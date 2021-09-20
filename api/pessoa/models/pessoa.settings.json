@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pessoas",
+  "info": {
+    "name": "pessoa",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "sobrenome": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "empresa": {
+      "via": "pessoas",
+      "model": "empresa"
+    }
+  }
+}

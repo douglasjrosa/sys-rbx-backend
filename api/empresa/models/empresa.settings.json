@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empresas",
+  "info": {
+    "name": "empresa",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "string"
+    },
+    "razao": {
+      "type": "string"
+    },
+    "pessoas": {
+      "via": "empresa",
+      "collection": "pessoa"
+    },
+    "produtos": {
+      "via": "empresa",
+      "collection": "produto"
+    }
+  }
+}

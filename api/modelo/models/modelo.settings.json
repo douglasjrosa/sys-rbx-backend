@@ -1,0 +1,98 @@
+{
+  "kind": "collectionType",
+  "collectionName": "modelos",
+  "info": {
+    "name": "modelo",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "notas": {
+      "type": "richtext"
+    },
+    "vaoMaximoEntrePes": {
+      "type": "float"
+    },
+    "vaoMaximoEntreSarrafos": {
+      "type": "float"
+    },
+    "lateralPorFora": {
+      "type": "boolean",
+      "default": false
+    },
+    "cabeceiraAoChao": {
+      "type": "boolean",
+      "default": false
+    },
+    "cabeceiraAoTopo": {
+      "type": "boolean",
+      "default": false
+    },
+    "peAlto": {
+      "type": "boolean",
+      "default": true
+    },
+    "peRefocado": {
+      "type": "boolean",
+      "default": false
+    },
+    "pe": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.partes"
+    },
+    "assoalho": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.partes"
+    },
+    "lateral": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.partes"
+    },
+    "cabeceira": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.partes"
+    },
+    "tampa": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.partes"
+    },
+    "avulso": {
+      "type": "component",
+      "repeatable": true,
+      "component": "cx-components.pecas"
+    }
+  }
+}
