@@ -1,52 +1,52 @@
 {
-  "routes": [
-    {
-      "method": "GET",
-      "path": "/pessoas",
-      "handler": "pessoa.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/pessoas/count",
-      "handler": "pessoa.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/pessoas/:id",
-      "handler": "pessoa.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/pessoas",
-      "handler": "pessoa.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/pessoas/:id",
-      "handler": "pessoa.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/pessoas/:id",
-      "handler": "pessoa.delete",
-      "config": {
-        "policies": []
-      }
-    }
-  ]
+	"routes": [
+		{
+			"method": "GET",
+			"path": "/pessoas",
+			"handler": "pessoa.find",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/pessoas/count",
+			"handler": "pessoa.count",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/pessoas/:id",
+			"handler": "pessoa.findOne",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "POST",
+			"path": "/pessoas",
+			"handler": "pessoa.create",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "PUT",
+			"path": "/pessoas/:id",
+			"handler": "pessoa.update",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "DELETE",
+			"path": "/pessoas/:id",
+			"handler": "pessoa.delete",
+			"config": {
+				"policies": []
+			}
+		}
+	]
 }

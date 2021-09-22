@@ -1,59 +1,65 @@
+const partesDataFill = require("../../../../utils/scripts-rbx");
 
 class Economica {
-    constructor(prodRequest, modeloObj) {
-        this.info = prodRequest;
-        this.mod = modeloObj;
+	constructor(prodRequest) {
+		this.info = prodRequest;
+		this.partes = {
+			pe: { pecas: {} },
+			assoalho: { pecas: {} },
+			lateral: { pecas: {} },
+			cabeceira: { pecas: {} },
+			tampa: { pecas: {} },
+			avulso: [],
+		};
+	}
+
+	calcularCx(modeloObj) {
+		// Preenche na classe as medidas das peças
+		// conforme as matérias primas do modelo.
+		this.partes = partesDataFill(modeloObj);
+
+        // Calcula o pé
+		this.partes.pe = this.calcularPe(modeloObj);
+
+
+		return this;
+	}
+
+	calcularPe(modeloObj) {
+		
+		const { sarrafo, toco, prego } = this.partes.pe.pecas;
+		const qtde = Math.ceil(this.info.comp / modeloObj.vaoMaximoEntrePes) + 1;
+
+		sarrafo.comp =
+			this.info.larg +
+			this.partes.lateral.pecas.sarrafoExt.esp * 2 +
+			this.partes.lateral.pecas.chapa.esp * 2;
+
+		if (modeloObj.peAlto) {
+			if (modeloObj.peReforcado) sarrafo.qtde = 5;
+			else {
+				sarrafo.qtde = 2;
+
+				toco.qtde = Math.ceil(this.info.larg / 30) + 1;
+				toco.esp = toco.esp * 3;
+				toco.custo = (toco.comp / 100) * 3 * toco.qtde * toco.precoVenda;
+
+				prego.qtde = toco.qtde * qtde * 7;
+				prego.custo = prego.qtde * prego.precoVenda;
+			}
+		} else {
+			sarrafo.qtde = 1;
+			toco.qtde = 0;
+		}
+		sarrafo.custo = ((sarrafo.qtde * sarrafo.comp) / 100) * sarrafo.precoVenda;
+
+		const custo = qtde * (sarrafo.custo + toco.custo + prego.custo);
+
+		return { qtde, custo, pecas: { sarrafo, toco, prego } };
+	}
+
+    calcularLateral(){
+
     }
-
-    mpDataFill(pecas) {
-        const obj = {}
-        pecas.map(peca => {
-            obj[peca.nome] = {
-                comp: 0,
-                larg: peca.materia_prima.largura,
-                esp: peca.materia_prima.espessura,
-                precoVenda: peca.materia_prima.precoVenda,
-                qtde: 0,
-                custo: 0
-            }
-        });
-        return obj;
-    }
-
-    calcular() {
-
-        const pe = {};
-        pe.qtde = Math.ceil( this.info.comp / this.mod.vaoMaximoEntrePes ) + 1;
-        
-        pe.pecas = this.mpDataFill(this.mod.pe.pecas)
-
-        if( this.mod.peAlto ){
-            if( this.mod.peReforcado ) pe.pecas.sarrafo.qtde = 5;
-            else{
-                pe.pecas.sarrafo.qtde = 2;
-
-                pe.pecas.toco.qtde = Math.ceil(this.info.larg / 30) + 1;
-                pe.pecas.toco.esp = pe.pecas.toco.esp * 3;
-                pe.pecas.toco.comp = 15;
-                pe.pecas.toco.custo = 0.15 * 3 * pe.pecas.toco.qtde * pe.pecas.toco.precoVenda;
-
-                pe.pecas.prego.qtde = pe.pecas.toco.qtde / 3 * pe.qtde * 7;
-                pe.pecas.prego.custo = pe.pecas.prego.qtde * pe.pecas.prego.precoVenda;
-            }
-        }
-        else{
-            pe.pecas.sarrafo.qtde = 1
-            pe.pecas.toco.qtde = 0
-        }
-
-
-        this.info.pesoProd = 0.00;
-        this.info.preco = 0.00;
-	    this.info.desconto = "6147758e7d4ddf1354db3600";
-	    this.info.vFinal = 0.00;
-
-        return pe;
-    }
-  }
-
+}
 module.exports = Economica;

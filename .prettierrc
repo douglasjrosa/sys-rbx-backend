@@ -1,0 +1,10 @@
+{
+	"printWidth": 80,
+	"tabWidth": 2,
+	"arrowParens": "avoid",
+	"proseWrap": "always",
+	"useTabs": true,
+	"bracketSpacing": true,
+	"bracketSameLine": false,
+	"semi": true
+}

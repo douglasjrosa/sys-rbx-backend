@@ -1,26 +1,26 @@
 {
-  "collectionName": "components_cx_components_partes",
-  "info": {
-    "name": "partes",
-    "icon": "boxes",
-    "description": ""
-  },
-  "options": {},
-  "attributes": {
-    "nome": {
-      "type": "string"
-    },
-    "qtde": {
-      "type": "integer"
-    },
-    "pecas": {
-      "type": "component",
-      "repeatable": true,
-      "component": "cx-components.pecas"
-    },
-    "ativo": {
-      "type": "boolean",
-      "default": true
-    }
-  }
+	"collectionName": "components_cx_components_partes",
+	"info": {
+		"name": "partes",
+		"icon": "boxes",
+		"description": ""
+	},
+	"options": {},
+	"attributes": {
+		"nome": {
+			"type": "string"
+		},
+		"qtde": {
+			"type": "integer"
+		},
+		"pecas": {
+			"type": "component",
+			"repeatable": true,
+			"component": "cx-components.pecas"
+		},
+		"ativo": {
+			"type": "boolean",
+			"default": true
+		}
+	}
 }

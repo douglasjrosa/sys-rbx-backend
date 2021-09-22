@@ -6,14 +6,15 @@
  */
 
 module.exports = {
-  async simular(ctx) {
+	async simular(ctx) {
+		const prodRequest = await ctx.request.body;
+		const modeloObj = await strapi.services.modelo.findOne({
+			slug: prodRequest.modelo,
+		});
 
-    const prodRequest = await ctx.request.body;
-    const modeloObj = await strapi.services.modelo.findOne({slug: prodRequest.modelo});
+		const Modelo = await require(`./classes/${prodRequest.modelo}.js`);
+		const produto = new Modelo(prodRequest);
 
-    const Modelo = await require(`./classes/${prodRequest.modelo}.js`);
-    const produto = new Modelo(prodRequest, modeloObj);
-
-    ctx.send(produto.calcular());
-  },
+		ctx.send(produto.calcularCx(modeloObj));
+	},
 };

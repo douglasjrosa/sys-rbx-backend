@@ -1,52 +1,52 @@
 {
-  "routes": [
-    {
-      "method": "GET",
-      "path": "/descontos",
-      "handler": "desconto.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/descontos/count",
-      "handler": "desconto.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/descontos/:id",
-      "handler": "desconto.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/descontos",
-      "handler": "desconto.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/descontos/:id",
-      "handler": "desconto.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/descontos/:id",
-      "handler": "desconto.delete",
-      "config": {
-        "policies": []
-      }
-    }
-  ]
+	"routes": [
+		{
+			"method": "GET",
+			"path": "/descontos",
+			"handler": "desconto.find",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/descontos/count",
+			"handler": "desconto.count",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/descontos/:id",
+			"handler": "desconto.findOne",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "POST",
+			"path": "/descontos",
+			"handler": "desconto.create",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "PUT",
+			"path": "/descontos/:id",
+			"handler": "desconto.update",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "DELETE",
+			"path": "/descontos/:id",
+			"handler": "desconto.delete",
+			"config": {
+				"policies": []
+			}
+		}
+	]
 }

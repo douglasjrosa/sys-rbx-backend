@@ -1,52 +1,52 @@
 {
-  "routes": [
-    {
-      "method": "GET",
-      "path": "/materia-primas",
-      "handler": "materia-prima.find",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/materia-primas/count",
-      "handler": "materia-prima.count",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "GET",
-      "path": "/materia-primas/:id",
-      "handler": "materia-prima.findOne",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "POST",
-      "path": "/materia-primas",
-      "handler": "materia-prima.create",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "PUT",
-      "path": "/materia-primas/:id",
-      "handler": "materia-prima.update",
-      "config": {
-        "policies": []
-      }
-    },
-    {
-      "method": "DELETE",
-      "path": "/materia-primas/:id",
-      "handler": "materia-prima.delete",
-      "config": {
-        "policies": []
-      }
-    }
-  ]
+	"routes": [
+		{
+			"method": "GET",
+			"path": "/materia-primas",
+			"handler": "materia-prima.find",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/materia-primas/count",
+			"handler": "materia-prima.count",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "GET",
+			"path": "/materia-primas/:id",
+			"handler": "materia-prima.findOne",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "POST",
+			"path": "/materia-primas",
+			"handler": "materia-prima.create",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "PUT",
+			"path": "/materia-primas/:id",
+			"handler": "materia-prima.update",
+			"config": {
+				"policies": []
+			}
+		},
+		{
+			"method": "DELETE",
+			"path": "/materia-primas/:id",
+			"handler": "materia-prima.delete",
+			"config": {
+				"policies": []
+			}
+		}
+	]
 }
