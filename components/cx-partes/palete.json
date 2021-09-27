@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_cx_partes_paletes",
+  "info": {
+    "name": "palete",
+    "icon": "table",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "vaoMaximoEntrePes": {
+      "type": "float",
+      "default": 80
+    },
+    "assoalho": {
+      "model": "materia-prima"
+    },
+    "vaoMaximoEntreTabuas": {
+      "type": "float",
+      "default": 0,
+      "min": 0
+    },
+    "tipos_de_pe": {
+      "model": "tipos-de-pe"
+    }
+  }
+}

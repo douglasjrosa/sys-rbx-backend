@@ -6,15 +6,16 @@
  */
 
 module.exports = {
+	async tipos(ctx) {
+		const response = require("../../../rbx-core/configs/tipos");
+
+		ctx.send(response);
+	},
 	async simular(ctx) {
-		const prodRequest = await ctx.request.body;
-		const modeloObj = await strapi.services.modelo.findOne({
-			slug: prodRequest.modelo,
-		});
+		const req = ctx.request.body;
+		const calcularProduto = require("../../../rbx-core/tipos");
+		const response = await calcularProduto(req);
 
-		const Modelo = await require(`./classes/${prodRequest.modelo}.js`);
-		const produto = new Modelo(prodRequest);
-
-		ctx.send(produto.calcularCx(modeloObj));
+		ctx.send(response);
 	},
 };

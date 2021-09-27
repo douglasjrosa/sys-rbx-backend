@@ -1,13 +1,12 @@
-module.exports = function partesDataFill(modeloObj) {
+function partesDataFill(mod) {
 	const partes = {};
 	["pe", "assoalho", "lateral", "cabeceira", "tampa"].map(parte => {
-		partes[parte] = { pecas: mpDataFill(modeloObj[parte].pecas) };
+		partes[parte] = mpDataFill(mod[parte].pecas);
 	});
 	return partes;
-};
+}
 
 function mpDataFill(pecas) {
-
 	const filledPecas = {};
 	pecas.map(peca => {
 		filledPecas[peca.nome] = {
@@ -21,3 +20,5 @@ function mpDataFill(pecas) {
 	});
 	return filledPecas;
 }
+
+module.exports = { partesDataFill, mpDataFill };

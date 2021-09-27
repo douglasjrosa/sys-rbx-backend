@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "09/22/2021 12:29:54 AM"
+    "x-generation-date": "09/26/2021 10:32:42 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1591,6 +1591,63 @@
         ]
       }
     },
+    "/modelos/tipos": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Modelo"
+        ],
+        "parameters": []
+      }
+    },
     "/modelos": {
       "get": {
         "deprecated": false,
@@ -2155,77 +2212,6 @@
         "summary": "",
         "tags": [
           "Modelo"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "properties": {
-                  "foo": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/modelos/simulate": {
-      "post": {
-        "deprecated": false,
-        "description": "Create a new record",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "foo": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Unclassified"
         ],
         "requestBody": {
           "description": "",
@@ -3251,6 +3237,1054 @@
         "summary": "",
         "tags": [
           "Produto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tipos-de-pes": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-pe"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tipos-de-pes/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "parameters": []
+      }
+    },
+    "/tipos-de-pes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-pe"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "/tipos-de-produtos": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
+        ],
+        "parameters": [
+          {
+            "name": "_limit",
+            "in": "query",
+            "required": false,
+            "description": "Maximum number of results possible",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_sort",
+            "in": "query",
+            "required": false,
+            "description": "Sort according to a specific field.",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_start",
+            "in": "query",
+            "required": false,
+            "description": "Skip a specific number of entries (especially useful for pagination)",
+            "schema": {
+              "type": "integer"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "=",
+            "in": "query",
+            "required": false,
+            "description": "Get entries that matches exactly your input",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_ne",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are not equals to something",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lt",
+            "in": "query",
+            "required": false,
+            "description": "Get record that are lower than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_lte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are lower than or equal to a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gt",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_gte",
+            "in": "query",
+            "required": false,
+            "description": "Get records that are greater than  or equal a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_contains",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_containss",
+            "in": "query",
+            "required": false,
+            "description": "Get records that contains (case sensitive) a value",
+            "schema": {
+              "type": "string"
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_in",
+            "in": "query",
+            "required": false,
+            "description": "Get records that matches any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          },
+          {
+            "name": "_nin",
+            "in": "query",
+            "required": false,
+            "description": "Get records that doesn't match any value in the array of values",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "deprecated": false
+          }
+        ]
+      },
+      "post": {
+        "deprecated": false,
+        "description": "Create a new record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-produto"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tipos-de-produtos/count": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
+        ],
+        "parameters": []
+      }
+    },
+    "/tipos-de-produtos/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "put": {
+        "deprecated": false,
+        "description": "Update a record",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
+        ],
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-produto"
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "",
+            "deprecated": false,
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ]
+      },
+      "delete": {
+        "deprecated": false,
+        "description": "Delete a record",
+        "responses": {
+          "200": {
+            "description": "deletes a single record based on the ID supplied",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
         ],
         "parameters": [
           {
@@ -5641,9 +6675,6 @@
                 "notas": {
                   "type": "string"
                 },
-                "partes": {
-                  "type": "component"
-                },
                 "preco": {
                   "type": "number"
                 },
@@ -5816,76 +6847,6 @@
           "slug": {
             "type": "uid"
           },
-          "image": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id",
-                "name",
-                "hash",
-                "mime",
-                "size",
-                "url",
-                "provider"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "alternativeText": {
-                  "type": "string"
-                },
-                "caption": {
-                  "type": "string"
-                },
-                "width": {
-                  "type": "integer"
-                },
-                "height": {
-                  "type": "integer"
-                },
-                "formats": {
-                  "type": "object"
-                },
-                "hash": {
-                  "type": "string"
-                },
-                "ext": {
-                  "type": "string"
-                },
-                "mime": {
-                  "type": "string"
-                },
-                "size": {
-                  "type": "number"
-                },
-                "url": {
-                  "type": "string"
-                },
-                "previewUrl": {
-                  "type": "string"
-                },
-                "provider": {
-                  "type": "string"
-                },
-                "provider_metadata": {
-                  "type": "object"
-                },
-                "related": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
           "ativo": {
             "type": "boolean",
             "default": true
@@ -5893,674 +6854,160 @@
           "notas": {
             "type": "string"
           },
-          "vaoMaximoEntrePes": {
-            "type": "number"
-          },
-          "vaoMaximoEntreSarrafos": {
-            "type": "number"
-          },
-          "lateralPorFora": {
-            "type": "boolean",
-            "default": false
-          },
-          "cabeceiraAoChao": {
-            "type": "boolean",
-            "default": false
-          },
-          "cabeceiraAoTopo": {
-            "type": "boolean",
-            "default": false
-          },
-          "peAlto": {
-            "type": "boolean",
-            "default": true
-          },
-          "peRefocado": {
-            "type": "boolean",
-            "default": false
-          },
-          "pe": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "assoalho": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "lateral": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "cabeceira": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "tampa": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "avulso": {
+          "partes": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "qtde": {
-                  "type": "integer"
-                },
-                "comp": {
-                  "type": "number"
-                },
-                "materia_prima": {
-                  "required": [
-                    "id"
-                  ],
+              "oneOf": [
+                {
                   "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "cx-partes.palete"
+                      ]
+                    },
                     "id": {
                       "type": "string"
                     },
-                    "nome": {
-                      "type": "string"
+                    "vaoMaximoEntrePes": {
+                      "type": "number",
+                      "default": 80
                     },
-                    "largura": {
-                      "type": "number"
+                    "assoalho": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     },
-                    "espessura": {
-                      "type": "number"
+                    "vaoMaximoEntreTabuas": {
+                      "type": "number",
+                      "default": 0
                     },
-                    "precoCompra": {
-                      "type": "number"
-                    },
-                    "unCompra": {
-                      "type": "string",
-                      "enum": [
-                        "unidade",
-                        "milheiro",
-                        "metroCubico",
-                        "metroQuadrado",
-                        "metroLinear",
-                        "litro",
-                        "kg"
-                      ]
-                    },
-                    "unVenda": {
-                      "type": "string",
-                      "enum": [
-                        "unidade",
-                        "milheiro",
-                        "metroCubico",
-                        "metroQuadrado",
-                        "metroLinear",
-                        "litro",
-                        "kg"
-                      ]
-                    },
-                    "precoVenda": {
-                      "type": "number"
-                    },
-                    "comprimento": {
-                      "type": "number"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
+                    "tipos_de_pe": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "uid"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "notas": {
+                          "type": "string"
+                        },
+                        "pe": {
+                          "type": "string"
+                        },
+                        "longarina": {
+                          "type": "string"
+                        },
+                        "toco": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
-                  }
-                },
-                "custo": {
-                  "type": "number"
-                },
-                "larg": {
-                  "type": "number"
-                },
-                "esp": {
-                  "type": "number"
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
+              ]
+            }
+          },
+          "tipos_de_produto": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "notas": {
+                "type": "string"
+              },
+              "images": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           }
@@ -6581,676 +7028,134 @@
           "notas": {
             "type": "string"
           },
-          "vaoMaximoEntrePes": {
-            "type": "number"
-          },
-          "vaoMaximoEntreSarrafos": {
-            "type": "number"
-          },
-          "lateralPorFora": {
-            "type": "boolean",
-            "default": false
-          },
-          "cabeceiraAoChao": {
-            "type": "boolean",
-            "default": false
-          },
-          "cabeceiraAoTopo": {
-            "type": "boolean",
-            "default": false
-          },
-          "peAlto": {
-            "type": "boolean",
-            "default": true
-          },
-          "peRefocado": {
-            "type": "boolean",
-            "default": false
-          },
-          "pe": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "assoalho": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "lateral": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "cabeceira": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "tampa": {
-            "type": "object",
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "qtde": {
-                "type": "integer"
-              },
-              "pecas": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": [
-                    "id"
-                  ],
-                  "properties": {
-                    "id": {
-                      "type": "string"
-                    },
-                    "nome": {
-                      "type": "string"
-                    },
-                    "qtde": {
-                      "type": "integer"
-                    },
-                    "comp": {
-                      "type": "number"
-                    },
-                    "materia_prima": {
-                      "required": [
-                        "id"
-                      ],
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "nome": {
-                          "type": "string"
-                        },
-                        "largura": {
-                          "type": "number"
-                        },
-                        "espessura": {
-                          "type": "number"
-                        },
-                        "precoCompra": {
-                          "type": "number"
-                        },
-                        "unCompra": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "unVenda": {
-                          "type": "string",
-                          "enum": [
-                            "unidade",
-                            "milheiro",
-                            "metroCubico",
-                            "metroQuadrado",
-                            "metroLinear",
-                            "litro",
-                            "kg"
-                          ]
-                        },
-                        "precoVenda": {
-                          "type": "number"
-                        },
-                        "comprimento": {
-                          "type": "number"
-                        },
-                        "created_by": {
-                          "type": "string"
-                        },
-                        "updated_by": {
-                          "type": "string"
-                        }
-                      }
-                    },
-                    "custo": {
-                      "type": "number"
-                    },
-                    "larg": {
-                      "type": "number"
-                    },
-                    "esp": {
-                      "type": "number"
-                    }
-                  }
-                }
-              },
-              "ativo": {
-                "type": "boolean",
-                "default": true
-              }
-            }
-          },
-          "avulso": {
+          "partes": {
             "type": "array",
             "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "qtde": {
-                  "type": "integer"
-                },
-                "comp": {
-                  "type": "number"
-                },
-                "materia_prima": {
-                  "required": [
-                    "id"
-                  ],
+              "oneOf": [
+                {
                   "properties": {
+                    "__component": {
+                      "type": "string",
+                      "enum": [
+                        "cx-partes.palete"
+                      ]
+                    },
                     "id": {
                       "type": "string"
                     },
-                    "nome": {
-                      "type": "string"
+                    "vaoMaximoEntrePes": {
+                      "type": "number",
+                      "default": 80
                     },
-                    "largura": {
-                      "type": "number"
+                    "assoalho": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     },
-                    "espessura": {
-                      "type": "number"
+                    "vaoMaximoEntreTabuas": {
+                      "type": "number",
+                      "default": 0
                     },
-                    "precoCompra": {
-                      "type": "number"
-                    },
-                    "unCompra": {
-                      "type": "string",
-                      "enum": [
-                        "unidade",
-                        "milheiro",
-                        "metroCubico",
-                        "metroQuadrado",
-                        "metroLinear",
-                        "litro",
-                        "kg"
-                      ]
-                    },
-                    "unVenda": {
-                      "type": "string",
-                      "enum": [
-                        "unidade",
-                        "milheiro",
-                        "metroCubico",
-                        "metroQuadrado",
-                        "metroLinear",
-                        "litro",
-                        "kg"
-                      ]
-                    },
-                    "precoVenda": {
-                      "type": "number"
-                    },
-                    "comprimento": {
-                      "type": "number"
-                    },
-                    "created_by": {
-                      "type": "string"
-                    },
-                    "updated_by": {
-                      "type": "string"
+                    "tipos_de_pe": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "slug": {
+                          "type": "uid"
+                        },
+                        "image": {
+                          "type": "string"
+                        },
+                        "notas": {
+                          "type": "string"
+                        },
+                        "pe": {
+                          "type": "string"
+                        },
+                        "longarina": {
+                          "type": "string"
+                        },
+                        "toco": {
+                          "type": "string"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
-                  }
-                },
-                "custo": {
-                  "type": "number"
-                },
-                "larg": {
-                  "type": "number"
-                },
-                "esp": {
-                  "type": "number"
+                  },
+                  "required": [
+                    "id"
+                  ]
                 }
-              }
+              ]
             }
+          },
+          "tipos_de_produto": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -7418,120 +7323,6 @@
           "notas": {
             "type": "string"
           },
-          "partes": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "qtde": {
-                  "type": "integer"
-                },
-                "pecas": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "nome": {
-                        "type": "string"
-                      },
-                      "qtde": {
-                        "type": "integer"
-                      },
-                      "comp": {
-                        "type": "number"
-                      },
-                      "materia_prima": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "nome": {
-                            "type": "string"
-                          },
-                          "largura": {
-                            "type": "number"
-                          },
-                          "espessura": {
-                            "type": "number"
-                          },
-                          "precoCompra": {
-                            "type": "number"
-                          },
-                          "unCompra": {
-                            "type": "string",
-                            "enum": [
-                              "unidade",
-                              "milheiro",
-                              "metroCubico",
-                              "metroQuadrado",
-                              "metroLinear",
-                              "litro",
-                              "kg"
-                            ]
-                          },
-                          "unVenda": {
-                            "type": "string",
-                            "enum": [
-                              "unidade",
-                              "milheiro",
-                              "metroCubico",
-                              "metroQuadrado",
-                              "metroLinear",
-                              "litro",
-                              "kg"
-                            ]
-                          },
-                          "precoVenda": {
-                            "type": "number"
-                          },
-                          "comprimento": {
-                            "type": "number"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "custo": {
-                        "type": "number"
-                      },
-                      "larg": {
-                        "type": "number"
-                      },
-                      "esp": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                "ativo": {
-                  "type": "boolean",
-                  "default": true
-                }
-              }
-            }
-          },
           "preco": {
             "type": "number"
           },
@@ -7610,120 +7401,6 @@
           "notas": {
             "type": "string"
           },
-          "partes": {
-            "type": "array",
-            "items": {
-              "type": "object",
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "qtde": {
-                  "type": "integer"
-                },
-                "pecas": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "required": [
-                      "id"
-                    ],
-                    "properties": {
-                      "id": {
-                        "type": "string"
-                      },
-                      "nome": {
-                        "type": "string"
-                      },
-                      "qtde": {
-                        "type": "integer"
-                      },
-                      "comp": {
-                        "type": "number"
-                      },
-                      "materia_prima": {
-                        "required": [
-                          "id"
-                        ],
-                        "properties": {
-                          "id": {
-                            "type": "string"
-                          },
-                          "nome": {
-                            "type": "string"
-                          },
-                          "largura": {
-                            "type": "number"
-                          },
-                          "espessura": {
-                            "type": "number"
-                          },
-                          "precoCompra": {
-                            "type": "number"
-                          },
-                          "unCompra": {
-                            "type": "string",
-                            "enum": [
-                              "unidade",
-                              "milheiro",
-                              "metroCubico",
-                              "metroQuadrado",
-                              "metroLinear",
-                              "litro",
-                              "kg"
-                            ]
-                          },
-                          "unVenda": {
-                            "type": "string",
-                            "enum": [
-                              "unidade",
-                              "milheiro",
-                              "metroCubico",
-                              "metroQuadrado",
-                              "metroLinear",
-                              "litro",
-                              "kg"
-                            ]
-                          },
-                          "precoVenda": {
-                            "type": "number"
-                          },
-                          "comprimento": {
-                            "type": "number"
-                          },
-                          "created_by": {
-                            "type": "string"
-                          },
-                          "updated_by": {
-                            "type": "string"
-                          }
-                        }
-                      },
-                      "custo": {
-                        "type": "number"
-                      },
-                      "larg": {
-                        "type": "number"
-                      },
-                      "esp": {
-                        "type": "number"
-                      }
-                    }
-                  }
-                },
-                "ativo": {
-                  "type": "boolean",
-                  "default": true
-                }
-              }
-            }
-          },
           "preco": {
             "type": "number"
           },
@@ -7735,6 +7412,402 @@
           },
           "vFinal": {
             "type": "number"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Tipos-de-pe": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "image": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "notas": {
+            "type": "string"
+          },
+          "pe": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "longarina": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "toco": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "NewTipos-de-pe": {
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "notas": {
+            "type": "string"
+          },
+          "pe": {
+            "type": "string"
+          },
+          "longarina": {
+            "type": "string"
+          },
+          "toco": {
+            "type": "string"
+          },
+          "created_by": {
+            "type": "string"
+          },
+          "updated_by": {
+            "type": "string"
+          }
+        }
+      },
+      "Tipos-de-produto": {
+        "required": [
+          "id"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "notas": {
+            "type": "string"
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "alternativeText": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
+                  "type": "number"
+                },
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "NewTipos-de-produto": {
+        "properties": {
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
+          },
+          "notas": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -8038,9 +8111,6 @@
     },
     {
       "name": "Modelo"
-    },
-    {
-      "name": "Unclassified"
     },
     {
       "name": "Pessoa"

@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/produtos": {
+    "/tipos-de-produtos": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-produto"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Produto"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewProduto"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/produtos/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-produto"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-produto"
+              }
+            }
+          }
+        }
       }
     },
-    "/produtos/{id}": {
+    "/tipos-de-produtos/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-produto"
+        ],
+        "parameters": []
+      }
+    },
+    "/tipos-de-produtos/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-produto"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-produto"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduto"
+                "$ref": "#/components/schemas/NewTipos-de-produto"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-produto"
         ],
         "parameters": [
           {
@@ -514,10 +527,9 @@
   },
   "components": {
     "schemas": {
-      "Produto": {
+      "Tipos-de-produto": {
         "required": [
-          "id",
-          "montagem"
+          "id"
         ],
         "properties": {
           "id": {
@@ -526,94 +538,71 @@
           "nome": {
             "type": "string"
           },
-          "codigo": {
-            "type": "string"
-          },
-          "empresa": {
-            "required": [
-              "id"
-            ],
-            "properties": {
-              "id": {
-                "type": "string"
-              },
-              "nome": {
-                "type": "string"
-              },
-              "cnpj": {
-                "type": "string"
-              },
-              "razao": {
-                "type": "string"
-              },
-              "pessoas": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "produtos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
-              },
-              "created_by": {
-                "type": "string"
-              },
-              "updated_by": {
-                "type": "string"
-              }
-            }
-          },
-          "comp": {
-            "type": "number"
-          },
-          "larg": {
-            "type": "number"
-          },
-          "alt": {
-            "type": "number"
-          },
-          "pesoProd": {
-            "type": "number"
-          },
-          "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+          "slug": {
+            "type": "uid"
           },
           "notas": {
             "type": "string"
           },
-          "preco": {
-            "type": "number"
-          },
-          "descontos": {
+          "images": {
             "type": "array",
             "items": {
               "required": [
-                "id"
+                "id",
+                "name",
+                "hash",
+                "mime",
+                "size",
+                "url",
+                "provider"
               ],
               "properties": {
                 "id": {
                   "type": "string"
                 },
-                "nome": {
+                "name": {
                   "type": "string"
                 },
-                "slug": {
-                  "type": "uid"
+                "alternativeText": {
+                  "type": "string"
                 },
-                "ativo": {
-                  "type": "boolean"
+                "caption": {
+                  "type": "string"
                 },
-                "percentual": {
+                "width": {
+                  "type": "integer"
+                },
+                "height": {
+                  "type": "integer"
+                },
+                "formats": {
+                  "type": "object"
+                },
+                "hash": {
+                  "type": "string"
+                },
+                "ext": {
+                  "type": "string"
+                },
+                "mime": {
+                  "type": "string"
+                },
+                "size": {
                   "type": "number"
                 },
-                "validade": {
+                "url": {
+                  "type": "string"
+                },
+                "previewUrl": {
+                  "type": "string"
+                },
+                "provider": {
+                  "type": "string"
+                },
+                "provider_metadata": {
+                  "type": "object"
+                },
+                "related": {
                   "type": "string"
                 },
                 "created_by": {
@@ -624,59 +613,19 @@
                 }
               }
             }
-          },
-          "vFinal": {
-            "type": "number"
           }
         }
       },
-      "NewProduto": {
-        "required": [
-          "montagem"
-        ],
+      "NewTipos-de-produto": {
         "properties": {
           "nome": {
             "type": "string"
           },
-          "codigo": {
-            "type": "string"
-          },
-          "empresa": {
-            "type": "string"
-          },
-          "comp": {
-            "type": "number"
-          },
-          "larg": {
-            "type": "number"
-          },
-          "alt": {
-            "type": "number"
-          },
-          "pesoProd": {
-            "type": "number"
-          },
-          "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+          "slug": {
+            "type": "uid"
           },
           "notas": {
             "type": "string"
-          },
-          "preco": {
-            "type": "number"
-          },
-          "descontos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "vFinal": {
-            "type": "number"
           },
           "created_by": {
             "type": "string"
@@ -688,9 +637,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Produto"
-    }
-  ]
+  "tags": []
 }

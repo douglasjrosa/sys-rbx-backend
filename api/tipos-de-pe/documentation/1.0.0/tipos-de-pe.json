@@ -1,6 +1,6 @@
 {
   "paths": {
-    "/produtos": {
+    "/tipos-de-pes": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -10,9 +10,10 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
                   }
                 }
               }
@@ -51,7 +52,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-pe"
         ],
         "parameters": [
           {
@@ -201,72 +202,9 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
-                }
-              }
-            }
-          },
-          "403": {
-            "description": "Forbidden",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not found",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          },
-          "default": {
-            "description": "unexpected error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Error"
-                }
-              }
-            }
-          }
-        },
-        "summary": "",
-        "tags": [
-          "Produto"
-        ],
-        "requestBody": {
-          "description": "",
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/NewProduto"
-              }
-            }
-          }
-        }
-      }
-    },
-    "/produtos/count": {
-      "get": {
-        "deprecated": false,
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "response",
-            "content": {
-              "application/json": {
-                "schema": {
                   "properties": {
-                    "count": {
-                      "type": "integer"
+                    "foo": {
+                      "type": "string"
                     }
                   }
                 }
@@ -306,12 +244,22 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-pe"
         ],
-        "parameters": []
+        "requestBody": {
+          "description": "",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewTipos-de-pe"
+              }
+            }
+          }
+        }
       }
     },
-    "/produtos/{id}": {
+    "/tipos-de-pes/count": {
       "get": {
         "deprecated": false,
         "description": "",
@@ -321,7 +269,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -359,7 +311,64 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-pe"
+        ],
+        "parameters": []
+      }
+    },
+    "/tipos-de-pes/{id}": {
+      "get": {
+        "deprecated": false,
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        },
+        "summary": "",
+        "tags": [
+          "Tipos-de-pe"
         ],
         "parameters": [
           {
@@ -383,7 +392,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Produto"
+                  "properties": {
+                    "foo": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -421,7 +434,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-pe"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +442,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewProduto"
+                "$ref": "#/components/schemas/NewTipos-de-pe"
               }
             }
           }
@@ -495,7 +508,7 @@
         },
         "summary": "",
         "tags": [
-          "Produto"
+          "Tipos-de-pe"
         ],
         "parameters": [
           {
@@ -514,10 +527,9 @@
   },
   "components": {
     "schemas": {
-      "Produto": {
+      "Tipos-de-pe": {
         "required": [
-          "id",
-          "montagem"
+          "id"
         ],
         "properties": {
           "id": {
@@ -526,10 +538,80 @@
           "nome": {
             "type": "string"
           },
-          "codigo": {
+          "slug": {
+            "type": "uid"
+          },
+          "image": {
+            "required": [
+              "id",
+              "name",
+              "hash",
+              "mime",
+              "size",
+              "url",
+              "provider"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "name": {
+                "type": "string"
+              },
+              "alternativeText": {
+                "type": "string"
+              },
+              "caption": {
+                "type": "string"
+              },
+              "width": {
+                "type": "integer"
+              },
+              "height": {
+                "type": "integer"
+              },
+              "formats": {
+                "type": "object"
+              },
+              "hash": {
+                "type": "string"
+              },
+              "ext": {
+                "type": "string"
+              },
+              "mime": {
+                "type": "string"
+              },
+              "size": {
+                "type": "number"
+              },
+              "url": {
+                "type": "string"
+              },
+              "previewUrl": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "provider_metadata": {
+                "type": "object"
+              },
+              "related": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "notas": {
             "type": "string"
           },
-          "empresa": {
+          "pe": {
             "required": [
               "id"
             ],
@@ -540,23 +622,44 @@
               "nome": {
                 "type": "string"
               },
-              "cnpj": {
-                "type": "string"
+              "largura": {
+                "type": "number"
               },
-              "razao": {
-                "type": "string"
+              "espessura": {
+                "type": "number"
               },
-              "pessoas": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "precoCompra": {
+                "type": "number"
               },
-              "produtos": {
-                "type": "array",
-                "items": {
-                  "type": "string"
-                }
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
               },
               "created_by": {
                 "type": "string"
@@ -566,117 +669,143 @@
               }
             }
           },
-          "comp": {
-            "type": "number"
-          },
-          "larg": {
-            "type": "number"
-          },
-          "alt": {
-            "type": "number"
-          },
-          "pesoProd": {
-            "type": "number"
-          },
-          "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
-          },
-          "notas": {
-            "type": "string"
-          },
-          "preco": {
-            "type": "number"
-          },
-          "descontos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "ativo": {
-                  "type": "boolean"
-                },
-                "percentual": {
-                  "type": "number"
-                },
-                "validade": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
+          "longarina": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
               }
             }
           },
-          "vFinal": {
-            "type": "number"
+          "toco": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
-      "NewProduto": {
-        "required": [
-          "montagem"
-        ],
+      "NewTipos-de-pe": {
         "properties": {
           "nome": {
             "type": "string"
           },
-          "codigo": {
-            "type": "string"
-          },
-          "empresa": {
-            "type": "string"
-          },
-          "comp": {
-            "type": "number"
-          },
-          "larg": {
-            "type": "number"
-          },
-          "alt": {
-            "type": "number"
-          },
-          "pesoProd": {
-            "type": "number"
-          },
-          "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+          "slug": {
+            "type": "uid"
           },
           "notas": {
             "type": "string"
           },
-          "preco": {
-            "type": "number"
+          "pe": {
+            "type": "string"
           },
-          "descontos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "longarina": {
+            "type": "string"
           },
-          "vFinal": {
-            "type": "number"
+          "toco": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"
@@ -688,9 +817,5 @@
       }
     }
   },
-  "tags": [
-    {
-      "name": "Produto"
-    }
-  ]
+  "tags": []
 }

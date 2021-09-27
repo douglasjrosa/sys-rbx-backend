@@ -1,63 +1,58 @@
 {
-	"kind": "collectionType",
-	"collectionName": "produtos",
-	"info": {
-		"name": "produto",
-		"description": ""
-	},
-	"options": {
-		"increments": true,
-		"timestamps": true,
-		"draftAndPublish": false
-	},
-	"pluginOptions": {},
-	"attributes": {
-		"nome": {
-			"type": "string"
-		},
-		"codigo": {
-			"type": "string"
-		},
-		"empresa": {
-			"via": "produtos",
-			"model": "empresa"
-		},
-		"comp": {
-			"type": "float"
-		},
-		"larg": {
-			"type": "float"
-		},
-		"alt": {
-			"type": "float"
-		},
-		"pesoProd": {
-			"type": "float"
-		},
-		"exp": {
-			"type": "boolean"
-		},
-		"montagem": {
-			"type": "string",
-			"default": "Desmontada",
-			"required": true
-		},
-		"notas": {
-			"type": "string"
-		},
-		"partes": {
-			"type": "component",
-			"repeatable": true,
-			"component": "cx-components.partes"
-		},
-		"preco": {
-			"type": "decimal"
-		},
-		"descontos": {
-			"collection": "desconto"
-		},
-		"vFinal": {
-			"type": "decimal"
-		}
-	}
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "name": "produto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "empresa": {
+      "via": "produtos",
+      "model": "empresa"
+    },
+    "comp": {
+      "type": "float"
+    },
+    "larg": {
+      "type": "float"
+    },
+    "alt": {
+      "type": "float"
+    },
+    "pesoProd": {
+      "type": "float"
+    },
+    "exp": {
+      "type": "boolean"
+    },
+    "montagem": {
+      "type": "string",
+      "default": "Desmontada",
+      "required": true
+    },
+    "notas": {
+      "type": "string"
+    },
+    "preco": {
+      "type": "decimal"
+    },
+    "descontos": {
+      "collection": "desconto"
+    },
+    "vFinal": {
+      "type": "decimal"
+    }
+  }
 }

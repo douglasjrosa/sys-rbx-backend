@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/tipos-de-pes",
+      "handler": "tipos-de-pe.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tipos-de-pes/count",
+      "handler": "tipos-de-pe.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/tipos-de-pes/:id",
+      "handler": "tipos-de-pe.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/tipos-de-pes",
+      "handler": "tipos-de-pe.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/tipos-de-pes/:id",
+      "handler": "tipos-de-pe.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/tipos-de-pes/:id",
+      "handler": "tipos-de-pe.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "modelos",
+  "collectionName": "tipos_de_produtos",
   "info": {
-    "name": "modelo",
+    "name": "tipos de produto",
     "description": ""
   },
   "options": {
@@ -19,21 +19,20 @@
       "type": "uid",
       "targetField": "nome"
     },
-    "ativo": {
-      "type": "boolean",
-      "default": true
-    },
     "notas": {
-      "type": "richtext"
+      "type": "text"
     },
-    "partes": {
-      "type": "dynamiczone",
-      "components": [
-        "cx-partes.palete"
-      ]
-    },
-    "tipos_de_produto": {
-      "model": "tipos-de-produto"
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
     }
   }
 }
