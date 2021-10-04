@@ -8,6 +8,8 @@ class Observable {
         this.state = {};
 	}
 
+	observersCount(){ return this.observers.length }
+
     set(obj){
         this.state = {...this.state, ...obj};
     }
@@ -24,7 +26,7 @@ class Observable {
 
 	// adicione a capacidade de cancelar a inscrição de um objeto em particular
 	// essencilamente, remove algum item do array de observadores
-	unsubscribe(f) {
+	unSubscribe(f) {
 		this.observers = this.observers.filter(subscriber => subscriber !== f);
 	}
 

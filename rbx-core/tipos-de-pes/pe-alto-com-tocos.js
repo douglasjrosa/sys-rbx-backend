@@ -1,55 +1,45 @@
-const {mpDataFill} = require("../utils/scripts-rbx");
-
-const calcularPe = prod => {
-	console.log("Calculando pé com tocos...");
-    return prod.req.larg;
-
-    /*
+const peAltoComTocos = async (palete) => {
 	
-    
-			const { longarina, toco, pe } = parte["tipos_de_pe"];
+	const { compPe, longPe, vaoMaximoEntrePes, tipos_de_pe } = palete;
+	const { longarina } = tipos_de_pe;
 
-			const longarinaMp = await strapi.services["materia-prima"].findOne({
-				id: longarina,
-			});
-            
-			Produto.set({ longarinaMp });
-    
-    
-    
-    
-    
-    const { sarrafo, toco, prego } = caixa.partes.pe;
-	const qtde = Math.ceil(caixa.req.comp / caixa.mod.vaoMaximoEntrePes) + 1;
+	const materiasPrimas = await strapi.services["materia-prima"].find({
+		_id: { $in: [longarina] },
+	});
 
-	sarrafo.comp =
-		caixa.req.larg +
-		caixa.partes.lateral.sarrafoExt.esp * 2 +
-		caixa.partes.lateral.chapa.esp * 2;
+	const longarinaMp = materiasPrimas[0];
 
-	if (caixa.mod.peAlto) {
-		if (caixa.mod.peReforcado) sarrafo.qtde = 5;
-		else {
-			sarrafo.qtde = 2;
+	const tocoPronto = {
+		qtde: Math.max(Math.ceil(compPe / 30), 2),
+		comp: 15,
+		larg: longarinaMp.largura,
+		alt: Math.ceil10(longarinaMp.espessura * 3, -2),
+		custo: 0,
+	};
 
-			toco.qtde = Math.ceil(caixa.req.larg / 30) + 1;
-			toco.esp = toco.esp * 3;
-			toco.custo = (toco.comp / 100) * 3 * toco.qtde * toco.precoVenda;
+	tocoPronto.custo = Math.ceil10(
+		(tocoPronto.comp / 100) * 3 * longarinaMp.precoVenda, -2
+	);
 
-			prego.qtde = toco.qtde * qtde * 7;
-			prego.custo = prego.qtde * prego.precoVenda;
-		}
-	} else {
-		sarrafo.qtde = 1;
-		toco.qtde = 0;
-	}
-	sarrafo.custo = ((sarrafo.qtde * sarrafo.comp) / 100) * sarrafo.precoVenda;
+	const pePronto = {
+		comp: compPe,
+		larg: longarinaMp.largura,
+		alt: longarinaMp.espessura * 2 + tocoPronto.alt,
+		custo: Math.ceil10(
+			((compPe * 2 + tocoPronto.comp * 3 * tocoPronto.qtde) / 100) *
+			longarinaMp.precoVenda, -2
+		),
+		toco: tocoPronto,
+	};
 
-	const custo = qtde * (sarrafo.custo + toco.custo + prego.custo);
+	const pes = {
+		pePronto,
+		qtde: Math.max(Math.ceil( longPe / vaoMaximoEntrePes), 2),
+		custo: 0
+	};
+	pes.custo = Math.ceil10( pes.qtde * pePronto.custo, -2);
 
-	caixa.partes.pe = { qtde, custo, sarrafo, toco, prego };
-
-	Estruturada.set(caixa);
-    */
+	console.log("calculado o pé.");
+	return pes;
 };
-module.exports = calcularPe;
+module.exports = peAltoComTocos;

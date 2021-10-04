@@ -2,14 +2,6 @@
 	"routes": [
 		{
 			"method": "GET",
-			"path": "/modelos/tipos",
-			"handler": "modelo.tipos",
-			"config": {
-				"policies": []
-			}
-		},
-		{
-			"method": "GET",
 			"path": "/modelos",
 			"handler": "modelo.find",
 			"config": {

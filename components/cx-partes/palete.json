@@ -21,6 +21,11 @@
     },
     "tipos_de_pe": {
       "model": "tipos-de-pe"
+    },
+    "nome": {
+      "type": "string",
+      "default": "palete",
+      "required": true
     }
   }
 }
