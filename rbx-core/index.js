@@ -1,4 +1,5 @@
-require("../utils/math-decimal");
+require("./utils/math-decimal");
+require("./utils/scripts-rbx");
 
 const calcularProduto = async req => {
 	const mod = await strapi.services.modelo.findOne({
@@ -25,7 +26,7 @@ const calcularProduto = async req => {
 	};
 
 	const tipo = mod.tipos_de_produto.slug;
-	const calcTipoDeProduto = require(`./${tipo}`);
+	const calcTipoDeProduto = require(`./tipos-de-produto/${tipo}`);
 
 	const produtoPronto = await calcTipoDeProduto(prod);
 

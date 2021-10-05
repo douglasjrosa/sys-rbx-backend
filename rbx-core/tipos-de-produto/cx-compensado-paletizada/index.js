@@ -7,7 +7,7 @@ const calcTipoDeProduto = async prod => {
 	}
 
 	console.log("Calculada a caixa econômica.");
-	return prod;
+	return prod.partes.lateral;
 };
 
 module.exports = calcTipoDeProduto;

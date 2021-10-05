@@ -1,7 +1,7 @@
 {
   "collectionName": "components_cx_components_pecas",
   "info": {
-    "name": "pecas",
+    "name": "avulso",
     "icon": "puzzle-piece",
     "description": ""
   },
@@ -12,6 +12,12 @@
     },
     "materia_prima": {
       "model": "materia-prima"
+    },
+    "compAvulso": {
+      "type": "float"
+    },
+    "qtde": {
+      "type": "integer"
     }
   }
 }

@@ -1,4 +1,4 @@
-const peAltoComTocos = async (palete) => {
+const calcPeFn = async (palete) => {
 	
 	const { compPe, longPe, vaoMaximoEntrePes, tipos_de_pe } = palete;
 	const { longarina } = tipos_de_pe;
@@ -34,7 +34,7 @@ const peAltoComTocos = async (palete) => {
 
 	const pes = {
 		pePronto,
-		qtde: Math.max(Math.ceil( longPe / vaoMaximoEntrePes), 2),
+		qtde: Math.max(Math.ceil( longPe / vaoMaximoEntrePes) + 1, 2),
 		custo: 0
 	};
 	pes.custo = Math.ceil10( pes.qtde * pePronto.custo, -2);
@@ -42,4 +42,4 @@ const peAltoComTocos = async (palete) => {
 	console.log("calculado o pé.");
 	return pes;
 };
-module.exports = peAltoComTocos;
+module.exports = calcPeFn;

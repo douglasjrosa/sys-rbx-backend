@@ -1,26 +1,26 @@
-const calcularPe = require("../tipos-de-pes");
 
-const calcularPalete = async (palete) => {
+const calcularBase = async base => {
     
-    const pes = await calcularPe( palete );
+    const calcularPe = require("../pecas/pes");
+    const pes = await calcularPe( base );
     
-    const assObj = palete.assoalho;
+    const assObj = base.assoalho;
 
     const assoalho = {
         comp: assObj.comp,
         larg: assObj.larg,
-        vaoMaximoEntreTabuas: palete.vaoMaximoEntreTabuas,
+        vaoMaximoEntreTabuas: base.vaoMaximoEntreTabuas,
         custo: 0,
         tabuas : {
             comp: assObj.comp,
             larg: assObj.largura,
             esp: assObj.espessura,
             custo: Math.ceil10( assObj.comp / 100 * assObj.precoVenda, -2),
-            qtde: Math.ceil(assObj.larg / ( assObj.largura + palete.vaoMaximoEntreTabuas ))
+            qtde: Math.ceil(assObj.larg / ( assObj.largura + base.vaoMaximoEntreTabuas ))
         }
     };
     assoalho.custo = Math.ceil10(assoalho.tabuas.qtde * assoalho.tabuas.custo, -2);
     
     return { pes, assoalho };
 }
-module.exports = calcularPalete;
+module.exports = calcularBase;

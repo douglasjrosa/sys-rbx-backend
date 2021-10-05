@@ -24,7 +24,7 @@
     },
     "nome": {
       "type": "string",
-      "default": "palete",
+      "default": "base",
       "required": true
     }
   }

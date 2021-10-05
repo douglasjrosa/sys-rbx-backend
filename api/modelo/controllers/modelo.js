@@ -8,7 +8,7 @@
 module.exports = {
 	async simular(ctx) {
 
-			const calcularProduto = require("../../../rbx-core/tipos-de-produto");
+			const calcularProduto = require("../../../rbx-core");
 			
 			const req = ctx.request.body;
 			const produtoPronto = await calcularProduto(req);

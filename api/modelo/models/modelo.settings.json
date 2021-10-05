@@ -29,7 +29,10 @@
     "partes": {
       "type": "dynamiczone",
       "components": [
-        "cx-partes.palete"
+        "cx-components.palete",
+        "cx-components.quadro",
+        "cx-components.pecas",
+        "cx-components.gradeado"
       ]
     },
     "tipos_de_produto": {
