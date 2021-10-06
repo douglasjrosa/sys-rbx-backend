@@ -4,6 +4,12 @@ const calcParteFn = async (prod) => {
     const { req, mod } = prod;
     const { tampa } = mod.partes;
     
-    return await calcularTampa(tampa);
+    
+	const arrTrash = [ "unCompra", "unVenda", "precoCompra" ];
+	objClean( tampa, arrTrash );
+
+	const customConfigs = req.partes && req.partes.tampa ? req.partes.tampa : {};
+
+	return await calcularTampa( {...tampa, ...customConfigs } );
 }
 module.exports = calcParteFn;

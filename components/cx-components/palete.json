@@ -26,6 +26,16 @@
       "type": "string",
       "default": "base",
       "required": true
+    },
+    "tabuasMeioQtde": {
+      "type": "integer",
+      "default": -1,
+      "min": -1
+    },
+    "pesMeioQtde": {
+      "type": "integer",
+      "default": -1,
+      "min": -1
     }
   }
 }

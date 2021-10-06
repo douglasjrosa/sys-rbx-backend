@@ -1,6 +1,6 @@
 const calcularAvulso = async avulso => {
 
 	
-	return { avulso };
+	return avulso;
 };
 module.exports = calcularAvulso;

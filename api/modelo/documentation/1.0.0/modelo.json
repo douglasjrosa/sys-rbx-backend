@@ -730,6 +730,14 @@
                     "nome": {
                       "type": "string",
                       "default": "base"
+                    },
+                    "tabuasMeioQtde": {
+                      "type": "integer",
+                      "default": -1
+                    },
+                    "pesMeioQtde": {
+                      "type": "integer",
+                      "default": -1
                     }
                   },
                   "required": [
@@ -979,6 +987,10 @@
                     "adesivoRbx": {
                       "type": "boolean",
                       "default": false
+                    },
+                    "sarrafosMeioQtde": {
+                      "type": "integer",
+                      "default": -1
                     }
                   },
                   "required": [
@@ -1328,6 +1340,42 @@
                 "type": "string"
               }
             }
+          },
+          "temBase": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temTampa": {
+            "type": "boolean",
+            "default": true
+          },
+          "cabeceiraAoChao": {
+            "type": "boolean",
+            "default": false
+          },
+          "cabeceiraAoTopo": {
+            "type": "boolean",
+            "default": false
+          },
+          "lateraisPorFora": {
+            "type": "boolean",
+            "default": false
           }
         }
       },
@@ -1470,6 +1518,14 @@
                     "nome": {
                       "type": "string",
                       "default": "base"
+                    },
+                    "tabuasMeioQtde": {
+                      "type": "integer",
+                      "default": -1
+                    },
+                    "pesMeioQtde": {
+                      "type": "integer",
+                      "default": -1
                     }
                   },
                   "required": [
@@ -1719,6 +1775,10 @@
                     "adesivoRbx": {
                       "type": "boolean",
                       "default": false
+                    },
+                    "sarrafosMeioQtde": {
+                      "type": "integer",
+                      "default": -1
                     }
                   },
                   "required": [
@@ -2040,6 +2100,42 @@
           },
           "tipos_de_produto": {
             "type": "string"
+          },
+          "temBase": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temTampa": {
+            "type": "boolean",
+            "default": true
+          },
+          "cabeceiraAoChao": {
+            "type": "boolean",
+            "default": false
+          },
+          "cabeceiraAoTopo": {
+            "type": "boolean",
+            "default": false
+          },
+          "lateraisPorFora": {
+            "type": "boolean",
+            "default": false
           },
           "created_by": {
             "type": "string"

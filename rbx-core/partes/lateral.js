@@ -1,8 +1,6 @@
 const calcularLateral = async lateral => {
-    
-	const parte = {
-	};
-	
-	return { lateral };
+ 
+	console.log("retornando quadro...");
+	return lateral;
 };
 module.exports = calcularLateral;

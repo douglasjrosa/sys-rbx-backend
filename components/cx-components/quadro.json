@@ -70,6 +70,11 @@
     "adesivoRbx": {
       "type": "boolean",
       "default": false
+    },
+    "sarrafosMeioQtde": {
+      "type": "integer",
+      "min": -1,
+      "default": -1
     }
   }
 }

@@ -4,6 +4,11 @@ const calcParteFn = async prod => {
     const { req, mod } = prod;
     const { cabeceira } = mod.partes;
     
-    return await calcularCabeceira(cabeceira);
+	const arrTrash = [ "unCompra", "unVenda", "precoCompra" ];
+	objClean( cabeceira, arrTrash );
+
+	const customConfigs = req.partes && req.partes.cabeceira ? req.partes.cabeceira : {};
+
+	return await calcularCabeceira( {...cabeceira, ...customConfigs } );
 }
 module.exports = calcParteFn;

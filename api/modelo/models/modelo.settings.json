@@ -37,6 +37,42 @@
     },
     "tipos_de_produto": {
       "model": "tipos-de-produto"
+    },
+    "temBase": {
+      "type": "boolean",
+      "default": true
+    },
+    "temLateralDireita": {
+      "type": "boolean",
+      "default": true
+    },
+    "temLateralEsquerda": {
+      "type": "boolean",
+      "default": true
+    },
+    "temCabeceiraDireita": {
+      "type": "boolean",
+      "default": true
+    },
+    "temCabeceiraEsquerda": {
+      "type": "boolean",
+      "default": true
+    },
+    "temTampa": {
+      "type": "boolean",
+      "default": true
+    },
+    "cabeceiraAoChao": {
+      "type": "boolean",
+      "default": false
+    },
+    "cabeceiraAoTopo": {
+      "type": "boolean",
+      "default": false
+    },
+    "lateraisPorFora": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

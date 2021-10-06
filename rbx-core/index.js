@@ -6,31 +6,23 @@ const calcularProduto = async req => {
 		slug: req.modelo,
 	});
 
-    const partes = {};
-	const modPartes = {};
-	for ( const parte of mod.partes ){
-		modPartes[parte.nome] = parte;
-        partes[parte.nome] = {};
-	};
-	
-	const prod = {
-		req,
-		mod: {
-			nome: mod.nome,
-			ativo: mod.ativo,
-			slug: mod.slug,
-			notas: mod.notas,
-			partes: modPartes
-		},
-		partes
-	};
+	const partesObj = {};
+	for (const parte of mod.partes) {
+		partesObj[parte.nome] = parte;
+	}
+	mod.partes = partesObj;
+
+	const prod = { req, mod };
+
+	const arrTrash = ["unCompra", "unVenda", "precoCompra"];
+	objClean(prod, arrTrash);
 
 	const tipo = mod.tipos_de_produto.slug;
 	const calcTipoDeProduto = require(`./tipos-de-produto/${tipo}`);
 
 	const produtoPronto = await calcTipoDeProduto(prod);
 
-	console.log("index executado.");
+	console.log("Core index executado.");
 	return produtoPronto;
 };
 module.exports = calcularProduto;

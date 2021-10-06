@@ -1,4 +1,4 @@
 const calcularTampa = async tampa => {
-	return { tampa };
+	return tampa;
 };
 module.exports = calcularTampa;
