@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/05/2021 3:23:44 PM"
+    "x-generation-date": "10/06/2021 10:04:49 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6581,8 +6581,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "montagem"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -6612,9 +6611,6 @@
                 "exp": {
                   "type": "boolean"
                 },
-                "montagem": {
-                  "type": "string"
-                },
                 "notas": {
                   "type": "string"
                 },
@@ -6629,6 +6625,85 @@
                 },
                 "vFinal": {
                   "type": "number"
+                },
+                "modelo": {
+                  "type": "string"
+                },
+                "ativo": {
+                  "type": "boolean"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "modelos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "nome": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "ativo": {
+                  "type": "boolean"
+                },
+                "notas": {
+                  "type": "string"
+                },
+                "partes": {
+                  "type": "dynamiczone"
+                },
+                "tipos_de_produto": {
+                  "type": "string"
+                },
+                "temBase": {
+                  "type": "boolean"
+                },
+                "temLateralDireita": {
+                  "type": "boolean"
+                },
+                "temLateralEsquerda": {
+                  "type": "boolean"
+                },
+                "temCabeceiraDireita": {
+                  "type": "boolean"
+                },
+                "temCabeceiraEsquerda": {
+                  "type": "boolean"
+                },
+                "temTampa": {
+                  "type": "boolean"
+                },
+                "cabeceiraAoChao": {
+                  "type": "boolean"
+                },
+                "cabeceiraAoTopo": {
+                  "type": "boolean"
+                },
+                "lateraisPorFora": {
+                  "type": "boolean"
+                },
+                "montagem": {
+                  "type": "component"
+                },
+                "publico": {
+                  "type": "boolean"
+                },
+                "empresa": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -6659,6 +6734,12 @@
             }
           },
           "produtos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "modelos": {
             "type": "array",
             "items": {
               "type": "string"
@@ -6910,6 +6991,9 @@
                         "toco": {
                           "type": "string"
                         },
+                        "pregoG": {
+                          "type": "string"
+                        },
                         "created_by": {
                           "type": "string"
                         },
@@ -6929,6 +7013,122 @@
                     "pesMeioQtde": {
                       "type": "integer",
                       "default": -1
+                    },
+                    "pregoG": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "pregoP": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -7131,24 +7331,6 @@
                       "type": "number",
                       "default": 70
                     },
-                    "alinhamento": {
-                      "type": "string",
-                      "default": "horizontal",
-                      "enum": [
-                        "horizontal",
-                        "vertical"
-                      ]
-                    },
-                    "meioInvertido": {
-                      "type": "boolean",
-                      "default": false
-                    },
-                    "longQuadro": {
-                      "type": "number"
-                    },
-                    "compQuadro": {
-                      "type": "number"
-                    },
                     "adesivoFragil": {
                       "type": "string",
                       "default": "padrao",
@@ -7182,6 +7364,15 @@
                     "sarrafosMeioQtde": {
                       "type": "integer",
                       "default": -1
+                    },
+                    "meioInvertido": {
+                      "type": "string",
+                      "default": "automatico",
+                      "enum": [
+                        "automatico",
+                        "sim",
+                        "nao"
+                      ]
                     }
                   },
                   "required": [
@@ -7567,6 +7758,210 @@
           "lateraisPorFora": {
             "type": "boolean",
             "default": false
+          },
+          "montagem": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "notas": {
+                "type": "string"
+              },
+              "fixadoresFixos": {
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "nome": {
+                    "type": "string"
+                  },
+                  "largura": {
+                    "type": "number"
+                  },
+                  "espessura": {
+                    "type": "number"
+                  },
+                  "precoCompra": {
+                    "type": "number"
+                  },
+                  "unCompra": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "unVenda": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "precoVenda": {
+                    "type": "number"
+                  },
+                  "comprimento": {
+                    "type": "number"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
+              },
+              "fixadoresSoltos": {
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "nome": {
+                    "type": "string"
+                  },
+                  "largura": {
+                    "type": "number"
+                  },
+                  "espessura": {
+                    "type": "number"
+                  },
+                  "precoCompra": {
+                    "type": "number"
+                  },
+                  "unCompra": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "unVenda": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "precoVenda": {
+                    "type": "number"
+                  },
+                  "comprimento": {
+                    "type": "number"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
+              },
+              "baseAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "lateralDireitaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "lateralEsquerdaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "cabeceiraDireitaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "cabeceiraEsquerdaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "tampaAnexada": {
+                "type": "boolean"
+              },
+              "enviarFechada": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "publico": {
+            "type": "boolean",
+            "default": false
+          },
+          "empresa": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "cnpj": {
+                "type": "string"
+              },
+              "razao": {
+                "type": "string"
+              },
+              "pessoas": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "produtos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "modelos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -7698,6 +8093,9 @@
                         "toco": {
                           "type": "string"
                         },
+                        "pregoG": {
+                          "type": "string"
+                        },
                         "created_by": {
                           "type": "string"
                         },
@@ -7717,6 +8115,122 @@
                     "pesMeioQtde": {
                       "type": "integer",
                       "default": -1
+                    },
+                    "pregoG": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "pregoP": {
+                      "required": [
+                        "id"
+                      ],
+                      "properties": {
+                        "id": {
+                          "type": "string"
+                        },
+                        "nome": {
+                          "type": "string"
+                        },
+                        "largura": {
+                          "type": "number"
+                        },
+                        "espessura": {
+                          "type": "number"
+                        },
+                        "precoCompra": {
+                          "type": "number"
+                        },
+                        "unCompra": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "unVenda": {
+                          "type": "string",
+                          "enum": [
+                            "unidade",
+                            "milheiro",
+                            "metroCubico",
+                            "metroQuadrado",
+                            "metroLinear",
+                            "litro",
+                            "kg"
+                          ]
+                        },
+                        "precoVenda": {
+                          "type": "number"
+                        },
+                        "comprimento": {
+                          "type": "number"
+                        },
+                        "created_by": {
+                          "type": "string"
+                        },
+                        "updated_by": {
+                          "type": "string"
+                        }
+                      }
                     }
                   },
                   "required": [
@@ -7919,24 +8433,6 @@
                       "type": "number",
                       "default": 70
                     },
-                    "alinhamento": {
-                      "type": "string",
-                      "default": "horizontal",
-                      "enum": [
-                        "horizontal",
-                        "vertical"
-                      ]
-                    },
-                    "meioInvertido": {
-                      "type": "boolean",
-                      "default": false
-                    },
-                    "longQuadro": {
-                      "type": "number"
-                    },
-                    "compQuadro": {
-                      "type": "number"
-                    },
                     "adesivoFragil": {
                       "type": "string",
                       "default": "padrao",
@@ -7970,6 +8466,15 @@
                     "sarrafosMeioQtde": {
                       "type": "integer",
                       "default": -1
+                    },
+                    "meioInvertido": {
+                      "type": "string",
+                      "default": "automatico",
+                      "enum": [
+                        "automatico",
+                        "sim",
+                        "nao"
+                      ]
                     }
                   },
                   "required": [
@@ -8328,6 +8833,170 @@
             "type": "boolean",
             "default": false
           },
+          "montagem": {
+            "type": "object",
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "notas": {
+                "type": "string"
+              },
+              "fixadoresFixos": {
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "nome": {
+                    "type": "string"
+                  },
+                  "largura": {
+                    "type": "number"
+                  },
+                  "espessura": {
+                    "type": "number"
+                  },
+                  "precoCompra": {
+                    "type": "number"
+                  },
+                  "unCompra": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "unVenda": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "precoVenda": {
+                    "type": "number"
+                  },
+                  "comprimento": {
+                    "type": "number"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
+              },
+              "fixadoresSoltos": {
+                "required": [
+                  "id"
+                ],
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "nome": {
+                    "type": "string"
+                  },
+                  "largura": {
+                    "type": "number"
+                  },
+                  "espessura": {
+                    "type": "number"
+                  },
+                  "precoCompra": {
+                    "type": "number"
+                  },
+                  "unCompra": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "unVenda": {
+                    "type": "string",
+                    "enum": [
+                      "unidade",
+                      "milheiro",
+                      "metroCubico",
+                      "metroQuadrado",
+                      "metroLinear",
+                      "litro",
+                      "kg"
+                    ]
+                  },
+                  "precoVenda": {
+                    "type": "number"
+                  },
+                  "comprimento": {
+                    "type": "number"
+                  },
+                  "created_by": {
+                    "type": "string"
+                  },
+                  "updated_by": {
+                    "type": "string"
+                  }
+                }
+              },
+              "baseAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "lateralDireitaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "lateralEsquerdaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "cabeceiraDireitaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "cabeceiraEsquerdaAnexada": {
+                "type": "boolean",
+                "default": false
+              },
+              "tampaAnexada": {
+                "type": "boolean"
+              },
+              "enviarFechada": {
+                "type": "boolean",
+                "default": false
+              }
+            }
+          },
+          "publico": {
+            "type": "boolean",
+            "default": false
+          },
+          "empresa": {
+            "type": "string"
+          },
           "created_by": {
             "type": "string"
           },
@@ -8385,6 +9054,12 @@
                   "type": "string"
                 }
               },
+              "modelos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8422,8 +9097,7 @@
       },
       "Produto": {
         "required": [
-          "id",
-          "montagem"
+          "id"
         ],
         "properties": {
           "id": {
@@ -8464,6 +9138,12 @@
                   "type": "string"
                 }
               },
+              "modelos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -8485,11 +9165,8 @@
             "type": "number"
           },
           "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+            "type": "boolean",
+            "default": false
           },
           "notas": {
             "type": "string"
@@ -8533,13 +9210,84 @@
           },
           "vFinal": {
             "type": "number"
+          },
+          "modelo": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "ativo": {
+                "type": "boolean"
+              },
+              "notas": {
+                "type": "string"
+              },
+              "partes": {
+                "type": "dynamiczone"
+              },
+              "tipos_de_produto": {
+                "type": "string"
+              },
+              "temBase": {
+                "type": "boolean"
+              },
+              "temLateralDireita": {
+                "type": "boolean"
+              },
+              "temLateralEsquerda": {
+                "type": "boolean"
+              },
+              "temCabeceiraDireita": {
+                "type": "boolean"
+              },
+              "temCabeceiraEsquerda": {
+                "type": "boolean"
+              },
+              "temTampa": {
+                "type": "boolean"
+              },
+              "cabeceiraAoChao": {
+                "type": "boolean"
+              },
+              "cabeceiraAoTopo": {
+                "type": "boolean"
+              },
+              "lateraisPorFora": {
+                "type": "boolean"
+              },
+              "montagem": {
+                "type": "component"
+              },
+              "publico": {
+                "type": "boolean"
+              },
+              "empresa": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
       "NewProduto": {
-        "required": [
-          "montagem"
-        ],
         "properties": {
           "nome": {
             "type": "string"
@@ -8563,11 +9311,8 @@
             "type": "number"
           },
           "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+            "type": "boolean",
+            "default": false
           },
           "notas": {
             "type": "string"
@@ -8583,6 +9328,13 @@
           },
           "vFinal": {
             "type": "number"
+          },
+          "modelo": {
+            "type": "string"
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"
@@ -8849,6 +9601,64 @@
                 "type": "string"
               }
             }
+          },
+          "pregoG": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -8870,6 +9680,9 @@
             "type": "string"
           },
           "toco": {
+            "type": "string"
+          },
+          "pregoG": {
             "type": "string"
           },
           "created_by": {

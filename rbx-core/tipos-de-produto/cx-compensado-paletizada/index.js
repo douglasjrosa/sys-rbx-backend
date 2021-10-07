@@ -1,4 +1,9 @@
 const calcTipoDeProduto = async prod => {
+	
+	const calcQuadroEsp =  quadro => {
+		quadro.espQuadro = quadro.sarrafos.espessura + quadro.chapa.espessura;
+	};
+
 	const quadros = ["lateral", "cabeceira", "tampa"];
 	for (const parte in prod.mod.partes) {
 		if (quadros.includes(parte)) {
@@ -15,8 +20,13 @@ const calcTipoDeProduto = async prod => {
 		calcParteFn = require(`./${parte}`);
 		response.partes[parte] = await calcParteFn(prod);
 	}
+	
+	const arrTrash = ["unCompra", "unVenda", "precoCompra"];
+	objClean(response, arrTrash);
 
-	console.log("Calculada a caixa econômica.");
+	Math.roundAll10(response, -2);
+	
+	console.log("Retornando caixa de compensado...");
 	return response;
 };
 

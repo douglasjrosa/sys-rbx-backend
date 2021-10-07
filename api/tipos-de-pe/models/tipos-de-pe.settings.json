@@ -42,6 +42,9 @@
     },
     "toco": {
       "model": "materia-prima"
+    },
+    "pregoG": {
+      "model": "materia-prima"
     }
   }
 }

@@ -569,8 +569,7 @@
             "type": "array",
             "items": {
               "required": [
-                "id",
-                "montagem"
+                "id"
               ],
               "properties": {
                 "id": {
@@ -600,9 +599,6 @@
                 "exp": {
                   "type": "boolean"
                 },
-                "montagem": {
-                  "type": "string"
-                },
                 "notas": {
                   "type": "string"
                 },
@@ -617,6 +613,85 @@
                 },
                 "vFinal": {
                   "type": "number"
+                },
+                "modelo": {
+                  "type": "string"
+                },
+                "ativo": {
+                  "type": "boolean"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "modelos": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "nome": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "ativo": {
+                  "type": "boolean"
+                },
+                "notas": {
+                  "type": "string"
+                },
+                "partes": {
+                  "type": "dynamiczone"
+                },
+                "tipos_de_produto": {
+                  "type": "string"
+                },
+                "temBase": {
+                  "type": "boolean"
+                },
+                "temLateralDireita": {
+                  "type": "boolean"
+                },
+                "temLateralEsquerda": {
+                  "type": "boolean"
+                },
+                "temCabeceiraDireita": {
+                  "type": "boolean"
+                },
+                "temCabeceiraEsquerda": {
+                  "type": "boolean"
+                },
+                "temTampa": {
+                  "type": "boolean"
+                },
+                "cabeceiraAoChao": {
+                  "type": "boolean"
+                },
+                "cabeceiraAoTopo": {
+                  "type": "boolean"
+                },
+                "lateraisPorFora": {
+                  "type": "boolean"
+                },
+                "montagem": {
+                  "type": "component"
+                },
+                "publico": {
+                  "type": "boolean"
+                },
+                "empresa": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -647,6 +722,12 @@
             }
           },
           "produtos": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "modelos": {
             "type": "array",
             "items": {
               "type": "string"

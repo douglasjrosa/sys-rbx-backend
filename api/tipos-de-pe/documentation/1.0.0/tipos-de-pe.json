@@ -784,6 +784,64 @@
                 "type": "string"
               }
             }
+          },
+          "pregoG": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "largura": {
+                "type": "number"
+              },
+              "espessura": {
+                "type": "number"
+              },
+              "precoCompra": {
+                "type": "number"
+              },
+              "unCompra": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "unVenda": {
+                "type": "string",
+                "enum": [
+                  "unidade",
+                  "milheiro",
+                  "metroCubico",
+                  "metroQuadrado",
+                  "metroLinear",
+                  "litro",
+                  "kg"
+                ]
+              },
+              "precoVenda": {
+                "type": "number"
+              },
+              "comprimento": {
+                "type": "number"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -805,6 +863,9 @@
             "type": "string"
           },
           "toco": {
+            "type": "string"
+          },
+          "pregoG": {
             "type": "string"
           },
           "created_by": {

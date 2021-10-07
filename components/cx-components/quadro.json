@@ -23,24 +23,6 @@
       "type": "float",
       "default": 70
     },
-    "alinhamento": {
-      "type": "enumeration",
-      "enum": [
-        "horizontal",
-        "vertical"
-      ],
-      "default": "horizontal"
-    },
-    "meioInvertido": {
-      "type": "boolean",
-      "default": false
-    },
-    "longQuadro": {
-      "type": "float"
-    },
-    "compQuadro": {
-      "type": "float"
-    },
     "adesivoFragil": {
       "type": "enumeration",
       "enum": [
@@ -75,6 +57,15 @@
       "type": "integer",
       "min": -1,
       "default": -1
+    },
+    "meioInvertido": {
+      "type": "enumeration",
+      "enum": [
+        "automatico",
+        "sim",
+        "nao"
+      ],
+      "default": "automatico"
     }
   }
 }

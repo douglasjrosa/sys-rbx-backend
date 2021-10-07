@@ -35,12 +35,8 @@
       "type": "float"
     },
     "exp": {
-      "type": "boolean"
-    },
-    "montagem": {
-      "type": "string",
-      "default": "Desmontada",
-      "required": true
+      "type": "boolean",
+      "default": false
     },
     "notas": {
       "type": "string"
@@ -53,6 +49,13 @@
     },
     "vFinal": {
       "type": "decimal"
+    },
+    "modelo": {
+      "model": "modelo"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

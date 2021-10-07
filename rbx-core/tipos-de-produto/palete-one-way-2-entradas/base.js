@@ -7,9 +7,6 @@ const calcParteFn = async prod => {
     base.assoalho.larg = req.larg;
     base.compPe = req.larg;
     base.longPe = req.comp;
-
-	const arrTrash = [ "unCompra", "unVenda", "precoCompra" ];
-	objClean( base, arrTrash );
     
 	const customConfigs = req.partes && req.partes.base ? req.partes.base : {};
     

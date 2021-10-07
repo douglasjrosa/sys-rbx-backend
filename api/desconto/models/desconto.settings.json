@@ -1,33 +1,33 @@
 {
-	"kind": "collectionType",
-	"collectionName": "descontos",
-	"info": {
-		"name": "desconto",
-		"description": ""
-	},
-	"options": {
-		"increments": true,
-		"timestamps": true,
-		"draftAndPublish": false
-	},
-	"pluginOptions": {},
-	"attributes": {
-		"nome": {
-			"type": "string"
-		},
-		"slug": {
-			"type": "uid",
-			"targetField": "nome"
-		},
-		"ativo": {
-			"type": "boolean",
-			"default": true
-		},
-		"percentual": {
-			"type": "float"
-		},
-		"validade": {
-			"type": "date"
-		}
-	}
+  "kind": "collectionType",
+  "collectionName": "descontos",
+  "info": {
+    "name": "desconto",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "nome"
+    },
+    "ativo": {
+      "type": "boolean",
+      "default": true
+    },
+    "percentual": {
+      "type": "float"
+    },
+    "validade": {
+      "type": "date"
+    }
+  }
 }

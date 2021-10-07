@@ -73,6 +73,19 @@
     "lateraisPorFora": {
       "type": "boolean",
       "default": false
+    },
+    "montagem": {
+      "type": "component",
+      "repeatable": false,
+      "component": "cx-components.montagem"
+    },
+    "publico": {
+      "type": "boolean",
+      "default": false
+    },
+    "empresa": {
+      "model": "empresa",
+      "via": "modelos"
     }
   }
 }

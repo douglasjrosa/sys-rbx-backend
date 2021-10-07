@@ -1,14 +1,32 @@
-
 const calcParteFn = async prod => {
-    const calcularCabeceira = require("../../partes/cabeceira");
-    const { req, mod } = prod;
-    const { cabeceira } = mod.partes;
-    
-	const arrTrash = [ "unCompra", "unVenda", "precoCompra" ];
-	objClean( cabeceira, arrTrash );
+	const calcularQuadro = require("../../pecas/quadros");
+	const { req, mod } = prod;
 
-	const customConfigs = req.partes && req.partes.cabeceira ? req.partes.cabeceira : {};
+	const { base, lateral, cabeceira, tampa } = mod.partes;
 
-	return await calcularCabeceira( {...cabeceira, ...customConfigs } );
-}
+	const lateraisPorFora = req.lateraisPorFora
+		? req.lateraisPorFora
+		: mod.lateraisPorFora;
+
+	cabeceira.longQuadro = lateraisPorFora
+		? req.larg
+		: req.larg + lateral.espQuadro * 2;
+
+	cabeceira.compQuadro = req.alt + base.assoalho.espessura;
+	if (mod.cabeceiraAoChao) cabeceira.compQuadro += base.pes.pePronto.alt;
+	if (mod.cabeceiraAoTopo) cabeceira.compQuadro += tampa.espQuadro;
+
+	const customConfigs =
+		req.partes && req.partes.cabeceira ? req.partes.cabeceira : {};
+
+	const quadro = await calcularQuadro({ ...cabeceira, ...customConfigs });
+
+	quadro.qtde = 0;
+	if (mod.temCabeceiraDireita) quadro.qtde++;
+	if (mod.temCabeceiraEsquerda) quadro.qtde++;
+
+	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
+
+	return quadro;
+};
 module.exports = calcParteFn;

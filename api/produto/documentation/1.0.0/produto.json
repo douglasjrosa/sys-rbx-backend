@@ -516,8 +516,7 @@
     "schemas": {
       "Produto": {
         "required": [
-          "id",
-          "montagem"
+          "id"
         ],
         "properties": {
           "id": {
@@ -558,6 +557,12 @@
                   "type": "string"
                 }
               },
+              "modelos": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
               "created_by": {
                 "type": "string"
               },
@@ -579,11 +584,8 @@
             "type": "number"
           },
           "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+            "type": "boolean",
+            "default": false
           },
           "notas": {
             "type": "string"
@@ -627,13 +629,84 @@
           },
           "vFinal": {
             "type": "number"
+          },
+          "modelo": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "ativo": {
+                "type": "boolean"
+              },
+              "notas": {
+                "type": "string"
+              },
+              "partes": {
+                "type": "dynamiczone"
+              },
+              "tipos_de_produto": {
+                "type": "string"
+              },
+              "temBase": {
+                "type": "boolean"
+              },
+              "temLateralDireita": {
+                "type": "boolean"
+              },
+              "temLateralEsquerda": {
+                "type": "boolean"
+              },
+              "temCabeceiraDireita": {
+                "type": "boolean"
+              },
+              "temCabeceiraEsquerda": {
+                "type": "boolean"
+              },
+              "temTampa": {
+                "type": "boolean"
+              },
+              "cabeceiraAoChao": {
+                "type": "boolean"
+              },
+              "cabeceiraAoTopo": {
+                "type": "boolean"
+              },
+              "lateraisPorFora": {
+                "type": "boolean"
+              },
+              "montagem": {
+                "type": "component"
+              },
+              "publico": {
+                "type": "boolean"
+              },
+              "empresa": {
+                "type": "string"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
           }
         }
       },
       "NewProduto": {
-        "required": [
-          "montagem"
-        ],
         "properties": {
           "nome": {
             "type": "string"
@@ -657,11 +730,8 @@
             "type": "number"
           },
           "exp": {
-            "type": "boolean"
-          },
-          "montagem": {
-            "type": "string",
-            "default": "Desmontada"
+            "type": "boolean",
+            "default": false
           },
           "notas": {
             "type": "string"
@@ -677,6 +747,13 @@
           },
           "vFinal": {
             "type": "number"
+          },
+          "modelo": {
+            "type": "string"
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
           },
           "created_by": {
             "type": "string"

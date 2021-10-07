@@ -7,9 +7,11 @@ const calcParteFn = async prod => {
 	const lateraisPorFora = req.lateraisPorFora
 		? req.lateraisPorFora
 		: mod.lateraisPorFora;
+
 	lateral.compQuadro = lateraisPorFora
 		? req.comp + cabeceira.espQuadro * 2
 		: req.comp;
+
 	lateral.longQuadro = req.alt + base.assoalho.espessura;
 
 	const customConfigs =
@@ -20,7 +22,7 @@ const calcParteFn = async prod => {
 	quadro.qtde = 0;
 	if (mod.temLateralDireita) quadro.qtde++;
 	if (mod.temLateralEsquerda) quadro.qtde++;
-	
+
 	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
 
 	return quadro;

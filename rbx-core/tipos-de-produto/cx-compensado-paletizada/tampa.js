@@ -1,15 +1,27 @@
-const calcularTampa = require("../../partes/tampa");
+const calcParteFn = async prod => {
+	const calcularQuadro = require("../../pecas/quadros");
+	const { req, mod } = prod;
 
-const calcParteFn = async (prod) => {
-    const { req, mod } = prod;
-    const { tampa } = mod.partes;
-    
-    
-	const arrTrash = [ "unCompra", "unVenda", "precoCompra" ];
-	objClean( tampa, arrTrash );
+	const { lateral, cabeceira, tampa } = mod.partes;
 
-	const customConfigs = req.partes && req.partes.tampa ? req.partes.tampa : {};
+	if (mod.cabeceiraAoTopo){
+		tampa.compQuadro = req.larg + lateral.espQuadro * 2;
+		tampa.longQuadro = req.comp;
+	}
+	else{
+		tampa.compQuadro = req.comp + cabeceira.espQuadro * 2;
+		tampa.longQuadro = req.larg + lateral.espQuadro * 2;
+	}
+	
+	const customConfigs =
+		req.partes && req.partes.tampa ? req.partes.tampa : {};
 
-	return await calcularTampa( {...tampa, ...customConfigs } );
-}
+	const quadro = await calcularQuadro({ ...tampa, ...customConfigs });
+
+	quadro.qtde = mod.temTampa ? 1 : 0;
+
+	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
+
+	return quadro;
+};
 module.exports = calcParteFn;

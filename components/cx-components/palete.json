@@ -36,6 +36,12 @@
       "type": "integer",
       "default": -1,
       "min": -1
+    },
+    "pregoG": {
+      "model": "materia-prima"
+    },
+    "pregoP": {
+      "model": "materia-prima"
     }
   }
 }

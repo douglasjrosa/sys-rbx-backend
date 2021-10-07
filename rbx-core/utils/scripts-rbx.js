@@ -43,11 +43,4 @@
 		}
 		return obj;
 	};
-
-	calcQuadroEsp = function (quadro) {
-		quadro.espQuadro = Math.ceil10(
-			quadro.sarrafos.espessura + quadro.chapa.espessura,
-			-2
-		);
-	};
 })();

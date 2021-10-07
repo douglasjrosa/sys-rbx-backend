@@ -13,13 +13,10 @@ const calcularProduto = async req => {
 	mod.partes = partesObj;
 
 	const prod = { req, mod };
-
-	const arrTrash = ["unCompra", "unVenda", "precoCompra"];
-	objClean(prod, arrTrash);
-
+	
 	const tipo = mod.tipos_de_produto.slug;
 	const calcTipoDeProduto = require(`./tipos-de-produto/${tipo}`);
-
+	
 	const produtoPronto = await calcTipoDeProduto(prod);
 
 	console.log("Core index executado.");

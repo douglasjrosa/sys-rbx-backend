@@ -19,6 +19,11 @@ const calcularQuadro = async quadro => {
 	interno.custo =
 		(interno.comp / 100) * quadro.sarrafos.precoVenda * interno.qtde;
 
+	quadro.meioInvertido = 
+		quadro.meioInvertido === "automatico"
+		? quadro.longQuadro > quadro.compQuadro + 20
+		: quadro.meioInvertido === "sim";
+
 	let compMeio, longMeio, qtdeMeio;
 	if (quadro.meioInvertido) {
 		compMeio = quadro.compQuadro;
@@ -31,9 +36,12 @@ const calcularQuadro = async quadro => {
 	longMeio -= quadro.sarrafos.largura * 2;
 
 	qtdeMeio =
-		quadro.sarrafosMeioQtde === -1
-			? Math.ceil(longMeio / quadro.vaoMaximoEntreSarrafos) - 1
-			: quadro.sarrafosMeioQtde;
+		quadro.sarrafosMeioQtde !== -1
+			? quadro.sarrafosMeioQtde
+			: Math.ceil(longMeio / quadro.vaoMaximoEntreSarrafos) - 1;
+
+	qtdeMeio = longMeio >  quadro.sarrafos.largura * 8
+		? Math.max(qtdeMeio, 1) : 0;
 
 	const meio = {
 		comp: compMeio,
@@ -76,22 +84,17 @@ const calcularQuadro = async quadro => {
 	const quadroPronto = {
 		sarrafos: { externo, interno, meio },
 		chapa,
-		fixadores
+		fixadores,
 	};
-	Math.roundAll10(quadroPronto, -2);
 
 	delete quadro.sarrafos;
 	delete quadro.chapa;
 	delete quadro.fixadores;
 
-	const custoQuadro = 
-		externo.custo +
-		interno.custo +
-		meio.custo +
-		chapa.custo +
-		fixadores.custo;
+	const custoQuadro =
+		externo.custo + interno.custo + meio.custo + chapa.custo + fixadores.custo;
 
 	console.log("retornando quadro...");
-	return {  ...quadro, quadroPronto, custoQuadro };
+	return { ...quadro, quadroPronto, custoQuadro };
 };
 module.exports = calcularQuadro;
