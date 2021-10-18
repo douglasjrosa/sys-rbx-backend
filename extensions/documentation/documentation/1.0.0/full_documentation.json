@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/06/2021 10:04:49 PM"
+    "x-generation-date": "10/17/2021 9:28:25 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -6608,20 +6608,11 @@
                 "pesoProd": {
                   "type": "number"
                 },
-                "exp": {
-                  "type": "boolean"
-                },
                 "notas": {
                   "type": "string"
                 },
                 "preco": {
                   "type": "number"
-                },
-                "descontos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "vFinal": {
                   "type": "number"
@@ -6631,6 +6622,33 @@
                 },
                 "ativo": {
                   "type": "boolean"
+                },
+                "custom": {
+                  "type": "object"
+                },
+                "pesoCx": {
+                  "type": "string"
+                },
+                "compExt": {
+                  "type": "string"
+                },
+                "largExt": {
+                  "type": "string"
+                },
+                "altExt": {
+                  "type": "string"
+                },
+                "compExtDes": {
+                  "type": "string"
+                },
+                "largExtDes": {
+                  "type": "string"
+                },
+                "altExtDes": {
+                  "type": "string"
+                },
+                "volumes": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -6703,6 +6721,12 @@
                   "type": "boolean"
                 },
                 "empresa": {
+                  "type": "string"
+                },
+                "exp": {
+                  "type": "boolean"
+                },
+                "desconto": {
                   "type": "string"
                 },
                 "created_by": {
@@ -7454,7 +7478,10 @@
                         }
                       }
                     },
-                    "compAvulso": {
+                    "comp": {
+                      "type": "number"
+                    },
+                    "larg": {
                       "type": "number"
                     },
                     "qtde": {
@@ -7954,6 +7981,41 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "exp": {
+            "type": "boolean",
+            "default": false
+          },
+          "desconto": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "ativo": {
+                "type": "boolean"
+              },
+              "percentual": {
+                "type": "number"
+              },
+              "validade": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -8556,7 +8618,10 @@
                         }
                       }
                     },
-                    "compAvulso": {
+                    "comp": {
+                      "type": "number"
+                    },
+                    "larg": {
                       "type": "number"
                     },
                     "qtde": {
@@ -8997,6 +9062,13 @@
           "empresa": {
             "type": "string"
           },
+          "exp": {
+            "type": "boolean",
+            "default": false
+          },
+          "desconto": {
+            "type": "string"
+          },
           "created_by": {
             "type": "string"
           },
@@ -9164,49 +9236,11 @@
           "pesoProd": {
             "type": "number"
           },
-          "exp": {
-            "type": "boolean",
-            "default": false
-          },
           "notas": {
             "type": "string"
           },
           "preco": {
             "type": "number"
-          },
-          "descontos": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "nome": {
-                  "type": "string"
-                },
-                "slug": {
-                  "type": "uid"
-                },
-                "ativo": {
-                  "type": "boolean"
-                },
-                "percentual": {
-                  "type": "number"
-                },
-                "validade": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           },
           "vFinal": {
             "type": "number"
@@ -9273,6 +9307,12 @@
               "empresa": {
                 "type": "string"
               },
+              "exp": {
+                "type": "boolean"
+              },
+              "desconto": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
@@ -9284,6 +9324,33 @@
           "ativo": {
             "type": "boolean",
             "default": true
+          },
+          "custom": {
+            "type": "object"
+          },
+          "pesoCx": {
+            "type": "string"
+          },
+          "compExt": {
+            "type": "string"
+          },
+          "largExt": {
+            "type": "string"
+          },
+          "altExt": {
+            "type": "string"
+          },
+          "compExtDes": {
+            "type": "string"
+          },
+          "largExtDes": {
+            "type": "string"
+          },
+          "altExtDes": {
+            "type": "string"
+          },
+          "volumes": {
+            "type": "string"
           }
         }
       },
@@ -9310,21 +9377,11 @@
           "pesoProd": {
             "type": "number"
           },
-          "exp": {
-            "type": "boolean",
-            "default": false
-          },
           "notas": {
             "type": "string"
           },
           "preco": {
             "type": "number"
-          },
-          "descontos": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "vFinal": {
             "type": "number"
@@ -9335,6 +9392,33 @@
           "ativo": {
             "type": "boolean",
             "default": true
+          },
+          "custom": {
+            "type": "object"
+          },
+          "pesoCx": {
+            "type": "string"
+          },
+          "compExt": {
+            "type": "string"
+          },
+          "largExt": {
+            "type": "string"
+          },
+          "altExt": {
+            "type": "string"
+          },
+          "compExtDes": {
+            "type": "string"
+          },
+          "largExtDes": {
+            "type": "string"
+          },
+          "altExtDes": {
+            "type": "string"
+          },
+          "volumes": {
+            "type": "string"
           },
           "created_by": {
             "type": "string"

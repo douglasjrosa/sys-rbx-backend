@@ -1,25 +1,24 @@
 require("./utils/math-decimal");
 require("./utils/scripts-rbx");
 
-const calcularProduto = async req => {
-	const mod = await strapi.services.modelo.findOne({
-		slug: req.modelo,
-	});
-
-	const partesObj = {};
-	for (const parte of mod.partes) {
-		partesObj[parte.nome] = parte;
+const calcularProduto = async produto => {
+	if (typeof produto.modelo === "string") {
+		produto.modelo = await strapi.services.modelo.findOne({
+			id: produto.modelo,
+		});
 	}
-	mod.partes = partesObj;
-
-	const prod = { req, mod };
 	
-	const tipo = mod.tipos_de_produto.slug;
-	const calcTipoDeProduto = require(`./tipos-de-produto/${tipo}`);
-	
-	const produtoPronto = await calcTipoDeProduto(prod);
+	if( typeof produto.modelo.tipos_de_produto === "string" ){
+		produto.modelo.tipos_de_produto = await strapi.services["tipos-de-produto"].findOne({
+			id: produto.modelo.tipos_de_produto,
+		})
+	}
 
-	console.log("Core index executado.");
+	const calcTipoDeProduto = require(`./tipos-de-produto/${produto.modelo.tipos_de_produto.slug}`);
+
+	const produtoPronto = await calcTipoDeProduto(produto);
+
+	console.log("rbx-core/index");
 	return produtoPronto;
 };
 module.exports = calcularProduto;

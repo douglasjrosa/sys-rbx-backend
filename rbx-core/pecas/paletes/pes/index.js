@@ -9,10 +9,10 @@ const calcPe = async base => {
 	const pes = {
 		pePronto,
 		qtde: pesQtde,
-		custo: pesQtde * pePronto.custo,
+		custoMP: pesQtde * pePronto.custoMP,
 	};
 
-	console.log("retornando os pés...");
+	console.log("pes/index");
 	return pes;
 };
 module.exports = calcPe;

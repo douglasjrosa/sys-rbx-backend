@@ -1182,7 +1182,10 @@
                         }
                       }
                     },
-                    "compAvulso": {
+                    "comp": {
+                      "type": "number"
+                    },
+                    "larg": {
                       "type": "number"
                     },
                     "qtde": {
@@ -1682,6 +1685,41 @@
                 "items": {
                   "type": "string"
                 }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "exp": {
+            "type": "boolean",
+            "default": false
+          },
+          "desconto": {
+            "required": [
+              "id"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "nome": {
+                "type": "string"
+              },
+              "slug": {
+                "type": "uid"
+              },
+              "ativo": {
+                "type": "boolean"
+              },
+              "percentual": {
+                "type": "number"
+              },
+              "validade": {
+                "type": "string"
               },
               "created_by": {
                 "type": "string"
@@ -2284,7 +2322,10 @@
                         }
                       }
                     },
-                    "compAvulso": {
+                    "comp": {
+                      "type": "number"
+                    },
+                    "larg": {
                       "type": "number"
                     },
                     "qtde": {
@@ -2723,6 +2764,13 @@
             "default": false
           },
           "empresa": {
+            "type": "string"
+          },
+          "exp": {
+            "type": "boolean",
+            "default": false
+          },
+          "desconto": {
             "type": "string"
           },
           "created_by": {

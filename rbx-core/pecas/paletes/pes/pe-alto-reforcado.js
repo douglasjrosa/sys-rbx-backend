@@ -10,14 +10,14 @@ const calcPeFn = async base => {
 	pregoG = materiasPrimas[1];
 
 	pregoG.qtde = (compPe / 20 + 1) * 4;
-	pregoG.custo = pregoG.qtde * pregoG.precoVenda;
+	pregoG.custoMP = pregoG.qtde * pregoG.precoVenda;
 
 	const pePronto = {
 		comp: compPe,
 		larg: longarina.largura,
 		alt: longarina.espessura * 5,
 		pregos: pregoG,
-		custo: ((compPe * 5) / 100) * longarina.precoVenda + pregoG.custo
+		custoMP: ((compPe * 5) / 100) * longarina.precoVenda + pregoG.custoMP,
 	};
 
 	return pePronto;

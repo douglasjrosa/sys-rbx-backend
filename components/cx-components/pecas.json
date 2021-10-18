@@ -13,7 +13,10 @@
     "materia_prima": {
       "model": "materia-prima"
     },
-    "compAvulso": {
+    "comp": {
+      "type": "float"
+    },
+    "larg": {
       "type": "float"
     },
     "qtde": {

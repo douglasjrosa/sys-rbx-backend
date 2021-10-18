@@ -596,20 +596,11 @@
                 "pesoProd": {
                   "type": "number"
                 },
-                "exp": {
-                  "type": "boolean"
-                },
                 "notas": {
                   "type": "string"
                 },
                 "preco": {
                   "type": "number"
-                },
-                "descontos": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
                 },
                 "vFinal": {
                   "type": "number"
@@ -619,6 +610,33 @@
                 },
                 "ativo": {
                   "type": "boolean"
+                },
+                "custom": {
+                  "type": "object"
+                },
+                "pesoCx": {
+                  "type": "string"
+                },
+                "compExt": {
+                  "type": "string"
+                },
+                "largExt": {
+                  "type": "string"
+                },
+                "altExt": {
+                  "type": "string"
+                },
+                "compExtDes": {
+                  "type": "string"
+                },
+                "largExtDes": {
+                  "type": "string"
+                },
+                "altExtDes": {
+                  "type": "string"
+                },
+                "volumes": {
+                  "type": "string"
                 },
                 "created_by": {
                   "type": "string"
@@ -691,6 +709,12 @@
                   "type": "boolean"
                 },
                 "empresa": {
+                  "type": "string"
+                },
+                "exp": {
+                  "type": "boolean"
+                },
+                "desconto": {
                   "type": "string"
                 },
                 "created_by": {

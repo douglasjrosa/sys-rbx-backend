@@ -1,28 +1,36 @@
-const calcularQuadro = async quadro => {
+const calcExterno = quadro => {
 	const externo = {
 		comp: quadro.compQuadro,
 		larg: quadro.sarrafos.largura,
 		esp: quadro.sarrafos.espessura,
 		qtde: 2,
-		custo: 0,
+		custoMP: 0,
 	};
-	externo.custo =
+	externo.custoMP =
 		(externo.comp / 100) * quadro.sarrafos.precoVenda * externo.qtde;
 
+	return externo;
+};
+
+const calcInterno = quadro => {
 	const interno = {
 		comp: quadro.longQuadro - quadro.sarrafos.largura * 2,
 		larg: quadro.sarrafos.largura,
 		esp: quadro.sarrafos.espessura,
 		qtde: 2,
-		custo: 0,
+		custoMP: 0,
 	};
-	interno.custo =
+	interno.custoMP =
 		(interno.comp / 100) * quadro.sarrafos.precoVenda * interno.qtde;
 
-	quadro.meioInvertido = 
+	return interno;
+};
+
+const calcMeio = quadro => {
+	quadro.meioInvertido =
 		quadro.meioInvertido === "automatico"
-		? quadro.longQuadro > quadro.compQuadro + 20
-		: quadro.meioInvertido === "sim";
+			? quadro.longQuadro > quadro.compQuadro + 20
+			: quadro.meioInvertido === "sim";
 
 	let compMeio, longMeio, qtdeMeio;
 	if (quadro.meioInvertido) {
@@ -40,30 +48,42 @@ const calcularQuadro = async quadro => {
 			? quadro.sarrafosMeioQtde
 			: Math.ceil(longMeio / quadro.vaoMaximoEntreSarrafos) - 1;
 
-	qtdeMeio = longMeio >  quadro.sarrafos.largura * 8
-		? Math.max(qtdeMeio, 1) : 0;
+	qtdeMeio = longMeio > quadro.sarrafos.largura * 8 ? Math.max(qtdeMeio, 1) : 0;
 
 	const meio = {
 		comp: compMeio,
 		larg: quadro.sarrafos.largura,
 		esp: quadro.sarrafos.espessura,
 		qtde: qtdeMeio,
-		custo: 0,
+		custoMP: 0,
 	};
-	meio.custo = (meio.comp / 100) * quadro.sarrafos.precoVenda * meio.qtde;
+	meio.custoMP = (meio.comp / 100) * quadro.sarrafos.precoVenda * meio.qtde;
 
-	const chapa = {
-		comp: quadro.compQuadro,
-		larg: quadro.longQuadro,
-		esp: quadro.chapa.espessura,
-		qtde: quadro.revestimento ? 1 : 0,
-		custo: 0,
-	};
-	chapa.custo =
-		(chapa.comp / 100) *
-		(chapa.larg / 100) *
-		chapa.qtde *
-		quadro.chapa.precoVenda;
+	return meio;
+};
+
+const calcChapa = quadro => {
+	let chapa = {};
+	if (quadro.revestimento) {
+		chapa = {
+			comp: quadro.compQuadro,
+			larg: quadro.longQuadro,
+			esp: quadro.chapa.espessura,
+			qtde: quadro.revestimento ? 1 : 0,
+			custoMP: 0,
+		};
+		chapa.custoMP =
+			(chapa.comp / 100) *
+			(chapa.larg / 100) *
+			chapa.qtde *
+			quadro.chapa.precoVenda;
+	}
+	return chapa;
+};
+
+const calcFixadores = (quadro, externo, interno, meio) => {
+	
+	let fixQuadroQtde = (interno.qtde + meio.qtde) * 2 * 1.7;
 
 	let fixChapaQtde = 0;
 	if (quadro.revestimento) {
@@ -72,29 +92,44 @@ const calcularQuadro = async quadro => {
 		fixChapaQtde += meio.comp * meio.qtde;
 		fixChapaQtde *= 0.11;
 	}
-
-	const fixQuadroQtde = (interno.qtde + meio.qtde) * 2 * 1.7;
+	else fixQuadroQtde *= 2;
 
 	const fixadores = {
 		nome: quadro.fixadores.nome,
-		qtde: fixChapaQtde,
-		custo: (fixQuadroQtde + fixChapaQtde) * quadro.fixadores.precoVenda,
+		qtde: fixQuadroQtde + fixChapaQtde,
+		custoMP: (fixQuadroQtde + fixChapaQtde) * quadro.fixadores.precoVenda,
 	};
+	return fixadores;
+};
 
-	const quadroPronto = {
-		sarrafos: { externo, interno, meio },
-		chapa,
-		fixadores,
-	};
+const calcularQuadro = quadro => {
+	
+	const externo = calcExterno(quadro);
+	const interno = calcInterno(quadro);
+	const meio = calcMeio(quadro);
+
+	const chapa = calcChapa(quadro);
+	const fixadores = calcFixadores(quadro, externo, interno, meio);
 
 	delete quadro.sarrafos;
 	delete quadro.chapa;
 	delete quadro.fixadores;
+	
+	let quadroPronto = {
+		sarrafos: { externo, interno, meio },
+		chapa,
+		fixadores
+	};
+	quadroPronto = objMerge(quadroPronto, quadro.quadroPronto);
 
-	const custoQuadro =
-		externo.custo + interno.custo + meio.custo + chapa.custo + fixadores.custo;
+	let custoQuadroMP = 0;
+	custoQuadroMP += externo.custoMP ? externo.custoMP : 0;
+	custoQuadroMP += interno.custoMP ? interno.custoMP : 0;
+	custoQuadroMP += meio.custoMP ? meio.custoMP : 0;
+	custoQuadroMP += chapa.custoMP ? chapa.custoMP : 0;
+	custoQuadroMP += fixadores.custoMP ? fixadores.custoMP : 0;
 
 	console.log("retornando quadro...");
-	return { ...quadro, quadroPronto, custoQuadro };
+	return { ...quadro, quadroPronto, custoQuadroMP };
 };
 module.exports = calcularQuadro;

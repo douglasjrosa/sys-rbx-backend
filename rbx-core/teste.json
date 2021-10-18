@@ -1,0 +1,286 @@
+{
+	"ativo": true,
+	"nome": "Caixa teste",
+	"codigo": "cxtst",
+	"comp": 130,
+	"larg": 90,
+	"alt": 80,
+	"pesoProd": 300,
+	"notas": "Notas....",
+	"preco": 120,
+	"vFinal": 119,
+	"custom": {
+		"temBase": false,
+		"partes": {
+			"base": {
+				"tabuasMeioQtde": 3
+			},
+			"lateral": {
+				"revestimento": false,
+				"sarrafos": {
+					"largura": 4.5
+				}
+			}
+		},
+		"avulso": [
+			{
+				"nome": "Sarrafaço",
+				"materia_prima": "6147360d3dac361004f67fe4",
+				"comp": 100,
+				"qtde": 5
+			}
+		]
+	},
+	"empresa": {
+		"nome": "Gigante"
+	},
+	"modelo": {
+		"ativo": true,
+		"temBase": true,
+		"temLateralDireita": true,
+		"temLateralEsquerda": true,
+		"temCabeceiraDireita": true,
+		"temCabeceiraEsquerda": true,
+		"temTampa": true,
+		"cabeceiraAoChao": false,
+		"cabeceiraAoTopo": false,
+		"lateraisPorFora": false,
+		"publico": true,
+		"exp": false,
+		"nome": "Caixa Econômica",
+		"slug": "caixa-economica",
+		"notas": "Caixa fechada em compensado, paletizada, padrão americano com estrutura e revestimento econômicos.",
+		"partes": [
+			{
+				"__component": "cx-components.palete",
+				"vaoMaximoEntrePes": 80,
+				"vaoMaximoEntreTabuas": 0,
+				"nome": "base",
+				"tabuasMeioQtde": -1,
+				"pesMeioQtde": -1,
+				"assoalho": {
+					"unCompra": "metroCubico",
+					"unVenda": "metroLinear",
+					"nome": "tabua",
+					"largura": 10,
+					"espessura": 1.9,
+					"precoCompra": 800,
+					"precoVenda": 1.52
+				},
+				"tipos_de_pe": {
+					"nome": "Pé alto com tocos",
+					"slug": "pe-alto-com-tocos",
+					"notas": "Pé alto para paletes de 2 entradas.",
+					"longarina": "6147368b3dac361004f67fe5",
+					"pe": "6147368b3dac361004f67fe5",
+					"toco": "6147368b3dac361004f67fe5",
+					"image": {
+						"name": "caixa-madeira-fumigada-3.webp",
+						"alternativeText": "Caixa de madeira fumigada",
+						"caption": "",
+						"hash": "caixa_madeira_fumigada_02_9e33cfc218",
+						"ext": ".webp",
+						"mime": "image/webp",
+						"size": 7.36,
+						"width": 400,
+						"height": 300,
+						"url": "https://rbx-backend-media.s3.sa-east-1.amazonaws.com/caixa_madeira_fumigada_02_9e33cfc218.webp",
+						"formats": {
+							"thumbnail": {
+								"name": "thumbnail_caixa-madeira-fumigada-02.webp",
+								"hash": "thumbnail_caixa_madeira_fumigada_02_9e33cfc218",
+								"ext": ".webp",
+								"mime": "image/webp",
+								"width": 208,
+								"height": 156,
+								"size": 3.26,
+								"path": null,
+								"url": "https://rbx-backend-media.s3.sa-east-1.amazonaws.com/thumbnail_caixa_madeira_fumigada_02_9e33cfc218.webp"
+							}
+						},
+						"provider": "aws-s3",
+						"related": ["61510ac9afae9d061865fcaf"]
+					},
+					"pregoG": "61473d0d9586d82828ec49f9"
+				},
+				"pregoG": {
+					"unCompra": "milheiro",
+					"unVenda": "unidade",
+					"nome": "pregoG",
+					"precoCompra": 38.13,
+					"comprimento": 50,
+					"espessura": 2.5,
+					"precoVenda": 0.044
+				},
+				"pregoP": {
+					"unCompra": "milheiro",
+					"unVenda": "unidade",
+					"nome": "pregoPP",
+					"comprimento": 35,
+					"espessura": 2.1,
+					"precoCompra": 21.83,
+					"precoVenda": 0.025
+				}
+			},
+			{
+				"__component": "cx-components.quadro",
+				"vaoMaximoEntreSarrafos": 70,
+				"adesivoFragil": "padrao",
+				"adesivoExtra": "nenhum",
+				"revestimento": true,
+				"carimboExp": false,
+				"adesivoRbx": false,
+				"sarrafosMeioQtde": -1,
+				"meioInvertido": "automatico",
+				"nome": "lateral",
+				"chapa": {
+					"unCompra": "unidade",
+					"unVenda": "metroQuadrado",
+					"nome": "chapaPP",
+					"comprimento": 220,
+					"largura": 160,
+					"espessura": 0.3,
+					"precoVenda": 7.65
+				},
+				"fixadores": {
+					"unCompra": "milheiro",
+					"unVenda": "unidade",
+					"nome": "grampoPP",
+					"comprimento": 16,
+					"largura": 80,
+					"precoCompra": 3.99,
+					"precoVenda": 0.005
+				},
+				"sarrafos": {
+					"unCompra": "metroCubico",
+					"unVenda": "metroLinear",
+					"nome": "sarrafoP",
+					"largura": 3,
+					"espessura": 1.9,
+					"precoCompra": 800,
+					"precoVenda": 0.51
+				}
+			},
+			{
+				"__component": "cx-components.quadro",
+				"vaoMaximoEntreSarrafos": 70,
+				"adesivoFragil": "padrao",
+				"adesivoExtra": "nenhum",
+				"revestimento": true,
+				"carimboExp": false,
+				"adesivoRbx": false,
+				"sarrafosMeioQtde": -1,
+				"meioInvertido": "automatico",
+				"nome": "cabeceira",
+				"fixadores": {
+					"unCompra": "milheiro",
+					"unVenda": "unidade",
+					"nome": "grampoPP",
+					"comprimento": 16,
+					"largura": 80,
+					"precoCompra": 3.99,
+					"precoVenda": 0.005
+				},
+				"sarrafos": {
+					"unCompra": "metroCubico",
+					"unVenda": "metroLinear",
+					"nome": "sarrafoP",
+					"largura": 3,
+					"espessura": 1.9,
+					"precoCompra": 800,
+					"precoVenda": 0.51
+				},
+				"chapa": {
+					"unCompra": "unidade",
+					"unVenda": "metroQuadrado",
+					"nome": "chapaPP",
+					"comprimento": 220,
+					"largura": 160,
+					"espessura": 0.3,
+					"precoVenda": 7.65
+				}
+			},
+			{
+				"__component": "cx-components.quadro",
+				"vaoMaximoEntreSarrafos": 70,
+				"adesivoFragil": "nenhum",
+				"adesivoExtra": "nenhum",
+				"revestimento": true,
+				"carimboExp": false,
+				"adesivoRbx": false,
+				"sarrafosMeioQtde": -1,
+				"meioInvertido": "automatico",
+				"nome": "tampa",
+				"chapa": {
+					"unCompra": "unidade",
+					"unVenda": "metroQuadrado",
+					"nome": "chapaPP",
+					"comprimento": 220,
+					"largura": 160,
+					"espessura": 0.3,
+					"precoVenda": 7.65
+				},
+				"fixadores": {
+					"unCompra": "milheiro",
+					"unVenda": "unidade",
+					"nome": "grampoPP",
+					"comprimento": 16,
+					"largura": 80,
+					"precoCompra": 3.99,
+					"precoVenda": 0.005
+				},
+				"sarrafos": {
+					"unCompra": "metroCubico",
+					"unVenda": "metroLinear",
+					"nome": "sarrafoP",
+					"largura": 3,
+					"espessura": 1.9,
+					"precoCompra": 800,
+					"precoVenda": 0.51
+				}
+			}
+		],
+		"tipos_de_produto": "615a0929b5a00a1c20c72821",
+		"avulso": [
+			{
+				"nome": "15",
+				"qtde": 4,
+				"comp": 15,
+				"materia_prima": {
+					"unCompra": "metroCubico",
+					"unVenda": "metroLinear",
+					"nome": "sarrafoG",
+					"largura": 6.5,
+					"espessura": 1.9,
+					"precoCompra": 800,
+					"precoVenda": 1.01
+				}
+			}
+		],
+		"montagem": {
+			"baseAnexada": true,
+			"lateralDireitaAnexada": true,
+			"lateralEsquerdaAnexada": true,
+			"cabeceiraDireitaAnexada": true,
+			"cabeceiraEsquerdaAnexada": true,
+			"enviarFechada": false,
+			"tampaAnexada": false,
+			"fixadoresFixos": {
+				"unCompra": "milheiro",
+				"unVenda": "unidade",
+				"nome": "grampoGG",
+				"comprimento": 50,
+				"largura": 14,
+				"precoVenda": 0.03
+			},
+			"fixadoresSoltos": {
+				"unCompra": "milheiro",
+				"unVenda": "unidade",
+				"nome": "grampoGG",
+				"comprimento": 50,
+				"largura": 14,
+				"precoVenda": 0.03
+			}
+		}
+	}
+}

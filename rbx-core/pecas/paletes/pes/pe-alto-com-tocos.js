@@ -15,22 +15,23 @@ const calcPeFn = async base => {
 		larg: longarina.largura,
 		alt: longarina.espessura * 3,
 		qtde: Math.max(Math.ceil(compPe / 30), 2),
-		custo: (compToco / 100) * 3 * longarina.precoVenda,
+		custoMP: (compToco / 100) * 3 * longarina.precoVenda,
 	};
 
 	pregoG.qtde = tocoPronto.qtde * 8;
-	pregoG.custo = pregoG.qtde * pregoG.precoVenda;
+	pregoG.custoMP = pregoG.qtde * pregoG.precoVenda;
 
 	const pePronto = {
 		comp: compPe,
 		larg: longarina.largura,
 		alt: longarina.espessura * 2 + tocoPronto.alt,
 		toco: tocoPronto,
-		custo:
+		custoMP:
 			((compPe * 2 + compToco * 3 * tocoPronto.qtde) / 100) *
 			longarina.precoVenda,
 	};
 
+	console.log("pes/pe-alto-com-tocos");
 	return pePronto;
 };
 module.exports = calcPeFn;

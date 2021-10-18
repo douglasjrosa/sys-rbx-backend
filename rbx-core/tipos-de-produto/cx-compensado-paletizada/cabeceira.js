@@ -1,31 +1,42 @@
-const calcParteFn = async prod => {
+const calcParteFn = produto => {
 	const calcularQuadro = require("../../pecas/quadros");
-	const { req, mod } = prod;
 
-	const { base, lateral, cabeceira, tampa } = mod.partes;
+	const { partes } = produto.modelo;
+	const [base] = partes.filter(parte => parte.nome === "base");
+	const [lateral] = partes.filter(parte => parte.nome === "lateral");
+	const [cabeceira] = partes.filter(parte => parte.nome === "cabeceira");
+	const [tampa] = partes.filter(parte => parte.nome === "tampa");
 
-	const lateraisPorFora = req.lateraisPorFora
-		? req.lateraisPorFora
-		: mod.lateraisPorFora;
+	const {
+		lateraisPorFora,
+		cabeceiraAoChao,
+		cabeceiraAoTopo,
+		temCabeceiraDireita,
+		temCabeceiraEsquerda,
+	} = produto.modelo;
 
 	cabeceira.longQuadro = lateraisPorFora
-		? req.larg
-		: req.larg + lateral.espQuadro * 2;
+		? produto.larg
+		: produto.larg + lateral.espQuadro * 2;
 
-	cabeceira.compQuadro = req.alt + base.assoalho.espessura;
-	if (mod.cabeceiraAoChao) cabeceira.compQuadro += base.pes.pePronto.alt;
-	if (mod.cabeceiraAoTopo) cabeceira.compQuadro += tampa.espQuadro;
+	cabeceira.compQuadro = produto.alt + base.assoalho.espessura;
+	if (cabeceiraAoChao) cabeceira.compQuadro += base.pes.pePronto.alt;
+	if (cabeceiraAoTopo) cabeceira.compQuadro += tampa.espQuadro;
 
-	const customConfigs =
-		req.partes && req.partes.cabeceira ? req.partes.cabeceira : {};
+	let customConfigs = {};
+	if (produto.custom && produto.custom.partes) {
+		[customConfigs] = produto.custom.partes.filter(
+			parte => parte.nome === "cabeceira"
+		);
+	}
 
-	const quadro = await calcularQuadro({ ...cabeceira, ...customConfigs });
+	const quadro = calcularQuadro({ ...cabeceira, ...customConfigs });
 
 	quadro.qtde = 0;
-	if (mod.temCabeceiraDireita) quadro.qtde++;
-	if (mod.temCabeceiraEsquerda) quadro.qtde++;
+	if (temCabeceiraDireita) quadro.qtde++;
+	if (temCabeceiraEsquerda) quadro.qtde++;
 
-	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
+	quadro.custoParte = quadro.qtde * quadro.custoQuadroMP;
 
 	return quadro;
 };

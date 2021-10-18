@@ -43,4 +43,20 @@
 		}
 		return obj;
 	};
+
+	
+	objMerge = function (objOriginal, objNovo) {
+		for (const index in objNovo) {
+			if (typeof objNovo[index] === "object") {
+				if (objNovo[index] instanceof Array){
+					objNovo[index].map(item => objMerge(objOriginal[index], item));
+				}
+				else objMerge(objOriginal[index], objNovo[index])
+			}
+			else{
+				objOriginal[index] = objNovo[index];
+			}
+		}
+		return objOriginal;
+	};
 })();

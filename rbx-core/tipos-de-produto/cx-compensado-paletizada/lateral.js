@@ -1,29 +1,33 @@
-const calcParteFn = async prod => {
+const calcParteFn = produto => {
 	const calcularQuadro = require("../../pecas/quadros");
-	const { req, mod } = prod;
 
-	const { base, lateral, cabeceira } = mod.partes;
+	const { partes } = produto.modelo;
+	const [base] = partes.filter(parte => parte.nome === "base");
+	const [lateral] = partes.filter(parte => parte.nome === "lateral");
+	const [cabeceira] = partes.filter(parte => parte.nome === "cabeceira");
 
-	const lateraisPorFora = req.lateraisPorFora
-		? req.lateraisPorFora
-		: mod.lateraisPorFora;
+	const { lateraisPorFora, temLateralDireita, temLateralEsquerda } =
+		produto.modelo;
 
 	lateral.compQuadro = lateraisPorFora
-		? req.comp + cabeceira.espQuadro * 2
-		: req.comp;
+		? produto.comp + cabeceira.espQuadro * 2
+		: produto.comp;
 
-	lateral.longQuadro = req.alt + base.assoalho.espessura;
+	lateral.longQuadro = produto.alt + base.assoalho.espessura;
 
-	const customConfigs =
-		req.partes && req.partes.lateral ? req.partes.lateral : {};
-
-	const quadro = await calcularQuadro({ ...lateral, ...customConfigs });
+	let customConfigs = {};
+	if (produto.custom && produto.custom.partes) {
+		[customConfigs] = produto.custom.partes.filter(
+			parte => parte.nome === "lateral"
+		);
+	}
+	const quadro = calcularQuadro({ ...lateral, ...customConfigs });
 
 	quadro.qtde = 0;
-	if (mod.temLateralDireita) quadro.qtde++;
-	if (mod.temLateralEsquerda) quadro.qtde++;
+	if (temLateralDireita) quadro.qtde++;
+	if (temLateralEsquerda) quadro.qtde++;
 
-	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
+	quadro.custoParte = quadro.qtde * quadro.custoQuadroMP;
 
 	return quadro;
 };

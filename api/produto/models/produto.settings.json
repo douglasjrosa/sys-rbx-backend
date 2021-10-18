@@ -34,18 +34,11 @@
     "pesoProd": {
       "type": "float"
     },
-    "exp": {
-      "type": "boolean",
-      "default": false
-    },
     "notas": {
       "type": "string"
     },
     "preco": {
       "type": "decimal"
-    },
-    "descontos": {
-      "collection": "desconto"
     },
     "vFinal": {
       "type": "decimal"
@@ -56,6 +49,33 @@
     "ativo": {
       "type": "boolean",
       "default": true
+    },
+    "custom": {
+      "type": "json"
+    },
+    "pesoCx": {
+      "type": "string"
+    },
+    "compExt": {
+      "type": "string"
+    },
+    "largExt": {
+      "type": "string"
+    },
+    "altExt": {
+      "type": "string"
+    },
+    "compExtDes": {
+      "type": "string"
+    },
+    "largExtDes": {
+      "type": "string"
+    },
+    "altExtDes": {
+      "type": "string"
+    },
+    "volumes": {
+      "type": "string"
     }
   }
 }

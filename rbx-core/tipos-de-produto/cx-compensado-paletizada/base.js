@@ -1,17 +1,32 @@
-const calcularBase = require("../../pecas/paletes");
+const calcBase = async produto => {
+	const calcularBase = require("../../pecas/paletes");
 
-const calcParteFn = async prod => {
-    const { req, mod } = prod;
-    const { base, lateral, cabeceira } = mod.partes;
-    base.assoalho.comp = req.comp;
-    base.assoalho.larg = req.larg;
-    base.compPe = req.larg + lateral.espQuadro * 2;
-    base.longPe = mod.cabeceiraAoChao
-        ? req.comp
-        : req.comp + cabeceira.espQuadro * 2;
-    
-	const customConfigs = req.partes && req.partes.base ? req.partes.base : {};
-    
-    return await calcularBase( { ...base, ...customConfigs } );
-}
-module.exports = calcParteFn;
+	const { partes, cabeceiraAoChao } = produto.modelo;
+	const [lateral] = partes.filter(parte => parte.nome === "lateral");
+	const [cabeceira] = partes.filter(parte => parte.nome === "cabeceira");
+
+	let baseIndex;
+	const [base] = partes.filter((parte, index) => {
+		if (parte.nome === "base") {
+			baseIndex = index;
+			return true;
+		}
+	});
+
+	base.assoalho.comp = produto.comp;
+	base.assoalho.larg = produto.larg;
+	base.compPe = produto.larg + lateral.espQuadro * 2;
+	base.longPe = cabeceiraAoChao
+		? produto.comp
+		: produto.comp + cabeceira.espQuadro * 2;
+
+	let customConfigs = {};
+    if( produto.custom && produto.custom.partes ){
+        [customConfigs] = produto.custom.partes.filter(parte => parte.nome === "base")
+    }
+
+    partes[baseIndex] = await calcularBase({ ...base, ...customConfigs });
+
+	console.log("cx-compensado/base");
+};
+module.exports = calcBase;

@@ -86,6 +86,13 @@
     "empresa": {
       "model": "empresa",
       "via": "modelos"
+    },
+    "exp": {
+      "type": "boolean",
+      "default": false
+    },
+    "desconto": {
+      "model": "desconto"
     }
   }
 }

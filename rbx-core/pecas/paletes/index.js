@@ -1,12 +1,15 @@
 const calcularBase = async base => {
 	const calcPe = require("./pes");
-	base.pes = await calcPe(base);
+
+	const pes = await calcPe(base);
+	base.pes = pes;
 
 	const calcAssoalho = require("./assoalho");
 	const assoalho = calcAssoalho(base);
 
-	const custoParte = base.pes.custo + assoalho.custo;
+	const custoParte = pes.custoMP + assoalho.custoMP;
 
-	return { pes: base.pes, assoalho, custoParte };
+	console.log("paletes/index");
+	return { nome: "base", pes, assoalho, custoParte };
 };
 module.exports = calcularBase;

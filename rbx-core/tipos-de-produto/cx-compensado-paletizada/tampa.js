@@ -1,26 +1,33 @@
-const calcParteFn = async prod => {
+const calcParteFn = produto => {
 	const calcularQuadro = require("../../pecas/quadros");
-	const { req, mod } = prod;
 
-	const { lateral, cabeceira, tampa } = mod.partes;
+	const { partes } = produto.modelo;
+	const [lateral] = partes.filter(parte => parte.nome === "lateral");
+	const [cabeceira] = partes.filter(parte => parte.nome === "cabeceira");
+	const [tampa] = partes.filter(parte => parte.nome === "tampa");
 
-	if (mod.cabeceiraAoTopo){
-		tampa.compQuadro = req.larg + lateral.espQuadro * 2;
-		tampa.longQuadro = req.comp;
+	const { cabeceiraAoTopo, temTampa } = produto.modelo;
+
+	if (cabeceiraAoTopo) {
+		tampa.compQuadro = produto.larg + lateral.espQuadro * 2;
+		tampa.longQuadro = produto.comp;
+	} else {
+		tampa.compQuadro = produto.comp + cabeceira.espQuadro * 2;
+		tampa.longQuadro = produto.larg + lateral.espQuadro * 2;
 	}
-	else{
-		tampa.compQuadro = req.comp + cabeceira.espQuadro * 2;
-		tampa.longQuadro = req.larg + lateral.espQuadro * 2;
+
+	let customConfigs = {};
+	if (produto.custom && produto.custom.partes) {
+		[customConfigs] = produto.custom.partes.filter(
+			parte => parte.nome === "tampa"
+		);
 	}
-	
-	const customConfigs =
-		req.partes && req.partes.tampa ? req.partes.tampa : {};
 
-	const quadro = await calcularQuadro({ ...tampa, ...customConfigs });
+	const quadro = calcularQuadro({ ...tampa, ...customConfigs });
 
-	quadro.qtde = mod.temTampa ? 1 : 0;
+	quadro.qtde = temTampa ? 1 : 0;
 
-	quadro.custoParte = quadro.qtde * quadro.custoQuadro;
+	quadro.custoParte = quadro.qtde * quadro.custoQuadroMP;
 
 	return quadro;
 };

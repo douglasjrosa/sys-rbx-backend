@@ -12,7 +12,7 @@ const calcPeFn = async base => {
 		comp: compPe,
 		larg: longarina.largura,
 		alt: longarina.espessura,
-		custo: (compPe / 100) * longarina.precoVenda,
+		custoMP: (compPe / 100) * longarina.precoVenda,
 	};
 
 	return pePronto;
