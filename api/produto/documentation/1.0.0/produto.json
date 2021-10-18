@@ -676,28 +676,28 @@
             "type": "object"
           },
           "pesoCx": {
-            "type": "string"
+            "type": "integer"
           },
           "compExt": {
-            "type": "string"
+            "type": "integer"
           },
           "largExt": {
-            "type": "string"
+            "type": "integer"
           },
           "altExt": {
-            "type": "string"
+            "type": "integer"
           },
           "compExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "largExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "altExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "volumes": {
-            "type": "string"
+            "type": "integer"
           }
         }
       },
@@ -744,28 +744,28 @@
             "type": "object"
           },
           "pesoCx": {
-            "type": "string"
+            "type": "integer"
           },
           "compExt": {
-            "type": "string"
+            "type": "integer"
           },
           "largExt": {
-            "type": "string"
+            "type": "integer"
           },
           "altExt": {
-            "type": "string"
+            "type": "integer"
           },
           "compExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "largExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "altExtDes": {
-            "type": "string"
+            "type": "integer"
           },
           "volumes": {
-            "type": "string"
+            "type": "integer"
           },
           "created_by": {
             "type": "string"

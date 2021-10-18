@@ -1,0 +1,108 @@
+{
+    "custos": {
+        "mo": {
+            "descargaMadeira": {
+                "notas": "Calculo aproximado baseado pelo tempo de 3 horas por 2 funcionários para descarregar um caminhão com 30m³ de madeira",
+                "un": "metroQuadrado",
+                "custo": 0.054
+            },
+            "descargaChapa": {
+                "notas": "Calculo aproximado baseado pelo tempo de 3 horas por 2 funcionários para descarregar um caminhão com 2000 chapas de madeira",
+                "un": "metroQuadrado",
+                "custo": 0.012
+            },
+            "plaina": {
+                "notas": "Calculo aproximado baseado pelo tempo de 4,5 horas por 3 funcionários para aplainar um fardo com 3m³ madeira",
+                "un": "metroQuadrado",
+                "custo": 0.973
+            },
+            "corteMadeira": {
+                "notas": "Calculo aproximado baseado pelo tempo de 4,5 horas por 2 funcionários para destopar 1,5 fardos de 3m³ de madeira",
+                "un": "unidade",
+                "custo": 0.12
+            },
+            "refilamento": {
+                "notas": "Calculo aproximado baseado no tempo de 2 dias com 2 funcionários para sarrafear 141 Dentemed. Metro linear por sarrafo.",
+                "un": "metroLinear",
+                "custo": 0.097
+            },
+            "corteChapa": {
+                "notas": "Calculo aproximado baseado em 2 dias de 1 funcionário para cortar chapa para 141 Dentemed. Metro linear de cada corte.",
+                "un": "metroLinear",
+                "custo": 0.13
+            },
+            "montagemPes": {
+                "notas": "Calculo ainda impreciso que considera o custo de 2 segundos de MO de 1 funcionário por prego disparado.",
+                "un": "unidade",
+                "custo": 0.0058
+            },
+            "montagemBase": {
+                "notas": "Calculo ainda impreciso que considera o custo de 2 segundos de MO de 1 funcionário por prego disparado.",
+                "un": "unidade",
+                "custo": 0.0058
+            },
+            "montagemQuadro": {
+                "notas": "Calculo ainda impreciso que considera o custo de 1 segundo de MO de 1 funcionário por grampo disparado.",
+                "un": "unidade",
+                "custo": 0.0029
+            },
+            "montagemChapa": {
+                "notas": "Calculo ainda impreciso que considera o custo de 1 segundo de MO de 1 funcionário por grampo disparado.",
+                "un": "unidade",
+                "custo": 0.0029
+            },
+            "montagemAdesivos": {
+                "notas": "Calculo ainda impreciso que considera o custo de 30 segundos de MO de 1 funcionário por adesivo colado.",
+                "un": "unidade",
+                "custo": 0.088
+            },
+            "montagemCaixa": {
+                "notas": "Calculo ainda impreciso que considera o custo de 7 segundos de MO de 1 funcionário por grampo disparado.",
+                "un": "unidade",
+                "custo": 0.02
+            }
+        },
+        "cf": {
+            "moAdm": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "aluguel": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "energia": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "contabilidade": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "merenda": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "limpeza": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "manutencao": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "diversos": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            }
+        }
+    }
+}
