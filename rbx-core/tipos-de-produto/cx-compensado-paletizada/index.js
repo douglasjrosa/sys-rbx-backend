@@ -24,9 +24,12 @@ const calcTipoDeProduto = async produto => {
 	const calcBase = require("./base");
 	await calcBase(produto);
 
-	const getAvulsos = require("./avulso");
-	const avulsos = await getAvulsos(produto);
-	produto.modelo.partes.push(...avulsos);
+	const calcAvulsos = require("./avulso");
+	await calcAvulsos(produto);
+
+
+
+
 
 	const custoMP = 0;
 	produto["custoMP"] = custoMP;

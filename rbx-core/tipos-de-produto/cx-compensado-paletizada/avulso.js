@@ -1,5 +1,3 @@
-const calcAvulso = async avulso => {};
-
 const getAvulsos = async produto => {
 	const avulsos = [];
 	const { custom, modelo } = produto;
@@ -36,4 +34,9 @@ const getAvulsos = async produto => {
 		return await Promise.all(promises);
 	} else return [];
 };
-module.exports = getAvulsos;
+
+const calcAvulsos = async produto => {
+	const avulsos = await getAvulsos(produto);	
+	produto.modelo.partes.push(...avulsos);
+};
+module.exports = calcAvulsos;
