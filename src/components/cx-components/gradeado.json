@@ -1,0 +1,57 @@
+{
+  "collectionName": "components_cx_components_gradeados",
+  "info": {
+    "displayName": "gradeado",
+    "icon": "border-all",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "vaoMaximoEntrePes": {
+      "type": "float",
+      "default": 60
+    },
+    "vaoMaximoEntreTabuas": {
+      "type": "float",
+      "default": 0
+    },
+    "alinhamento": {
+      "type": "enumeration",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ],
+      "default": "horizontal"
+    },
+    "longCinta": {
+      "type": "float"
+    },
+    "compCinta": {
+      "type": "float"
+    },
+    "longGrade": {
+      "type": "float"
+    },
+    "compGrade": {
+      "type": "float"
+    },
+    "estrutura": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::materia-prima.materia-prima"
+    },
+    "fixadores": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::materia-prima.materia-prima"
+    },
+    "grade": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::materia-prima.materia-prima"
+    }
+  }
+}
