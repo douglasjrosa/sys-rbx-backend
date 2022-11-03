@@ -1,0 +1,271 @@
+{
+  "key": "plugin_content_manager_configuration_components::cx-components.quadro",
+  "value": {
+    "uid": "cx-components.quadro",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "nome",
+      "defaultSortBy": "nome",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "nome": {
+        "edit": {
+          "label": "nome",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nome",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "sarrafos": {
+        "edit": {
+          "label": "sarrafos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "sarrafos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "chapa": {
+        "edit": {
+          "label": "chapa",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "chapa",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fixadores": {
+        "edit": {
+          "label": "fixadores",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "fixadores",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "vaoMaximoEntreSarrafos": {
+        "edit": {
+          "label": "vaoMaximoEntreSarrafos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vaoMaximoEntreSarrafos",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "adesivoFragil": {
+        "edit": {
+          "label": "adesivoFragil",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "adesivoFragil",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "adesivoExtra": {
+        "edit": {
+          "label": "adesivoExtra",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "adesivoExtra",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "revestimento": {
+        "edit": {
+          "label": "revestimento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "revestimento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "carimboExp": {
+        "edit": {
+          "label": "carimboExp",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "carimboExp",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "adesivoRbx": {
+        "edit": {
+          "label": "adesivoRbx",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "adesivoRbx",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "sarrafosMeioQtde": {
+        "edit": {
+          "label": "sarrafosMeioQtde",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "sarrafosMeioQtde",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "meioInvertido": {
+        "edit": {
+          "label": "meioInvertido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "meioInvertido",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "nome",
+        "sarrafos",
+        "chapa"
+      ],
+      "edit": [
+        [
+          {
+            "name": "nome",
+            "size": 6
+          },
+          {
+            "name": "sarrafos",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "chapa",
+            "size": 6
+          },
+          {
+            "name": "fixadores",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "vaoMaximoEntreSarrafos",
+            "size": 4
+          },
+          {
+            "name": "adesivoFragil",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "adesivoExtra",
+            "size": 6
+          },
+          {
+            "name": "revestimento",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "carimboExp",
+            "size": 4
+          },
+          {
+            "name": "adesivoRbx",
+            "size": 4
+          },
+          {
+            "name": "sarrafosMeioQtde",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "meioInvertido",
+            "size": 6
+          }
+        ]
+      ],
+      "editRelations": []
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

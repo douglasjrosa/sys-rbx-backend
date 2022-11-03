@@ -1,0 +1,165 @@
+{
+  "kind": "collectionType",
+  "collectionName": "empresas",
+  "info": {
+    "singularName": "empresa",
+    "pluralName": "empresas",
+    "displayName": "empresa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "fantasia": {
+      "type": "string"
+    },
+    "tipoPessoa": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "complemento": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cep": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "uf": {
+      "type": "string"
+    },
+    "site": {
+      "type": "string"
+    },
+    "pais": {
+      "type": "string"
+    },
+    "porte": {
+      "type": "string"
+    },
+    "simples": {
+      "type": "boolean"
+    },
+    "ieStatus": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "adFrailLat": {
+      "type": "boolean"
+    },
+    "adFrailCab": {
+      "type": "boolean"
+    },
+    "adEspecialLat": {
+      "type": "boolean"
+    },
+    "adEspecialCab": {
+      "type": "boolean"
+    },
+    "latFCab": {
+      "type": "boolean"
+    },
+    "cabChao": {
+      "type": "boolean"
+    },
+    "cabTop": {
+      "type": "boolean"
+    },
+    "cxEco": {
+      "type": "boolean"
+    },
+    "cxEst": {
+      "type": "boolean"
+    },
+    "cxLev": {
+      "type": "boolean"
+    },
+    "cxRef": {
+      "type": "boolean"
+    },
+    "cxSupRef": {
+      "type": "boolean"
+    },
+    "platSMed": {
+      "type": "boolean"
+    },
+    "cxResi": {
+      "type": "boolean"
+    },
+    "engEco": {
+      "type": "boolean"
+    },
+    "engLev": {
+      "type": "boolean"
+    },
+    "engRef": {
+      "type": "boolean"
+    },
+    "engResi": {
+      "type": "boolean"
+    },
+    "email": {
+      "type": "string"
+    },
+    "emailNfe": {
+      "type": "string"
+    },
+    "pessoa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::pessoa.pessoa"
+    },
+    "tablecalc": {
+      "type": "string"
+    },
+    "maxPg": {
+      "type": "string"
+    },
+    "forpg": {
+      "type": "string"
+    },
+    "frete": {
+      "type": "string"
+    },
+    "CNPJ": {
+      "type": "string"
+    },
+    "Ie": {
+      "type": "string"
+    },
+    "fone": {
+      "type": "string"
+    },
+    "celular": {
+      "type": "string"
+    },
+    "CNAE": {
+      "type": "string"
+    },
+    "codpais": {
+      "type": "string"
+    },
+    "responsavel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::pessoa.pessoa",
+      "inversedBy": "empresas"
+    }
+  }
+}

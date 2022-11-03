@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pessoas",
+  "info": {
+    "singularName": "pessoa",
+    "pluralName": "pessoas",
+    "displayName": "pessoa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "CEP": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "uf": {
+      "type": "string"
+    },
+    "CPF": {
+      "type": "string"
+    },
+    "RG": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "pais": {
+      "type": "string"
+    },
+    "obs": {
+      "type": "richtext"
+    },
+    "empresas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empresa.empresa",
+      "mappedBy": "responsavel"
+    },
+    "status": {
+      "type": "boolean"
+    }
+  }
+}

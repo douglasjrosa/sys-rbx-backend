@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_cx_components_montagems",
+  "info": {
+    "displayName": "montagem",
+    "icon": "box-open"
+  },
+  "options": {},
+  "attributes": {
+    "notas": {
+      "type": "text"
+    },
+    "fixadoresFixos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::materia-prima.materia-prima"
+    },
+    "fixadoresSoltos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::materia-prima.materia-prima"
+    },
+    "baseAnexada": {
+      "type": "boolean",
+      "default": false
+    },
+    "lateralDireitaAnexada": {
+      "type": "boolean",
+      "default": false
+    },
+    "lateralEsquerdaAnexada": {
+      "type": "boolean",
+      "default": false
+    },
+    "cabeceiraDireitaAnexada": {
+      "type": "boolean",
+      "default": false
+    },
+    "cabeceiraEsquerdaAnexada": {
+      "type": "boolean",
+      "default": false
+    },
+    "tampaAnexada": {
+      "type": "boolean"
+    },
+    "enviarFechada": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

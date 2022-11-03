@@ -1,0 +1,219 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::materia-prima.materia-prima",
+  "value": {
+    "uid": "api::materia-prima.materia-prima",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "nome",
+      "defaultSortBy": "nome",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nome": {
+        "edit": {
+          "label": "nome",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nome",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "largura": {
+        "edit": {
+          "label": "largura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "largura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "espessura": {
+        "edit": {
+          "label": "espessura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "espessura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "precoCompra": {
+        "edit": {
+          "label": "precoCompra",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "precoCompra",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "unCompra": {
+        "edit": {
+          "label": "unCompra",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "unCompra",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "unVenda": {
+        "edit": {
+          "label": "unVenda",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "unVenda",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "precoVenda": {
+        "edit": {
+          "label": "precoVenda",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "precoVenda",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "comprimento": {
+        "edit": {
+          "label": "comprimento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "comprimento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "nome",
+        "largura",
+        "espessura"
+      ],
+      "editRelations": [],
+      "edit": [
+        [
+          {
+            "name": "nome",
+            "size": 6
+          },
+          {
+            "name": "largura",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "espessura",
+            "size": 4
+          },
+          {
+            "name": "precoCompra",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "unCompra",
+            "size": 6
+          },
+          {
+            "name": "unVenda",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "precoVenda",
+            "size": 4
+          },
+          {
+            "name": "comprimento",
+            "size": 4
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

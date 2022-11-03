@@ -63,8 +63,43 @@
             }
         },
         "cf": {
-            "geral": {
-                "notas": "Calculo ainda impreciso que considera o custo fixo total da empresa dividido pelo faturamento de modo a encontrar um percentual flutuante",
+            "moAdm": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "aluguel": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "energia": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "contabilidade": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "merenda": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "limpeza": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "manutencao": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
+                "un": "percentual",
+                "custo": 0.1
+            },
+            "diversos": {
+                "notas": "Mão-de-obra administrativa. Compreende todos os cargos não ligados diretamente à produção. Deverá ser relativo aos custos de MO e MP dos produtos.",
                 "un": "percentual",
                 "custo": 0.1
             }

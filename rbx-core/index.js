@@ -21,5 +21,4 @@ const calcularProduto = async produto => {
 	console.log("rbx-core/index");
 	return produtoPronto;
 };
-
 module.exports = calcularProduto;
