@@ -90,11 +90,15 @@
       "target": "api::modelo.modelo",
       "mappedBy": "empresa"
     },
+<<<<<<< Updated upstream
     "pessoa": {
+=======
+    "responsavels": {
+>>>>>>> Stashed changes
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::pessoa.pessoa",
-      "inversedBy": "empresas"
+      "mappedBy": "empresa"
     }
   }
 }

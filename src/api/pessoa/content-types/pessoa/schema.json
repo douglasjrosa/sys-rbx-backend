@@ -23,11 +23,22 @@
     "email": {
       "type": "email"
     },
+<<<<<<< Updated upstream
     "empresas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::empresa.empresa",
       "mappedBy": "pessoa"
+=======
+    "status": {
+      "type": "boolean"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "responsavels"
+>>>>>>> Stashed changes
     }
   }
 }
