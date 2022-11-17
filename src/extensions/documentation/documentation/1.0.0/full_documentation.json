@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-11-03T15:48:01.559Z"
+    "x-generation-date": "2022-11-16T23:22:05.030Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1587,17 +1587,6 @@
               "emailNfe": {
                 "type": "string"
               },
-              "pessoa": {
-                "oneOf": [
-                  {
-                    "type": "integer"
-                  },
-                  {
-                    "type": "string"
-                  }
-                ],
-                "example": "string or id"
-              },
               "tablecalc": {
                 "type": "string"
               },
@@ -1760,7 +1749,37 @@
               "emailNfe": {
                 "type": "string"
               },
-              "pessoa": {
+              "tablecalc": {
+                "type": "string"
+              },
+              "maxPg": {
+                "type": "string"
+              },
+              "forpg": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "CNPJ": {
+                "type": "string"
+              },
+              "Ie": {
+                "type": "string"
+              },
+              "fone": {
+                "type": "string"
+              },
+              "celular": {
+                "type": "string"
+              },
+              "CNAE": {
+                "type": "string"
+              },
+              "codpais": {
+                "type": "string"
+              },
+              "responsavel": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -1935,23 +1954,6 @@
                                         },
                                         "emailNfe": {
                                           "type": "string"
-                                        },
-                                        "pessoa": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "object",
-                                              "properties": {
-                                                "id": {
-                                                  "type": "number"
-                                                },
-                                                "attributes": {
-                                                  "type": "object",
-                                                  "properties": {}
-                                                }
-                                              }
-                                            }
-                                          }
                                         },
                                         "tablecalc": {
                                           "type": "string"
@@ -2354,53 +2356,6 @@
                             }
                           }
                         }
-                      }
-                    }
-                  }
-                }
-              },
-              "tablecalc": {
-                "type": "string"
-              },
-              "maxPg": {
-                "type": "string"
-              },
-              "forpg": {
-                "type": "string"
-              },
-              "frete": {
-                "type": "string"
-              },
-              "CNPJ": {
-                "type": "string"
-              },
-              "Ie": {
-                "type": "string"
-              },
-              "fone": {
-                "type": "string"
-              },
-              "celular": {
-                "type": "string"
-              },
-              "CNAE": {
-                "type": "string"
-              },
-              "codpais": {
-                "type": "string"
-              },
-              "responsavel": {
-                "type": "object",
-                "properties": {
-                  "data": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "properties": {}
                       }
                     }
                   }
@@ -2573,7 +2528,37 @@
               "emailNfe": {
                 "type": "string"
               },
-              "pessoa": {
+              "tablecalc": {
+                "type": "string"
+              },
+              "maxPg": {
+                "type": "string"
+              },
+              "forpg": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "CNPJ": {
+                "type": "string"
+              },
+              "Ie": {
+                "type": "string"
+              },
+              "fone": {
+                "type": "string"
+              },
+              "celular": {
+                "type": "string"
+              },
+              "CNAE": {
+                "type": "string"
+              },
+              "codpais": {
+                "type": "string"
+              },
+              "responsavel": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -2748,23 +2733,6 @@
                                         },
                                         "emailNfe": {
                                           "type": "string"
-                                        },
-                                        "pessoa": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "object",
-                                              "properties": {
-                                                "id": {
-                                                  "type": "number"
-                                                },
-                                                "attributes": {
-                                                  "type": "object",
-                                                  "properties": {}
-                                                }
-                                              }
-                                            }
-                                          }
                                         },
                                         "tablecalc": {
                                           "type": "string"
@@ -3167,53 +3135,6 @@
                             }
                           }
                         }
-                      }
-                    }
-                  }
-                }
-              },
-              "tablecalc": {
-                "type": "string"
-              },
-              "maxPg": {
-                "type": "string"
-              },
-              "forpg": {
-                "type": "string"
-              },
-              "frete": {
-                "type": "string"
-              },
-              "CNPJ": {
-                "type": "string"
-              },
-              "Ie": {
-                "type": "string"
-              },
-              "fone": {
-                "type": "string"
-              },
-              "celular": {
-                "type": "string"
-              },
-              "CNAE": {
-                "type": "string"
-              },
-              "codpais": {
-                "type": "string"
-              },
-              "responsavel": {
-                "type": "object",
-                "properties": {
-                  "data": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "properties": {}
                       }
                     }
                   }
@@ -3419,7 +3340,37 @@
               "emailNfe": {
                 "type": "string"
               },
-              "pessoa": {
+              "tablecalc": {
+                "type": "string"
+              },
+              "maxPg": {
+                "type": "string"
+              },
+              "forpg": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "CNPJ": {
+                "type": "string"
+              },
+              "Ie": {
+                "type": "string"
+              },
+              "fone": {
+                "type": "string"
+              },
+              "celular": {
+                "type": "string"
+              },
+              "CNAE": {
+                "type": "string"
+              },
+              "codpais": {
+                "type": "string"
+              },
+              "responsavel": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -3594,23 +3545,6 @@
                                         },
                                         "emailNfe": {
                                           "type": "string"
-                                        },
-                                        "pessoa": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "object",
-                                              "properties": {
-                                                "id": {
-                                                  "type": "number"
-                                                },
-                                                "attributes": {
-                                                  "type": "object",
-                                                  "properties": {}
-                                                }
-                                              }
-                                            }
-                                          }
                                         },
                                         "tablecalc": {
                                           "type": "string"
@@ -4013,53 +3947,6 @@
                             }
                           }
                         }
-                      }
-                    }
-                  }
-                }
-              },
-              "tablecalc": {
-                "type": "string"
-              },
-              "maxPg": {
-                "type": "string"
-              },
-              "forpg": {
-                "type": "string"
-              },
-              "frete": {
-                "type": "string"
-              },
-              "CNPJ": {
-                "type": "string"
-              },
-              "Ie": {
-                "type": "string"
-              },
-              "fone": {
-                "type": "string"
-              },
-              "celular": {
-                "type": "string"
-              },
-              "CNAE": {
-                "type": "string"
-              },
-              "codpais": {
-                "type": "string"
-              },
-              "responsavel": {
-                "type": "object",
-                "properties": {
-                  "data": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "properties": {}
                       }
                     }
                   }
@@ -4232,7 +4119,37 @@
               "emailNfe": {
                 "type": "string"
               },
-              "pessoa": {
+              "tablecalc": {
+                "type": "string"
+              },
+              "maxPg": {
+                "type": "string"
+              },
+              "forpg": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "CNPJ": {
+                "type": "string"
+              },
+              "Ie": {
+                "type": "string"
+              },
+              "fone": {
+                "type": "string"
+              },
+              "celular": {
+                "type": "string"
+              },
+              "CNAE": {
+                "type": "string"
+              },
+              "codpais": {
+                "type": "string"
+              },
+              "responsavel": {
                 "type": "object",
                 "properties": {
                   "data": {
@@ -4407,23 +4324,6 @@
                                         },
                                         "emailNfe": {
                                           "type": "string"
-                                        },
-                                        "pessoa": {
-                                          "type": "object",
-                                          "properties": {
-                                            "data": {
-                                              "type": "object",
-                                              "properties": {
-                                                "id": {
-                                                  "type": "number"
-                                                },
-                                                "attributes": {
-                                                  "type": "object",
-                                                  "properties": {}
-                                                }
-                                              }
-                                            }
-                                          }
                                         },
                                         "tablecalc": {
                                           "type": "string"
@@ -4826,53 +4726,6 @@
                             }
                           }
                         }
-                      }
-                    }
-                  }
-                }
-              },
-              "tablecalc": {
-                "type": "string"
-              },
-              "maxPg": {
-                "type": "string"
-              },
-              "forpg": {
-                "type": "string"
-              },
-              "frete": {
-                "type": "string"
-              },
-              "CNPJ": {
-                "type": "string"
-              },
-              "Ie": {
-                "type": "string"
-              },
-              "fone": {
-                "type": "string"
-              },
-              "celular": {
-                "type": "string"
-              },
-              "CNAE": {
-                "type": "string"
-              },
-              "codpais": {
-                "type": "string"
-              },
-              "responsavel": {
-                "type": "object",
-                "properties": {
-                  "data": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "attributes": {
-                        "type": "object",
-                        "properties": {}
                       }
                     }
                   }
@@ -9274,7 +9127,37 @@
                             "emailNfe": {
                               "type": "string"
                             },
-                            "pessoa": {
+                            "tablecalc": {
+                              "type": "string"
+                            },
+                            "maxPg": {
+                              "type": "string"
+                            },
+                            "forpg": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "CNPJ": {
+                              "type": "string"
+                            },
+                            "Ie": {
+                              "type": "string"
+                            },
+                            "fone": {
+                              "type": "string"
+                            },
+                            "celular": {
+                              "type": "string"
+                            },
+                            "CNAE": {
+                              "type": "string"
+                            },
+                            "codpais": {
+                              "type": "string"
+                            },
+                            "responsavel": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -9649,53 +9532,6 @@
                                           }
                                         }
                                       }
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "tablecalc": {
-                              "type": "string"
-                            },
-                            "maxPg": {
-                              "type": "string"
-                            },
-                            "forpg": {
-                              "type": "string"
-                            },
-                            "frete": {
-                              "type": "string"
-                            },
-                            "CNPJ": {
-                              "type": "string"
-                            },
-                            "Ie": {
-                              "type": "string"
-                            },
-                            "fone": {
-                              "type": "string"
-                            },
-                            "celular": {
-                              "type": "string"
-                            },
-                            "CNAE": {
-                              "type": "string"
-                            },
-                            "codpais": {
-                              "type": "string"
-                            },
-                            "responsavel": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "number"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
                                     }
                                   }
                                 }
@@ -9980,7 +9816,37 @@
                             "emailNfe": {
                               "type": "string"
                             },
-                            "pessoa": {
+                            "tablecalc": {
+                              "type": "string"
+                            },
+                            "maxPg": {
+                              "type": "string"
+                            },
+                            "forpg": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "CNPJ": {
+                              "type": "string"
+                            },
+                            "Ie": {
+                              "type": "string"
+                            },
+                            "fone": {
+                              "type": "string"
+                            },
+                            "celular": {
+                              "type": "string"
+                            },
+                            "CNAE": {
+                              "type": "string"
+                            },
+                            "codpais": {
+                              "type": "string"
+                            },
+                            "responsavel": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -10355,53 +10221,6 @@
                                           }
                                         }
                                       }
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "tablecalc": {
-                              "type": "string"
-                            },
-                            "maxPg": {
-                              "type": "string"
-                            },
-                            "forpg": {
-                              "type": "string"
-                            },
-                            "frete": {
-                              "type": "string"
-                            },
-                            "CNPJ": {
-                              "type": "string"
-                            },
-                            "Ie": {
-                              "type": "string"
-                            },
-                            "fone": {
-                              "type": "string"
-                            },
-                            "celular": {
-                              "type": "string"
-                            },
-                            "CNAE": {
-                              "type": "string"
-                            },
-                            "codpais": {
-                              "type": "string"
-                            },
-                            "responsavel": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "number"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
                                     }
                                   }
                                 }
@@ -10719,7 +10538,37 @@
                             "emailNfe": {
                               "type": "string"
                             },
-                            "pessoa": {
+                            "tablecalc": {
+                              "type": "string"
+                            },
+                            "maxPg": {
+                              "type": "string"
+                            },
+                            "forpg": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "CNPJ": {
+                              "type": "string"
+                            },
+                            "Ie": {
+                              "type": "string"
+                            },
+                            "fone": {
+                              "type": "string"
+                            },
+                            "celular": {
+                              "type": "string"
+                            },
+                            "CNAE": {
+                              "type": "string"
+                            },
+                            "codpais": {
+                              "type": "string"
+                            },
+                            "responsavel": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -11094,53 +10943,6 @@
                                           }
                                         }
                                       }
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "tablecalc": {
-                              "type": "string"
-                            },
-                            "maxPg": {
-                              "type": "string"
-                            },
-                            "forpg": {
-                              "type": "string"
-                            },
-                            "frete": {
-                              "type": "string"
-                            },
-                            "CNPJ": {
-                              "type": "string"
-                            },
-                            "Ie": {
-                              "type": "string"
-                            },
-                            "fone": {
-                              "type": "string"
-                            },
-                            "celular": {
-                              "type": "string"
-                            },
-                            "CNAE": {
-                              "type": "string"
-                            },
-                            "codpais": {
-                              "type": "string"
-                            },
-                            "responsavel": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "number"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
                                     }
                                   }
                                 }
@@ -11425,7 +11227,37 @@
                             "emailNfe": {
                               "type": "string"
                             },
-                            "pessoa": {
+                            "tablecalc": {
+                              "type": "string"
+                            },
+                            "maxPg": {
+                              "type": "string"
+                            },
+                            "forpg": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "CNPJ": {
+                              "type": "string"
+                            },
+                            "Ie": {
+                              "type": "string"
+                            },
+                            "fone": {
+                              "type": "string"
+                            },
+                            "celular": {
+                              "type": "string"
+                            },
+                            "CNAE": {
+                              "type": "string"
+                            },
+                            "codpais": {
+                              "type": "string"
+                            },
+                            "responsavel": {
                               "type": "object",
                               "properties": {
                                 "data": {
@@ -11800,53 +11632,6 @@
                                           }
                                         }
                                       }
-                                    }
-                                  }
-                                }
-                              }
-                            },
-                            "tablecalc": {
-                              "type": "string"
-                            },
-                            "maxPg": {
-                              "type": "string"
-                            },
-                            "forpg": {
-                              "type": "string"
-                            },
-                            "frete": {
-                              "type": "string"
-                            },
-                            "CNPJ": {
-                              "type": "string"
-                            },
-                            "Ie": {
-                              "type": "string"
-                            },
-                            "fone": {
-                              "type": "string"
-                            },
-                            "celular": {
-                              "type": "string"
-                            },
-                            "CNAE": {
-                              "type": "string"
-                            },
-                            "codpais": {
-                              "type": "string"
-                            },
-                            "responsavel": {
-                              "type": "object",
-                              "properties": {
-                                "data": {
-                                  "type": "object",
-                                  "properties": {
-                                    "id": {
-                                      "type": "number"
-                                    },
-                                    "attributes": {
-                                      "type": "object",
-                                      "properties": {}
                                     }
                                   }
                                 }

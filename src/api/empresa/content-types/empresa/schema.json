@@ -120,11 +120,6 @@
     "emailNfe": {
       "type": "string"
     },
-    "pessoa": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::pessoa.pessoa"
-    },
     "tablecalc": {
       "type": "string"
     },
