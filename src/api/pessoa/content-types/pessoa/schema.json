@@ -4,7 +4,8 @@
   "info": {
     "singularName": "pessoa",
     "pluralName": "pessoas",
-    "displayName": "pessoa"
+    "displayName": "pessoa",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,31 +15,53 @@
     "nome": {
       "type": "string"
     },
-    "sobrenome": {
+    "CEP": {
+      "type": "string"
+    },
+    "endereco": {
+      "type": "string"
+    },
+    "numero": {
+      "type": "string"
+    },
+    "bairro": {
+      "type": "string"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "uf": {
+      "type": "string"
+    },
+    "CPF": {
+      "type": "string"
+    },
+    "RG": {
+      "type": "string"
+    },
+    "whatsapp": {
       "type": "string"
     },
     "telefone": {
       "type": "string"
     },
     "email": {
-      "type": "email"
+      "type": "string"
     },
-<<<<<<< Updated upstream
+    "pais": {
+      "type": "string"
+    },
+    "obs": {
+      "type": "richtext"
+    },
     "empresas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::empresa.empresa",
-      "mappedBy": "pessoa"
-=======
+      "mappedBy": "responsavel"
+    },
     "status": {
       "type": "boolean"
-    },
-    "empresa": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::empresa.empresa",
-      "inversedBy": "responsavels"
->>>>>>> Stashed changes
     }
   }
 }

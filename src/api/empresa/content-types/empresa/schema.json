@@ -4,7 +4,8 @@
   "info": {
     "singularName": "empresa",
     "pluralName": "empresas",
-    "displayName": "empresa"
+    "displayName": "empresa",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,35 +13,22 @@
   "pluginOptions": {},
   "attributes": {
     "nome": {
-      "type": "string",
-      "required": true
+      "type": "string"
     },
     "fantasia": {
       "type": "string"
     },
     "tipoPessoa": {
-      "type": "string",
-      "required": true
-    },
-    "contribuinte": {
-      "type": "integer",
-      "required": true
-    },
-    "cpf_cnpj": {
-      "type": "string",
-      "required": true
-    },
-    "ie_rg": {
       "type": "string"
     },
     "endereco": {
-      "type": "text"
+      "type": "string"
     },
     "numero": {
       "type": "string"
     },
     "complemento": {
-      "type": "text"
+      "type": "string"
     },
     "bairro": {
       "type": "string"
@@ -54,51 +42,119 @@
     "uf": {
       "type": "string"
     },
+    "site": {
+      "type": "string"
+    },
+    "pais": {
+      "type": "string"
+    },
+    "porte": {
+      "type": "string"
+    },
+    "simples": {
+      "type": "boolean"
+    },
+    "ieStatus": {
+      "type": "boolean"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "adFrailLat": {
+      "type": "boolean"
+    },
+    "adFrailCab": {
+      "type": "boolean"
+    },
+    "adEspecialLat": {
+      "type": "boolean"
+    },
+    "adEspecialCab": {
+      "type": "boolean"
+    },
+    "latFCab": {
+      "type": "boolean"
+    },
+    "cabChao": {
+      "type": "boolean"
+    },
+    "cabTop": {
+      "type": "boolean"
+    },
+    "cxEco": {
+      "type": "boolean"
+    },
+    "cxEst": {
+      "type": "boolean"
+    },
+    "cxLev": {
+      "type": "boolean"
+    },
+    "cxRef": {
+      "type": "boolean"
+    },
+    "cxSupRef": {
+      "type": "boolean"
+    },
+    "platSMed": {
+      "type": "boolean"
+    },
+    "cxResi": {
+      "type": "boolean"
+    },
+    "engEco": {
+      "type": "boolean"
+    },
+    "engLev": {
+      "type": "boolean"
+    },
+    "engRef": {
+      "type": "boolean"
+    },
+    "engResi": {
+      "type": "boolean"
+    },
+    "email": {
+      "type": "string"
+    },
+    "emailNfe": {
+      "type": "string"
+    },
+    "tablecalc": {
+      "type": "string"
+    },
+    "maxPg": {
+      "type": "string"
+    },
+    "forpg": {
+      "type": "string"
+    },
+    "frete": {
+      "type": "string"
+    },
+    "CNPJ": {
+      "type": "string"
+    },
+    "Ie": {
+      "type": "string"
+    },
     "fone": {
       "type": "string"
     },
     "celular": {
       "type": "string"
     },
-    "email": {
+    "CNAE": {
       "type": "string"
     },
-    "emailNfe": {
-      "type": "text"
-    },
-    "informacaoContato": {
-      "type": "text"
-    },
-    "limiteCredito": {
-      "type": "decimal"
-    },
-    "paisOrigem": {
-      "type": "text"
-    },
-    "codigo": {
+    "codpais": {
       "type": "string"
     },
-    "site": {
-      "type": "text"
-    },
-    "obs": {
-      "type": "richtext"
-    },
-    "modelos": {
+    "responsavel": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::modelo.modelo",
-      "mappedBy": "empresa"
-    },
-<<<<<<< Updated upstream
-    "pessoa": {
-=======
-    "responsavels": {
->>>>>>> Stashed changes
-      "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::pessoa.pessoa",
-      "mappedBy": "empresa"
+      "inversedBy": "empresas"
     }
   }
 }

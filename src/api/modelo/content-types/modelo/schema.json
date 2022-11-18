@@ -85,12 +85,6 @@
       "type": "boolean",
       "default": false
     },
-    "empresa": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::empresa.empresa",
-      "inversedBy": "modelos"
-    },
     "exp": {
       "type": "boolean",
       "default": false

@@ -1,0 +1,251 @@
+{
+  "key": "plugin_content_manager_configuration_components::cx-components.gradeado",
+  "value": {
+    "uid": "cx-components.gradeado",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "nome",
+      "defaultSortBy": "nome",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "nome": {
+        "edit": {
+          "label": "nome",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nome",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vaoMaximoEntrePes": {
+        "edit": {
+          "label": "vaoMaximoEntrePes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vaoMaximoEntrePes",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vaoMaximoEntreTabuas": {
+        "edit": {
+          "label": "vaoMaximoEntreTabuas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vaoMaximoEntreTabuas",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "alinhamento": {
+        "edit": {
+          "label": "alinhamento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "alinhamento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "longCinta": {
+        "edit": {
+          "label": "longCinta",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "longCinta",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "compCinta": {
+        "edit": {
+          "label": "compCinta",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "compCinta",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "longGrade": {
+        "edit": {
+          "label": "longGrade",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "longGrade",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "compGrade": {
+        "edit": {
+          "label": "compGrade",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "compGrade",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "estrutura": {
+        "edit": {
+          "label": "estrutura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "estrutura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fixadores": {
+        "edit": {
+          "label": "fixadores",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "fixadores",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "grade": {
+        "edit": {
+          "label": "grade",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "grade",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "nome",
+        "vaoMaximoEntrePes",
+        "vaoMaximoEntreTabuas"
+      ],
+      "edit": [
+        [
+          {
+            "name": "nome",
+            "size": 6
+          },
+          {
+            "name": "vaoMaximoEntrePes",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "vaoMaximoEntreTabuas",
+            "size": 4
+          },
+          {
+            "name": "alinhamento",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "longCinta",
+            "size": 4
+          },
+          {
+            "name": "compCinta",
+            "size": 4
+          },
+          {
+            "name": "longGrade",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "compGrade",
+            "size": 4
+          },
+          {
+            "name": "estrutura",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "fixadores",
+            "size": 6
+          },
+          {
+            "name": "grade",
+            "size": 6
+          }
+        ]
+      ],
+      "editRelations": []
+    },
+    "isComponent": true
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}
