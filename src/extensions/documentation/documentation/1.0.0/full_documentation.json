@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2022-11-23T19:20:10.392Z"
+    "x-generation-date": "2022-12-13T22:27:59.856Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -32709,7 +32709,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -32786,6 +32786,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/descontos"
@@ -33204,7 +33214,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -33281,6 +33291,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/empresas"
@@ -33699,7 +33719,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -33776,6 +33796,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/materia-primas"
@@ -34194,7 +34224,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -34271,6 +34301,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/modelos"
@@ -34689,7 +34729,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -34766,6 +34806,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/pessoas"
@@ -35184,7 +35234,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -35261,6 +35311,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/tipos-de-pes"
@@ -35679,7 +35739,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -35756,6 +35816,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/tipos-de-produtos"
@@ -36174,7 +36244,7 @@
           {
             "name": "pagination[withCount]",
             "in": "query",
-            "description": "Retun page/pageSize (default: true)",
+            "description": "Return page/pageSize (default: true)",
             "deprecated": false,
             "required": false,
             "schema": {
@@ -36251,6 +36321,16 @@
               "type": "object"
             },
             "style": "deepObject"
+          },
+          {
+            "name": "locale",
+            "in": "query",
+            "description": "Locale to apply",
+            "deprecated": false,
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "operationId": "get/upload/files"
