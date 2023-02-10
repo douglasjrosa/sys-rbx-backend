@@ -16,6 +16,8 @@
     "@strapi/plugin-i18n": "4.4.0",
     "@strapi/plugin-users-permissions": "4.3.9",
     "@strapi/strapi": "4.4.3",
+    "ejs": "^3.1.8",
+    "html-pdf": "^3.0.1",
     "mysql": "2.18.1",
     "strapi-plugin-config-sync": "^1.0.4"
   },
@@ -26,7 +28,7 @@
     "uuid": "f978a049-4f93-4851-9bc1-475e221ee250"
   },
   "engines": {
-    "node": ">=14.19.1 <=19.x.x",
+    "node": ">=14.19.1 <=16.x.x",
     "npm": ">=6.0.0"
   },
   "license": "MIT"

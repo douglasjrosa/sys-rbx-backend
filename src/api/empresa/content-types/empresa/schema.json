@@ -161,6 +161,15 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "empresas"
+    },
+    "negocios": {
+      "type": "json"
+    },
+    "SalesHistory": {
+      "type": "json"
+    },
+    "Client": {
+      "type": "string"
     }
   }
 }
