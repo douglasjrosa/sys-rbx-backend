@@ -1,6 +1,6 @@
 const ejs = require("ejs");
 const path = require("path");
-const fs = require("fs");
+const pdf = require("html-pdf");
 
 module.exports = {
   async index(ctx, next) {
@@ -130,7 +130,7 @@ module.exports = {
       const totoalGeral = inf.totoalGeral;
 
       const filePath = path.join(__dirname, "../", "lib", "pdf.ejs");
-      ejs.renderFile(
+      await ejs.renderFile(
         filePath,
         {
           nPedido,
@@ -144,14 +144,19 @@ module.exports = {
           venc,
           totoalGeral,
         },
-        (err, data) => {
+        async (err, html) => {
           if (err) {
             console.log(err);
             return "erro na leitura do arquivo";
           }
-          if (data) {
-            ctx.status = 200;
-            ctx.body = data;
+          if (html) {
+            pdf
+              .create(html, { format: "A4" })
+              .toFile("hello.pdf", function (err, res) {
+                if (err) return console.log(err);
+               return res
+              });
+            ctx.body = pdf;
           }
         }
       );
