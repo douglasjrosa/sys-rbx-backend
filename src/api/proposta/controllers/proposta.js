@@ -1,11 +1,28 @@
 const ejs = require("ejs");
 const path = require("path");
-const pdf = require("html-pdf");
+const puppeteer = require("puppeteer");
 
 module.exports = {
   async index(ctx, next) {
     // called by GET /hello
-    ctx.body = "Hello World!"; // we could also send a JSON
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+
+    await page.goto("http://localhost:1337/api/proposta", {
+      waitUntil: "networkidle0",
+    });
+    const pdf = await page.pdf({
+      printBackground: true,
+      format: "A4",
+      margin: "0",
+    });
+
+    await browser.close();
+
+    ctx.set("Content-Type", "application/pdf");
+    ctx.set("Content-disposition", `attachment;filename=docname.pdf`);
+    ctx.body = pdf;
+    // ctx.body = "Feito"; // we could also send a JSON
   },
   async create(ctx, next) {
     try {
@@ -150,13 +167,7 @@ module.exports = {
             return "erro na leitura do arquivo";
           }
           if (html) {
-            pdf
-              .create(html, { format: "A4" })
-              .toFile("hello.pdf", function (err, res) {
-                if (err) return console.log(err);
-               return res
-              });
-            ctx.body = pdf;
+            ctx.body = html;
           }
         }
       );

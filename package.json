@@ -19,6 +19,7 @@
     "ejs": "^3.1.8",
     "html-pdf": "^3.0.1",
     "mysql": "2.18.1",
+    "puppeteer": "^19.6.3",
     "strapi-plugin-config-sync": "^1.0.4"
   },
   "author": {
@@ -26,10 +27,6 @@
   },
   "strapi": {
     "uuid": "f978a049-4f93-4851-9bc1-475e221ee250"
-  },
-  "engines": {
-    "node": ">=14.19.1 <=16.x.x",
-    "npm": ">=6.0.0"
   },
   "license": "MIT"
 }

@@ -1,7 +1,7 @@
 module.exports = {
   routes: [
     {
-      method: 'POST',
+      method: 'GET',
       path: '/proposta/pdf',
       handler: 'proposta.index',
       config: {
@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       method: 'GET',
-      path: '/proposta/pdf',
+      path: '/proposta',
       handler: 'proposta.create',
       config: {
         auth: false,
