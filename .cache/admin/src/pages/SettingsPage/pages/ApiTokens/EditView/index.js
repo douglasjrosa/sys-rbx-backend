@@ -9,13 +9,14 @@ import {
   useTracking,
   useGuidedTour,
   useRBAC,
-  useFetchClient,
 } from '@strapi/helper-plugin';
 import { Main } from '@strapi/design-system/Main';
 import { Formik } from 'formik';
+import { get } from 'lodash';
 import { useRouteMatch, useHistory } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import { formatAPIErrors } from '../../../../../utils';
+import { axiosInstance } from '../../../../../core/utils';
 import { schema } from './utils';
 import LoadingView from './components/LoadingView';
 import FormHead from './components/FormHead';
@@ -50,7 +51,6 @@ const ApiTokenCreateView = () => {
   const {
     params: { id },
   } = useRouteMatch('/settings/api-tokens/:id');
-  const { get, post, put } = useFetchClient();
 
   const isCreating = id === 'create';
 
@@ -59,7 +59,7 @@ const ApiTokenCreateView = () => {
     async () => {
       const [permissions, routes] = await Promise.all(
         ['/admin/content-api/permissions', '/admin/content-api/routes'].map(async (url) => {
-          const { data } = await get(url);
+          const { data } = await axiosInstance.get(url);
 
           return data.data;
         })
@@ -113,7 +113,7 @@ const ApiTokenCreateView = () => {
     async () => {
       const {
         data: { data },
-      } = await get(`/admin/api-tokens/${id}`);
+      } = await axiosInstance.get(`/admin/api-tokens/${id}`);
 
       setApiToken({
         ...data,
@@ -152,21 +152,20 @@ const ApiTokenCreateView = () => {
   const handleSubmit = async (body, actions) => {
     trackUsageRef.current(isCreating ? 'willCreateToken' : 'willEditToken');
     lockApp();
-    const lifespanVal =
-      body.lifespan && parseInt(body.lifespan, 10) && body.lifespan !== '0'
-        ? parseInt(body.lifespan, 10)
-        : null;
 
     try {
       const {
         data: { data: response },
       } = isCreating
-        ? await post(`/admin/api-tokens`, {
+        ? await axiosInstance.post(`/admin/api-tokens`, {
             ...body,
-            lifespan: lifespanVal,
+            lifespan:
+              body.lifespan && parseInt(body.lifespan, 10)
+                ? parseInt(body.lifespan, 10)
+                : body.lifespan,
             permissions: body.type === 'custom' ? state.selectedActions : null,
           })
-        : await put(`/admin/api-tokens/${id}`, {
+        : await axiosInstance.put(`/admin/api-tokens/${id}`, {
             name: body.name,
             description: body.description,
             type: body.type,
@@ -205,12 +204,12 @@ const ApiTokenCreateView = () => {
       if (err?.response?.data?.error?.message === MSG_ERROR_NAME_TAKEN) {
         toggleNotification({
           type: 'warning',
-          message: err.response.data.message || 'notification.error.tokennamenotunique',
+          message: get(err, 'response.data.message', 'notification.error.tokennamenotunique'),
         });
       } else {
         toggleNotification({
           type: 'warning',
-          message: err?.response?.data?.message || 'notification.error',
+          message: get(err, 'response.data.message', 'notification.error'),
         });
       }
       unlockApp();

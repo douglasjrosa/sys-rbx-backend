@@ -1472,6 +1472,12 @@
           "inversedBy": "users",
           "configurable": false
         },
+        "empresas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::empresa.empresa",
+          "mappedBy": "user"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1513,6 +1519,7 @@
         }
       },
       "kind": "collectionType",
+      "__filename__": "schema.json",
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1576,6 +1583,12 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "empresas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::empresa.empresa",
+            "mappedBy": "user"
           }
         },
         "kind": "collectionType"
@@ -1916,11 +1929,6 @@
         "emailNfe": {
           "type": "string"
         },
-        "pessoa": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::pessoa.pessoa"
-        },
         "tablecalc": {
           "type": "string"
         },
@@ -1956,6 +1964,26 @@
           "relation": "manyToOne",
           "target": "api::pessoa.pessoa",
           "inversedBy": "empresas"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "empresas"
+        },
+        "negocios": {
+          "type": "json"
+        },
+        "SalesHistory": {
+          "type": "json"
+        },
+        "Client": {
+          "type": "string"
+        },
+        "propostas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::proposta.proposta"
         },
         "createdAt": {
           "type": "datetime"
@@ -2111,11 +2139,6 @@
           "emailNfe": {
             "type": "string"
           },
-          "pessoa": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::pessoa.pessoa"
-          },
           "tablecalc": {
             "type": "string"
           },
@@ -2151,6 +2174,26 @@
             "relation": "manyToOne",
             "target": "api::pessoa.pessoa",
             "inversedBy": "empresas"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "empresas"
+          },
+          "negocios": {
+            "type": "json"
+          },
+          "SalesHistory": {
+            "type": "json"
+          },
+          "Client": {
+            "type": "string"
+          },
+          "propostas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::proposta.proposta"
           }
         },
         "kind": "collectionType"
@@ -2164,13 +2207,156 @@
       "actions": {},
       "lifecycles": {}
     },
+    "api::fornecedor.fornecedor": {
+      "kind": "collectionType",
+      "collectionName": "fornecedores",
+      "info": {
+        "singularName": "fornecedor",
+        "pluralName": "fornecedores",
+        "displayName": "Fornecedor",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "razao": {
+          "type": "string"
+        },
+        "fantasia": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "cnpj": {
+          "type": "biginteger"
+        },
+        "cidade": {
+          "type": "string"
+        },
+        "uf": {
+          "type": "string"
+        },
+        "email": {
+          "type": "email"
+        },
+        "tel": {
+          "type": "biginteger"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "nome": {
+          "type": "uid",
+          "targetField": "titulo"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "fornecedores",
+        "info": {
+          "singularName": "fornecedor",
+          "pluralName": "fornecedores",
+          "displayName": "Fornecedor",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "razao": {
+            "type": "string"
+          },
+          "fantasia": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "cnpj": {
+            "type": "biginteger"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "uf": {
+            "type": "string"
+          },
+          "email": {
+            "type": "email"
+          },
+          "tel": {
+            "type": "biginteger"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "uid",
+            "targetField": "titulo"
+          },
+          "numero": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "fornecedor",
+      "connection": "default",
+      "uid": "api::fornecedor.fornecedor",
+      "apiName": "fornecedor",
+      "globalId": "Fornecedor",
+      "actions": {},
+      "lifecycles": {}
+    },
     "api::materia-prima.materia-prima": {
       "kind": "collectionType",
       "collectionName": "materia_primas",
       "info": {
         "singularName": "materia-prima",
         "pluralName": "materia-primas",
-        "displayName": "matéria-prima"
+        "displayName": "matéria-prima",
+        "order": [
+          "materia_prima_order"
+        ]
       },
       "options": {
         "draftAndPublish": true
@@ -2257,7 +2443,10 @@
         "info": {
           "singularName": "materia-prima",
           "pluralName": "materia-primas",
-          "displayName": "matéria-prima"
+          "displayName": "matéria-prima",
+          "order": [
+            "materia_prima_order"
+          ]
         },
         "options": {
           "draftAndPublish": true
@@ -2554,6 +2743,114 @@
       "actions": {},
       "lifecycles": {}
     },
+    "api::pedido.pedido": {
+      "kind": "collectionType",
+      "collectionName": "pedidos",
+      "info": {
+        "singularName": "pedido",
+        "pluralName": "pedidos",
+        "displayName": "pedido",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nPedido": {
+          "type": "string"
+        },
+        "cliente": {
+          "type": "json"
+        },
+        "itens": {
+          "type": "json"
+        },
+        "empresa": {
+          "type": "string"
+        },
+        "dataPedido": {
+          "type": "date"
+        },
+        "vencPedido": {
+          "type": "date"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "pedidos",
+        "info": {
+          "singularName": "pedido",
+          "pluralName": "pedidos",
+          "displayName": "pedido",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nPedido": {
+            "type": "string"
+          },
+          "cliente": {
+            "type": "json"
+          },
+          "itens": {
+            "type": "json"
+          },
+          "empresa": {
+            "type": "string"
+          },
+          "dataPedido": {
+            "type": "date"
+          },
+          "vencPedido": {
+            "type": "date"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "pedido",
+      "connection": "default",
+      "uid": "api::pedido.pedido",
+      "apiName": "pedido",
+      "globalId": "Pedido",
+      "actions": {},
+      "lifecycles": {}
+    },
     "api::pessoa.pessoa": {
       "kind": "collectionType",
       "collectionName": "pessoas",
@@ -2725,6 +3022,190 @@
       "uid": "api::pessoa.pessoa",
       "apiName": "pessoa",
       "globalId": "Pessoa",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::produto.produto": {
+      "kind": "collectionType",
+      "collectionName": "produtos",
+      "info": {
+        "singularName": "produto",
+        "pluralName": "produtos",
+        "displayName": "Produto"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nomeProd": {
+          "type": "string"
+        },
+        "modelo": {
+          "type": "string"
+        },
+        "altura": {
+          "type": "integer"
+        },
+        "comprimento": {
+          "type": "integer"
+        },
+        "vFinal": {
+          "type": "string"
+        },
+        "prodId": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "produtos",
+        "info": {
+          "singularName": "produto",
+          "pluralName": "produtos",
+          "displayName": "Produto"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nomeProd": {
+            "type": "string"
+          },
+          "modelo": {
+            "type": "string"
+          },
+          "altura": {
+            "type": "integer"
+          },
+          "comprimento": {
+            "type": "integer"
+          },
+          "vFinal": {
+            "type": "string"
+          },
+          "prodId": {
+            "type": "integer"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "produto",
+      "connection": "default",
+      "uid": "api::produto.produto",
+      "apiName": "produto",
+      "globalId": "Produto",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::proposta.proposta": {
+      "kind": "collectionType",
+      "collectionName": "propostas",
+      "info": {
+        "singularName": "proposta",
+        "pluralName": "propostas",
+        "displayName": "proposta",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nPedido": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "propostas",
+        "info": {
+          "singularName": "proposta",
+          "pluralName": "propostas",
+          "displayName": "proposta",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nPedido": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "proposta",
+      "connection": "default",
+      "uid": "api::proposta.proposta",
+      "apiName": "proposta",
+      "globalId": "Proposta",
       "actions": {},
       "lifecycles": {}
     },

@@ -524,21 +524,6 @@
           "sortable": true
         }
       },
-      "pessoa": {
-        "edit": {
-          "label": "pessoa",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "pessoa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "tablecalc": {
         "edit": {
           "label": "tablecalc",
@@ -694,6 +679,78 @@
           "sortable": true
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "negocios": {
+        "edit": {
+          "label": "negocios",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "negocios",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "SalesHistory": {
+        "edit": {
+          "label": "SalesHistory",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "SalesHistory",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "Client": {
+        "edit": {
+          "label": "Client",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Client",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "propostas": {
+        "edit": {
+          "label": "propostas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "propostas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -729,10 +786,6 @@
         "nome",
         "fantasia",
         "tipoPessoa"
-      ],
-      "editRelations": [
-        "pessoa",
-        "responsavel"
       ],
       "edit": [
         [
@@ -958,7 +1011,30 @@
             "name": "codpais",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "negocios",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "SalesHistory",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "Client",
+            "size": 6
+          }
         ]
+      ],
+      "editRelations": [
+        "responsavel",
+        "user",
+        "propostas"
       ]
     }
   },

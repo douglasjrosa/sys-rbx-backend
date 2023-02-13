@@ -5,16 +5,24 @@ const puppeteer = require("puppeteer");
 module.exports = {
   async index(ctx, next) {
     // called by GET /hello
-    const browser = await puppeteer.launch();
-    const page = await browser.newPage();
+    const pedido = ctx.params.pedido;
+    const consulti = await fetch('http://localhost:1337/api/')
+    const browser = await puppeteer.launch({ headless: false });
+    const pages = [];
 
-    await page.goto("http://localhost:1337/api/proposta", {
-      waitUntil: "networkidle0",
-    });
-    const pdf = await page.pdf({
-      printBackground: true,
+    for (let i = 1; i <= 7; i++) {
+      const page = await browser.newPage();
+      await page.goto(`http://localhost:1337/api/proposta/${i}`, {
+        waitUntil: "networkidle0",
+      });
+      pages.push(page);
+    }
+
+    const pdf = await browser.pdf({
+      path: "document.pdf",
       format: "A4",
-      margin: "0",
+      displayHeaderFooter: false,
+      pages: pages.map((page) => page.pdf()),
     });
 
     await browser.close();
@@ -22,10 +30,13 @@ module.exports = {
     ctx.set("Content-Type", "application/pdf");
     ctx.set("Content-disposition", `attachment;filename=docname.pdf`);
     ctx.body = pdf;
-    // ctx.body = "Feito"; // we could also send a JSON
   },
   async create(ctx, next) {
     try {
+      const page = ctx.params.page;
+      const limit = 5;
+      const offset = (page - 1) * limit;
+
       const inf = {
         empresa: "01812637000145",
         periodo: "2023-02-07",
@@ -128,6 +139,74 @@ module.exports = {
             codg: "7858",
             unid: "10",
           },
+          {
+            prodId: "7856",
+            preco: "7.491,00",
+            vFinal: "4.290,00",
+            ativo: "1",
+            empresa: "2383",
+            modelo: "caixa_reforcada",
+            tabela: "0.20",
+            nomeProd: "Caixa de madeira - 450 x 230 x 240",
+            comprimento: "450",
+            largura: "230",
+            altura: "240",
+            codigo: "",
+            pesoProd: "",
+            codg: "7856",
+            unid: "20",
+          },
+          {
+            prodId: "7856",
+            preco: "7.491,00",
+            vFinal: "4.290,00",
+            ativo: "1",
+            empresa: "2383",
+            modelo: "caixa_reforcada",
+            tabela: "0.20",
+            nomeProd: "Caixa de madeira - 450 x 230 x 240",
+            comprimento: "450",
+            largura: "230",
+            altura: "240",
+            codigo: "",
+            pesoProd: "",
+            codg: "7856",
+            unid: "20",
+          },
+          {
+            prodId: "7856",
+            preco: "7.491,00",
+            vFinal: "4.290,00",
+            ativo: "1",
+            empresa: "2383",
+            modelo: "caixa_reforcada",
+            tabela: "0.20",
+            nomeProd: "Caixa de madeira - 450 x 230 x 240",
+            comprimento: "450",
+            largura: "230",
+            altura: "240",
+            codigo: "",
+            pesoProd: "",
+            codg: "7856",
+            unid: "20",
+          },
+          {
+            prodId: "7856",
+            preco: "7.491,00",
+            vFinal: "4.290,00",
+            ativo: "1",
+            empresa: "2383",
+            modelo: "caixa_reforcada",
+            tabela: "0.20",
+            nomeProd: "Caixa de madeira - 450 x 230 x 240",
+            comprimento: "450",
+            largura: "230",
+            altura: "240",
+            codigo: "",
+            pesoProd: "",
+            codg: "7856",
+            unid: "20",
+          },
         ],
         condi: "a vista",
         prazo: "",
@@ -146,6 +225,8 @@ module.exports = {
       const venc = inf.venc;
       const totoalGeral = inf.totoalGeral;
 
+      const chunk = itens.slice(offset, offset + limit);
+
       const filePath = path.join(__dirname, "../", "lib", "pdf.ejs");
       await ejs.renderFile(
         filePath,
@@ -155,7 +236,7 @@ module.exports = {
           datePop,
           fornecedor,
           cliente,
-          itens,
+          itens: chunk,
           condi,
           prazo,
           venc,

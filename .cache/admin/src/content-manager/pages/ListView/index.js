@@ -14,7 +14,6 @@ import {
   NoPermissions,
   CheckPermissions,
   SearchURLQuery,
-  useFetchClient,
   useFocusWhenNavigate,
   useQueryParams,
   useNotification,
@@ -33,6 +32,8 @@ import { Button } from '@strapi/design-system/Button';
 import ArrowLeft from '@strapi/icons/ArrowLeft';
 import Plus from '@strapi/icons/Plus';
 import Cog from '@strapi/icons/Cog';
+
+import { axiosInstance } from '../../../core/utils';
 
 import DynamicTable from '../../components/DynamicTable';
 import AttributeFilter from '../../components/AttributeFilter';
@@ -96,8 +97,6 @@ function ListView({
   const { formatMessage } = useIntl();
   const contentType = layout.contentType;
   const hasDraftAndPublish = get(contentType, 'options.draftAndPublish', false);
-  const fetchClient = useFetchClient();
-  const { post, del } = fetchClient;
 
   // FIXME
   // Using a ref to avoid requests being fired multiple times on slug on change
@@ -113,7 +112,7 @@ function ListView({
 
         const {
           data: { results, pagination: paginationResult },
-        } = await fetchClient.get(endPoint, opts);
+        } = await axiosInstance.get(endPoint, opts);
 
         notifyStatus(
           formatMessage(
@@ -155,13 +154,13 @@ function ListView({
         });
       }
     },
-    [formatMessage, getData, getDataSucceeded, notifyStatus, push, toggleNotification, fetchClient]
+    [formatMessage, getData, getDataSucceeded, notifyStatus, push, toggleNotification]
   );
 
   const handleConfirmDeleteAllData = useCallback(
     async (ids) => {
       try {
-        await post(getRequestUrl(`collection-types/${slug}/actions/bulkDelete`), {
+        await axiosInstance.post(getRequestUrl(`collection-types/${slug}/actions/bulkDelete`), {
           ids,
         });
 
@@ -175,13 +174,13 @@ function ListView({
         });
       }
     },
-    [fetchData, params, slug, toggleNotification, post]
+    [fetchData, params, slug, toggleNotification]
   );
 
   const handleConfirmDeleteData = useCallback(
     async (idToDelete) => {
       try {
-        await del(getRequestUrl(`collection-types/${slug}/${idToDelete}`));
+        await axiosInstance.delete(getRequestUrl(`collection-types/${slug}/${idToDelete}`));
 
         const requestUrl = getRequestUrl(`collection-types/${slug}${params}`);
         fetchData(requestUrl);
@@ -203,7 +202,7 @@ function ListView({
         });
       }
     },
-    [slug, params, fetchData, toggleNotification, formatMessage, del]
+    [slug, params, fetchData, toggleNotification, formatMessage]
   );
 
   useEffect(() => {
@@ -222,6 +221,7 @@ function ListView({
 
       source.cancel('Operation canceled by the user.');
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [canRead, getData, slug, params, getDataSucceeded, fetchData]);
 
   const defaultHeaderLayoutTitle = formatMessage({
@@ -370,6 +370,7 @@ ListView.propTypes = {
       info: PropTypes.shape({ displayName: PropTypes.string.isRequired }).isRequired,
       layouts: PropTypes.shape({
         list: PropTypes.array.isRequired,
+        editRelations: PropTypes.array,
       }).isRequired,
       options: PropTypes.object.isRequired,
       settings: PropTypes.object.isRequired,

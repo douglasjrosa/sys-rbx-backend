@@ -14,7 +14,6 @@ import {
   DynamicTable,
   useTracking,
   useGuidedTour,
-  useFetchClient,
   LinkButton,
 } from '@strapi/helper-plugin';
 import { HeaderLayout, ContentLayout } from '@strapi/design-system/Layout';
@@ -22,6 +21,7 @@ import { Main } from '@strapi/design-system/Main';
 import { Button } from '@strapi/design-system/Button';
 import Plus from '@strapi/icons/Plus';
 
+import { axiosInstance } from '../../../../../core/utils';
 import adminPermissions from '../../../../../permissions';
 import tableHeaders from './utils/tableHeaders';
 import TableRows from './DynamicTable';
@@ -38,7 +38,6 @@ const ApiTokenListView = () => {
   const { trackUsage } = useTracking();
   const { startSection } = useGuidedTour();
   const startSectionRef = useRef(startSection);
-  const { get, del } = useFetchClient();
 
   useEffect(() => {
     if (startSectionRef.current) {
@@ -68,7 +67,7 @@ const ApiTokenListView = () => {
       trackUsage('willAccessTokenList');
       const {
         data: { data },
-      } = await get(`/admin/api-tokens`);
+      } = await axiosInstance.get(`/admin/api-tokens`);
 
       trackUsage('didAccessTokenList', { number: data.length });
 
@@ -91,7 +90,7 @@ const ApiTokenListView = () => {
 
   const deleteMutation = useMutation(
     async (id) => {
-      await del(`/admin/api-tokens/${id}`);
+      await axiosInstance.delete(`/admin/api-tokens/${id}`);
     },
     {
       async onSuccess() {

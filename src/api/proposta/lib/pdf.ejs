@@ -57,9 +57,9 @@
           </div>
           <div class="col align-self-center p-3 me-3">
             <img
-              class="float-end"
-              style="width: 8rem"
-              src="https://ribermax.com.br/images/logomarca-h.webp"
+              src="https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75"
+              alt="Ribermax"
+              width="128"
             />
           </div>
         </div>
@@ -183,23 +183,21 @@
             <th style="width: 240px">Valor Total</th>
           </thead>
           <tbody>
-            <% if (itens.length >0) {%>
-              <% itens.forEach((i, x) => {%>
-                <tr key="<%=x%>">
-                  <td><%=x + 1%></td>
-                  <td><%=i.modelo%></td>
-                  <td><%=i.nomeProd%></td>
-                  <td><%=i.comprimento%></td>
-                  <td><%=i.largura%></td>
-                  <td><%=i.altura%></td>
-                  <td><%=i.unid%></td>
-                  <td><%=i.vFinal%></td>
-                  <td><%=i.expo%></td>
-                  <td><%=i.mont%></td>
-                  <td><%=i.total%></td>
-                </tr>
-             <% });%>
-           <% } %>
+            <% if (itens.length >0) {%> <% itens.forEach((i, x) => {%>
+            <tr key="<%=x%>">
+              <td><%=x + 1%></td>
+              <td><%=i.modelo%></td>
+              <td><%=i.nomeProd%></td>
+              <td><%=i.comprimento%></td>
+              <td><%=i.largura%></td>
+              <td><%=i.altura%></td>
+              <td><%=i.unid%></td>
+              <td><%=i.vFinal%></td>
+              <td><%=i.expo%></td>
+              <td><%=i.mont%></td>
+              <td><%=i.total%></td>
+            </tr>
+            <% });%> <% } %>
           </tbody>
         </table>
       </section>
@@ -218,7 +216,10 @@
               <p class="textDesc me-1" style="font-size: 1rem">
                 Condições de Pagamento:
               </p>
-              <div class="row justify-content-between" style="font-size: 0.9rem;">
+              <div
+                class="row justify-content-between"
+                style="font-size: 0.9rem"
+              >
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Tipo:</p>
@@ -317,6 +318,5 @@
         </div>
       </div>
     </footer>
-
   </body>
 </html>

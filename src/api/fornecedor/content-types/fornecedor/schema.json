@@ -1,0 +1,50 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fornecedores",
+  "info": {
+    "singularName": "fornecedor",
+    "pluralName": "fornecedores",
+    "displayName": "Fornecedor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "razao": {
+      "type": "string"
+    },
+    "fantasia": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    },
+    "cnpj": {
+      "type": "biginteger"
+    },
+    "cidade": {
+      "type": "string"
+    },
+    "uf": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "tel": {
+      "type": "biginteger"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "uid",
+      "targetField": "titulo"
+    },
+    "numero": {
+      "type": "string"
+    }
+  }
+}

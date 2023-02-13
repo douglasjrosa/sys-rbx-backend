@@ -98,7 +98,6 @@
           "engResi",
           "email",
           "emailNfe",
-          "pessoa",
           "tablecalc",
           "maxPg",
           "forpg",
@@ -109,7 +108,12 @@
           "celular",
           "CNAE",
           "codpais",
-          "responsavel"
+          "responsavel",
+          "user",
+          "negocios",
+          "SalesHistory",
+          "Client",
+          "propostas"
         ]
       },
       "conditions": []
@@ -167,7 +171,6 @@
           "engResi",
           "email",
           "emailNfe",
-          "pessoa",
           "tablecalc",
           "maxPg",
           "forpg",
@@ -178,7 +181,12 @@
           "celular",
           "CNAE",
           "codpais",
-          "responsavel"
+          "responsavel",
+          "user",
+          "negocios",
+          "SalesHistory",
+          "Client",
+          "propostas"
         ]
       },
       "conditions": []
@@ -224,7 +232,6 @@
           "engResi",
           "email",
           "emailNfe",
-          "pessoa",
           "tablecalc",
           "maxPg",
           "forpg",
@@ -235,7 +242,84 @@
           "celular",
           "CNAE",
           "codpais",
-          "responsavel"
+          "responsavel",
+          "user",
+          "negocios",
+          "SalesHistory",
+          "Client",
+          "propostas"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
         ]
       },
       "conditions": []
@@ -428,6 +512,63 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "nPedido",
+          "cliente",
+          "itens",
+          "empresa",
+          "dataPedido",
+          "vencPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pedido.pedido",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::pedido.pedido",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "nPedido",
+          "cliente",
+          "itens",
+          "empresa",
+          "dataPedido",
+          "vencPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "nPedido",
+          "cliente",
+          "itens",
+          "empresa",
+          "dataPedido",
+          "vencPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
       "subject": "api::pessoa.pessoa",
       "properties": {
         "fields": [
@@ -509,6 +650,105 @@
           "obs",
           "empresas",
           "status"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::produto.produto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::produto.produto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::proposta.proposta",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::proposta.proposta",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
         ]
       },
       "conditions": []
@@ -802,7 +1042,8 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "empresas"
         ]
       },
       "conditions": []
@@ -826,7 +1067,8 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "empresas"
         ]
       },
       "conditions": []
@@ -844,7 +1086,8 @@
           "confirmationToken",
           "confirmed",
           "blocked",
-          "role"
+          "role",
+          "empresas"
         ]
       },
       "conditions": []

@@ -10,7 +10,7 @@ module.exports = {
     },
     {
       method: 'GET',
-      path: '/proposta',
+      path: '/proposta/:page',
       handler: 'proposta.create',
       config: {
         auth: false,
