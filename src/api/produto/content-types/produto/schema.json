@@ -4,7 +4,8 @@
   "info": {
     "singularName": "produto",
     "pluralName": "produtos",
-    "displayName": "Produto"
+    "displayName": "Produto",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,9 @@
     },
     "prodId": {
       "type": "integer"
+    },
+    "peso": {
+      "type": "string"
     }
   }
 }

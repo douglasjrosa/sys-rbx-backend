@@ -104,6 +104,20 @@
           "sortable": true
         }
       },
+      "peso": {
+        "edit": {
+          "label": "peso",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "peso",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -140,7 +154,6 @@
         "modelo",
         "altura"
       ],
-      "editRelations": [],
       "edit": [
         [
           {
@@ -171,8 +184,15 @@
             "name": "prodId",
             "size": 4
           }
+        ],
+        [
+          {
+            "name": "peso",
+            "size": 6
+          }
         ]
-      ]
+      ],
+      "editRelations": []
     }
   },
   "type": "object",

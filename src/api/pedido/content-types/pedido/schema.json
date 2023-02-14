@@ -29,6 +29,28 @@
     },
     "vencPedido": {
       "type": "date"
+    },
+    "condi": {
+      "type": "string",
+      "default": "null"
+    },
+    "prazo": {
+      "type": "string",
+      "default": "null"
+    },
+    "totalGeral": {
+      "type": "string",
+      "default": "null"
+    },
+    "fornecedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fornecedor.fornecedor",
+      "inversedBy": "pedidos"
+    },
+    "codigo": {
+      "type": "uid",
+      "targetField": "nPedido"
     }
   }
 }

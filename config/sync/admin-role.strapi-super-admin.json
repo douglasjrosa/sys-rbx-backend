@@ -267,7 +267,8 @@
           "tel",
           "titulo",
           "nome",
-          "numero"
+          "numero",
+          "pedidos"
         ]
       },
       "conditions": []
@@ -299,7 +300,8 @@
           "tel",
           "titulo",
           "nome",
-          "numero"
+          "numero",
+          "pedidos"
         ]
       },
       "conditions": []
@@ -319,7 +321,8 @@
           "tel",
           "titulo",
           "nome",
-          "numero"
+          "numero",
+          "pedidos"
         ]
       },
       "conditions": []
@@ -520,7 +523,11 @@
           "itens",
           "empresa",
           "dataPedido",
-          "vencPedido"
+          "vencPedido",
+          "condi",
+          "prazo",
+          "totalGeral",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -547,7 +554,11 @@
           "itens",
           "empresa",
           "dataPedido",
-          "vencPedido"
+          "vencPedido",
+          "condi",
+          "prazo",
+          "totalGeral",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -562,7 +573,11 @@
           "itens",
           "empresa",
           "dataPedido",
-          "vencPedido"
+          "vencPedido",
+          "condi",
+          "prazo",
+          "totalGeral",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -664,7 +679,8 @@
           "altura",
           "comprimento",
           "vFinal",
-          "prodId"
+          "prodId",
+          "peso"
         ]
       },
       "conditions": []
@@ -691,7 +707,8 @@
           "altura",
           "comprimento",
           "vFinal",
-          "prodId"
+          "prodId",
+          "peso"
         ]
       },
       "conditions": []
@@ -706,7 +723,8 @@
           "altura",
           "comprimento",
           "vFinal",
-          "prodId"
+          "prodId",
+          "peso"
         ]
       },
       "conditions": []

@@ -104,6 +104,63 @@
           "sortable": true
         }
       },
+      "condi": {
+        "edit": {
+          "label": "condi",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "condi",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "prazo": {
+        "edit": {
+          "label": "prazo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "prazo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "totalGeral": {
+        "edit": {
+          "label": "totalGeral",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "totalGeral",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedor": {
+        "edit": {
+          "label": "fornecedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "razao"
+        },
+        "list": {
+          "label": "fornecedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -173,10 +230,26 @@
           {
             "name": "vencPedido",
             "size": 4
+          },
+          {
+            "name": "condi",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "prazo",
+            "size": 6
+          },
+          {
+            "name": "totalGeral",
+            "size": 6
           }
         ]
       ],
-      "editRelations": []
+      "editRelations": [
+        "fornecedor"
+      ]
     }
   },
   "type": "object",

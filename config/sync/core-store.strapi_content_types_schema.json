@@ -2255,6 +2255,12 @@
         "numero": {
           "type": "string"
         },
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "fornecedor"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2334,6 +2340,12 @@
           },
           "numero": {
             "type": "string"
+          },
+          "pedidos": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pedido.pedido",
+            "mappedBy": "fornecedor"
           }
         },
         "kind": "collectionType"
@@ -2775,6 +2787,24 @@
         "vencPedido": {
           "type": "date"
         },
+        "condi": {
+          "type": "string",
+          "default": "null"
+        },
+        "prazo": {
+          "type": "string",
+          "default": "null"
+        },
+        "totalGeral": {
+          "type": "string",
+          "default": "null"
+        },
+        "fornecedor": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::fornecedor.fornecedor",
+          "inversedBy": "pedidos"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2838,6 +2868,24 @@
           },
           "vencPedido": {
             "type": "date"
+          },
+          "condi": {
+            "type": "string",
+            "default": "null"
+          },
+          "prazo": {
+            "type": "string",
+            "default": "null"
+          },
+          "totalGeral": {
+            "type": "string",
+            "default": "null"
+          },
+          "fornecedor": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::fornecedor.fornecedor",
+            "inversedBy": "pedidos"
           }
         },
         "kind": "collectionType"
@@ -3031,7 +3079,8 @@
       "info": {
         "singularName": "produto",
         "pluralName": "produtos",
-        "displayName": "Produto"
+        "displayName": "Produto",
+        "description": ""
       },
       "options": {
         "draftAndPublish": true
@@ -3055,6 +3104,9 @@
         },
         "prodId": {
           "type": "integer"
+        },
+        "peso": {
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -3094,7 +3146,8 @@
         "info": {
           "singularName": "produto",
           "pluralName": "produtos",
-          "displayName": "Produto"
+          "displayName": "Produto",
+          "description": ""
         },
         "options": {
           "draftAndPublish": true
@@ -3118,6 +3171,9 @@
           },
           "prodId": {
             "type": "integer"
+          },
+          "peso": {
+            "type": "string"
           }
         },
         "kind": "collectionType"

@@ -2,7 +2,7 @@ module.exports = {
   routes: [
     {
       method: 'GET',
-      path: '/proposta/pdf',
+      path: '/pdf/:pedido',
       handler: 'proposta.index',
       config: {
         auth: false,

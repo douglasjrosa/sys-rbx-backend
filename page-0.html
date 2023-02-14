@@ -26,7 +26,7 @@
       border-top: 3rem solid #1a562e;
       border-bottom: 2px solid #1a562e;
       margin-bottom: 1rem;
-      margin-top: 2.5rem;
+      margin-top: 1.7rem;
     }
     label {
       font-weight: bold;
@@ -59,7 +59,7 @@
             <img
               src="https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75"
               alt="Ribermax"
-              width="132"
+              width="128"
             />
           </div>
         </div>
@@ -69,11 +69,11 @@
           <div class="row">
             <div class="col">
               <label>Data da proposta</label>
-              <p><%=datePop%></p>
+              <p></p>
             </div>
             <div class="col">
               <label>N° proposta</label>
-              <p><%=nPedido%></p>
+              <p>2643</p>
             </div>
             <div class="col-5">
               <label>Data da coleta</label>
@@ -81,7 +81,7 @@
             </div>
             <div class="col">
               <label>Frete</label>
-              <p><%=frete%></p>
+              <p></p>
             </div>
           </div>
         </div>
@@ -91,35 +91,35 @@
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Razão:</p>
-                <p><%=fornecedor.razao%></p>
+                <p>RENATO HUGO ROSA</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Fantasia:</p>
-                <p><%=fornecedor.fantasia%></p>
+                <p>RENATO HUGO</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">CNPJ:</p>
-                <p><%=fornecedor.cnpj%></p>
+                <p>30668678000108</p>
               </div>
             </div>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">End:</p>
-                <p><%=fornecedor.end%></p>
+                <p>Rua Áustria</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Cidade/Uf:</p>
-                <p><%=fornecedor.city%></p>
+                <p></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Tel:</p>
-                <p><%=fornecedor.tel%></p>
+                <p>16997655543</p>
               </div>
             </div>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Email:</p>
-                <p><%=fornecedor.email%></p>
+                <p>contato@ribermax.com.br</p>
               </div>
             </div>
           </div>
@@ -128,35 +128,35 @@
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Razão:</p>
-                <p><%=cliente.razao%></p>
+                <p>Renato Hugo Rosa LTDA cliente</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Fantasia:</p>
-                <p><%=cliente.fantasia%></p>
+                <p>Renato Hugo Rosa cliente</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">CNPJ:</p>
-                <p><%=cliente.cnpj%></p>
+                <p>30.668.678/0001-08 cleinete</p>
               </div>
             </div>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">End:</p>
-                <p><%=cliente.end%></p>
+                <p>R. Australia, 585 cleinete</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Cidade/Uf:</p>
-                <p><%=cliente.city%></p>
+                <p>Ribeirão Preto-SP cleinete</p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Tel:</p>
-                <p><%=cliente.tel%></p>
+                <p>(16) 99765-5543 cleinete</p>
               </div>
             </div>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Email:</p>
-                <p><%=cliente.email%></p>
+                <p>contato@ribermax.com.br cleinete</p>
               </div>
             </div>
           </div>
@@ -183,21 +183,77 @@
             <th style="width: 240px">Valor Total</th>
           </thead>
           <tbody>
-            <% if (itens.length >0) {%> <% itens.forEach((i, x) => {%>
-            <tr key="<%=x%>">
-              <td><%=x + 1%></td>
-              <td><%=i.modelo%></td>
-              <td><%=i.nomeProd%></td>
-              <td><%=i.comprimento%></td>
-              <td><%=i.largura%></td>
-              <td><%=i.altura%></td>
-              <td><%=i.unid%></td>
-              <td><%=i.vFinal%></td>
-              <td><%=i.expo%></td>
-              <td><%=i.mont%></td>
-              <td><%=i.total%></td>
+             
+            <tr key="0">
+              <td>1</td>
+              <td>caixa_reforcada</td>
+              <td>Caixa EXP. Argentina</td>
+              <td>120</td>
+              <td>120</td>
+              <td>120</td>
+              <td>20</td>
+              <td>673,20</td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            <% });%> <% } %>
+            
+            <tr key="1">
+              <td>2</td>
+              <td>caixa_reforcada</td>
+              <td>Caixa de madeira - 400 x 230 x 200</td>
+              <td>400</td>
+              <td>230</td>
+              <td>200</td>
+              <td>54</td>
+              <td>4.101,00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            
+            <tr key="2">
+              <td>3</td>
+              <td>palete_sob_medida</td>
+              <td>Palete de madeira 90 x 90</td>
+              <td>90</td>
+              <td>90</td>
+              <td></td>
+              <td>31</td>
+              <td>70,40</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            
+            <tr key="3">
+              <td>4</td>
+              <td>caixa_reforcada</td>
+              <td>Caixa de madeira - 450 x 230 x 240</td>
+              <td>450</td>
+              <td>230</td>
+              <td>240</td>
+              <td>20</td>
+              <td>4.290,00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            
+            <tr key="4">
+              <td>5</td>
+              <td>caixa_reforcada</td>
+              <td>Caixa de madeira - 500 x 230 x 200</td>
+              <td>500</td>
+              <td>230</td>
+              <td>200</td>
+              <td>10</td>
+              <td>4.349,00</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+             
           </tbody>
         </table>
       </section>
@@ -223,19 +279,19 @@
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Tipo:</p>
-                    <p><%=condi%></p>
+                    <p>a vista</p>
                   </div>
                 </div>
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Prazo:</p>
-                    <p><%=prazo%></p>
+                    <p>null</p>
                   </div>
                 </div>
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Vencimento</p>
-                    <p><%=venc%></p>
+                    <p></p>
                   </div>
                 </div>
               </div>
@@ -270,7 +326,7 @@
               Total
             </h2>
             <p style="font-size: 1.2rem; text-align: end; font-weight: 500">
-              <%=totoalGeral%>
+              
             </p>
           </div>
         </div>

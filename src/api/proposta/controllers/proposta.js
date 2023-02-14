@@ -1,227 +1,113 @@
 const ejs = require("ejs");
 const path = require("path");
 const puppeteer = require("puppeteer");
+const axios = require("axios");
+const pdfMerge = require("pdf-merge");
+const fs = require("fs");
 
 module.exports = {
   async index(ctx, next) {
     // called by GET /hello
     const pedido = ctx.params.pedido;
-    const consulti = await fetch('http://localhost:1337/api/')
-    const browser = await puppeteer.launch({ headless: false });
-    const pages = [];
+    const config = {
+      method: "get",
+      maxBodyLength: Infinity,
+      url:
+        "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
+        pedido,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+      },
+    };
 
-    for (let i = 1; i <= 7; i++) {
-      const page = await browser.newPage();
-      await page.goto(`http://localhost:1337/api/proposta/${i}`, {
-        waitUntil: "networkidle0",
-      });
-      pages.push(page);
+    const response = await axios(config);
+    const [result] = response.data.data;
+    const itenResponse = result.attributes.itens;
+    const quanti = itenResponse.length;
+    const Qtpages = Math.ceil(quanti / 5);
+
+    const linkis = [];
+
+    for (let i = 1; i <= Qtpages; i++) {
+      const link = `http://localhost:1337/api/proposta/${i}?pedido=${pedido}`;
+      linkis.push(link);
     }
-
-    const pdf = await browser.pdf({
-      path: "document.pdf",
-      format: "A4",
-      displayHeaderFooter: false,
-      pages: pages.map((page) => page.pdf()),
+    let htmls = "";
+    const resphtml = linkis.map(async (l) => {
+      const html = await axios(l, {
+        headers: {
+          Authorization:
+            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+        },
+      });
+      htmls += html.data;
     });
 
-    await browser.close();
+    await Promise.all(resphtml);
 
+    const browser = await puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+
+    await page.setContent(htmls);
+
+    // Gera o PDF
+    const pdf = await page.pdf({
+      format: "A4",
+      printBackground: true,
+      margin: "0",
+    });
+
+    // await browser.close();
+
+    const today = new Date();
+    const formattedDate =
+      today.getDate() +
+      "_" +
+      (today.getMonth() + 1) +
+      "_" +
+      today.getFullYear();
+    const docname = pedido + "-" + formattedDate + ".pdf";
+    // await pdfMerge(html, docname);
+    // const pdf = fs.createReadStream(mergedPdfPath);
     ctx.set("Content-Type", "application/pdf");
-    ctx.set("Content-disposition", `attachment;filename=docname.pdf`);
+    ctx.set("Content-disposition", `attachment;filename=${docname}`);
     ctx.body = pdf;
   },
   async create(ctx, next) {
     try {
       const page = ctx.params.page;
+      const pedido = ctx.query.pedido;
+      console.log(pedido);
       const limit = 5;
       const offset = (page - 1) * limit;
 
-      const inf = {
-        empresa: "01812637000145",
-        periodo: "2023-02-07",
-        vendedor: "alexandre vendedor",
-        nPedido: "2642",
-        frete: "CIP",
-        datePop: "10/02/2023",
-        fornecedor: {
-          razao: "Renato Hugo Rosa LTDA",
-          fantasia: "Renato Hugo Rosa",
-          cnpj: "30.668.678/0001-08",
-          end: "R. Australia, 585",
-          city: "Ribeirão Preto-SP",
-          tel: "(16) 99765-5543",
-          email: "contato@ribermax.com.br",
+      const config = {
+        method: "get",
+        maxBodyLength: Infinity,
+        url:
+          "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
+          pedido,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization:
+            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
         },
-        cliente: {
-          razao: "Renato Hugo Rosa LTDA cliente",
-          fantasia: "Renato Hugo Rosa cliente",
-          cnpj: "30.668.678/0001-08 cleinete",
-          end: "R. Australia, 585 cleinete",
-          city: "Ribeirão Preto-SP cleinete",
-          tel: "(16) 99765-5543 cleinete",
-          email: "contato@ribermax.com.br cleinete",
-        },
-        itens: [
-          {
-            prodId: "2923",
-            modelo: "caixa_reforcada",
-            nomeProd: "Caixa EXP. Argentina",
-            pesoProd: "1000",
-            comprimento: "120",
-            largura: "120",
-            altura: "120",
-            ativo: "1",
-            vFinal: "673,20",
-            codg: "2923",
-            unid: "20",
-          },
-          {
-            prodId: "7861",
-            preco: "6.244,00",
-            vFinal: "4.101,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.23",
-            nomeProd: "Caixa de madeira - 400 x 230 x 200",
-            comprimento: "400",
-            largura: "230",
-            altura: "200",
-            codigo: "",
-            pesoProd: "",
-            codg: "7861",
-            unid: "54",
-          },
-          {
-            prodId: "1249",
-            modelo: "palete_sob_medida",
-            nomeProd: "Palete de madeira 90 x 90",
-            pesoProd: "100",
-            comprimento: "90",
-            largura: "90",
-            ativo: "1",
-            vFinal: "70,40",
-            codg: "1249",
-            unid: "31",
-          },
-          {
-            prodId: "7856",
-            preco: "7.491,00",
-            vFinal: "4.290,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 450 x 230 x 240",
-            comprimento: "450",
-            largura: "230",
-            altura: "240",
-            codigo: "",
-            pesoProd: "",
-            codg: "7856",
-            unid: "20",
-          },
-          {
-            prodId: "7858",
-            preco: "7.594,00",
-            vFinal: "4.349,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 500 x 230 x 200",
-            comprimento: "500",
-            largura: "230",
-            altura: "200",
-            codigo: "",
-            pesoProd: "",
-            codg: "7858",
-            unid: "10",
-          },
-          {
-            prodId: "7856",
-            preco: "7.491,00",
-            vFinal: "4.290,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 450 x 230 x 240",
-            comprimento: "450",
-            largura: "230",
-            altura: "240",
-            codigo: "",
-            pesoProd: "",
-            codg: "7856",
-            unid: "20",
-          },
-          {
-            prodId: "7856",
-            preco: "7.491,00",
-            vFinal: "4.290,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 450 x 230 x 240",
-            comprimento: "450",
-            largura: "230",
-            altura: "240",
-            codigo: "",
-            pesoProd: "",
-            codg: "7856",
-            unid: "20",
-          },
-          {
-            prodId: "7856",
-            preco: "7.491,00",
-            vFinal: "4.290,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 450 x 230 x 240",
-            comprimento: "450",
-            largura: "230",
-            altura: "240",
-            codigo: "",
-            pesoProd: "",
-            codg: "7856",
-            unid: "20",
-          },
-          {
-            prodId: "7856",
-            preco: "7.491,00",
-            vFinal: "4.290,00",
-            ativo: "1",
-            empresa: "2383",
-            modelo: "caixa_reforcada",
-            tabela: "0.20",
-            nomeProd: "Caixa de madeira - 450 x 230 x 240",
-            comprimento: "450",
-            largura: "230",
-            altura: "240",
-            codigo: "",
-            pesoProd: "",
-            codg: "7856",
-            unid: "20",
-          },
-        ],
-        condi: "a vista",
-        prazo: "",
-        venc: "13/02/2023",
-        totoalGeral: "R$ 5.000,00",
       };
+
+      const response = await axios(config);
+      const [resp] = response.data.data;
+      const inf = resp.attributes;
 
       const nPedido = inf.nPedido;
       const frete = inf.frete;
       const datePop = inf.datePop;
-      const fornecedor = inf.fornecedor;
+      const fornecedor = inf.fornecedor.data.attributes;
       const cliente = inf.cliente;
       const condi = inf.condi;
       const itens = inf.itens;
-      const prazo = inf.prazo;
+      const prazo = inf.prazo === null ? "" : inf.prazo;
       const venc = inf.venc;
       const totoalGeral = inf.totoalGeral;
 

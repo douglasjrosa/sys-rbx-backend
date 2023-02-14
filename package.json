@@ -19,8 +19,10 @@
     "ejs": "^3.1.8",
     "html-pdf": "^3.0.1",
     "mysql": "2.18.1",
+    "pdf-merge": "^1.2.0",
     "puppeteer": "^19.6.3",
-    "strapi-plugin-config-sync": "^1.0.4"
+    "strapi-plugin-config-sync": "^1.0.4",
+    "wkhtmltopdf": "^0.4.0"
   },
   "author": {
     "name": "A Strapi developer"
