@@ -1,6 +1,6 @@
 {
   "/proposta/{page}": {
-    "get": {
+    "post": {
       "responses": {
         "200": {
           "description": "OK",
@@ -78,7 +78,17 @@
           }
         }
       ],
-      "operationId": "get/proposta/{page}"
+      "operationId": "post/proposta/{page}",
+      "requestBody": {
+        "required": true,
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/PropostaRequest"
+            }
+          }
+        }
+      }
     }
   }
 }

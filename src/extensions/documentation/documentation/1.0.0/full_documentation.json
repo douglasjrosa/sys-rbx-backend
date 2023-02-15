@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-14T20:31:51.270Z"
+    "x-generation-date": "2023-02-15T00:42:30.787Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -20815,6 +20815,23 @@
           },
           "meta": {
             "type": "object"
+          }
+        }
+      },
+      "PropostaRequest": {
+        "type": "object",
+        "required": [
+          "data"
+        ],
+        "properties": {
+          "data": {
+            "required": [],
+            "type": "object",
+            "properties": {
+              "nPedido": {
+                "type": "string"
+              }
+            }
           }
         }
       },
@@ -51496,7 +51513,7 @@
       }
     },
     "/proposta/{page}": {
-      "get": {
+      "post": {
         "responses": {
           "200": {
             "description": "OK",
@@ -51574,7 +51591,17 @@
             }
           }
         ],
-        "operationId": "get/proposta/{page}"
+        "operationId": "post/proposta/{page}",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PropostaRequest"
+              }
+            }
+          }
+        }
       }
     },
     "/tipos-de-pes": {

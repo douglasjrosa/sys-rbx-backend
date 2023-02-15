@@ -9,7 +9,7 @@ module.exports = {
       },
     },
     {
-      method: 'GET',
+      method: 'POST',
       path: '/proposta/:page',
       handler: 'proposta.create',
       config: {

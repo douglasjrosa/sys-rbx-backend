@@ -9,24 +9,51 @@ module.exports = {
   async index(ctx, next) {
     // called by GET /hello
     const pedido = ctx.params.pedido;
+    const url =
+      "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=1234";
     const config = {
-      method: "get",
-      maxBodyLength: Infinity,
-      url:
-        "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
-        pedido,
+      method: "GET",
+      url: url,
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+          "Bearer edf14eaee600f0b3eb9c1afe47d2119dd47018c2c8ca65b81c5e73f8cc7928f6f6ef64fb380e751d140405a5b7fb63ce1d5f622d093a9e26fd45cbe2f1d62e0b1b42b73f9bf060edea7f0e2a51a0f94c04f75b54eb11122b5849d41e55751c02864d0b5dd47311e56af35d10a55a58a7f2989bc13f6578afcb2b7028ce4dedce",
       },
     };
 
     const response = await axios(config);
+    console.log(response.data);
     const [result] = response.data.data;
     const itenResponse = result.attributes.itens;
     const quanti = itenResponse.length;
     const Qtpages = Math.ceil(quanti / 5);
+
+    const [resp] = response.data.data;
+    const inf = resp.attributes;
+
+    const nPedido = inf.nPedido;
+    const frete = inf.frete;
+    const datePop = inf.datePop;
+    const fornecedor = inf.fornecedor.data.attributes;
+    const cliente = inf.cliente;
+    const condi = inf.condi;
+    const itens = inf.itens;
+    const prazo = inf.prazo === null ? "" : inf.prazo;
+    const venc = inf.venc;
+    const totoalGeral = inf.totoalGeral;
+
+    const data = {
+      nPedido,
+      frete,
+      datePop,
+      fornecedor,
+      cliente,
+      condi,
+      itens,
+      prazo,
+      venc,
+      totoalGeral,
+    };
 
     const linkis = [];
 
@@ -37,10 +64,12 @@ module.exports = {
     let htmls = "";
     const resphtml = linkis.map(async (l) => {
       const html = await axios(l, {
+        method: "post",
         headers: {
           Authorization:
-            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+            "Bearer edf14eaee600f0b3eb9c1afe47d2119dd47018c2c8ca65b81c5e73f8cc7928f6f6ef64fb380e751d140405a5b7fb63ce1d5f622d093a9e26fd45cbe2f1d62e0b1b42b73f9bf060edea7f0e2a51a0f94c04f75b54eb11122b5849d41e55751c02864d0b5dd47311e56af35d10a55a58a7f2989bc13f6578afcb2b7028ce4dedce",
         },
+        data: data,
       });
       htmls += html.data;
     });
@@ -59,7 +88,7 @@ module.exports = {
       margin: "0",
     });
 
-    // await browser.close();
+    await browser.close();
 
     const today = new Date();
     const formattedDate =
@@ -69,45 +98,28 @@ module.exports = {
       "_" +
       today.getFullYear();
     const docname = pedido + "-" + formattedDate + ".pdf";
-    // await pdfMerge(html, docname);
-    // const pdf = fs.createReadStream(mergedPdfPath);
+
     ctx.set("Content-Type", "application/pdf");
     ctx.set("Content-disposition", `attachment;filename=${docname}`);
     ctx.body = pdf;
   },
   async create(ctx, next) {
     try {
+      const json = ctx.request.body;
       const page = ctx.params.page;
-      const pedido = ctx.query.pedido;
-      console.log(pedido);
       const limit = 5;
       const offset = (page - 1) * limit;
 
-      const config = {
-        method: "get",
-        maxBodyLength: Infinity,
-        url:
-          "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
-          pedido,
-        headers: {
-          "Content-Type": "application/json",
-          Authorization:
-            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
-        },
-      };
-
-      const response = await axios(config);
-      const [resp] = response.data.data;
-      const inf = resp.attributes;
+      const inf = json;
 
       const nPedido = inf.nPedido;
       const frete = inf.frete;
       const datePop = inf.datePop;
-      const fornecedor = inf.fornecedor.data.attributes;
+      const fornecedor = inf.fornecedor;
       const cliente = inf.cliente;
       const condi = inf.condi;
       const itens = inf.itens;
-      const prazo = inf.prazo === null ? "" : inf.prazo;
+      const prazo = inf.prazo;
       const venc = inf.venc;
       const totoalGeral = inf.totoalGeral;
 
