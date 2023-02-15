@@ -17,23 +17,23 @@
     body {
       margin: 0;
       padding: 0;
-      font-size: 0.7rem;
+      font-size: 12px;
     }
     .containerTitle {
-      margin-inline: 2rem;
+      margin-inline: 32px;
     }
     .classTop {
-      border-top: 3rem solid #1a562e;
+      border-top: 48px solid #1a562e;
       border-bottom: 2px solid #1a562e;
-      margin-bottom: 1rem;
-      margin-top: 2.5rem;
+      margin-bottom: 16px;
+      margin-top: 20px;
     }
     label {
       font-weight: bold;
       padding-bottom: 0;
     }
     table {
-      font-size: 0.7rem;
+      font-size: 10px;
       text-align: center;
     }
     tableLine {
@@ -43,23 +43,23 @@
       font-weight: bold;
     }
     p {
-      margin-top: 0rem;
-      margin-bottom: 0rem;
+      margin-top: 0;
+      margin-bottom: 0;
       line-height: 1.4;
     }
   </style>
   <body>
-    <div style="height: 85.5vh">
+    <div style="height: 86.156vh">
       <header class="classTop">
         <div class="row justify-content-between containerTitle">
           <div class="col ms-3 align-self-end">
-            <spam style="font-size: 1.8rem">Proposta comercial</spam>
+            <spam style="font-size: 30px">Proposta comercial</spam>
           </div>
-          <div class="col align-self-center p-3 me-3">
+          <div class="col-4 align-self-end p-3 m-3">
             <img
               src="https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75"
               alt="Ribermax"
-              width="132"
+              width="130"
             />
           </div>
         </div>
@@ -74,6 +74,10 @@
             <div class="col">
               <label>N° proposta</label>
               <p><%=nPedido%></p>
+            </div>
+            <div class="col">
+              <label>N° pagina</label>
+              <p><%=pagina%></p>
             </div>
             <div class="col-5">
               <label>Data da coleta</label>
@@ -164,11 +168,11 @@
       </section>
       <section
         class="containerTitle"
-        style="max-height: 41vh; margin-top: 2rem; margin-inline: 1rem"
+        style="height: 34vh; margin-top: 32px; margin-inline: 16px"
       >
         <table class="table">
           <thead
-            style="font-size: 0.6rem; background-color: #1a562e; color: white"
+            style="font-size: 10px; background-color: #1a562e; color: white"
           >
             <th style="width: 5px">#</th>
             <th style="width: 400px">Modelo</th>
@@ -213,13 +217,10 @@
         <div class="containerTitle">
           <div class="row justify-content-around">
             <div class="col">
-              <p class="textDesc me-1" style="font-size: 1rem">
+              <p class="textDesc me-1" style="font-size: 16px">
                 Condições de Pagamento:
               </p>
-              <div
-                class="row justify-content-between"
-                style="font-size: 0.9rem"
-              >
+              <div class="row justify-content-between" style="font-size: 15px">
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Tipo:</p>
@@ -243,12 +244,12 @@
           </div>
         </div>
       </section>
-      <section class="containerTitle">
+      <section class="containerTitle" style="height: 12vh">
         <div class="row justify-content-between">
-          <div class="col-6" style="font-size: 0.8rem">
+          <div class="col-6" style="font-size: 13px">
             <h2
               style="
-                font-size: 1rem;
+                font-size: 16px;
                 font-weight: bold;
                 text-decoration: underline;
                 margin-bottom: 0;
@@ -266,10 +267,10 @@
             <p>A montagen deve ser solicitada no ato da cotação.</p>
           </div>
           <div class="col-4 align-self-end">
-            <h2 style="font-size: 2rem; font-weight: bold; text-align: end">
+            <h2 style="font-size: 32px; font-weight: bold; text-align: end">
               Total
             </h2>
-            <p style="font-size: 1.2rem; text-align: end; font-weight: 500">
+            <p style="font-size: 19px; text-align: end; font-weight: 500">
               <%=totoalGeral%>
             </p>
           </div>
@@ -288,11 +289,7 @@
       <div class="row containerTitle">
         <div class="col-12">
           <h2
-            style="
-              font-size: 15px;
-              margin-top: 0.8rem;
-              text-transform: uppercase;
-            "
+            style="font-size: 15px; margin-top: 13px; text-transform: uppercase"
           >
             Ribermax Embalagens
           </h2>

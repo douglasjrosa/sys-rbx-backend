@@ -12,16 +12,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "nPedido": {
-      "type": "string"
-    },
-    "cliente": {
-      "type": "json"
-    },
     "itens": {
       "type": "json"
     },
-    "empresa": {
+    "matriz": {
       "type": "string"
     },
     "dataPedido": {
@@ -38,19 +32,39 @@
       "type": "string",
       "default": "null"
     },
-    "totalGeral": {
-      "type": "string",
-      "default": "null"
-    },
     "fornecedor": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::fornecedor.fornecedor",
       "inversedBy": "pedidos"
     },
-    "codigo": {
-      "type": "uid",
-      "targetField": "nPedido"
+    "frete": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "pedidos"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "totalGeral": {
+      "type": "decimal",
+      "default": 0
+    },
+    "fornecedorId": {
+      "type": "integer"
+    },
+    "empresaId": {
+      "type": "integer"
+    },
+    "vendedorId": {
+      "type": "integer"
+    },
+    "nPedido": {
+      "type": "biginteger"
     }
   }
 }

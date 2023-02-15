@@ -2,27 +2,25 @@ const ejs = require("ejs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const axios = require("axios");
-const pdfMerge = require("pdf-merge");
-const fs = require("fs");
 
 module.exports = {
   async index(ctx, next) {
     // called by GET /hello
     const pedido = ctx.params.pedido;
     const url =
-      "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=1234";
+      "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
+      pedido;
     const config = {
       method: "GET",
       url: url,
       headers: {
         "Content-Type": "application/json",
         Authorization:
-          "Bearer edf14eaee600f0b3eb9c1afe47d2119dd47018c2c8ca65b81c5e73f8cc7928f6f6ef64fb380e751d140405a5b7fb63ce1d5f622d093a9e26fd45cbe2f1d62e0b1b42b73f9bf060edea7f0e2a51a0f94c04f75b54eb11122b5849d41e55751c02864d0b5dd47311e56af35d10a55a58a7f2989bc13f6578afcb2b7028ce4dedce",
+          "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
       },
     };
 
     const response = await axios(config);
-    console.log(response.data);
     const [result] = response.data.data;
     const itenResponse = result.attributes.itens;
     const quanti = itenResponse.length;
@@ -33,14 +31,14 @@ module.exports = {
 
     const nPedido = inf.nPedido;
     const frete = inf.frete;
-    const datePop = inf.datePop;
+    const datePop = inf.dataPedido;
     const fornecedor = inf.fornecedor.data.attributes;
     const cliente = inf.cliente;
     const condi = inf.condi;
     const itens = inf.itens;
     const prazo = inf.prazo === null ? "" : inf.prazo;
-    const venc = inf.venc;
-    const totoalGeral = inf.totoalGeral;
+    const venc = inf.vencPedido;
+    const totoalGeral = inf.totalGeral;
 
     const data = {
       nPedido,
@@ -55,10 +53,12 @@ module.exports = {
       totoalGeral,
     };
 
+    // console.log(data);
+
     const linkis = [];
 
     for (let i = 1; i <= Qtpages; i++) {
-      const link = `http://localhost:1337/api/proposta/${i}?pedido=${pedido}`;
+      const link = `http://localhost:1337/api/proposta/${i}`;
       linkis.push(link);
     }
     let htmls = "";
@@ -67,7 +67,7 @@ module.exports = {
         method: "post",
         headers: {
           Authorization:
-            "Bearer edf14eaee600f0b3eb9c1afe47d2119dd47018c2c8ca65b81c5e73f8cc7928f6f6ef64fb380e751d140405a5b7fb63ce1d5f622d093a9e26fd45cbe2f1d62e0b1b42b73f9bf060edea7f0e2a51a0f94c04f75b54eb11122b5849d41e55751c02864d0b5dd47311e56af35d10a55a58a7f2989bc13f6578afcb2b7028ce4dedce",
+            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
         },
         data: data,
       });
@@ -76,7 +76,7 @@ module.exports = {
 
     await Promise.all(resphtml);
 
-    const browser = await puppeteer.launch({ headless: false });
+    const browser = await puppeteer.launch();
     const page = await browser.newPage();
 
     await page.setContent(htmls);
@@ -85,7 +85,12 @@ module.exports = {
     const pdf = await page.pdf({
       format: "A4",
       printBackground: true,
-      margin: "0",
+      margin: {
+        top: "0.4in",
+        bottom: "0",
+        left: "0",
+        right: "0",
+      },
     });
 
     await browser.close();
@@ -97,7 +102,8 @@ module.exports = {
       (today.getMonth() + 1) +
       "_" +
       today.getFullYear();
-    const docname = pedido + "-" + formattedDate + ".pdf";
+    const docname =
+      pedido + "-" + cliente.fantasia + "-" + formattedDate + ".pdf";
 
     ctx.set("Content-Type", "application/pdf");
     ctx.set("Content-disposition", `attachment;filename=${docname}`);
@@ -139,6 +145,7 @@ module.exports = {
           prazo,
           venc,
           totoalGeral,
+          pagina: page,
         },
         async (err, html) => {
           if (err) {

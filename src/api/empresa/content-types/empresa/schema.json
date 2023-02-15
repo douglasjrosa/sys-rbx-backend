@@ -156,25 +156,29 @@
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "empresas"
-    },
-    "negocios": {
-      "type": "json"
-    },
     "SalesHistory": {
       "type": "json"
     },
-    "Client": {
-      "type": "string"
-    },
-    "propostas": {
+    "pedidos": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::proposta.proposta"
+      "target": "api::pedido.pedido",
+      "mappedBy": "empresa"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "fornecedor": {
+      "type": "string"
+    },
+    "fornecedorId": {
+      "type": "integer"
+    },
+    "vendedorId": {
+      "type": "integer"
     }
   }
 }
