@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * desconto controller
+ * prazo controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::desconto.desconto');
+module.exports = createCoreController('api::prazo.prazo');

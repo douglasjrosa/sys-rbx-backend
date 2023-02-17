@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * desconto service
+ * prazo service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::desconto.desconto');
+module.exports = createCoreService('api::prazo.prazo');

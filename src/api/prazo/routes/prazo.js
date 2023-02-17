@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * desconto router
+ * prazo router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::desconto.desconto');
+module.exports = createCoreRouter('api::prazo.prazo');
