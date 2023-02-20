@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-20T10:00:16.967Z"
+    "x-generation-date": "2023-02-20T12:19:22.581Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -28,7 +28,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337/api",
+      "url": "http://localhost:1338/api",
       "description": "Development server"
     }
   ],
@@ -1080,8 +1080,7 @@
                                                         "type": "string"
                                                       },
                                                       "totalGeral": {
-                                                        "type": "number",
-                                                        "format": "float"
+                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -1093,9 +1092,7 @@
                                                         "type": "integer"
                                                       },
                                                       "nPedido": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -2159,8 +2156,7 @@
                                                         "type": "string"
                                                       },
                                                       "totalGeral": {
-                                                        "type": "number",
-                                                        "format": "float"
+                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -2172,9 +2168,7 @@
                                                         "type": "integer"
                                                       },
                                                       "nPedido": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -3271,8 +3265,7 @@
                                                         "type": "string"
                                                       },
                                                       "totalGeral": {
-                                                        "type": "number",
-                                                        "format": "float"
+                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -3284,9 +3277,7 @@
                                                         "type": "integer"
                                                       },
                                                       "nPedido": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -4350,8 +4341,7 @@
                                                         "type": "string"
                                                       },
                                                       "totalGeral": {
-                                                        "type": "number",
-                                                        "format": "float"
+                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -4363,9 +4353,7 @@
                                                         "type": "integer"
                                                       },
                                                       "nPedido": {
-                                                        "type": "string",
-                                                        "pattern": "^\\d*$",
-                                                        "example": "123456789"
+                                                        "type": "string"
                                                       },
                                                       "createdAt": {
                                                         "type": "string",
@@ -5531,8 +5519,7 @@
                               "type": "string"
                             },
                             "totalGeral": {
-                              "type": "number",
-                              "format": "float"
+                              "type": "string"
                             },
                             "fornecedorId": {
                               "type": "integer"
@@ -5544,9 +5531,7 @@
                               "type": "integer"
                             },
                             "nPedido": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -6477,8 +6462,7 @@
                               "type": "string"
                             },
                             "totalGeral": {
-                              "type": "number",
-                              "format": "float"
+                              "type": "string"
                             },
                             "fornecedorId": {
                               "type": "integer"
@@ -6490,9 +6474,7 @@
                               "type": "integer"
                             },
                             "nPedido": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -7456,8 +7438,7 @@
                               "type": "string"
                             },
                             "totalGeral": {
-                              "type": "number",
-                              "format": "float"
+                              "type": "string"
                             },
                             "fornecedorId": {
                               "type": "integer"
@@ -7469,9 +7450,7 @@
                               "type": "integer"
                             },
                             "nPedido": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -8402,8 +8381,7 @@
                               "type": "string"
                             },
                             "totalGeral": {
-                              "type": "number",
-                              "format": "float"
+                              "type": "string"
                             },
                             "fornecedorId": {
                               "type": "integer"
@@ -8415,9 +8393,7 @@
                               "type": "integer"
                             },
                             "nPedido": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -12344,8 +12320,7 @@
                 "type": "string"
               },
               "totalGeral": {
-                "type": "number",
-                "format": "float"
+                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -12357,9 +12332,7 @@
                 "type": "integer"
               },
               "nPedido": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "string"
               }
             }
           }
@@ -13116,8 +13089,7 @@
                                           "type": "string"
                                         },
                                         "totalGeral": {
-                                          "type": "number",
-                                          "format": "float"
+                                          "type": "string"
                                         },
                                         "fornecedorId": {
                                           "type": "integer"
@@ -13129,9 +13101,7 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
-                                          "type": "string",
-                                          "pattern": "^\\d*$",
-                                          "example": "123456789"
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -13262,8 +13232,7 @@
                 "type": "string"
               },
               "totalGeral": {
-                "type": "number",
-                "format": "float"
+                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -13275,9 +13244,7 @@
                 "type": "integer"
               },
               "nPedido": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -14080,8 +14047,7 @@
                                           "type": "string"
                                         },
                                         "totalGeral": {
-                                          "type": "number",
-                                          "format": "float"
+                                          "type": "string"
                                         },
                                         "fornecedorId": {
                                           "type": "integer"
@@ -14093,9 +14059,7 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
-                                          "type": "string",
-                                          "pattern": "^\\d*$",
-                                          "example": "123456789"
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -14226,8 +14190,7 @@
                 "type": "string"
               },
               "totalGeral": {
-                "type": "number",
-                "format": "float"
+                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -14239,9 +14202,7 @@
                 "type": "integer"
               },
               "nPedido": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -15077,8 +15038,7 @@
                                           "type": "string"
                                         },
                                         "totalGeral": {
-                                          "type": "number",
-                                          "format": "float"
+                                          "type": "string"
                                         },
                                         "fornecedorId": {
                                           "type": "integer"
@@ -15090,9 +15050,7 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
-                                          "type": "string",
-                                          "pattern": "^\\d*$",
-                                          "example": "123456789"
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -15223,8 +15181,7 @@
                 "type": "string"
               },
               "totalGeral": {
-                "type": "number",
-                "format": "float"
+                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -15236,9 +15193,7 @@
                 "type": "integer"
               },
               "nPedido": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -16041,8 +15996,7 @@
                                           "type": "string"
                                         },
                                         "totalGeral": {
-                                          "type": "number",
-                                          "format": "float"
+                                          "type": "string"
                                         },
                                         "fornecedorId": {
                                           "type": "integer"
@@ -16054,9 +16008,7 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
-                                          "type": "string",
-                                          "pattern": "^\\d*$",
-                                          "example": "123456789"
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -16187,8 +16139,7 @@
                 "type": "string"
               },
               "totalGeral": {
-                "type": "number",
-                "format": "float"
+                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -16200,9 +16151,7 @@
                 "type": "integer"
               },
               "nPedido": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -17099,8 +17048,7 @@
                                             "type": "string"
                                           },
                                           "totalGeral": {
-                                            "type": "number",
-                                            "format": "float"
+                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -17112,9 +17060,7 @@
                                             "type": "integer"
                                           },
                                           "nPedido": {
-                                            "type": "string",
-                                            "pattern": "^\\d*$",
-                                            "example": "123456789"
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -18052,8 +17998,7 @@
                                             "type": "string"
                                           },
                                           "totalGeral": {
-                                            "type": "number",
-                                            "format": "float"
+                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -18065,9 +18010,7 @@
                                             "type": "integer"
                                           },
                                           "nPedido": {
-                                            "type": "string",
-                                            "pattern": "^\\d*$",
-                                            "example": "123456789"
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -19038,8 +18981,7 @@
                                             "type": "string"
                                           },
                                           "totalGeral": {
-                                            "type": "number",
-                                            "format": "float"
+                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -19051,9 +18993,7 @@
                                             "type": "integer"
                                           },
                                           "nPedido": {
-                                            "type": "string",
-                                            "pattern": "^\\d*$",
-                                            "example": "123456789"
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
@@ -19991,8 +19931,7 @@
                                             "type": "string"
                                           },
                                           "totalGeral": {
-                                            "type": "number",
-                                            "format": "float"
+                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -20004,9 +19943,7 @@
                                             "type": "integer"
                                           },
                                           "nPedido": {
-                                            "type": "string",
-                                            "pattern": "^\\d*$",
-                                            "example": "123456789"
+                                            "type": "string"
                                           },
                                           "createdAt": {
                                             "type": "string",
