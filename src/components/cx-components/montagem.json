@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_cx_components_montagems",
+  "collectionName": "components_cx_montagems",
   "info": {
     "displayName": "montagem",
     "icon": "box-open"
@@ -9,7 +9,7 @@
     "notas": {
       "type": "text"
     },
-    "fixadoresFixos": {
+    "fixFixos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::materia-prima.materia-prima"

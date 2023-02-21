@@ -15,7 +15,7 @@
     "@strapi/plugin-documentation": "^4.4.3",
     "@strapi/plugin-i18n": "4.4.0",
     "@strapi/plugin-users-permissions": "4.3.9",
-    "@strapi/strapi": "4.4.3",
+    "@strapi/strapi": "4.6.1",
     "ejs": "^3.1.8",
     "html-pdf": "^3.0.1",
     "mysql": "2.18.1",
