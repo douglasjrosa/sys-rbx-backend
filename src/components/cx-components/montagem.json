@@ -9,7 +9,7 @@
     "notas": {
       "type": "text"
     },
-    "fixadoresFixos": {
+    "fixFixos": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::materia-prima.materia-prima"
