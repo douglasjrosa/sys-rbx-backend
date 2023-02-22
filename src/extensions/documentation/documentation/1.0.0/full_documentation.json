@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-20T15:34:58.234Z"
+    "x-generation-date": "2023-02-22T18:06:47.814Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -28,7 +28,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1338/api",
+      "url": "http://localhost:1337/api",
       "description": "Development server"
     }
   ],
@@ -275,6 +275,9 @@
               },
               "vendedorId": {
                 "type": "integer"
+              },
+              "codigo": {
+                "type": "string"
               }
             }
           }
@@ -1094,6 +1097,9 @@
                                                       "nPedido": {
                                                         "type": "string"
                                                       },
+                                                      "desconto": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -1161,6 +1167,9 @@
                                         },
                                         "vendedorId": {
                                           "type": "integer"
+                                        },
+                                        "codigo": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -1305,6 +1314,9 @@
               },
               "vendedorId": {
                 "type": "integer"
+              },
+              "codigo": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -2170,6 +2182,9 @@
                                                       "nPedido": {
                                                         "type": "string"
                                                       },
+                                                      "desconto": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -2237,6 +2252,9 @@
                                         },
                                         "vendedorId": {
                                           "type": "integer"
+                                        },
+                                        "codigo": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -2381,6 +2399,9 @@
               },
               "vendedorId": {
                 "type": "integer"
+              },
+              "codigo": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -3279,6 +3300,9 @@
                                                       "nPedido": {
                                                         "type": "string"
                                                       },
+                                                      "desconto": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -3346,6 +3370,9 @@
                                         },
                                         "vendedorId": {
                                           "type": "integer"
+                                        },
+                                        "codigo": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -3490,6 +3517,9 @@
               },
               "vendedorId": {
                 "type": "integer"
+              },
+              "codigo": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -4355,6 +4385,9 @@
                                                       "nPedido": {
                                                         "type": "string"
                                                       },
+                                                      "desconto": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -4422,6 +4455,9 @@
                                         },
                                         "vendedorId": {
                                           "type": "integer"
+                                        },
+                                        "codigo": {
+                                          "type": "string"
                                         },
                                         "createdAt": {
                                           "type": "string",
@@ -4566,6 +4602,9 @@
               },
               "vendedorId": {
                 "type": "integer"
+              },
+              "codigo": {
+                "type": "string"
               },
               "createdAt": {
                 "type": "string",
@@ -5463,6 +5502,9 @@
                                         "vendedorId": {
                                           "type": "integer"
                                         },
+                                        "codigo": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -5531,6 +5573,9 @@
                               "type": "integer"
                             },
                             "nPedido": {
+                              "type": "string"
+                            },
+                            "desconto": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -6406,6 +6451,9 @@
                                         "vendedorId": {
                                           "type": "integer"
                                         },
+                                        "codigo": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -6474,6 +6522,9 @@
                               "type": "integer"
                             },
                             "nPedido": {
+                              "type": "string"
+                            },
+                            "desconto": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -7382,6 +7433,9 @@
                                         "vendedorId": {
                                           "type": "integer"
                                         },
+                                        "codigo": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -7450,6 +7504,9 @@
                               "type": "integer"
                             },
                             "nPedido": {
+                              "type": "string"
+                            },
+                            "desconto": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -8325,6 +8382,9 @@
                                         "vendedorId": {
                                           "type": "integer"
                                         },
+                                        "codigo": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -8393,6 +8453,9 @@
                               "type": "integer"
                             },
                             "nPedido": {
+                              "type": "string"
+                            },
+                            "desconto": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -12333,6 +12396,9 @@
               },
               "nPedido": {
                 "type": "string"
+              },
+              "desconto": {
+                "type": "string"
               }
             }
           }
@@ -13033,6 +13099,9 @@
                                                     "vendedorId": {
                                                       "type": "integer"
                                                     },
+                                                    "codigo": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -13101,6 +13170,9 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
+                                          "type": "string"
+                                        },
+                                        "desconto": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -13244,6 +13316,9 @@
                 "type": "integer"
               },
               "nPedido": {
+                "type": "string"
+              },
+              "desconto": {
                 "type": "string"
               },
               "createdAt": {
@@ -13991,6 +14066,9 @@
                                                     "vendedorId": {
                                                       "type": "integer"
                                                     },
+                                                    "codigo": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -14059,6 +14137,9 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
+                                          "type": "string"
+                                        },
+                                        "desconto": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -14202,6 +14283,9 @@
                 "type": "integer"
               },
               "nPedido": {
+                "type": "string"
+              },
+              "desconto": {
                 "type": "string"
               },
               "createdAt": {
@@ -14982,6 +15066,9 @@
                                                     "vendedorId": {
                                                       "type": "integer"
                                                     },
+                                                    "codigo": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -15050,6 +15137,9 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
+                                          "type": "string"
+                                        },
+                                        "desconto": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -15193,6 +15283,9 @@
                 "type": "integer"
               },
               "nPedido": {
+                "type": "string"
+              },
+              "desconto": {
                 "type": "string"
               },
               "createdAt": {
@@ -15940,6 +16033,9 @@
                                                     "vendedorId": {
                                                       "type": "integer"
                                                     },
+                                                    "codigo": {
+                                                      "type": "string"
+                                                    },
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -16008,6 +16104,9 @@
                                           "type": "integer"
                                         },
                                         "nPedido": {
+                                          "type": "string"
+                                        },
+                                        "desconto": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -16151,6 +16250,9 @@
                 "type": "integer"
               },
               "nPedido": {
+                "type": "string"
+              },
+              "desconto": {
                 "type": "string"
               },
               "createdAt": {
@@ -17062,6 +17164,9 @@
                                           "nPedido": {
                                             "type": "string"
                                           },
+                                          "desconto": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -17129,6 +17234,9 @@
                             },
                             "vendedorId": {
                               "type": "integer"
+                            },
+                            "codigo": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -18012,6 +18120,9 @@
                                           "nPedido": {
                                             "type": "string"
                                           },
+                                          "desconto": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -18079,6 +18190,9 @@
                             },
                             "vendedorId": {
                               "type": "integer"
+                            },
+                            "codigo": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -18995,6 +19109,9 @@
                                           "nPedido": {
                                             "type": "string"
                                           },
+                                          "desconto": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -19062,6 +19179,9 @@
                             },
                             "vendedorId": {
                               "type": "integer"
+                            },
+                            "codigo": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",
@@ -19945,6 +20065,9 @@
                                           "nPedido": {
                                             "type": "string"
                                           },
+                                          "desconto": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -20012,6 +20135,9 @@
                             },
                             "vendedorId": {
                               "type": "integer"
+                            },
+                            "codigo": {
+                              "type": "string"
                             },
                             "createdAt": {
                               "type": "string",

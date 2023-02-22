@@ -67,6 +67,9 @@
     "nPedido": {
       "type": "string",
       "default": "null"
+    },
+    "desconto": {
+      "type": "string"
     }
   }
 }
