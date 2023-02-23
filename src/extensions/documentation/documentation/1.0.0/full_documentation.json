@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-22T18:06:47.814Z"
+    "x-generation-date": "2023-02-23T20:00:55.441Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1100,6 +1100,24 @@
                                                       "desconto": {
                                                         "type": "string"
                                                       },
+                                                      "CNPJClinet": {
+                                                        "type": "string"
+                                                      },
+                                                      "status": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "andamento": {
+                                                        "type": "string"
+                                                      },
+                                                      "valorFrete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vencPrint": {
+                                                        "type": "string"
+                                                      },
+                                                      "descriptStatus": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -2183,6 +2201,24 @@
                                                         "type": "string"
                                                       },
                                                       "desconto": {
+                                                        "type": "string"
+                                                      },
+                                                      "CNPJClinet": {
+                                                        "type": "string"
+                                                      },
+                                                      "status": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "andamento": {
+                                                        "type": "string"
+                                                      },
+                                                      "valorFrete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vencPrint": {
+                                                        "type": "string"
+                                                      },
+                                                      "descriptStatus": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -3303,6 +3339,24 @@
                                                       "desconto": {
                                                         "type": "string"
                                                       },
+                                                      "CNPJClinet": {
+                                                        "type": "string"
+                                                      },
+                                                      "status": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "andamento": {
+                                                        "type": "string"
+                                                      },
+                                                      "valorFrete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vencPrint": {
+                                                        "type": "string"
+                                                      },
+                                                      "descriptStatus": {
+                                                        "type": "string"
+                                                      },
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -4386,6 +4440,24 @@
                                                         "type": "string"
                                                       },
                                                       "desconto": {
+                                                        "type": "string"
+                                                      },
+                                                      "CNPJClinet": {
+                                                        "type": "string"
+                                                      },
+                                                      "status": {
+                                                        "type": "boolean"
+                                                      },
+                                                      "andamento": {
+                                                        "type": "string"
+                                                      },
+                                                      "valorFrete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vencPrint": {
+                                                        "type": "string"
+                                                      },
+                                                      "descriptStatus": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -5578,6 +5650,24 @@
                             "desconto": {
                               "type": "string"
                             },
+                            "CNPJClinet": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "boolean"
+                            },
+                            "andamento": {
+                              "type": "string"
+                            },
+                            "valorFrete": {
+                              "type": "string"
+                            },
+                            "vencPrint": {
+                              "type": "string"
+                            },
+                            "descriptStatus": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -6525,6 +6615,24 @@
                               "type": "string"
                             },
                             "desconto": {
+                              "type": "string"
+                            },
+                            "CNPJClinet": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "boolean"
+                            },
+                            "andamento": {
+                              "type": "string"
+                            },
+                            "valorFrete": {
+                              "type": "string"
+                            },
+                            "vencPrint": {
+                              "type": "string"
+                            },
+                            "descriptStatus": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -7509,6 +7617,24 @@
                             "desconto": {
                               "type": "string"
                             },
+                            "CNPJClinet": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "boolean"
+                            },
+                            "andamento": {
+                              "type": "string"
+                            },
+                            "valorFrete": {
+                              "type": "string"
+                            },
+                            "vencPrint": {
+                              "type": "string"
+                            },
+                            "descriptStatus": {
+                              "type": "string"
+                            },
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -8456,6 +8582,24 @@
                               "type": "string"
                             },
                             "desconto": {
+                              "type": "string"
+                            },
+                            "CNPJClinet": {
+                              "type": "string"
+                            },
+                            "status": {
+                              "type": "boolean"
+                            },
+                            "andamento": {
+                              "type": "string"
+                            },
+                            "valorFrete": {
+                              "type": "string"
+                            },
+                            "vencPrint": {
+                              "type": "string"
+                            },
+                            "descriptStatus": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -12399,6 +12543,24 @@
               },
               "desconto": {
                 "type": "string"
+              },
+              "CNPJClinet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "boolean"
+              },
+              "andamento": {
+                "type": "string"
+              },
+              "valorFrete": {
+                "type": "string"
+              },
+              "vencPrint": {
+                "type": "string"
+              },
+              "descriptStatus": {
+                "type": "string"
               }
             }
           }
@@ -13175,6 +13337,24 @@
                                         "desconto": {
                                           "type": "string"
                                         },
+                                        "CNPJClinet": {
+                                          "type": "string"
+                                        },
+                                        "status": {
+                                          "type": "boolean"
+                                        },
+                                        "andamento": {
+                                          "type": "string"
+                                        },
+                                        "valorFrete": {
+                                          "type": "string"
+                                        },
+                                        "vencPrint": {
+                                          "type": "string"
+                                        },
+                                        "descriptStatus": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -13319,6 +13499,24 @@
                 "type": "string"
               },
               "desconto": {
+                "type": "string"
+              },
+              "CNPJClinet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "boolean"
+              },
+              "andamento": {
+                "type": "string"
+              },
+              "valorFrete": {
+                "type": "string"
+              },
+              "vencPrint": {
+                "type": "string"
+              },
+              "descriptStatus": {
                 "type": "string"
               },
               "createdAt": {
@@ -14142,6 +14340,24 @@
                                         "desconto": {
                                           "type": "string"
                                         },
+                                        "CNPJClinet": {
+                                          "type": "string"
+                                        },
+                                        "status": {
+                                          "type": "boolean"
+                                        },
+                                        "andamento": {
+                                          "type": "string"
+                                        },
+                                        "valorFrete": {
+                                          "type": "string"
+                                        },
+                                        "vencPrint": {
+                                          "type": "string"
+                                        },
+                                        "descriptStatus": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -14286,6 +14502,24 @@
                 "type": "string"
               },
               "desconto": {
+                "type": "string"
+              },
+              "CNPJClinet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "boolean"
+              },
+              "andamento": {
+                "type": "string"
+              },
+              "valorFrete": {
+                "type": "string"
+              },
+              "vencPrint": {
+                "type": "string"
+              },
+              "descriptStatus": {
                 "type": "string"
               },
               "createdAt": {
@@ -15142,6 +15376,24 @@
                                         "desconto": {
                                           "type": "string"
                                         },
+                                        "CNPJClinet": {
+                                          "type": "string"
+                                        },
+                                        "status": {
+                                          "type": "boolean"
+                                        },
+                                        "andamento": {
+                                          "type": "string"
+                                        },
+                                        "valorFrete": {
+                                          "type": "string"
+                                        },
+                                        "vencPrint": {
+                                          "type": "string"
+                                        },
+                                        "descriptStatus": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -15286,6 +15538,24 @@
                 "type": "string"
               },
               "desconto": {
+                "type": "string"
+              },
+              "CNPJClinet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "boolean"
+              },
+              "andamento": {
+                "type": "string"
+              },
+              "valorFrete": {
+                "type": "string"
+              },
+              "vencPrint": {
+                "type": "string"
+              },
+              "descriptStatus": {
                 "type": "string"
               },
               "createdAt": {
@@ -16109,6 +16379,24 @@
                                         "desconto": {
                                           "type": "string"
                                         },
+                                        "CNPJClinet": {
+                                          "type": "string"
+                                        },
+                                        "status": {
+                                          "type": "boolean"
+                                        },
+                                        "andamento": {
+                                          "type": "string"
+                                        },
+                                        "valorFrete": {
+                                          "type": "string"
+                                        },
+                                        "vencPrint": {
+                                          "type": "string"
+                                        },
+                                        "descriptStatus": {
+                                          "type": "string"
+                                        },
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -16253,6 +16541,24 @@
                 "type": "string"
               },
               "desconto": {
+                "type": "string"
+              },
+              "CNPJClinet": {
+                "type": "string"
+              },
+              "status": {
+                "type": "boolean"
+              },
+              "andamento": {
+                "type": "string"
+              },
+              "valorFrete": {
+                "type": "string"
+              },
+              "vencPrint": {
+                "type": "string"
+              },
+              "descriptStatus": {
                 "type": "string"
               },
               "createdAt": {
@@ -17165,6 +17471,24 @@
                                             "type": "string"
                                           },
                                           "desconto": {
+                                            "type": "string"
+                                          },
+                                          "CNPJClinet": {
+                                            "type": "string"
+                                          },
+                                          "status": {
+                                            "type": "boolean"
+                                          },
+                                          "andamento": {
+                                            "type": "string"
+                                          },
+                                          "valorFrete": {
+                                            "type": "string"
+                                          },
+                                          "vencPrint": {
+                                            "type": "string"
+                                          },
+                                          "descriptStatus": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -18121,6 +18445,24 @@
                                             "type": "string"
                                           },
                                           "desconto": {
+                                            "type": "string"
+                                          },
+                                          "CNPJClinet": {
+                                            "type": "string"
+                                          },
+                                          "status": {
+                                            "type": "boolean"
+                                          },
+                                          "andamento": {
+                                            "type": "string"
+                                          },
+                                          "valorFrete": {
+                                            "type": "string"
+                                          },
+                                          "vencPrint": {
+                                            "type": "string"
+                                          },
+                                          "descriptStatus": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -19112,6 +19454,24 @@
                                           "desconto": {
                                             "type": "string"
                                           },
+                                          "CNPJClinet": {
+                                            "type": "string"
+                                          },
+                                          "status": {
+                                            "type": "boolean"
+                                          },
+                                          "andamento": {
+                                            "type": "string"
+                                          },
+                                          "valorFrete": {
+                                            "type": "string"
+                                          },
+                                          "vencPrint": {
+                                            "type": "string"
+                                          },
+                                          "descriptStatus": {
+                                            "type": "string"
+                                          },
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -20066,6 +20426,24 @@
                                             "type": "string"
                                           },
                                           "desconto": {
+                                            "type": "string"
+                                          },
+                                          "CNPJClinet": {
+                                            "type": "string"
+                                          },
+                                          "status": {
+                                            "type": "boolean"
+                                          },
+                                          "andamento": {
+                                            "type": "string"
+                                          },
+                                          "valorFrete": {
+                                            "type": "string"
+                                          },
+                                          "vencPrint": {
+                                            "type": "string"
+                                          },
+                                          "descriptStatus": {
                                             "type": "string"
                                           },
                                           "createdAt": {

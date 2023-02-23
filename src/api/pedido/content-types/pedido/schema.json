@@ -70,6 +70,24 @@
     },
     "desconto": {
       "type": "string"
+    },
+    "CNPJClinet": {
+      "type": "string"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "andamento": {
+      "type": "string"
+    },
+    "valorFrete": {
+      "type": "string"
+    },
+    "vencPrint": {
+      "type": "string"
+    },
+    "descriptStatus": {
+      "type": "richtext"
     }
   }
 }
