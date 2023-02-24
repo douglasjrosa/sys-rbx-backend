@@ -87,7 +87,7 @@
       "type": "string"
     },
     "descriptStatus": {
-      "type": "richtext"
+      "type": "json"
     }
   }
 }

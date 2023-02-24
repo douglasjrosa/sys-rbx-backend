@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-23T20:00:55.441Z"
+    "x-generation-date": "2023-02-24T17:05:33.401Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1115,9 +1115,7 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {
-                                                        "type": "string"
-                                                      },
+                                                      "descriptStatus": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -2218,9 +2216,7 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {
-                                                        "type": "string"
-                                                      },
+                                                      "descriptStatus": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -3354,9 +3350,7 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {
-                                                        "type": "string"
-                                                      },
+                                                      "descriptStatus": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -4457,9 +4451,7 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {
-                                                        "type": "string"
-                                                      },
+                                                      "descriptStatus": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -5665,9 +5657,7 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {
-                              "type": "string"
-                            },
+                            "descriptStatus": {},
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -6632,9 +6622,7 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {
-                              "type": "string"
-                            },
+                            "descriptStatus": {},
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -7632,9 +7620,7 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {
-                              "type": "string"
-                            },
+                            "descriptStatus": {},
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -8599,9 +8585,7 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {
-                              "type": "string"
-                            },
+                            "descriptStatus": {},
                             "createdAt": {
                               "type": "string",
                               "format": "date-time"
@@ -12559,9 +12543,7 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {
-                "type": "string"
-              }
+              "descriptStatus": {}
             }
           }
         }
@@ -13352,9 +13334,7 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {
-                                          "type": "string"
-                                        },
+                                        "descriptStatus": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -13516,9 +13496,7 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {
-                "type": "string"
-              },
+              "descriptStatus": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -14355,9 +14333,7 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {
-                                          "type": "string"
-                                        },
+                                        "descriptStatus": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -14519,9 +14495,7 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {
-                "type": "string"
-              },
+              "descriptStatus": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -15391,9 +15365,7 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {
-                                          "type": "string"
-                                        },
+                                        "descriptStatus": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -15555,9 +15527,7 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {
-                "type": "string"
-              },
+              "descriptStatus": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -16394,9 +16364,7 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {
-                                          "type": "string"
-                                        },
+                                        "descriptStatus": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -16558,9 +16526,7 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {
-                "type": "string"
-              },
+              "descriptStatus": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -17488,9 +17454,7 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {
-                                            "type": "string"
-                                          },
+                                          "descriptStatus": {},
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -18462,9 +18426,7 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {
-                                            "type": "string"
-                                          },
+                                          "descriptStatus": {},
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -19469,9 +19431,7 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {
-                                            "type": "string"
-                                          },
+                                          "descriptStatus": {},
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
@@ -20443,9 +20403,7 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {
-                                            "type": "string"
-                                          },
+                                          "descriptStatus": {},
                                           "createdAt": {
                                             "type": "string",
                                             "format": "date-time"
