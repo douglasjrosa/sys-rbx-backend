@@ -2,11 +2,15 @@ const ejs = require("ejs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const axios = require("axios");
+const PDFDocument = require("pdfkit");
+const fs = require("fs");
 
 module.exports = {
   async index(ctx, next) {
     // called by GET /hello
     const pedido = ctx.params.pedido;
+
+    // console.log(result)
     const url =
       "http://localhost:1337/api/pedidos?populate=*&filters[nPedido][$eq]=" +
       pedido;
@@ -14,20 +18,29 @@ module.exports = {
       method: "GET",
       url: url,
       headers: {
-        "Content-Type": "application/json",
-        Authorization:
-          "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+        'Authorization': 'Bearer 59a0a53fa5454c60afdfd86b9c3828ca763cb564fee7107ba5dedb99319e126e520c442a6fa7e2c1c845469b2a2b555ea0662508f56679d4ff4ed2d46308df0fd810097f482a28539298c0ead698d73191c7c6fafbce63be1f98acc9ff300955b7422d349b019429e4dbd5da4eb0d2a20fedff67aa4879ec62c887c2d878b100',
       },
     };
 
-    const response = await axios(config);
+    // const response = await axios(config);
+    await axios(config)
+    .then(function (response) {
+      console.log(JSON.stringify(response.data));
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+
+    console.log(response.data)
     const [result] = response.data.data;
     const itenResponse = result.attributes.itens;
     const quanti = itenResponse.length;
+
     const Qtpages = Math.ceil(quanti / 5);
 
     const [resp] = response.data.data;
     const inf = resp.attributes;
+
 
     const nPedido = inf.nPedido;
     const frete = inf.frete;
@@ -53,12 +66,12 @@ module.exports = {
       totoalGeral,
     };
 
-    // console.log(data);
+    console.log(data);
 
     const linkis = [];
 
     for (let i = 1; i <= Qtpages; i++) {
-      const link = `http://localhost:1337/api/proposta/${i}`;
+      const link = `http://localhost:1338/api/proposta/${i}`;
       linkis.push(link);
     }
     let htmls = "";
@@ -67,7 +80,7 @@ module.exports = {
         method: "post",
         headers: {
           Authorization:
-            "Bearer a9caa9967b1dbfb901d6d7481c267244d7502cc8acbea07083e6f2d7c05ce3bb936fff6d001b7fed8256b89ade8daffed9d9a3b6308c4afd204ffb76942be602e6b2314dc98bcb7a48b23111c726d12fca8cdcaef51116be1bbfd915ea495789321ee935afc53faf43d210dc8a80f5e1520804d8e903aa14a67edb05f32c0dcf",
+            "Bearer 59a0a53fa5454c60afdfd86b9c3828ca763cb564fee7107ba5dedb99319e126e520c442a6fa7e2c1c845469b2a2b555ea0662508f56679d4ff4ed2d46308df0fd810097f482a28539298c0ead698d73191c7c6fafbce63be1f98acc9ff300955b7422d349b019429e4dbd5da4eb0d2a20fedff67aa4879ec62c887c2d878b100",
         },
         data: data,
       });
@@ -76,13 +89,24 @@ module.exports = {
 
     await Promise.all(resphtml);
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({ headless: false });
     const page = await browser.newPage();
 
     await page.setContent(htmls);
 
     // Gera o PDF
     const pdf = await page.pdf({
+      format: "A4",
+      printBackground: true,
+      margin: {
+        top: "0.4in",
+        bottom: "0",
+        left: "0",
+        right: "0",
+      },
+    });
+    // Gera o PDF
+    const pdfBuffer = await page.pdf({
       format: "A4",
       printBackground: true,
       margin: {
@@ -105,8 +129,12 @@ module.exports = {
     const docname =
       pedido + "-" + cliente.fantasia + "-" + formattedDate + ".pdf";
 
+    // const doc = new PDFDocument();
+    // doc.pipe(fs.createWriteStream(docname));
+    // doc.end(pdfBuffer);
+
     ctx.set("Content-Type", "application/pdf");
-    ctx.set("Content-disposition", `attachment;filename=${docname}`);
+    ctx.set("Content-disposition", `inline;filename=${docname}`);
     ctx.body = pdf;
   },
   async create(ctx, next) {
@@ -128,6 +156,8 @@ module.exports = {
       const prazo = inf.prazo;
       const venc = inf.venc;
       const totoalGeral = inf.totoalGeral;
+      const obs = inf.obs;
+      const business = inf.business;
 
       const chunk = itens.slice(offset, offset + limit);
 
@@ -145,6 +175,8 @@ module.exports = {
           prazo,
           venc,
           totoalGeral,
+          obs,
+          business,
           pagina: page,
         },
         async (err, html) => {

@@ -12,21 +12,28 @@
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <!-- Font-Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
   </head>
   <style>
     body {
       margin: 0;
       padding: 0;
-      font-size: 12px;
+      font-size: 11px;
     }
     .containerTitle {
       margin-inline: 32px;
     }
     .classTop {
-      border-top: 48px solid #1a562e;
+      border-top: 28px solid #1a562e;
       border-bottom: 2px solid #1a562e;
       margin-bottom: 16px;
-      margin-top: 20px;
+      margin-top: 18px;
     }
     label {
       font-weight: bold;
@@ -53,13 +60,13 @@
       <header class="classTop">
         <div class="row justify-content-between containerTitle">
           <div class="col ms-3 align-self-end">
-            <spam style="font-size: 30px">Proposta comercial</spam>
+            <spam style="font-size: 28px">Proposta comercial</spam>
           </div>
-          <div class="col-4 align-self-end p-3 m-3">
+          <div class="col-3 align-self-end p-3 m-1">
             <img
               src="https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75"
               alt="Ribermax"
-              width="130"
+              width="115"
             />
           </div>
         </div>
@@ -76,10 +83,14 @@
               <p><%=nPedido%></p>
             </div>
             <div class="col">
+              <label>N° Business</label>
+              <p><%=business %></p>
+            </div>
+            <div class="col">
               <label>N° pagina</label>
               <p><%=pagina%></p>
             </div>
-            <div class="col-5">
+            <div class="col-3">
               <label>Data da coleta</label>
               <p>7 dias uteis apos a confirmação do pedido</p>
             </div>
@@ -91,7 +102,7 @@
         </div>
         <div class="row mt-2">
           <div class="row justify-content-around">
-            <p class="textDesc" style="font-size: 15px">Fornecedor</p>
+            <p class="textDesc" style="font-size: 13px">Fornecedor</p>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Razão:</p>
@@ -109,11 +120,11 @@
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">End:</p>
-                <p><%=fornecedor.end%></p>
+                <p><%=fornecedor.endereco%></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Cidade/Uf:</p>
-                <p><%=fornecedor.city%></p>
+                <p><%=cliente.cidade%> - <%=cliente.uf%></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Tel:</p>
@@ -127,12 +138,12 @@
               </div>
             </div>
           </div>
-          <div class="row justify-content-around mt-3">
-            <p class="textDesc" style="font-size: 15px">Cliente</p>
+          <div class="row justify-content-around mt-2">
+            <p class="textDesc" style="font-size: 13px">Cliente</p>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Razão:</p>
-                <p><%=cliente.razao%></p>
+                <p><%=cliente.nome%></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Fantasia:</p>
@@ -140,21 +151,21 @@
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">CNPJ:</p>
-                <p><%=cliente.cnpj%></p>
+                <p><%=cliente.CNPJ%></p>
               </div>
             </div>
             <div class="col">
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">End:</p>
-                <p><%=cliente.end%></p>
+                <p><%=cliente.endereco%></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Cidade/Uf:</p>
-                <p><%=cliente.city%></p>
+                <p><%=cliente.cidade%> - <%=cliente.uf%></p>
               </div>
               <div class="d-flex flex-row gap-1">
                 <p class="textDesc">Tel:</p>
-                <p><%=cliente.tel%></p>
+                <p><%=cliente.fone%></p>
               </div>
             </div>
             <div class="col">
@@ -168,23 +179,23 @@
       </section>
       <section
         class="containerTitle"
-        style="height: 34vh; margin-top: 32px; margin-inline: 16px"
+        style="height: 36vh; max-height: 36vh; margin-top: 25px; margin-inline: 16px"
       >
         <table class="table">
           <thead
-            style="font-size: 10px; background-color: #1a562e; color: white"
+            style="font-size: 9px; background-color: #1a562e; color: white"
           >
-            <th style="width: 5px">#</th>
-            <th style="width: 400px">Modelo</th>
-            <th style="width: 450px">Descrição</th>
-            <th style="width: 100px">Comprir.</th>
-            <th style="width: 100px">Largura</th>
-            <th style="width: 100px">Altura</th>
+            <th style="width: 3px">#</th>
+            <th style="width: 200px">Modelo</th>
+            <th style="width: 750px">Descrição</th>
+            <th style="width: 90px">Comprir.</th>
+            <th style="width: 90px">Largura</th>
+            <th style="width: 90px">Altura</th>
             <th style="width: 120px">Qtd.</th>
             <th style="width: 280px">Valor Un.</th>
-            <th style="width: 210px">Exportação</th>
-            <th style="width: 210px">Montagem</th>
-            <th style="width: 240px">Valor Total</th>
+            <th style="width: 90px">Expo.</th>
+            <th style="width: 90px">Mont.</th>
+            <th style="width: 340px">Valor Total</th>
           </thead>
           <tbody>
             <% if (itens.length >0) {%> <% itens.forEach((i, x) => {%>
@@ -195,11 +206,17 @@
               <td><%=i.comprimento%></td>
               <td><%=i.largura%></td>
               <td><%=i.altura%></td>
-              <td><%=i.unid%></td>
-              <td><%=i.vFinal%></td>
-              <td><%=i.expo%></td>
-              <td><%=i.mont%></td>
-              <td><%=i.total%></td>
+              <td><%=i.Qtd%></td>
+              <td>
+                <%=parseFloat(i.vFinal).toLocaleString('pt-BR', {style:
+                'currency', currency: 'BRL'})%>
+              </td>
+              <td><%=i.expo === true ? "✅" : "" %></td>
+              <td><%=i.mont === true ? "✅" : "" %></td>
+              <td>
+                <%=i.total.toLocaleString('pt-BR', {style: 'currency', currency:
+                'BRL'})%>
+              </td>
             </tr>
             <% });%> <% } %>
           </tbody>
@@ -217,10 +234,10 @@
         <div class="containerTitle">
           <div class="row justify-content-around">
             <div class="col">
-              <p class="textDesc me-1" style="font-size: 16px">
+              <p class="textDesc me-1" style="font-size: 13px">
                 Condições de Pagamento:
               </p>
-              <div class="row justify-content-between" style="font-size: 15px">
+              <div class="row justify-content-between" style="font-size: 12px">
                 <div class="col">
                   <div class="d-flex flex-row align-items-center gap-1">
                     <p class="textDesc">Tipo:</p>
@@ -228,13 +245,13 @@
                   </div>
                 </div>
                 <div class="col">
-                  <div class="d-flex flex-row align-items-center gap-1">
+                  <div class="d-flex flex-row align-items-center gap-3">
                     <p class="textDesc">Prazo:</p>
                     <p><%=prazo%></p>
                   </div>
                 </div>
                 <div class="col">
-                  <div class="d-flex flex-row align-items-center gap-1">
+                  <div class="d-flex flex-row align-items-center gap-3">
                     <p class="textDesc">Vencimento</p>
                     <p><%=venc%></p>
                   </div>
@@ -246,31 +263,52 @@
       </section>
       <section class="containerTitle" style="height: 12vh">
         <div class="row justify-content-between">
-          <div class="col-6" style="font-size: 13px">
-            <h2
+          <div class="col-9" style="font-size: 10px">
+            <div class="row">
+              <div class="col-1">
+                <h2
+                  style="
+                    font-size: 13px;
+                    font-weight: bold;
+                    text-decoration: underline;
+                    margin-bottom: 0;
+                  "
+                >
+                  Obs:
+                </h2>
+              </div>
+              <div class="col">
+                <p class="textDesc">
+                  Esta Proposta comercial tem validade até <%=venc%>
+                </p>
+                <p>
+                  As mandagens são enviadas desmontadas, <br />
+                  para envio das embalegens mantada há uma acréscimo de
+                  <label>10%</label>.
+                </p>
+                <p>A montagen deve ser solicitada no ato da cotação.</p>
+              </div>
+            </div>
+            <div
               style="
-                font-size: 16px;
-                font-weight: bold;
-                text-decoration: underline;
-                margin-bottom: 0;
+                margin-top: 5px;
+                border-top: 2px solid #1a562e;
+                padding: 1px;
+                padding-top: 6px;
+                height: 90px;
+                max-height: 91px;
               "
             >
-              Obs:
-            </h2>
-            <p class="textDesc">
-              Esta Proposta comercial tem validade até <%=venc%>
-            </p>
-            <p>
-              As mandagens são enviadas desmontadas, para envio das embalegens
-              mantada há uma acréscimo de <label>10%</label>.
-            </p>
-            <p>A montagen deve ser solicitada no ato da cotação.</p>
+              <p style="margin-left: 10px;">
+                <%=obs%>
+              </p>
+            </div>
           </div>
-          <div class="col-4 align-self-end">
-            <h2 style="font-size: 32px; font-weight: bold; text-align: end">
+          <div class="col-2 align-self-end">
+            <h2 style="font-size: 20px; font-weight: bold; text-align: end">
               Total
             </h2>
-            <p style="font-size: 19px; text-align: end; font-weight: 500">
+            <p style="font-size: 17px; text-align: end; font-weight: 500; padding-bottom: 8px;">
               <%=totoalGeral%>
             </p>
           </div>
@@ -280,16 +318,16 @@
 
     <footer
       style="
-        height: 12vh;
+        height: 11vh;
         background-color: #1a562e;
         color: white;
-        font-size: 11px;
+        font-size: 9px;
       "
     >
       <div class="row containerTitle">
         <div class="col-12">
           <h2
-            style="font-size: 15px; margin-top: 13px; text-transform: uppercase"
+            style="font-size: 13px; margin-top: 13px; text-transform: uppercase"
           >
             Ribermax Embalagens
           </h2>

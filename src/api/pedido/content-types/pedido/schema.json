@@ -16,12 +16,6 @@
       "type": "json",
       "default": "null"
     },
-    "matriz": {
-      "type": "string"
-    },
-    "dataPedido": {
-      "type": "date"
-    },
     "vencPedido": {
       "type": "date"
     },
@@ -88,6 +82,25 @@
     },
     "descriptStatus": {
       "type": "json"
+    },
+    "business": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business.business",
+      "inversedBy": "pedidos"
+    },
+    "matriz": {
+      "type": "string"
+    },
+    "dataPedido": {
+      "type": "date"
+    },
+    "Npedido": {
+      "type": "uid",
+      "targetField": "nPedido"
+    },
+    "obs": {
+      "type": "richtext"
     }
   }
 }

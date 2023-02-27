@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "businesses",
+  "info": {
+    "singularName": "business",
+    "pluralName": "businesses",
+    "displayName": "Business"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "boolean"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "business"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "Budget": {
+      "type": "string"
+    },
+    "Approach": {
+      "type": "string"
+    }
+  }
+}
