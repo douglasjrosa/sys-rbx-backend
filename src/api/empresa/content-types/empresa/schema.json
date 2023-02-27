@@ -156,7 +156,7 @@
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
     },
-    "SalesHistory": {
+    "history": {
       "type": "json"
     },
     "pedidos": {

@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-02-25T21:56:34.399Z"
+    "x-generation-date": "2023-02-27T18:17:19.875Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -28,7 +28,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1338/api",
+      "url": "http://localhost:1337/api",
       "description": "Development server"
     }
   ],
@@ -118,12 +118,17 @@
                 "type": "string",
                 "format": "date"
               },
+              "nBusiness": {
+                "type": "string"
+              },
               "Budget": {
                 "type": "string"
               },
               "Approach": {
                 "type": "string"
-              }
+              },
+              "history": {},
+              "incidentRecord": {}
             }
           }
         }
@@ -158,12 +163,6 @@
                             "vencPedido": {
                               "type": "string",
                               "format": "date"
-                            },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
                             },
                             "fornecedor": {
                               "type": "object",
@@ -538,9 +537,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -820,7 +816,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -911,12 +907,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -935,9 +925,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -947,7 +934,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -987,12 +973,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -1052,10 +1043,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -1115,12 +1118,17 @@
                 "type": "string",
                 "format": "date"
               },
+              "nBusiness": {
+                "type": "string"
+              },
               "Budget": {
                 "type": "string"
               },
               "Approach": {
                 "type": "string"
               },
+              "history": {},
+              "incidentRecord": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -1202,12 +1210,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -1581,9 +1583,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -1863,7 +1862,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -1954,12 +1953,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -1978,9 +1971,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -1990,7 +1980,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -2030,12 +2019,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -2095,10 +2089,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -2158,12 +2164,17 @@
                 "type": "string",
                 "format": "date"
               },
+              "nBusiness": {
+                "type": "string"
+              },
               "Budget": {
                 "type": "string"
               },
               "Approach": {
                 "type": "string"
               },
+              "history": {},
+              "incidentRecord": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -2278,12 +2289,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -2657,9 +2662,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -2939,7 +2941,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -3030,12 +3032,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -3054,9 +3050,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -3066,7 +3059,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -3106,12 +3098,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -3171,10 +3168,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -3234,12 +3243,17 @@
                 "type": "string",
                 "format": "date"
               },
+              "nBusiness": {
+                "type": "string"
+              },
               "Budget": {
                 "type": "string"
               },
               "Approach": {
                 "type": "string"
               },
+              "history": {},
+              "incidentRecord": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -3321,12 +3335,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -3700,9 +3708,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -3982,7 +3987,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -4073,12 +4078,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -4097,9 +4096,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -4109,7 +4105,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -4149,12 +4144,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -4214,10 +4214,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -4277,12 +4289,17 @@
                 "type": "string",
                 "format": "date"
               },
+              "nBusiness": {
+                "type": "string"
+              },
               "Budget": {
                 "type": "string"
               },
               "Approach": {
                 "type": "string"
               },
+              "history": {},
+              "incidentRecord": {},
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -4502,7 +4519,7 @@
                 ],
                 "example": "string or id"
               },
-              "SalesHistory": {},
+              "history": {},
               "pedidos": {
                 "type": "array",
                 "items": {
@@ -4909,7 +4926,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -4928,12 +4945,6 @@
                                                       "vencPedido": {
                                                         "type": "string",
                                                         "format": "date"
-                                                      },
-                                                      "condi": {
-                                                        "type": "string"
-                                                      },
-                                                      "prazo": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedor": {
                                                         "type": "object",
@@ -5308,9 +5319,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "frete": {
-                                                        "type": "string"
-                                                      },
                                                       "empresa": {
                                                         "type": "object",
                                                         "properties": {
@@ -5327,12 +5335,6 @@
                                                             }
                                                           }
                                                         }
-                                                      },
-                                                      "vendedor": {
-                                                        "type": "string"
-                                                      },
-                                                      "totalGeral": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -5352,9 +5354,6 @@
                                                       "CNPJClinet": {
                                                         "type": "string"
                                                       },
-                                                      "status": {
-                                                        "type": "boolean"
-                                                      },
                                                       "andamento": {
                                                         "type": "string"
                                                       },
@@ -5364,7 +5363,6 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {},
                                                       "business": {
                                                         "type": "object",
                                                         "properties": {
@@ -5404,12 +5402,17 @@
                                                                     "type": "string",
                                                                     "format": "date"
                                                                   },
+                                                                  "nBusiness": {
+                                                                    "type": "string"
+                                                                  },
                                                                   "Budget": {
                                                                     "type": "string"
                                                                   },
                                                                   "Approach": {
                                                                     "type": "string"
                                                                   },
+                                                                  "history": {},
+                                                                  "incidentRecord": {},
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -5469,10 +5472,22 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
-                                                      "Npedido": {
+                                                      "obs": {
                                                         "type": "string"
                                                       },
-                                                      "obs": {
+                                                      "condi": {
+                                                        "type": "string"
+                                                      },
+                                                      "prazo": {
+                                                        "type": "string"
+                                                      },
+                                                      "frete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vendedor": {
+                                                        "type": "string"
+                                                      },
+                                                      "totalGeral": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -5654,7 +5669,7 @@
                   }
                 }
               },
-              "SalesHistory": {},
+              "history": {},
               "pedidos": {
                 "type": "object",
                 "properties": {
@@ -6113,7 +6128,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -6132,12 +6147,6 @@
                                                       "vencPedido": {
                                                         "type": "string",
                                                         "format": "date"
-                                                      },
-                                                      "condi": {
-                                                        "type": "string"
-                                                      },
-                                                      "prazo": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedor": {
                                                         "type": "object",
@@ -6512,9 +6521,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "frete": {
-                                                        "type": "string"
-                                                      },
                                                       "empresa": {
                                                         "type": "object",
                                                         "properties": {
@@ -6531,12 +6537,6 @@
                                                             }
                                                           }
                                                         }
-                                                      },
-                                                      "vendedor": {
-                                                        "type": "string"
-                                                      },
-                                                      "totalGeral": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -6556,9 +6556,6 @@
                                                       "CNPJClinet": {
                                                         "type": "string"
                                                       },
-                                                      "status": {
-                                                        "type": "boolean"
-                                                      },
                                                       "andamento": {
                                                         "type": "string"
                                                       },
@@ -6568,7 +6565,6 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {},
                                                       "business": {
                                                         "type": "object",
                                                         "properties": {
@@ -6608,12 +6604,17 @@
                                                                     "type": "string",
                                                                     "format": "date"
                                                                   },
+                                                                  "nBusiness": {
+                                                                    "type": "string"
+                                                                  },
                                                                   "Budget": {
                                                                     "type": "string"
                                                                   },
                                                                   "Approach": {
                                                                     "type": "string"
                                                                   },
+                                                                  "history": {},
+                                                                  "incidentRecord": {},
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -6673,10 +6674,22 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
-                                                      "Npedido": {
+                                                      "obs": {
                                                         "type": "string"
                                                       },
-                                                      "obs": {
+                                                      "condi": {
+                                                        "type": "string"
+                                                      },
+                                                      "prazo": {
+                                                        "type": "string"
+                                                      },
+                                                      "frete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vendedor": {
+                                                        "type": "string"
+                                                      },
+                                                      "totalGeral": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -6858,7 +6871,7 @@
                   }
                 }
               },
-              "SalesHistory": {},
+              "history": {},
               "pedidos": {
                 "type": "object",
                 "properties": {
@@ -7350,7 +7363,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -7369,12 +7382,6 @@
                                                       "vencPedido": {
                                                         "type": "string",
                                                         "format": "date"
-                                                      },
-                                                      "condi": {
-                                                        "type": "string"
-                                                      },
-                                                      "prazo": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedor": {
                                                         "type": "object",
@@ -7749,9 +7756,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "frete": {
-                                                        "type": "string"
-                                                      },
                                                       "empresa": {
                                                         "type": "object",
                                                         "properties": {
@@ -7768,12 +7772,6 @@
                                                             }
                                                           }
                                                         }
-                                                      },
-                                                      "vendedor": {
-                                                        "type": "string"
-                                                      },
-                                                      "totalGeral": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -7793,9 +7791,6 @@
                                                       "CNPJClinet": {
                                                         "type": "string"
                                                       },
-                                                      "status": {
-                                                        "type": "boolean"
-                                                      },
                                                       "andamento": {
                                                         "type": "string"
                                                       },
@@ -7805,7 +7800,6 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {},
                                                       "business": {
                                                         "type": "object",
                                                         "properties": {
@@ -7845,12 +7839,17 @@
                                                                     "type": "string",
                                                                     "format": "date"
                                                                   },
+                                                                  "nBusiness": {
+                                                                    "type": "string"
+                                                                  },
                                                                   "Budget": {
                                                                     "type": "string"
                                                                   },
                                                                   "Approach": {
                                                                     "type": "string"
                                                                   },
+                                                                  "history": {},
+                                                                  "incidentRecord": {},
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -7910,10 +7909,22 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
-                                                      "Npedido": {
+                                                      "obs": {
                                                         "type": "string"
                                                       },
-                                                      "obs": {
+                                                      "condi": {
+                                                        "type": "string"
+                                                      },
+                                                      "prazo": {
+                                                        "type": "string"
+                                                      },
+                                                      "frete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vendedor": {
+                                                        "type": "string"
+                                                      },
+                                                      "totalGeral": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -8095,7 +8106,7 @@
                   }
                 }
               },
-              "SalesHistory": {},
+              "history": {},
               "pedidos": {
                 "type": "object",
                 "properties": {
@@ -8554,7 +8565,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -8573,12 +8584,6 @@
                                                       "vencPedido": {
                                                         "type": "string",
                                                         "format": "date"
-                                                      },
-                                                      "condi": {
-                                                        "type": "string"
-                                                      },
-                                                      "prazo": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedor": {
                                                         "type": "object",
@@ -8953,9 +8958,6 @@
                                                           }
                                                         }
                                                       },
-                                                      "frete": {
-                                                        "type": "string"
-                                                      },
                                                       "empresa": {
                                                         "type": "object",
                                                         "properties": {
@@ -8972,12 +8974,6 @@
                                                             }
                                                           }
                                                         }
-                                                      },
-                                                      "vendedor": {
-                                                        "type": "string"
-                                                      },
-                                                      "totalGeral": {
-                                                        "type": "string"
                                                       },
                                                       "fornecedorId": {
                                                         "type": "integer"
@@ -8997,9 +8993,6 @@
                                                       "CNPJClinet": {
                                                         "type": "string"
                                                       },
-                                                      "status": {
-                                                        "type": "boolean"
-                                                      },
                                                       "andamento": {
                                                         "type": "string"
                                                       },
@@ -9009,7 +9002,6 @@
                                                       "vencPrint": {
                                                         "type": "string"
                                                       },
-                                                      "descriptStatus": {},
                                                       "business": {
                                                         "type": "object",
                                                         "properties": {
@@ -9049,12 +9041,17 @@
                                                                     "type": "string",
                                                                     "format": "date"
                                                                   },
+                                                                  "nBusiness": {
+                                                                    "type": "string"
+                                                                  },
                                                                   "Budget": {
                                                                     "type": "string"
                                                                   },
                                                                   "Approach": {
                                                                     "type": "string"
                                                                   },
+                                                                  "history": {},
+                                                                  "incidentRecord": {},
                                                                   "createdAt": {
                                                                     "type": "string",
                                                                     "format": "date-time"
@@ -9114,10 +9111,22 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
-                                                      "Npedido": {
+                                                      "obs": {
                                                         "type": "string"
                                                       },
-                                                      "obs": {
+                                                      "condi": {
+                                                        "type": "string"
+                                                      },
+                                                      "prazo": {
+                                                        "type": "string"
+                                                      },
+                                                      "frete": {
+                                                        "type": "string"
+                                                      },
+                                                      "vendedor": {
+                                                        "type": "string"
+                                                      },
+                                                      "totalGeral": {
                                                         "type": "string"
                                                       },
                                                       "createdAt": {
@@ -9299,7 +9308,7 @@
                   }
                 }
               },
-              "SalesHistory": {},
+              "history": {},
               "pedidos": {
                 "type": "object",
                 "properties": {
@@ -9530,12 +9539,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -9909,9 +9912,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -10191,7 +10191,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -10282,12 +10282,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -10306,9 +10300,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -10318,7 +10309,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -10358,12 +10348,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -10423,10 +10418,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -10598,12 +10605,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -10977,9 +10978,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -11259,7 +11257,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -11350,12 +11348,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -11374,9 +11366,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -11386,7 +11375,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -11426,12 +11414,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -11491,10 +11484,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -11699,12 +11704,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -12078,9 +12077,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -12360,7 +12356,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -12451,12 +12447,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -12475,9 +12465,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -12487,7 +12474,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -12527,12 +12513,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -12592,10 +12583,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -12767,12 +12770,6 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "condi": {
-                              "type": "string"
-                            },
-                            "prazo": {
-                              "type": "string"
-                            },
                             "fornecedor": {
                               "type": "object",
                               "properties": {
@@ -13146,9 +13143,6 @@
                                 }
                               }
                             },
-                            "frete": {
-                              "type": "string"
-                            },
                             "empresa": {
                               "type": "object",
                               "properties": {
@@ -13428,7 +13422,7 @@
                                             }
                                           }
                                         },
-                                        "SalesHistory": {},
+                                        "history": {},
                                         "pedidos": {
                                           "type": "object",
                                           "properties": {
@@ -13519,12 +13513,6 @@
                                 }
                               }
                             },
-                            "vendedor": {
-                              "type": "string"
-                            },
-                            "totalGeral": {
-                              "type": "string"
-                            },
                             "fornecedorId": {
                               "type": "integer"
                             },
@@ -13543,9 +13531,6 @@
                             "CNPJClinet": {
                               "type": "string"
                             },
-                            "status": {
-                              "type": "boolean"
-                            },
                             "andamento": {
                               "type": "string"
                             },
@@ -13555,7 +13540,6 @@
                             "vencPrint": {
                               "type": "string"
                             },
-                            "descriptStatus": {},
                             "business": {
                               "type": "object",
                               "properties": {
@@ -13595,12 +13579,17 @@
                                           "type": "string",
                                           "format": "date"
                                         },
+                                        "nBusiness": {
+                                          "type": "string"
+                                        },
                                         "Budget": {
                                           "type": "string"
                                         },
                                         "Approach": {
                                           "type": "string"
                                         },
+                                        "history": {},
+                                        "incidentRecord": {},
                                         "createdAt": {
                                           "type": "string",
                                           "format": "date-time"
@@ -13660,10 +13649,22 @@
                               "type": "string",
                               "format": "date"
                             },
-                            "Npedido": {
+                            "obs": {
                               "type": "string"
                             },
-                            "obs": {
+                            "condi": {
+                              "type": "string"
+                            },
+                            "prazo": {
+                              "type": "string"
+                            },
+                            "frete": {
+                              "type": "string"
+                            },
+                            "vendedor": {
+                              "type": "string"
+                            },
+                            "totalGeral": {
                               "type": "string"
                             },
                             "createdAt": {
@@ -17549,12 +17550,6 @@
                 "type": "string",
                 "format": "date"
               },
-              "condi": {
-                "type": "string"
-              },
-              "prazo": {
-                "type": "string"
-              },
               "fornecedor": {
                 "oneOf": [
                   {
@@ -17566,9 +17561,6 @@
                 ],
                 "example": "string or id"
               },
-              "frete": {
-                "type": "string"
-              },
               "empresa": {
                 "oneOf": [
                   {
@@ -17579,12 +17571,6 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "vendedor": {
-                "type": "string"
-              },
-              "totalGeral": {
-                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -17604,9 +17590,6 @@
               "CNPJClinet": {
                 "type": "string"
               },
-              "status": {
-                "type": "boolean"
-              },
               "andamento": {
                 "type": "string"
               },
@@ -17616,7 +17599,6 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {},
               "business": {
                 "oneOf": [
                   {
@@ -17635,10 +17617,22 @@
                 "type": "string",
                 "format": "date"
               },
-              "Npedido": {
+              "obs": {
                 "type": "string"
               },
-              "obs": {
+              "condi": {
+                "type": "string"
+              },
+              "prazo": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "vendedor": {
+                "type": "string"
+              },
+              "totalGeral": {
                 "type": "string"
               }
             }
@@ -17658,12 +17652,6 @@
               "vencPedido": {
                 "type": "string",
                 "format": "date"
-              },
-              "condi": {
-                "type": "string"
-              },
-              "prazo": {
-                "type": "string"
               },
               "fornecedor": {
                 "type": "object",
@@ -17734,12 +17722,6 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "condi": {
-                                          "type": "string"
-                                        },
-                                        "prazo": {
-                                          "type": "string"
-                                        },
                                         "fornecedor": {
                                           "type": "object",
                                           "properties": {
@@ -17756,9 +17738,6 @@
                                               }
                                             }
                                           }
-                                        },
-                                        "frete": {
-                                          "type": "string"
                                         },
                                         "empresa": {
                                           "type": "object",
@@ -18290,7 +18269,7 @@
                                                         }
                                                       }
                                                     },
-                                                    "SalesHistory": {},
+                                                    "history": {},
                                                     "pedidos": {
                                                       "type": "object",
                                                       "properties": {
@@ -18381,12 +18360,6 @@
                                             }
                                           }
                                         },
-                                        "vendedor": {
-                                          "type": "string"
-                                        },
-                                        "totalGeral": {
-                                          "type": "string"
-                                        },
                                         "fornecedorId": {
                                           "type": "integer"
                                         },
@@ -18405,9 +18378,6 @@
                                         "CNPJClinet": {
                                           "type": "string"
                                         },
-                                        "status": {
-                                          "type": "boolean"
-                                        },
                                         "andamento": {
                                           "type": "string"
                                         },
@@ -18417,7 +18387,6 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {},
                                         "business": {
                                           "type": "object",
                                           "properties": {
@@ -18457,12 +18426,17 @@
                                                       "type": "string",
                                                       "format": "date"
                                                     },
+                                                    "nBusiness": {
+                                                      "type": "string"
+                                                    },
                                                     "Budget": {
                                                       "type": "string"
                                                     },
                                                     "Approach": {
                                                       "type": "string"
                                                     },
+                                                    "history": {},
+                                                    "incidentRecord": {},
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -18522,10 +18496,22 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "Npedido": {
+                                        "obs": {
                                           "type": "string"
                                         },
-                                        "obs": {
+                                        "condi": {
+                                          "type": "string"
+                                        },
+                                        "prazo": {
+                                          "type": "string"
+                                        },
+                                        "frete": {
+                                          "type": "string"
+                                        },
+                                        "vendedor": {
+                                          "type": "string"
+                                        },
+                                        "totalGeral": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -18633,9 +18619,6 @@
                   }
                 }
               },
-              "frete": {
-                "type": "string"
-              },
               "empresa": {
                 "type": "object",
                 "properties": {
@@ -18652,12 +18635,6 @@
                     }
                   }
                 }
-              },
-              "vendedor": {
-                "type": "string"
-              },
-              "totalGeral": {
-                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -18677,9 +18654,6 @@
               "CNPJClinet": {
                 "type": "string"
               },
-              "status": {
-                "type": "boolean"
-              },
               "andamento": {
                 "type": "string"
               },
@@ -18689,7 +18663,6 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {},
               "business": {
                 "type": "object",
                 "properties": {
@@ -18714,10 +18687,22 @@
                 "type": "string",
                 "format": "date"
               },
-              "Npedido": {
+              "obs": {
                 "type": "string"
               },
-              "obs": {
+              "condi": {
+                "type": "string"
+              },
+              "prazo": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "vendedor": {
+                "type": "string"
+              },
+              "totalGeral": {
                 "type": "string"
               },
               "createdAt": {
@@ -18784,12 +18769,6 @@
                 "type": "string",
                 "format": "date"
               },
-              "condi": {
-                "type": "string"
-              },
-              "prazo": {
-                "type": "string"
-              },
               "fornecedor": {
                 "type": "object",
                 "properties": {
@@ -18859,12 +18838,6 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "condi": {
-                                          "type": "string"
-                                        },
-                                        "prazo": {
-                                          "type": "string"
-                                        },
                                         "fornecedor": {
                                           "type": "object",
                                           "properties": {
@@ -18881,9 +18854,6 @@
                                               }
                                             }
                                           }
-                                        },
-                                        "frete": {
-                                          "type": "string"
                                         },
                                         "empresa": {
                                           "type": "object",
@@ -19415,7 +19385,7 @@
                                                         }
                                                       }
                                                     },
-                                                    "SalesHistory": {},
+                                                    "history": {},
                                                     "pedidos": {
                                                       "type": "object",
                                                       "properties": {
@@ -19506,12 +19476,6 @@
                                             }
                                           }
                                         },
-                                        "vendedor": {
-                                          "type": "string"
-                                        },
-                                        "totalGeral": {
-                                          "type": "string"
-                                        },
                                         "fornecedorId": {
                                           "type": "integer"
                                         },
@@ -19530,9 +19494,6 @@
                                         "CNPJClinet": {
                                           "type": "string"
                                         },
-                                        "status": {
-                                          "type": "boolean"
-                                        },
                                         "andamento": {
                                           "type": "string"
                                         },
@@ -19542,7 +19503,6 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {},
                                         "business": {
                                           "type": "object",
                                           "properties": {
@@ -19582,12 +19542,17 @@
                                                       "type": "string",
                                                       "format": "date"
                                                     },
+                                                    "nBusiness": {
+                                                      "type": "string"
+                                                    },
                                                     "Budget": {
                                                       "type": "string"
                                                     },
                                                     "Approach": {
                                                       "type": "string"
                                                     },
+                                                    "history": {},
+                                                    "incidentRecord": {},
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -19647,10 +19612,22 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "Npedido": {
+                                        "obs": {
                                           "type": "string"
                                         },
-                                        "obs": {
+                                        "condi": {
+                                          "type": "string"
+                                        },
+                                        "prazo": {
+                                          "type": "string"
+                                        },
+                                        "frete": {
+                                          "type": "string"
+                                        },
+                                        "vendedor": {
+                                          "type": "string"
+                                        },
+                                        "totalGeral": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -19758,9 +19735,6 @@
                   }
                 }
               },
-              "frete": {
-                "type": "string"
-              },
               "empresa": {
                 "type": "object",
                 "properties": {
@@ -19777,12 +19751,6 @@
                     }
                   }
                 }
-              },
-              "vendedor": {
-                "type": "string"
-              },
-              "totalGeral": {
-                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -19802,9 +19770,6 @@
               "CNPJClinet": {
                 "type": "string"
               },
-              "status": {
-                "type": "boolean"
-              },
               "andamento": {
                 "type": "string"
               },
@@ -19814,7 +19779,6 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {},
               "business": {
                 "type": "object",
                 "properties": {
@@ -19839,10 +19803,22 @@
                 "type": "string",
                 "format": "date"
               },
-              "Npedido": {
+              "obs": {
                 "type": "string"
               },
-              "obs": {
+              "condi": {
+                "type": "string"
+              },
+              "prazo": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "vendedor": {
+                "type": "string"
+              },
+              "totalGeral": {
                 "type": "string"
               },
               "createdAt": {
@@ -19942,12 +19918,6 @@
                 "type": "string",
                 "format": "date"
               },
-              "condi": {
-                "type": "string"
-              },
-              "prazo": {
-                "type": "string"
-              },
               "fornecedor": {
                 "type": "object",
                 "properties": {
@@ -20017,12 +19987,6 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "condi": {
-                                          "type": "string"
-                                        },
-                                        "prazo": {
-                                          "type": "string"
-                                        },
                                         "fornecedor": {
                                           "type": "object",
                                           "properties": {
@@ -20039,9 +20003,6 @@
                                               }
                                             }
                                           }
-                                        },
-                                        "frete": {
-                                          "type": "string"
                                         },
                                         "empresa": {
                                           "type": "object",
@@ -20573,7 +20534,7 @@
                                                         }
                                                       }
                                                     },
-                                                    "SalesHistory": {},
+                                                    "history": {},
                                                     "pedidos": {
                                                       "type": "object",
                                                       "properties": {
@@ -20664,12 +20625,6 @@
                                             }
                                           }
                                         },
-                                        "vendedor": {
-                                          "type": "string"
-                                        },
-                                        "totalGeral": {
-                                          "type": "string"
-                                        },
                                         "fornecedorId": {
                                           "type": "integer"
                                         },
@@ -20688,9 +20643,6 @@
                                         "CNPJClinet": {
                                           "type": "string"
                                         },
-                                        "status": {
-                                          "type": "boolean"
-                                        },
                                         "andamento": {
                                           "type": "string"
                                         },
@@ -20700,7 +20652,6 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {},
                                         "business": {
                                           "type": "object",
                                           "properties": {
@@ -20740,12 +20691,17 @@
                                                       "type": "string",
                                                       "format": "date"
                                                     },
+                                                    "nBusiness": {
+                                                      "type": "string"
+                                                    },
                                                     "Budget": {
                                                       "type": "string"
                                                     },
                                                     "Approach": {
                                                       "type": "string"
                                                     },
+                                                    "history": {},
+                                                    "incidentRecord": {},
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -20805,10 +20761,22 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "Npedido": {
+                                        "obs": {
                                           "type": "string"
                                         },
-                                        "obs": {
+                                        "condi": {
+                                          "type": "string"
+                                        },
+                                        "prazo": {
+                                          "type": "string"
+                                        },
+                                        "frete": {
+                                          "type": "string"
+                                        },
+                                        "vendedor": {
+                                          "type": "string"
+                                        },
+                                        "totalGeral": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -20916,9 +20884,6 @@
                   }
                 }
               },
-              "frete": {
-                "type": "string"
-              },
               "empresa": {
                 "type": "object",
                 "properties": {
@@ -20935,12 +20900,6 @@
                     }
                   }
                 }
-              },
-              "vendedor": {
-                "type": "string"
-              },
-              "totalGeral": {
-                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -20960,9 +20919,6 @@
               "CNPJClinet": {
                 "type": "string"
               },
-              "status": {
-                "type": "boolean"
-              },
               "andamento": {
                 "type": "string"
               },
@@ -20972,7 +20928,6 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {},
               "business": {
                 "type": "object",
                 "properties": {
@@ -20997,10 +20952,22 @@
                 "type": "string",
                 "format": "date"
               },
-              "Npedido": {
+              "obs": {
                 "type": "string"
               },
-              "obs": {
+              "condi": {
+                "type": "string"
+              },
+              "prazo": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "vendedor": {
+                "type": "string"
+              },
+              "totalGeral": {
                 "type": "string"
               },
               "createdAt": {
@@ -21067,12 +21034,6 @@
                 "type": "string",
                 "format": "date"
               },
-              "condi": {
-                "type": "string"
-              },
-              "prazo": {
-                "type": "string"
-              },
               "fornecedor": {
                 "type": "object",
                 "properties": {
@@ -21142,12 +21103,6 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "condi": {
-                                          "type": "string"
-                                        },
-                                        "prazo": {
-                                          "type": "string"
-                                        },
                                         "fornecedor": {
                                           "type": "object",
                                           "properties": {
@@ -21164,9 +21119,6 @@
                                               }
                                             }
                                           }
-                                        },
-                                        "frete": {
-                                          "type": "string"
                                         },
                                         "empresa": {
                                           "type": "object",
@@ -21698,7 +21650,7 @@
                                                         }
                                                       }
                                                     },
-                                                    "SalesHistory": {},
+                                                    "history": {},
                                                     "pedidos": {
                                                       "type": "object",
                                                       "properties": {
@@ -21789,12 +21741,6 @@
                                             }
                                           }
                                         },
-                                        "vendedor": {
-                                          "type": "string"
-                                        },
-                                        "totalGeral": {
-                                          "type": "string"
-                                        },
                                         "fornecedorId": {
                                           "type": "integer"
                                         },
@@ -21813,9 +21759,6 @@
                                         "CNPJClinet": {
                                           "type": "string"
                                         },
-                                        "status": {
-                                          "type": "boolean"
-                                        },
                                         "andamento": {
                                           "type": "string"
                                         },
@@ -21825,7 +21768,6 @@
                                         "vencPrint": {
                                           "type": "string"
                                         },
-                                        "descriptStatus": {},
                                         "business": {
                                           "type": "object",
                                           "properties": {
@@ -21865,12 +21807,17 @@
                                                       "type": "string",
                                                       "format": "date"
                                                     },
+                                                    "nBusiness": {
+                                                      "type": "string"
+                                                    },
                                                     "Budget": {
                                                       "type": "string"
                                                     },
                                                     "Approach": {
                                                       "type": "string"
                                                     },
+                                                    "history": {},
+                                                    "incidentRecord": {},
                                                     "createdAt": {
                                                       "type": "string",
                                                       "format": "date-time"
@@ -21930,10 +21877,22 @@
                                           "type": "string",
                                           "format": "date"
                                         },
-                                        "Npedido": {
+                                        "obs": {
                                           "type": "string"
                                         },
-                                        "obs": {
+                                        "condi": {
+                                          "type": "string"
+                                        },
+                                        "prazo": {
+                                          "type": "string"
+                                        },
+                                        "frete": {
+                                          "type": "string"
+                                        },
+                                        "vendedor": {
+                                          "type": "string"
+                                        },
+                                        "totalGeral": {
                                           "type": "string"
                                         },
                                         "createdAt": {
@@ -22041,9 +22000,6 @@
                   }
                 }
               },
-              "frete": {
-                "type": "string"
-              },
               "empresa": {
                 "type": "object",
                 "properties": {
@@ -22060,12 +22016,6 @@
                     }
                   }
                 }
-              },
-              "vendedor": {
-                "type": "string"
-              },
-              "totalGeral": {
-                "type": "string"
               },
               "fornecedorId": {
                 "type": "integer"
@@ -22085,9 +22035,6 @@
               "CNPJClinet": {
                 "type": "string"
               },
-              "status": {
-                "type": "boolean"
-              },
               "andamento": {
                 "type": "string"
               },
@@ -22097,7 +22044,6 @@
               "vencPrint": {
                 "type": "string"
               },
-              "descriptStatus": {},
               "business": {
                 "type": "object",
                 "properties": {
@@ -22122,10 +22068,22 @@
                 "type": "string",
                 "format": "date"
               },
-              "Npedido": {
+              "obs": {
                 "type": "string"
               },
-              "obs": {
+              "condi": {
+                "type": "string"
+              },
+              "prazo": {
+                "type": "string"
+              },
+              "frete": {
+                "type": "string"
+              },
+              "vendedor": {
+                "type": "string"
+              },
+              "totalGeral": {
                 "type": "string"
               },
               "createdAt": {
@@ -22844,7 +22802,7 @@
                                 }
                               }
                             },
-                            "SalesHistory": {},
+                            "history": {},
                             "pedidos": {
                               "type": "object",
                               "properties": {
@@ -22863,12 +22821,6 @@
                                           "vencPedido": {
                                             "type": "string",
                                             "format": "date"
-                                          },
-                                          "condi": {
-                                            "type": "string"
-                                          },
-                                          "prazo": {
-                                            "type": "string"
                                           },
                                           "fornecedor": {
                                             "type": "object",
@@ -22992,9 +22944,6 @@
                                               }
                                             }
                                           },
-                                          "frete": {
-                                            "type": "string"
-                                          },
                                           "empresa": {
                                             "type": "object",
                                             "properties": {
@@ -23011,12 +22960,6 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "vendedor": {
-                                            "type": "string"
-                                          },
-                                          "totalGeral": {
-                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -23036,9 +22979,6 @@
                                           "CNPJClinet": {
                                             "type": "string"
                                           },
-                                          "status": {
-                                            "type": "boolean"
-                                          },
                                           "andamento": {
                                             "type": "string"
                                           },
@@ -23048,7 +22988,6 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {},
                                           "business": {
                                             "type": "object",
                                             "properties": {
@@ -23088,12 +23027,17 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
+                                                      "nBusiness": {
+                                                        "type": "string"
+                                                      },
                                                       "Budget": {
                                                         "type": "string"
                                                       },
                                                       "Approach": {
                                                         "type": "string"
                                                       },
+                                                      "history": {},
+                                                      "incidentRecord": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -23153,10 +23097,22 @@
                                             "type": "string",
                                             "format": "date"
                                           },
-                                          "Npedido": {
+                                          "obs": {
                                             "type": "string"
                                           },
-                                          "obs": {
+                                          "condi": {
+                                            "type": "string"
+                                          },
+                                          "prazo": {
+                                            "type": "string"
+                                          },
+                                          "frete": {
+                                            "type": "string"
+                                          },
+                                          "vendedor": {
+                                            "type": "string"
+                                          },
+                                          "totalGeral": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -23919,7 +23875,7 @@
                                 }
                               }
                             },
-                            "SalesHistory": {},
+                            "history": {},
                             "pedidos": {
                               "type": "object",
                               "properties": {
@@ -23938,12 +23894,6 @@
                                           "vencPedido": {
                                             "type": "string",
                                             "format": "date"
-                                          },
-                                          "condi": {
-                                            "type": "string"
-                                          },
-                                          "prazo": {
-                                            "type": "string"
                                           },
                                           "fornecedor": {
                                             "type": "object",
@@ -24067,9 +24017,6 @@
                                               }
                                             }
                                           },
-                                          "frete": {
-                                            "type": "string"
-                                          },
                                           "empresa": {
                                             "type": "object",
                                             "properties": {
@@ -24086,12 +24033,6 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "vendedor": {
-                                            "type": "string"
-                                          },
-                                          "totalGeral": {
-                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -24111,9 +24052,6 @@
                                           "CNPJClinet": {
                                             "type": "string"
                                           },
-                                          "status": {
-                                            "type": "boolean"
-                                          },
                                           "andamento": {
                                             "type": "string"
                                           },
@@ -24123,7 +24061,6 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {},
                                           "business": {
                                             "type": "object",
                                             "properties": {
@@ -24163,12 +24100,17 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
+                                                      "nBusiness": {
+                                                        "type": "string"
+                                                      },
                                                       "Budget": {
                                                         "type": "string"
                                                       },
                                                       "Approach": {
                                                         "type": "string"
                                                       },
+                                                      "history": {},
+                                                      "incidentRecord": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -24228,10 +24170,22 @@
                                             "type": "string",
                                             "format": "date"
                                           },
-                                          "Npedido": {
+                                          "obs": {
                                             "type": "string"
                                           },
-                                          "obs": {
+                                          "condi": {
+                                            "type": "string"
+                                          },
+                                          "prazo": {
+                                            "type": "string"
+                                          },
+                                          "frete": {
+                                            "type": "string"
+                                          },
+                                          "vendedor": {
+                                            "type": "string"
+                                          },
+                                          "totalGeral": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -25027,7 +24981,7 @@
                                 }
                               }
                             },
-                            "SalesHistory": {},
+                            "history": {},
                             "pedidos": {
                               "type": "object",
                               "properties": {
@@ -25046,12 +25000,6 @@
                                           "vencPedido": {
                                             "type": "string",
                                             "format": "date"
-                                          },
-                                          "condi": {
-                                            "type": "string"
-                                          },
-                                          "prazo": {
-                                            "type": "string"
                                           },
                                           "fornecedor": {
                                             "type": "object",
@@ -25175,9 +25123,6 @@
                                               }
                                             }
                                           },
-                                          "frete": {
-                                            "type": "string"
-                                          },
                                           "empresa": {
                                             "type": "object",
                                             "properties": {
@@ -25194,12 +25139,6 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "vendedor": {
-                                            "type": "string"
-                                          },
-                                          "totalGeral": {
-                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -25219,9 +25158,6 @@
                                           "CNPJClinet": {
                                             "type": "string"
                                           },
-                                          "status": {
-                                            "type": "boolean"
-                                          },
                                           "andamento": {
                                             "type": "string"
                                           },
@@ -25231,7 +25167,6 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {},
                                           "business": {
                                             "type": "object",
                                             "properties": {
@@ -25271,12 +25206,17 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
+                                                      "nBusiness": {
+                                                        "type": "string"
+                                                      },
                                                       "Budget": {
                                                         "type": "string"
                                                       },
                                                       "Approach": {
                                                         "type": "string"
                                                       },
+                                                      "history": {},
+                                                      "incidentRecord": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -25336,10 +25276,22 @@
                                             "type": "string",
                                             "format": "date"
                                           },
-                                          "Npedido": {
+                                          "obs": {
                                             "type": "string"
                                           },
-                                          "obs": {
+                                          "condi": {
+                                            "type": "string"
+                                          },
+                                          "prazo": {
+                                            "type": "string"
+                                          },
+                                          "frete": {
+                                            "type": "string"
+                                          },
+                                          "vendedor": {
+                                            "type": "string"
+                                          },
+                                          "totalGeral": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -26102,7 +26054,7 @@
                                 }
                               }
                             },
-                            "SalesHistory": {},
+                            "history": {},
                             "pedidos": {
                               "type": "object",
                               "properties": {
@@ -26121,12 +26073,6 @@
                                           "vencPedido": {
                                             "type": "string",
                                             "format": "date"
-                                          },
-                                          "condi": {
-                                            "type": "string"
-                                          },
-                                          "prazo": {
-                                            "type": "string"
                                           },
                                           "fornecedor": {
                                             "type": "object",
@@ -26250,9 +26196,6 @@
                                               }
                                             }
                                           },
-                                          "frete": {
-                                            "type": "string"
-                                          },
                                           "empresa": {
                                             "type": "object",
                                             "properties": {
@@ -26269,12 +26212,6 @@
                                                 }
                                               }
                                             }
-                                          },
-                                          "vendedor": {
-                                            "type": "string"
-                                          },
-                                          "totalGeral": {
-                                            "type": "string"
                                           },
                                           "fornecedorId": {
                                             "type": "integer"
@@ -26294,9 +26231,6 @@
                                           "CNPJClinet": {
                                             "type": "string"
                                           },
-                                          "status": {
-                                            "type": "boolean"
-                                          },
                                           "andamento": {
                                             "type": "string"
                                           },
@@ -26306,7 +26240,6 @@
                                           "vencPrint": {
                                             "type": "string"
                                           },
-                                          "descriptStatus": {},
                                           "business": {
                                             "type": "object",
                                             "properties": {
@@ -26346,12 +26279,17 @@
                                                         "type": "string",
                                                         "format": "date"
                                                       },
+                                                      "nBusiness": {
+                                                        "type": "string"
+                                                      },
                                                       "Budget": {
                                                         "type": "string"
                                                       },
                                                       "Approach": {
                                                         "type": "string"
                                                       },
+                                                      "history": {},
+                                                      "incidentRecord": {},
                                                       "createdAt": {
                                                         "type": "string",
                                                         "format": "date-time"
@@ -26411,10 +26349,22 @@
                                             "type": "string",
                                             "format": "date"
                                           },
-                                          "Npedido": {
+                                          "obs": {
                                             "type": "string"
                                           },
-                                          "obs": {
+                                          "condi": {
+                                            "type": "string"
+                                          },
+                                          "prazo": {
+                                            "type": "string"
+                                          },
+                                          "frete": {
+                                            "type": "string"
+                                          },
+                                          "vendedor": {
+                                            "type": "string"
+                                          },
+                                          "totalGeral": {
                                             "type": "string"
                                           },
                                           "createdAt": {

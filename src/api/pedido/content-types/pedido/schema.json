@@ -19,35 +19,17 @@
     "vencPedido": {
       "type": "date"
     },
-    "condi": {
-      "type": "string",
-      "default": "null"
-    },
-    "prazo": {
-      "type": "string",
-      "default": "null"
-    },
     "fornecedor": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::fornecedor.fornecedor",
       "inversedBy": "pedidos"
     },
-    "frete": {
-      "type": "string"
-    },
     "empresa": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::empresa.empresa",
       "inversedBy": "pedidos"
-    },
-    "vendedor": {
-      "type": "string"
-    },
-    "totalGeral": {
-      "type": "string",
-      "default": "null"
     },
     "fornecedorId": {
       "type": "integer"
@@ -68,9 +50,6 @@
     "CNPJClinet": {
       "type": "string"
     },
-    "status": {
-      "type": "boolean"
-    },
     "andamento": {
       "type": "string"
     },
@@ -79,9 +58,6 @@
     },
     "vencPrint": {
       "type": "string"
-    },
-    "descriptStatus": {
-      "type": "json"
     },
     "business": {
       "type": "relation",
@@ -95,12 +71,23 @@
     "dataPedido": {
       "type": "date"
     },
-    "Npedido": {
-      "type": "uid",
-      "targetField": "nPedido"
-    },
     "obs": {
       "type": "richtext"
+    },
+    "condi": {
+      "type": "string"
+    },
+    "prazo": {
+      "type": "string"
+    },
+    "frete": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "totalGeral": {
+      "type": "string"
     }
   }
 }

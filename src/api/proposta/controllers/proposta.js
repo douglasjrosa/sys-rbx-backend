@@ -141,7 +141,7 @@ module.exports = {
     try {
       const json = ctx.request.body;
       const page = ctx.params.page;
-      const limit = 5;
+      const limit = 6;
       const offset = (page - 1) * limit;
 
       const inf = json;

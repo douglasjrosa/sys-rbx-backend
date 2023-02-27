@@ -4,7 +4,8 @@
   "info": {
     "singularName": "business",
     "pluralName": "businesses",
-    "displayName": "Business"
+    "displayName": "Business",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -23,11 +24,20 @@
     "deadline": {
       "type": "date"
     },
+    "nBusiness": {
+      "type": "string"
+    },
     "Budget": {
       "type": "string"
     },
     "Approach": {
       "type": "string"
+    },
+    "history": {
+      "type": "json"
+    },
+    "incidentRecord": {
+      "type": "json"
     }
   }
 }
