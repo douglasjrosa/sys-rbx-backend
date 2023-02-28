@@ -147,21 +147,6 @@
           "sortable": true
         }
       },
-      "empresas": {
-        "edit": {
-          "label": "empresas",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "empresas",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -223,12 +208,12 @@
           {
             "name": "blocked",
             "size": 4
+          },
+          {
+            "name": "role",
+            "size": 6
           }
         ]
-      ],
-      "editRelations": [
-        "role",
-        "empresas"
       ]
     }
   },

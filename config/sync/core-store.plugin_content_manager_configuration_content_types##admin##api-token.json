@@ -169,9 +169,6 @@
         "description",
         "type"
       ],
-      "editRelations": [
-        "permissions"
-      ],
       "edit": [
         [
           {
@@ -207,6 +204,10 @@
           {
             "name": "lifespan",
             "size": 4
+          },
+          {
+            "name": "permissions",
+            "size": 6
           }
         ]
       ]

@@ -51,6 +51,12 @@
       "relation": "oneToMany",
       "target": "api::pedido.pedido",
       "mappedBy": "fornecedor"
+    },
+    "empresas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empresa.empresa",
+      "mappedBy": "fornecedor"
     }
   }
 }

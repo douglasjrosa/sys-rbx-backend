@@ -281,9 +281,6 @@
         "alternativeText",
         "caption"
       ],
-      "editRelations": [
-        "folder"
-      ],
       "edit": [
         [
           {
@@ -362,6 +359,10 @@
         [
           {
             "name": "folderPath",
+            "size": 6
+          },
+          {
+            "name": "folder",
             "size": 6
           }
         ]

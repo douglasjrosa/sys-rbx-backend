@@ -281,9 +281,6 @@
         "CEP",
         "endereco"
       ],
-      "editRelations": [
-        "empresas"
-      ],
       "edit": [
         [
           {
@@ -361,6 +358,10 @@
           {
             "name": "status",
             "size": 4
+          },
+          {
+            "name": "empresas",
+            "size": 6
           }
         ]
       ]

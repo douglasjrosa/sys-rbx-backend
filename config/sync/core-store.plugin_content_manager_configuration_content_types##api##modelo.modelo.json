@@ -273,21 +273,6 @@
           "sortable": true
         }
       },
-      "desconto": {
-        "edit": {
-          "label": "desconto",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "desconto",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -410,11 +395,13 @@
             "name": "exp",
             "size": 4
           }
+        ],
+        [
+          {
+            "name": "tipos_de_produto",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": [
-        "tipos_de_produto",
-        "desconto"
       ]
     }
   },

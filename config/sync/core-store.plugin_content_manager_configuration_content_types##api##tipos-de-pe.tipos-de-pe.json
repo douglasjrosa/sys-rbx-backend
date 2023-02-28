@@ -172,12 +172,6 @@
         "slug",
         "image"
       ],
-      "editRelations": [
-        "pe",
-        "longarina",
-        "toco",
-        "pregoG"
-      ],
       "edit": [
         [
           {
@@ -196,6 +190,26 @@
           },
           {
             "name": "notas",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pe",
+            "size": 6
+          },
+          {
+            "name": "longarina",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "toco",
+            "size": 6
+          },
+          {
+            "name": "pregoG",
             "size": 6
           }
         ]

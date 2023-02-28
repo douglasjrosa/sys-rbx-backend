@@ -280,11 +280,12 @@
           {
             "name": "nome",
             "size": 6
+          },
+          {
+            "name": "pedidos",
+            "size": 6
           }
         ]
-      ],
-      "editRelations": [
-        "pedidos"
       ]
     }
   },

@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::desconto.desconto",
+  "key": "plugin_content_manager_configuration_content_types::api::business.business",
   "value": {
-    "uid": "api::desconto.desconto",
+    "uid": "api::business.business",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "nome",
-      "defaultSortBy": "nome",
+      "mainField": "nBusiness",
+      "defaultSortBy": "nBusiness",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,74 +20,117 @@
           "sortable": true
         }
       },
-      "nome": {
+      "status": {
         "edit": {
-          "label": "nome",
+          "label": "status",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "nome",
+          "label": "status",
           "searchable": true,
           "sortable": true
         }
       },
-      "slug": {
+      "pedidos": {
         "edit": {
-          "label": "slug",
+          "label": "pedidos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "pedidos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "deadline": {
+        "edit": {
+          "label": "deadline",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "slug",
+          "label": "deadline",
           "searchable": true,
           "sortable": true
         }
       },
-      "ativo": {
+      "nBusiness": {
         "edit": {
-          "label": "ativo",
+          "label": "nBusiness",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "ativo",
+          "label": "nBusiness",
           "searchable": true,
           "sortable": true
         }
       },
-      "percentual": {
+      "Budget": {
         "edit": {
-          "label": "percentual",
+          "label": "Budget",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "percentual",
+          "label": "Budget",
           "searchable": true,
           "sortable": true
         }
       },
-      "validade": {
+      "Approach": {
         "edit": {
-          "label": "validade",
+          "label": "Approach",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "validade",
+          "label": "Approach",
           "searchable": true,
           "sortable": true
+        }
+      },
+      "history": {
+        "edit": {
+          "label": "history",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "history",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "incidentRecord": {
+        "edit": {
+          "label": "incidentRecord",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "incidentRecord",
+          "searchable": false,
+          "sortable": false
         }
       },
       "createdAt": {
@@ -122,34 +165,51 @@
     "layouts": {
       "list": [
         "id",
-        "nome",
-        "slug",
-        "ativo"
+        "status",
+        "pedidos",
+        "deadline"
       ],
-      "editRelations": [],
       "edit": [
         [
           {
-            "name": "nome",
+            "name": "status",
+            "size": 4
+          },
+          {
+            "name": "deadline",
+            "size": 4
+          },
+          {
+            "name": "pedidos",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "nBusiness",
             "size": 6
           },
           {
-            "name": "slug",
+            "name": "Budget",
             "size": 6
           }
         ],
         [
           {
-            "name": "ativo",
-            "size": 4
-          },
+            "name": "Approach",
+            "size": 6
+          }
+        ],
+        [
           {
-            "name": "percentual",
-            "size": 4
-          },
+            "name": "history",
+            "size": 12
+          }
+        ],
+        [
           {
-            "name": "validade",
-            "size": 4
+            "name": "incidentRecord",
+            "size": 12
           }
         ]
       ]

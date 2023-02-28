@@ -85,13 +85,14 @@
         "token",
         "createdAt"
       ],
-      "editRelations": [
-        "token"
-      ],
       "edit": [
         [
           {
             "name": "action",
+            "size": 6
+          },
+          {
+            "name": "token",
             "size": 6
           }
         ]

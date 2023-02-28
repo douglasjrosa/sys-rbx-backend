@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 10,
+      "pageSize": 20,
       "mainField": "nome",
-      "defaultSortBy": "nome",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -679,76 +679,117 @@
           "sortable": true
         }
       },
-      "user": {
+      "history": {
         "edit": {
-          "label": "user",
+          "label": "history",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "history",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pedidos": {
+        "edit": {
+          "label": "pedidos",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true,
-          "mainField": "username"
+          "mainField": "matriz"
         },
         "list": {
-          "label": "user",
+          "label": "pedidos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "titulo": {
+        "edit": {
+          "label": "titulo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "titulo",
           "searchable": true,
           "sortable": true
         }
       },
-      "negocios": {
+      "vendedor": {
         "edit": {
-          "label": "negocios",
+          "label": "vendedor",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "negocios",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "SalesHistory": {
-        "edit": {
-          "label": "SalesHistory",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "SalesHistory",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "Client": {
-        "edit": {
-          "label": "Client",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Client",
+          "label": "vendedor",
           "searchable": true,
           "sortable": true
         }
       },
-      "propostas": {
+      "fornecedor": {
         "edit": {
-          "label": "propostas",
+          "label": "fornecedor",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "nPedido"
+          "editable": true
         },
         "list": {
-          "label": "propostas",
-          "searchable": false,
-          "sortable": false
+          "label": "fornecedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedorId": {
+        "edit": {
+          "label": "fornecedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fornecedorId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vendedorId": {
+        "edit": {
+          "label": "vendedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vendedorId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "codigo": {
+        "edit": {
+          "label": "codigo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "codigo",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -791,26 +832,20 @@
         [
           {
             "name": "nome",
-            "size": 6
+            "size": 4
           },
           {
             "name": "fantasia",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "tipoPessoa",
-            "size": 6
+            "size": 4
           },
           {
-            "name": "endereco",
-            "size": 6
+            "name": "tipoPessoa",
+            "size": 4
           }
         ],
         [
           {
-            "name": "numero",
+            "name": "endereco",
             "size": 6
           },
           {
@@ -820,45 +855,47 @@
         ],
         [
           {
+            "name": "cep",
+            "size": 4
+          },
+          {
+            "name": "numero",
+            "size": 4
+          },
+          {
+            "name": "uf",
+            "size": 4
+          }
+        ],
+        [
+          {
             "name": "bairro",
             "size": 6
           },
           {
-            "name": "cep",
-            "size": 6
+            "name": "pais",
+            "size": 4
           }
         ],
         [
           {
             "name": "cidade",
-            "size": 6
+            "size": 4
           },
-          {
-            "name": "uf",
-            "size": 6
-          }
-        ],
-        [
           {
             "name": "site",
-            "size": 6
+            "size": 4
           },
-          {
-            "name": "pais",
-            "size": 6
-          }
-        ],
-        [
           {
             "name": "porte",
-            "size": 6
-          },
-          {
-            "name": "simples",
             "size": 4
           }
         ],
         [
+          {
+            "name": "simples",
+            "size": 4
+          },
           {
             "name": "ieStatus",
             "size": 4
@@ -866,7 +903,9 @@
           {
             "name": "status",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "adFrailLat",
             "size": 4
@@ -1014,27 +1053,50 @@
         ],
         [
           {
-            "name": "negocios",
-            "size": 12
-          }
-        ],
-        [
+            "name": "titulo",
+            "size": 6
+          },
           {
-            "name": "SalesHistory",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "Client",
+            "name": "vendedor",
             "size": 6
           }
+        ],
+        [
+          {
+            "name": "fornecedor",
+            "size": 6
+          },
+          {
+            "name": "fornecedorId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "vendedorId",
+            "size": 4
+          },
+          {
+            "name": "responsavel",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pedidos",
+            "size": 6
+          },
+          {
+            "name": "codigo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "history",
+            "size": 12
+          }
         ]
-      ],
-      "editRelations": [
-        "responsavel",
-        "user",
-        "propostas"
       ]
     }
   },

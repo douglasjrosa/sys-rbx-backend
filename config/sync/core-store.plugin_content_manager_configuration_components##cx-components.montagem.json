@@ -34,9 +34,9 @@
           "sortable": true
         }
       },
-      "fixadoresFixos": {
+      "fixFixos": {
         "edit": {
-          "label": "fixadoresFixos",
+          "label": "fixFixos",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -44,7 +44,7 @@
           "mainField": "nome"
         },
         "list": {
-          "label": "fixadoresFixos",
+          "label": "fixFixos",
           "searchable": false,
           "sortable": false
         }
@@ -167,17 +167,13 @@
       "list": [
         "id",
         "notas",
-        "fixadoresFixos",
-        "fixadoresSoltos"
+        "fixadoresSoltos",
+        "fixFixos"
       ],
       "edit": [
         [
           {
             "name": "notas",
-            "size": 6
-          },
-          {
-            "name": "fixadoresFixos",
             "size": 6
           }
         ],
@@ -218,9 +214,14 @@
             "name": "enviarFechada",
             "size": 4
           }
+        ],
+        [
+          {
+            "name": "fixFixos",
+            "size": 6
+          }
         ]
-      ],
-      "editRelations": []
+      ]
     },
     "isComponent": true
   },

@@ -171,9 +171,6 @@
     "vendedor": {
       "type": "string"
     },
-    "fornecedor": {
-      "type": "string"
-    },
     "fornecedorId": {
       "type": "integer"
     },
@@ -182,6 +179,12 @@
     },
     "codigo": {
       "type": "string"
+    },
+    "fornecedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fornecedor.fornecedor",
+      "inversedBy": "empresas"
     }
   }
 }
