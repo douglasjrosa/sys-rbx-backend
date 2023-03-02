@@ -62,6 +62,9 @@
     },
     "status": {
       "type": "boolean"
+    },
+    "history": {
+      "type": "json"
     }
   }
 }
