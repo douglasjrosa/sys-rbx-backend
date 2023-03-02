@@ -185,6 +185,12 @@
       "relation": "manyToOne",
       "target": "api::fornecedor.fornecedor",
       "inversedBy": "empresas"
+    },
+    "business": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business.business",
+      "mappedBy": "empresa"
     }
   }
 }

@@ -38,6 +38,12 @@
     },
     "incidentRecord": {
       "type": "json"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "business"
     }
   }
 }
