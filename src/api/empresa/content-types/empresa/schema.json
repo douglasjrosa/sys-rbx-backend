@@ -191,6 +191,12 @@
       "relation": "oneToOne",
       "target": "api::business.business",
       "mappedBy": "empresa"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "empresas"
     }
   }
 }

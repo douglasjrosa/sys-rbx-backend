@@ -62,6 +62,40 @@
       "target": "plugin::users-permissions.role",
       "inversedBy": "users",
       "configurable": false
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "user"
+    },
+    "empresas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empresa.empresa",
+      "mappedBy": "user"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "user"
+    },
+    "pessoas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pessoa.pessoa",
+      "mappedBy": "user"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
