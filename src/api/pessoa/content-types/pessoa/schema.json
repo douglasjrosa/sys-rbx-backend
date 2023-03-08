@@ -62,6 +62,7 @@
     },
     "status": {
       "type": "boolean"
+<<<<<<< HEAD
     },
     "history": {
       "type": "json"
@@ -71,6 +72,8 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "pessoas"
+=======
+>>>>>>> master
     }
   }
 }

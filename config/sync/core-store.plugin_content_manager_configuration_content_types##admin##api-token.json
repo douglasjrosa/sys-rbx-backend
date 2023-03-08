@@ -169,6 +169,12 @@
         "description",
         "type"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "permissions"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -204,10 +210,13 @@
           {
             "name": "lifespan",
             "size": 4
+<<<<<<< HEAD
           },
           {
             "name": "permissions",
             "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

@@ -6,9 +6,15 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
+<<<<<<< HEAD
       "pageSize": 20,
       "mainField": "nome",
       "defaultSortBy": "id",
+=======
+      "pageSize": 10,
+      "mainField": "nome",
+      "defaultSortBy": "nome",
+>>>>>>> master
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -524,6 +530,24 @@
           "sortable": true
         }
       },
+<<<<<<< HEAD
+=======
+      "pessoa": {
+        "edit": {
+          "label": "pessoa",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "pessoa",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+>>>>>>> master
       "tablecalc": {
         "edit": {
           "label": "tablecalc",
@@ -679,6 +703,7 @@
           "sortable": true
         }
       },
+<<<<<<< HEAD
       "history": {
         "edit": {
           "label": "history",
@@ -792,6 +817,8 @@
           "sortable": true
         }
       },
+=======
+>>>>>>> master
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -828,10 +855,18 @@
         "fantasia",
         "tipoPessoa"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "pessoa",
+        "responsavel"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
             "name": "nome",
+<<<<<<< HEAD
             "size": 4
           },
           {
@@ -841,12 +876,34 @@
           {
             "name": "tipoPessoa",
             "size": 4
+=======
+            "size": 6
+          },
+          {
+            "name": "fantasia",
+            "size": 6
+>>>>>>> master
           }
         ],
         [
           {
+<<<<<<< HEAD
             "name": "endereco",
             "size": 6
+=======
+            "name": "tipoPessoa",
+            "size": 6
+          },
+          {
+            "name": "endereco",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "numero",
+            "size": 6
+>>>>>>> master
           },
           {
             "name": "complemento",
@@ -855,6 +912,7 @@
         ],
         [
           {
+<<<<<<< HEAD
             "name": "cep",
             "size": 4
           },
@@ -869,17 +927,25 @@
         ],
         [
           {
+=======
+>>>>>>> master
             "name": "bairro",
             "size": 6
           },
           {
+<<<<<<< HEAD
             "name": "pais",
             "size": 4
+=======
+            "name": "cep",
+            "size": 6
+>>>>>>> master
           }
         ],
         [
           {
             "name": "cidade",
+<<<<<<< HEAD
             "size": 4
           },
           {
@@ -889,13 +955,42 @@
           {
             "name": "porte",
             "size": 4
+=======
+            "size": 6
+          },
+          {
+            "name": "uf",
+            "size": 6
+>>>>>>> master
           }
         ],
         [
           {
+<<<<<<< HEAD
             "name": "simples",
             "size": 4
           },
+=======
+            "name": "site",
+            "size": 6
+          },
+          {
+            "name": "pais",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "porte",
+            "size": 6
+          },
+          {
+            "name": "simples",
+            "size": 4
+          }
+        ],
+        [
+>>>>>>> master
           {
             "name": "ieStatus",
             "size": 4
@@ -903,9 +998,13 @@
           {
             "name": "status",
             "size": 4
+<<<<<<< HEAD
           }
         ],
         [
+=======
+          },
+>>>>>>> master
           {
             "name": "adFrailLat",
             "size": 4
@@ -1050,6 +1149,7 @@
             "name": "codpais",
             "size": 6
           }
+<<<<<<< HEAD
         ],
         [
           {
@@ -1096,6 +1196,8 @@
             "name": "history",
             "size": 12
           }
+=======
+>>>>>>> master
         ]
       ]
     }

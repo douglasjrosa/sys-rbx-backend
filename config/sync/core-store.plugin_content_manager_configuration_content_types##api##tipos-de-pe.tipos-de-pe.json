@@ -172,6 +172,15 @@
         "slug",
         "image"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "pe",
+        "longarina",
+        "toco",
+        "pregoG"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -192,6 +201,7 @@
             "name": "notas",
             "size": 6
           }
+<<<<<<< HEAD
         ],
         [
           {
@@ -212,6 +222,8 @@
             "name": "pregoG",
             "size": 6
           }
+=======
+>>>>>>> master
         ]
       ]
     }

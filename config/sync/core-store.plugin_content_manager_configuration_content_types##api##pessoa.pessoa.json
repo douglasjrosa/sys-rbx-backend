@@ -281,6 +281,12 @@
         "CEP",
         "endereco"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "empresas"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -358,10 +364,13 @@
           {
             "name": "status",
             "size": 4
+<<<<<<< HEAD
           },
           {
             "name": "empresas",
             "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

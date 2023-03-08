@@ -9,7 +9,11 @@
     "notas": {
       "type": "text"
     },
+<<<<<<< HEAD
     "fixFixos": {
+=======
+    "fixadoresFixos": {
+>>>>>>> master
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::materia-prima.materia-prima"

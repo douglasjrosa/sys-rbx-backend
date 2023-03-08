@@ -80,7 +80,11 @@
         {
           "name": "pagination[withCount]",
           "in": "query",
+<<<<<<< HEAD
           "description": "Return page/pageSize (default: true)",
+=======
+          "description": "Retun page/pageSize (default: true)",
+>>>>>>> master
           "deprecated": false,
           "required": false,
           "schema": {
@@ -157,6 +161,7 @@
             "type": "object"
           },
           "style": "deepObject"
+<<<<<<< HEAD
         },
         {
           "name": "locale",
@@ -167,6 +172,8 @@
           "schema": {
             "type": "string"
           }
+=======
+>>>>>>> master
         }
       ],
       "operationId": "get/tipos-de-pes"

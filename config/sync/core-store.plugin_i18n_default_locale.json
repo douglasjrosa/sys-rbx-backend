@@ -1,6 +1,10 @@
 {
   "key": "plugin_i18n_default_locale",
+<<<<<<< HEAD
   "value": "pt-BR",
+=======
+  "value": "en",
+>>>>>>> master
   "type": "string",
   "environment": null,
   "tag": null

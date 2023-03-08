@@ -73,10 +73,13 @@ const permissions = {
       read: [{ action: 'admin::api-tokens.read', subject: null }],
       update: [{ action: 'admin::api-tokens.update', subject: null }],
       regenerate: [{ action: 'admin::api-tokens.regenerate', subject: null }],
+<<<<<<< HEAD
     },
     'project-settings': {
       read: [{ action: 'admin::project-settings.read', subject: null }],
       update: [{ action: 'admin::project-settings.update', subject: null }],
+=======
+>>>>>>> master
     },
   },
 };

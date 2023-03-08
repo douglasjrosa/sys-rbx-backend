@@ -4,10 +4,14 @@
   "info": {
     "singularName": "materia-prima",
     "pluralName": "materia-primas",
+<<<<<<< HEAD
     "displayName": "matéria-prima",
     "order": [
       "materia_prima_order"
     ]
+=======
+    "displayName": "matéria-prima"
+>>>>>>> master
   },
   "options": {
     "draftAndPublish": true

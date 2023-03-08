@@ -240,7 +240,12 @@
             "size": 6
           }
         ]
+<<<<<<< HEAD
       ]
+=======
+      ],
+      "editRelations": []
+>>>>>>> master
     },
     "isComponent": true
   },

@@ -155,6 +155,7 @@
       "relation": "manyToOne",
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
+<<<<<<< HEAD
     },
     "history": {
       "type": "json"
@@ -197,6 +198,8 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "empresas"
+=======
+>>>>>>> master
     }
   }
 }

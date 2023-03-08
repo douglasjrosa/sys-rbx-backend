@@ -143,6 +143,14 @@
         "pathId",
         "parent"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "parent",
+        "children",
+        "files"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -158,6 +166,7 @@
           {
             "name": "path",
             "size": 6
+<<<<<<< HEAD
           },
           {
             "name": "parent",
@@ -172,6 +181,8 @@
           {
             "name": "files",
             "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

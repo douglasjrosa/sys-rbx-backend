@@ -85,15 +85,24 @@
         "token",
         "createdAt"
       ],
+<<<<<<< HEAD
+=======
+      "editRelations": [
+        "token"
+      ],
+>>>>>>> master
       "edit": [
         [
           {
             "name": "action",
             "size": 6
+<<<<<<< HEAD
           },
           {
             "name": "token",
             "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

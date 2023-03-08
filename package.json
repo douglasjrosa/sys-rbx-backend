@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "description": "A Strapi application",
   "scripts": {
+<<<<<<< HEAD
+=======
+    "dev": "strapi develop",
+>>>>>>> master
     "develop": "strapi develop",
     "dev": "strapi develop",
     "start": "strapi start",
@@ -12,6 +16,7 @@
     "cs": "config-sync"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@strapi/plugin-documentation": "4.6.2",
     "@strapi/plugin-i18n": "4.6.2",
     "@strapi/plugin-users-permissions": "4.6.2",
@@ -26,6 +31,14 @@
     "strapi-plugin-config-sync": "^1.0.4",
     "uuid": "^9.0.0",
     "wkhtmltopdf": "^0.4.0"
+=======
+    "@strapi/plugin-documentation": "^4.4.3",
+    "@strapi/plugin-i18n": "4.4.0",
+    "@strapi/plugin-users-permissions": "4.3.9",
+    "@strapi/strapi": "4.4.3",
+    "mysql": "2.18.1",
+    "strapi-plugin-config-sync": "^1.0.4"
+>>>>>>> master
   },
   "author": {
     "name": "A Strapi developer"
@@ -33,5 +46,12 @@
   "strapi": {
     "uuid": "f978a049-4f93-4851-9bc1-475e221ee250"
   },
+<<<<<<< HEAD
+=======
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+>>>>>>> master
   "license": "MIT"
 }

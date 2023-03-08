@@ -564,7 +564,11 @@
           "required": false
         },
         "lifespan": {
+<<<<<<< HEAD
           "type": "biginteger",
+=======
+          "type": "integer",
+>>>>>>> master
           "configurable": false,
           "required": false
         },
@@ -665,7 +669,11 @@
             "required": false
           },
           "lifespan": {
+<<<<<<< HEAD
             "type": "biginteger",
+=======
+            "type": "integer",
+>>>>>>> master
             "configurable": false,
             "required": false
           }
@@ -913,6 +921,7 @@
             "folder_path"
           ],
           "type": null
+<<<<<<< HEAD
         },
         {
           "name": "upload_files_created_at_index",
@@ -948,6 +957,8 @@
             "ext"
           ],
           "type": null
+=======
+>>>>>>> master
         }
       ],
       "kind": "collectionType",
@@ -1548,7 +1559,10 @@
         }
       },
       "kind": "collectionType",
+<<<<<<< HEAD
       "__filename__": "schema.json",
+=======
+>>>>>>> master
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1724,6 +1738,7 @@
       "collectionName": "i18n_locale",
       "globalId": "I18NLocale"
     },
+<<<<<<< HEAD
     "api::business.business": {
       "kind": "collectionType",
       "collectionName": "businesses",
@@ -1731,6 +1746,15 @@
         "singularName": "business",
         "pluralName": "businesses",
         "displayName": "Business",
+=======
+    "api::desconto.desconto": {
+      "kind": "collectionType",
+      "collectionName": "descontos",
+      "info": {
+        "singularName": "desconto",
+        "pluralName": "descontos",
+        "displayName": "desconto",
+>>>>>>> master
         "description": ""
       },
       "options": {
@@ -1738,6 +1762,7 @@
       },
       "pluginOptions": {},
       "attributes": {
+<<<<<<< HEAD
         "status": {
           "type": "boolean"
         },
@@ -1765,6 +1790,25 @@
         "incidentRecord": {
           "type": "json"
         },
+=======
+        "nome": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "ativo": {
+          "type": "boolean",
+          "default": true
+        },
+        "percentual": {
+          "type": "float"
+        },
+        "validade": {
+          "type": "date"
+        },
+>>>>>>> master
         "createdAt": {
           "type": "datetime"
         },
@@ -1799,11 +1843,19 @@
         }
       },
       "__schema__": {
+<<<<<<< HEAD
         "collectionName": "businesses",
         "info": {
           "singularName": "business",
           "pluralName": "businesses",
           "displayName": "Business",
+=======
+        "collectionName": "descontos",
+        "info": {
+          "singularName": "desconto",
+          "pluralName": "descontos",
+          "displayName": "desconto",
+>>>>>>> master
           "description": ""
         },
         "options": {
@@ -1811,6 +1863,7 @@
         },
         "pluginOptions": {},
         "attributes": {
+<<<<<<< HEAD
           "status": {
             "type": "boolean"
           },
@@ -1837,16 +1890,42 @@
           },
           "incidentRecord": {
             "type": "json"
+=======
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "nome"
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
+          },
+          "percentual": {
+            "type": "float"
+          },
+          "validade": {
+            "type": "date"
+>>>>>>> master
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
+<<<<<<< HEAD
       "modelName": "business",
       "connection": "default",
       "uid": "api::business.business",
       "apiName": "business",
       "globalId": "Business",
+=======
+      "modelName": "desconto",
+      "connection": "default",
+      "uid": "api::desconto.desconto",
+      "apiName": "desconto",
+      "globalId": "Desconto",
+>>>>>>> master
       "actions": {},
       "lifecycles": {}
     },
@@ -1972,6 +2051,14 @@
         "emailNfe": {
           "type": "string"
         },
+<<<<<<< HEAD
+=======
+        "pessoa": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::pessoa.pessoa"
+        },
+>>>>>>> master
         "tablecalc": {
           "type": "string"
         },
@@ -2008,6 +2095,7 @@
           "target": "api::pessoa.pessoa",
           "inversedBy": "empresas"
         },
+<<<<<<< HEAD
         "history": {
           "type": "json"
         },
@@ -2035,6 +2123,8 @@
         "codigo": {
           "type": "string"
         },
+=======
+>>>>>>> master
         "createdAt": {
           "type": "datetime"
         },
@@ -2189,6 +2279,14 @@
           "emailNfe": {
             "type": "string"
           },
+<<<<<<< HEAD
+=======
+          "pessoa": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::pessoa.pessoa"
+          },
+>>>>>>> master
           "tablecalc": {
             "type": "string"
           },
@@ -2224,6 +2322,7 @@
             "relation": "manyToOne",
             "target": "api::pessoa.pessoa",
             "inversedBy": "empresas"
+<<<<<<< HEAD
           },
           "history": {
             "type": "json"
@@ -2251,6 +2350,8 @@
           },
           "codigo": {
             "type": "string"
+=======
+>>>>>>> master
           }
         },
         "kind": "collectionType"
@@ -2264,6 +2365,7 @@
       "actions": {},
       "lifecycles": {}
     },
+<<<<<<< HEAD
     "api::fornecedor.fornecedor": {
       "kind": "collectionType",
       "collectionName": "fornecedores",
@@ -2416,16 +2518,22 @@
       "actions": {},
       "lifecycles": {}
     },
+=======
+>>>>>>> master
     "api::materia-prima.materia-prima": {
       "kind": "collectionType",
       "collectionName": "materia_primas",
       "info": {
         "singularName": "materia-prima",
         "pluralName": "materia-primas",
+<<<<<<< HEAD
         "displayName": "matéria-prima",
         "order": [
           "materia_prima_order"
         ]
+=======
+        "displayName": "matéria-prima"
+>>>>>>> master
       },
       "options": {
         "draftAndPublish": true
@@ -2512,10 +2620,14 @@
         "info": {
           "singularName": "materia-prima",
           "pluralName": "materia-primas",
+<<<<<<< HEAD
           "displayName": "matéria-prima",
           "order": [
             "materia_prima_order"
           ]
+=======
+          "displayName": "matéria-prima"
+>>>>>>> master
         },
         "options": {
           "draftAndPublish": true
@@ -2667,6 +2779,14 @@
           "type": "boolean",
           "default": false
         },
+<<<<<<< HEAD
+=======
+        "desconto": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::desconto.desconto"
+        },
+>>>>>>> master
         "createdAt": {
           "type": "datetime"
         },
@@ -2789,6 +2909,14 @@
           "exp": {
             "type": "boolean",
             "default": false
+<<<<<<< HEAD
+=======
+          },
+          "desconto": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::desconto.desconto"
+>>>>>>> master
           }
         },
         "kind": "collectionType"
@@ -2802,6 +2930,7 @@
       "actions": {},
       "lifecycles": {}
     },
+<<<<<<< HEAD
     "api::pedido.pedido": {
       "kind": "collectionType",
       "collectionName": "pedidos",
@@ -3028,6 +3157,8 @@
       "actions": {},
       "lifecycles": {}
     },
+=======
+>>>>>>> master
     "api::pessoa.pessoa": {
       "kind": "collectionType",
       "collectionName": "pessoas",
@@ -3202,6 +3333,7 @@
       "actions": {},
       "lifecycles": {}
     },
+<<<<<<< HEAD
     "api::prazo.prazo": {
       "kind": "collectionType",
       "collectionName": "prazos",
@@ -3476,6 +3608,8 @@
       "actions": {},
       "lifecycles": {}
     },
+=======
+>>>>>>> master
     "api::tipos-de-pe.tipos-de-pe": {
       "kind": "collectionType",
       "collectionName": "tipos_de_pes",
