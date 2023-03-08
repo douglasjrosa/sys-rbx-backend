@@ -1,0 +1,295 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::fornecedor.fornecedor",
+  "value": {
+    "uid": "api::fornecedor.fornecedor",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "razao",
+      "defaultSortBy": "razao",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "razao": {
+        "edit": {
+          "label": "razao",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "razao",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fantasia": {
+        "edit": {
+          "label": "fantasia",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fantasia",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "end": {
+        "edit": {
+          "label": "end",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "end",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cnpj": {
+        "edit": {
+          "label": "cnpj",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cnpj",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cidade": {
+        "edit": {
+          "label": "cidade",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cidade",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "uf": {
+        "edit": {
+          "label": "uf",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "uf",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "email": {
+        "edit": {
+          "label": "email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "tel": {
+        "edit": {
+          "label": "tel",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "tel",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "titulo": {
+        "edit": {
+          "label": "titulo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "titulo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nome": {
+        "edit": {
+          "label": "nome",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nome",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "numero": {
+        "edit": {
+          "label": "numero",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "numero",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pedidos": {
+        "edit": {
+          "label": "pedidos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "pedidos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "razao",
+        "fantasia",
+        "end"
+      ],
+      "edit": [
+        [
+          {
+            "name": "razao",
+            "size": 6
+          },
+          {
+            "name": "fantasia",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "end",
+            "size": 6
+          },
+          {
+            "name": "cnpj",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "cidade",
+            "size": 6
+          },
+          {
+            "name": "uf",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "email",
+            "size": 6
+          },
+          {
+            "name": "tel",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "titulo",
+            "size": 6
+          },
+          {
+            "name": "numero",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "nome",
+            "size": 6
+          },
+          {
+            "name": "pedidos",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

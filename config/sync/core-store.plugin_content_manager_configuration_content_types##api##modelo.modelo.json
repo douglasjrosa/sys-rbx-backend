@@ -273,6 +273,8 @@
           "sortable": true
         }
       },
+<<<<<<< HEAD
+=======
       "desconto": {
         "edit": {
           "label": "desconto",
@@ -288,6 +290,7 @@
           "sortable": true
         }
       },
+>>>>>>> master
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -410,11 +413,21 @@
             "name": "exp",
             "size": 4
           }
+<<<<<<< HEAD
+        ],
+        [
+          {
+            "name": "tipos_de_produto",
+            "size": 6
+          }
+        ]
+=======
         ]
       ],
       "editRelations": [
         "tipos_de_produto",
         "desconto"
+>>>>>>> master
       ]
     }
   },

@@ -128,10 +128,13 @@
         "code",
         "description"
       ],
+<<<<<<< HEAD
+=======
       "editRelations": [
         "users",
         "permissions"
       ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -147,6 +150,19 @@
           {
             "name": "description",
             "size": 6
+<<<<<<< HEAD
+          },
+          {
+            "name": "users",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "permissions",
+            "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

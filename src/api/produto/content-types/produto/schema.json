@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "produtos",
+  "info": {
+    "singularName": "produto",
+    "pluralName": "produtos",
+    "displayName": "Produto",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nomeProd": {
+      "type": "string"
+    },
+    "modelo": {
+      "type": "string"
+    },
+    "altura": {
+      "type": "integer"
+    },
+    "comprimento": {
+      "type": "integer"
+    },
+    "vFinal": {
+      "type": "string"
+    },
+    "prodId": {
+      "type": "integer"
+    },
+    "peso": {
+      "type": "string"
+    }
+  }
+}

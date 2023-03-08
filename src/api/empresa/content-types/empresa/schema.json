@@ -155,6 +155,51 @@
       "relation": "manyToOne",
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
+<<<<<<< HEAD
+    },
+    "history": {
+      "type": "json"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "empresa"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "fornecedorId": {
+      "type": "integer"
+    },
+    "vendedorId": {
+      "type": "integer"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "fornecedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::fornecedor.fornecedor",
+      "inversedBy": "empresas"
+    },
+    "business": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::business.business",
+      "mappedBy": "empresa"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "empresas"
+=======
+>>>>>>> master
     }
   }
 }

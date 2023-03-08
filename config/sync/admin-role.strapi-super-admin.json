@@ -5,6 +5,19 @@
   "permissions": [
     {
       "action": "plugin::content-manager.explorer.create",
+<<<<<<< HEAD
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "status",
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord"
+=======
       "subject": "api::desconto.desconto",
       "properties": {
         "fields": [
@@ -13,24 +26,46 @@
           "ativo",
           "percentual",
           "validade"
+>>>>>>> master
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.delete",
+<<<<<<< HEAD
+      "subject": "api::business.business",
+=======
       "subject": "api::desconto.desconto",
+>>>>>>> master
       "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
+<<<<<<< HEAD
+      "subject": "api::business.business",
+=======
       "subject": "api::desconto.desconto",
+>>>>>>> master
       "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
+<<<<<<< HEAD
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "status",
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord"
+=======
       "subject": "api::desconto.desconto",
       "properties": {
         "fields": [
@@ -39,12 +74,26 @@
           "ativo",
           "percentual",
           "validade"
+>>>>>>> master
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.update",
+<<<<<<< HEAD
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "status",
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord"
+=======
       "subject": "api::desconto.desconto",
       "properties": {
         "fields": [
@@ -53,6 +102,7 @@
           "ativo",
           "percentual",
           "validade"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -98,7 +148,10 @@
           "engResi",
           "email",
           "emailNfe",
+<<<<<<< HEAD
+=======
           "pessoa",
+>>>>>>> master
           "tablecalc",
           "maxPg",
           "forpg",
@@ -109,7 +162,19 @@
           "celular",
           "CNAE",
           "codpais",
+<<<<<<< HEAD
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo"
+=======
           "responsavel"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -167,7 +232,10 @@
           "engResi",
           "email",
           "emailNfe",
+<<<<<<< HEAD
+=======
           "pessoa",
+>>>>>>> master
           "tablecalc",
           "maxPg",
           "forpg",
@@ -178,7 +246,19 @@
           "celular",
           "CNAE",
           "codpais",
+<<<<<<< HEAD
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo"
+=======
           "responsavel"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -224,7 +304,10 @@
           "engResi",
           "email",
           "emailNfe",
+<<<<<<< HEAD
+=======
           "pessoa",
+>>>>>>> master
           "tablecalc",
           "maxPg",
           "forpg",
@@ -235,7 +318,94 @@
           "celular",
           "CNAE",
           "codpais",
+<<<<<<< HEAD
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero",
+          "pedidos"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero",
+          "pedidos"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero",
+          "pedidos"
+=======
           "responsavel"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -324,7 +494,11 @@
           "cabeceiraAoTopo",
           "lateraisPorFora",
           "montagem.notas",
+<<<<<<< HEAD
+          "montagem.fixFixos",
+=======
           "montagem.fixadoresFixos",
+>>>>>>> master
           "montagem.fixadoresSoltos",
           "montagem.baseAnexada",
           "montagem.lateralDireitaAnexada",
@@ -334,8 +508,12 @@
           "montagem.tampaAnexada",
           "montagem.enviarFechada",
           "publico",
+<<<<<<< HEAD
+          "exp"
+=======
           "exp",
           "desconto"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -373,7 +551,11 @@
           "cabeceiraAoTopo",
           "lateraisPorFora",
           "montagem.notas",
+<<<<<<< HEAD
+          "montagem.fixFixos",
+=======
           "montagem.fixadoresFixos",
+>>>>>>> master
           "montagem.fixadoresSoltos",
           "montagem.baseAnexada",
           "montagem.lateralDireitaAnexada",
@@ -383,8 +565,12 @@
           "montagem.tampaAnexada",
           "montagem.enviarFechada",
           "publico",
+<<<<<<< HEAD
+          "exp"
+=======
           "exp",
           "desconto"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -410,7 +596,11 @@
           "cabeceiraAoTopo",
           "lateraisPorFora",
           "montagem.notas",
+<<<<<<< HEAD
+          "montagem.fixFixos",
+=======
           "montagem.fixadoresFixos",
+>>>>>>> master
           "montagem.fixadoresSoltos",
           "montagem.baseAnexada",
           "montagem.lateralDireitaAnexada",
@@ -420,8 +610,117 @@
           "montagem.tampaAnexada",
           "montagem.enviarFechada",
           "publico",
+<<<<<<< HEAD
+          "exp"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "fornecedor",
+          "empresa",
+          "fornecedorId",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "matriz",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pedido.pedido",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::pedido.pedido",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "fornecedor",
+          "empresa",
+          "fornecedorId",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "matriz",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "fornecedor",
+          "empresa",
+          "fornecedorId",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "matriz",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral"
+=======
           "exp",
           "desconto"
+>>>>>>> master
         ]
       },
       "conditions": []
@@ -515,6 +814,156 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
+<<<<<<< HEAD
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::prazo.prazo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::prazo.prazo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId",
+          "peso"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::produto.produto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::produto.produto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId",
+          "peso"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::produto.produto",
+      "properties": {
+        "fields": [
+          "nomeProd",
+          "modelo",
+          "altura",
+          "comprimento",
+          "vFinal",
+          "prodId",
+          "peso"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::proposta.proposta",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::proposta.proposta",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+=======
+>>>>>>> master
       "subject": "api::tipos-de-pe.tipos-de-pe",
       "properties": {
         "fields": [
@@ -664,6 +1113,8 @@
       "conditions": []
     },
     {
+<<<<<<< HEAD
+=======
       "action": "admin::marketplace.plugins.install",
       "subject": null,
       "properties": {},
@@ -676,6 +1127,7 @@
       "conditions": []
     },
     {
+>>>>>>> master
       "action": "admin::marketplace.read",
       "subject": null,
       "properties": {},
@@ -940,6 +1392,15 @@
       "conditions": []
     },
     {
+<<<<<<< HEAD
+      "action": "plugin::upload.configure-view",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+=======
+>>>>>>> master
       "action": "plugin::upload.read",
       "subject": null,
       "properties": {},

@@ -183,9 +183,12 @@
         "email",
         "confirmed"
       ],
+<<<<<<< HEAD
+=======
       "editRelations": [
         "role"
       ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -211,6 +214,13 @@
           {
             "name": "blocked",
             "size": 4
+<<<<<<< HEAD
+          },
+          {
+            "name": "role",
+            "size": 6
+=======
+>>>>>>> master
           }
         ]
       ]

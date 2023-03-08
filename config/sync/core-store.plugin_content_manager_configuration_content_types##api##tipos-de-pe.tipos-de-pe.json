@@ -172,12 +172,15 @@
         "slug",
         "image"
       ],
+<<<<<<< HEAD
+=======
       "editRelations": [
         "pe",
         "longarina",
         "toco",
         "pregoG"
       ],
+>>>>>>> master
       "edit": [
         [
           {
@@ -198,6 +201,29 @@
             "name": "notas",
             "size": 6
           }
+<<<<<<< HEAD
+        ],
+        [
+          {
+            "name": "pe",
+            "size": 6
+          },
+          {
+            "name": "longarina",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "toco",
+            "size": 6
+          },
+          {
+            "name": "pregoG",
+            "size": 6
+          }
+=======
+>>>>>>> master
         ]
       ]
     }
