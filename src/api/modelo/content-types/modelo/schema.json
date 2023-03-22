@@ -88,14 +88,6 @@
     "exp": {
       "type": "boolean",
       "default": false
-<<<<<<< HEAD
-=======
-    },
-    "desconto": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::desconto.desconto"
->>>>>>> master
     }
   }
 }
