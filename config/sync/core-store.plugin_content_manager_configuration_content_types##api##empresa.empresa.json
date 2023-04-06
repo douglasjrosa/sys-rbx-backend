@@ -6,15 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-<<<<<<< HEAD
-      "pageSize": 20,
-      "mainField": "nome",
-      "defaultSortBy": "id",
-=======
       "pageSize": 10,
       "mainField": "nome",
       "defaultSortBy": "nome",
->>>>>>> master
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -530,24 +524,6 @@
           "sortable": true
         }
       },
-<<<<<<< HEAD
-=======
-      "pessoa": {
-        "edit": {
-          "label": "pessoa",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "pessoa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
->>>>>>> master
       "tablecalc": {
         "edit": {
           "label": "tablecalc",
@@ -703,7 +679,6 @@
           "sortable": true
         }
       },
-<<<<<<< HEAD
       "history": {
         "edit": {
           "label": "history",
@@ -725,7 +700,7 @@
           "placeholder": "",
           "visible": true,
           "editable": true,
-          "mainField": "matriz"
+          "mainField": "nPedido"
         },
         "list": {
           "label": "pedidos",
@@ -757,20 +732,6 @@
         },
         "list": {
           "label": "vendedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "fornecedor": {
-        "edit": {
-          "label": "fornecedor",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "fornecedor",
           "searchable": true,
           "sortable": true
         }
@@ -817,8 +778,36 @@
           "sortable": true
         }
       },
-=======
->>>>>>> master
+      "business": {
+        "edit": {
+          "label": "business",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "business",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -855,42 +844,19 @@
         "fantasia",
         "tipoPessoa"
       ],
-<<<<<<< HEAD
-=======
-      "editRelations": [
-        "pessoa",
-        "responsavel"
-      ],
->>>>>>> master
       "edit": [
         [
           {
             "name": "nome",
-<<<<<<< HEAD
-            "size": 4
-          },
-          {
-            "name": "fantasia",
-            "size": 4
-          },
-          {
-            "name": "tipoPessoa",
-            "size": 4
-=======
             "size": 6
           },
           {
             "name": "fantasia",
             "size": 6
->>>>>>> master
           }
         ],
         [
           {
-<<<<<<< HEAD
-            "name": "endereco",
-            "size": 6
-=======
             "name": "tipoPessoa",
             "size": 6
           },
@@ -903,7 +869,6 @@
           {
             "name": "numero",
             "size": 6
->>>>>>> master
           },
           {
             "name": "complemento",
@@ -912,65 +877,26 @@
         ],
         [
           {
-<<<<<<< HEAD
-            "name": "cep",
-            "size": 4
-          },
-          {
-            "name": "numero",
-            "size": 4
-          },
-          {
-            "name": "uf",
-            "size": 4
-          }
-        ],
-        [
-          {
-=======
->>>>>>> master
             "name": "bairro",
             "size": 6
           },
           {
-<<<<<<< HEAD
-            "name": "pais",
-            "size": 4
-=======
             "name": "cep",
             "size": 6
->>>>>>> master
           }
         ],
         [
           {
             "name": "cidade",
-<<<<<<< HEAD
-            "size": 4
-          },
-          {
-            "name": "site",
-            "size": 4
-          },
-          {
-            "name": "porte",
-            "size": 4
-=======
             "size": 6
           },
           {
             "name": "uf",
             "size": 6
->>>>>>> master
           }
         ],
         [
           {
-<<<<<<< HEAD
-            "name": "simples",
-            "size": 4
-          },
-=======
             "name": "site",
             "size": 6
           },
@@ -990,7 +916,6 @@
           }
         ],
         [
->>>>>>> master
           {
             "name": "ieStatus",
             "size": 4
@@ -998,13 +923,7 @@
           {
             "name": "status",
             "size": 4
-<<<<<<< HEAD
-          }
-        ],
-        [
-=======
           },
->>>>>>> master
           {
             "name": "adFrailLat",
             "size": 4
@@ -1149,21 +1068,32 @@
             "name": "codpais",
             "size": 6
           }
-<<<<<<< HEAD
         ],
         [
           {
-            "name": "titulo",
-            "size": 6
-          },
-          {
-            "name": "vendedor",
+            "name": "responsavel",
             "size": 6
           }
         ],
         [
           {
-            "name": "fornecedor",
+            "name": "history",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "pedidos",
+            "size": 6
+          },
+          {
+            "name": "titulo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "vendedor",
             "size": 6
           },
           {
@@ -1177,27 +1107,21 @@
             "size": 4
           },
           {
-            "name": "responsavel",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "pedidos",
-            "size": 6
-          },
-          {
             "name": "codigo",
             "size": 6
           }
         ],
         [
           {
-            "name": "history",
-            "size": 12
+            "name": "business",
+            "size": 6
           }
-=======
->>>>>>> master
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
+          }
         ]
       ]
     }

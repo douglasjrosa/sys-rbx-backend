@@ -281,12 +281,6 @@
         "alternativeText",
         "caption"
       ],
-<<<<<<< HEAD
-=======
-      "editRelations": [
-        "folder"
-      ],
->>>>>>> master
       "edit": [
         [
           {
@@ -364,15 +358,12 @@
         ],
         [
           {
-            "name": "folderPath",
-            "size": 6
-<<<<<<< HEAD
-          },
-          {
             "name": "folder",
             "size": 6
-=======
->>>>>>> master
+          },
+          {
+            "name": "folderPath",
+            "size": 6
           }
         ]
       ]

@@ -273,24 +273,6 @@
           "sortable": true
         }
       },
-<<<<<<< HEAD
-=======
-      "desconto": {
-        "edit": {
-          "label": "desconto",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "desconto",
-          "searchable": true,
-          "sortable": true
-        }
-      },
->>>>>>> master
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -358,9 +340,15 @@
         ],
         [
           {
+            "name": "tipos_de_produto",
+            "size": 6
+          },
+          {
             "name": "temBase",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "temLateralDireita",
             "size": 4
@@ -368,13 +356,13 @@
           {
             "name": "temLateralEsquerda",
             "size": 4
-          }
-        ],
-        [
+          },
           {
             "name": "temCabeceiraDireita",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "temCabeceiraEsquerda",
             "size": 4
@@ -382,13 +370,13 @@
           {
             "name": "temTampa",
             "size": 4
-          }
-        ],
-        [
+          },
           {
             "name": "cabeceiraAoChao",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "cabeceiraAoTopo",
             "size": 4
@@ -413,21 +401,7 @@
             "name": "exp",
             "size": 4
           }
-<<<<<<< HEAD
-        ],
-        [
-          {
-            "name": "tipos_de_produto",
-            "size": 6
-          }
         ]
-=======
-        ]
-      ],
-      "editRelations": [
-        "tipos_de_produto",
-        "desconto"
->>>>>>> master
       ]
     }
   },

@@ -66,13 +66,15 @@
     "layouts": {
       "list": [
         "id",
-        "nPedido"
+        "nPedido",
+        "createdAt",
+        "updatedAt"
       ],
       "edit": [
         [
           {
             "name": "nPedido",
-            "size": 4
+            "size": 6
           }
         ]
       ]

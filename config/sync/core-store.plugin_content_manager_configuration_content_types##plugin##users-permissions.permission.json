@@ -85,24 +85,15 @@
         "role",
         "createdAt"
       ],
-<<<<<<< HEAD
-=======
-      "editRelations": [
-        "role"
-      ],
->>>>>>> master
       "edit": [
         [
           {
             "name": "action",
             "size": 6
-<<<<<<< HEAD
           },
           {
             "name": "role",
             "size": 6
-=======
->>>>>>> master
           }
         ]
       ]

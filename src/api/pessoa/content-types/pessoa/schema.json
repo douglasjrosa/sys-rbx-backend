@@ -71,6 +71,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "pessoas"
+    },
+    "departamento": {
+      "type": "string"
+    },
+    "cargo": {
+      "type": "string"
     }
   }
 }

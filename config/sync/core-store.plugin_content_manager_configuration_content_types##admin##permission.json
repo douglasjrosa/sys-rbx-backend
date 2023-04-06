@@ -127,12 +127,6 @@
         "subject",
         "role"
       ],
-<<<<<<< HEAD
-=======
-      "editRelations": [
-        "role"
-      ],
->>>>>>> master
       "edit": [
         [
           {
@@ -155,15 +149,12 @@
             "name": "conditions",
             "size": 12
           }
-<<<<<<< HEAD
         ],
         [
           {
             "name": "role",
             "size": 6
           }
-=======
->>>>>>> master
         ]
       ]
     }

@@ -564,11 +564,7 @@
           "required": false
         },
         "lifespan": {
-<<<<<<< HEAD
           "type": "biginteger",
-=======
-          "type": "integer",
->>>>>>> master
           "configurable": false,
           "required": false
         },
@@ -669,11 +665,7 @@
             "required": false
           },
           "lifespan": {
-<<<<<<< HEAD
             "type": "biginteger",
-=======
-            "type": "integer",
->>>>>>> master
             "configurable": false,
             "required": false
           }
@@ -921,7 +913,6 @@
             "folder_path"
           ],
           "type": null
-<<<<<<< HEAD
         },
         {
           "name": "upload_files_created_at_index",
@@ -957,8 +948,6 @@
             "ext"
           ],
           "type": null
-=======
->>>>>>> master
         }
       ],
       "kind": "collectionType",
@@ -1518,6 +1507,48 @@
           "inversedBy": "users",
           "configurable": false
         },
+        "businesses": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::business.business",
+          "mappedBy": "user"
+        },
+        "empresas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::empresa.empresa",
+          "mappedBy": "user"
+        },
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "user"
+        },
+        "pessoas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pessoa.pessoa",
+          "mappedBy": "user"
+        },
+        "avatar": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images",
+            "files",
+            "videos",
+            "audios"
+          ]
+        },
+        "pemission": {
+          "type": "enumeration",
+          "enum": [
+            "Adm",
+            "User"
+          ]
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1559,10 +1590,7 @@
         }
       },
       "kind": "collectionType",
-<<<<<<< HEAD
       "__filename__": "schema.json",
-=======
->>>>>>> master
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1626,6 +1654,48 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "businesses": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::business.business",
+            "mappedBy": "user"
+          },
+          "empresas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::empresa.empresa",
+            "mappedBy": "user"
+          },
+          "pedidos": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pedido.pedido",
+            "mappedBy": "user"
+          },
+          "pessoas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pessoa.pessoa",
+            "mappedBy": "user"
+          },
+          "avatar": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images",
+              "files",
+              "videos",
+              "audios"
+            ]
+          },
+          "pemission": {
+            "type": "enumeration",
+            "enum": [
+              "Adm",
+              "User"
+            ]
           }
         },
         "kind": "collectionType"
@@ -1738,23 +1808,13 @@
       "collectionName": "i18n_locale",
       "globalId": "I18NLocale"
     },
-<<<<<<< HEAD
-    "api::business.business": {
+    "api::atendimento.atendimento": {
       "kind": "collectionType",
-      "collectionName": "businesses",
+      "collectionName": "atendimentos",
       "info": {
-        "singularName": "business",
-        "pluralName": "businesses",
-        "displayName": "Business",
-=======
-    "api::desconto.desconto": {
-      "kind": "collectionType",
-      "collectionName": "descontos",
-      "info": {
-        "singularName": "desconto",
-        "pluralName": "descontos",
-        "displayName": "desconto",
->>>>>>> master
+        "singularName": "atendimento",
+        "pluralName": "atendimentos",
+        "displayName": "atendimento",
         "description": ""
       },
       "options": {
@@ -1762,53 +1822,12 @@
       },
       "pluginOptions": {},
       "attributes": {
-<<<<<<< HEAD
-        "status": {
-          "type": "boolean"
-        },
-        "pedidos": {
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::pedido.pedido",
-          "mappedBy": "business"
-        },
-        "deadline": {
-          "type": "date"
-        },
-        "nBusiness": {
-          "type": "string"
-        },
-        "Budget": {
-          "type": "string"
-        },
-        "Approach": {
-          "type": "string"
-        },
-        "history": {
-          "type": "json"
-        },
-        "incidentRecord": {
-          "type": "json"
-        },
-=======
         "nome": {
           "type": "string"
         },
-        "slug": {
-          "type": "uid",
-          "targetField": "nome"
+        "value": {
+          "type": "string"
         },
-        "ativo": {
-          "type": "boolean",
-          "default": true
-        },
-        "percentual": {
-          "type": "float"
-        },
-        "validade": {
-          "type": "date"
-        },
->>>>>>> master
         "createdAt": {
           "type": "datetime"
         },
@@ -1843,19 +1862,11 @@
         }
       },
       "__schema__": {
-<<<<<<< HEAD
-        "collectionName": "businesses",
+        "collectionName": "atendimentos",
         "info": {
-          "singularName": "business",
-          "pluralName": "businesses",
-          "displayName": "Business",
-=======
-        "collectionName": "descontos",
-        "info": {
-          "singularName": "desconto",
-          "pluralName": "descontos",
-          "displayName": "desconto",
->>>>>>> master
+          "singularName": "atendimento",
+          "pluralName": "atendimentos",
+          "displayName": "atendimento",
           "description": ""
         },
         "options": {
@@ -1863,10 +1874,129 @@
         },
         "pluginOptions": {},
         "attributes": {
-<<<<<<< HEAD
-          "status": {
-            "type": "boolean"
+          "nome": {
+            "type": "string"
           },
+          "value": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "atendimento",
+      "connection": "default",
+      "uid": "api::atendimento.atendimento",
+      "apiName": "atendimento",
+      "globalId": "Atendimento",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::business.business": {
+      "kind": "collectionType",
+      "collectionName": "businesses",
+      "info": {
+        "singularName": "business",
+        "pluralName": "businesses",
+        "displayName": "Business",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "business"
+        },
+        "deadline": {
+          "type": "date"
+        },
+        "nBusiness": {
+          "type": "string"
+        },
+        "Budget": {
+          "type": "string"
+        },
+        "Approach": {
+          "type": "string"
+        },
+        "history": {
+          "type": "json"
+        },
+        "incidentRecord": {
+          "type": "json"
+        },
+        "empresa": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::empresa.empresa",
+          "inversedBy": "business"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "businesses"
+        },
+        "statusAnd": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "DataRetorno": {
+          "type": "date"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "businesses",
+        "info": {
+          "singularName": "business",
+          "pluralName": "businesses",
+          "displayName": "Business",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
           "pedidos": {
             "type": "relation",
             "relation": "oneToMany",
@@ -1890,7 +2020,117 @@
           },
           "incidentRecord": {
             "type": "json"
-=======
+          },
+          "empresa": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::empresa.empresa",
+            "inversedBy": "business"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "businesses"
+          },
+          "statusAnd": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "DataRetorno": {
+            "type": "date"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "business",
+      "connection": "default",
+      "uid": "api::business.business",
+      "apiName": "business",
+      "globalId": "Business",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::desconto.desconto": {
+      "kind": "collectionType",
+      "collectionName": "descontos",
+      "info": {
+        "singularName": "desconto",
+        "pluralName": "descontos",
+        "displayName": "desconto",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "ativo": {
+          "type": "boolean",
+          "default": true
+        },
+        "percentual": {
+          "type": "float"
+        },
+        "validade": {
+          "type": "date"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "descontos",
+        "info": {
+          "singularName": "desconto",
+          "pluralName": "descontos",
+          "displayName": "desconto",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
           "nome": {
             "type": "string"
           },
@@ -1907,25 +2147,16 @@
           },
           "validade": {
             "type": "date"
->>>>>>> master
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-<<<<<<< HEAD
-      "modelName": "business",
-      "connection": "default",
-      "uid": "api::business.business",
-      "apiName": "business",
-      "globalId": "Business",
-=======
       "modelName": "desconto",
       "connection": "default",
       "uid": "api::desconto.desconto",
       "apiName": "desconto",
       "globalId": "Desconto",
->>>>>>> master
       "actions": {},
       "lifecycles": {}
     },
@@ -2051,14 +2282,6 @@
         "emailNfe": {
           "type": "string"
         },
-<<<<<<< HEAD
-=======
-        "pessoa": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::pessoa.pessoa"
-        },
->>>>>>> master
         "tablecalc": {
           "type": "string"
         },
@@ -2095,7 +2318,6 @@
           "target": "api::pessoa.pessoa",
           "inversedBy": "empresas"
         },
-<<<<<<< HEAD
         "history": {
           "type": "json"
         },
@@ -2111,9 +2333,6 @@
         "vendedor": {
           "type": "string"
         },
-        "fornecedor": {
-          "type": "string"
-        },
         "fornecedorId": {
           "type": "integer"
         },
@@ -2123,8 +2342,18 @@
         "codigo": {
           "type": "string"
         },
-=======
->>>>>>> master
+        "business": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::business.business",
+          "mappedBy": "empresa"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "empresas"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2279,14 +2508,6 @@
           "emailNfe": {
             "type": "string"
           },
-<<<<<<< HEAD
-=======
-          "pessoa": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::pessoa.pessoa"
-          },
->>>>>>> master
           "tablecalc": {
             "type": "string"
           },
@@ -2322,7 +2543,6 @@
             "relation": "manyToOne",
             "target": "api::pessoa.pessoa",
             "inversedBy": "empresas"
-<<<<<<< HEAD
           },
           "history": {
             "type": "json"
@@ -2339,9 +2559,6 @@
           "vendedor": {
             "type": "string"
           },
-          "fornecedor": {
-            "type": "string"
-          },
           "fornecedorId": {
             "type": "integer"
           },
@@ -2350,8 +2567,18 @@
           },
           "codigo": {
             "type": "string"
-=======
->>>>>>> master
+          },
+          "business": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::business.business",
+            "mappedBy": "empresa"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "empresas"
           }
         },
         "kind": "collectionType"
@@ -2365,7 +2592,6 @@
       "actions": {},
       "lifecycles": {}
     },
-<<<<<<< HEAD
     "api::fornecedor.fornecedor": {
       "kind": "collectionType",
       "collectionName": "fornecedores",
@@ -2413,12 +2639,6 @@
         },
         "numero": {
           "type": "string"
-        },
-        "pedidos": {
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::pedido.pedido",
-          "mappedBy": "fornecedor"
         },
         "createdAt": {
           "type": "datetime"
@@ -2499,12 +2719,6 @@
           },
           "numero": {
             "type": "string"
-          },
-          "pedidos": {
-            "type": "relation",
-            "relation": "oneToMany",
-            "target": "api::pedido.pedido",
-            "mappedBy": "fornecedor"
           }
         },
         "kind": "collectionType"
@@ -2518,22 +2732,16 @@
       "actions": {},
       "lifecycles": {}
     },
-=======
->>>>>>> master
     "api::materia-prima.materia-prima": {
       "kind": "collectionType",
       "collectionName": "materia_primas",
       "info": {
         "singularName": "materia-prima",
         "pluralName": "materia-primas",
-<<<<<<< HEAD
         "displayName": "matéria-prima",
         "order": [
           "materia_prima_order"
         ]
-=======
-        "displayName": "matéria-prima"
->>>>>>> master
       },
       "options": {
         "draftAndPublish": true
@@ -2620,14 +2828,10 @@
         "info": {
           "singularName": "materia-prima",
           "pluralName": "materia-primas",
-<<<<<<< HEAD
           "displayName": "matéria-prima",
           "order": [
             "materia_prima_order"
           ]
-=======
-          "displayName": "matéria-prima"
->>>>>>> master
         },
         "options": {
           "draftAndPublish": true
@@ -2779,14 +2983,6 @@
           "type": "boolean",
           "default": false
         },
-<<<<<<< HEAD
-=======
-        "desconto": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::desconto.desconto"
-        },
->>>>>>> master
         "createdAt": {
           "type": "datetime"
         },
@@ -2909,14 +3105,6 @@
           "exp": {
             "type": "boolean",
             "default": false
-<<<<<<< HEAD
-=======
-          },
-          "desconto": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::desconto.desconto"
->>>>>>> master
           }
         },
         "kind": "collectionType"
@@ -2930,7 +3118,6 @@
       "actions": {},
       "lifecycles": {}
     },
-<<<<<<< HEAD
     "api::pedido.pedido": {
       "kind": "collectionType",
       "collectionName": "pedidos",
@@ -2952,20 +3139,11 @@
         "vencPedido": {
           "type": "date"
         },
-        "fornecedor": {
-          "type": "relation",
-          "relation": "manyToOne",
-          "target": "api::fornecedor.fornecedor",
-          "inversedBy": "pedidos"
-        },
         "empresa": {
           "type": "relation",
           "relation": "manyToOne",
           "target": "api::empresa.empresa",
           "inversedBy": "pedidos"
-        },
-        "fornecedorId": {
-          "type": "integer"
         },
         "empresaId": {
           "type": "integer"
@@ -2998,9 +3176,6 @@
           "target": "api::business.business",
           "inversedBy": "pedidos"
         },
-        "matriz": {
-          "type": "string"
-        },
         "dataPedido": {
           "type": "date"
         },
@@ -3020,6 +3195,18 @@
           "type": "string"
         },
         "totalGeral": {
+          "type": "string"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pedidos"
+        },
+        "fornecedor": {
+          "type": "string"
+        },
+        "businessId": {
           "type": "string"
         },
         "createdAt": {
@@ -3075,20 +3262,11 @@
           "vencPedido": {
             "type": "date"
           },
-          "fornecedor": {
-            "type": "relation",
-            "relation": "manyToOne",
-            "target": "api::fornecedor.fornecedor",
-            "inversedBy": "pedidos"
-          },
           "empresa": {
             "type": "relation",
             "relation": "manyToOne",
             "target": "api::empresa.empresa",
             "inversedBy": "pedidos"
-          },
-          "fornecedorId": {
-            "type": "integer"
           },
           "empresaId": {
             "type": "integer"
@@ -3121,9 +3299,6 @@
             "target": "api::business.business",
             "inversedBy": "pedidos"
           },
-          "matriz": {
-            "type": "string"
-          },
           "dataPedido": {
             "type": "date"
           },
@@ -3144,6 +3319,18 @@
           },
           "totalGeral": {
             "type": "string"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pedidos"
+          },
+          "fornecedor": {
+            "type": "string"
+          },
+          "businessId": {
+            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -3157,8 +3344,6 @@
       "actions": {},
       "lifecycles": {}
     },
-=======
->>>>>>> master
     "api::pessoa.pessoa": {
       "kind": "collectionType",
       "collectionName": "pessoas",
@@ -3223,6 +3408,21 @@
         },
         "status": {
           "type": "boolean"
+        },
+        "history": {
+          "type": "json"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pessoas"
+        },
+        "departamento": {
+          "type": "string"
+        },
+        "cargo": {
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -3320,6 +3520,21 @@
           },
           "status": {
             "type": "boolean"
+          },
+          "history": {
+            "type": "json"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pessoas"
+          },
+          "departamento": {
+            "type": "string"
+          },
+          "cargo": {
+            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -3333,7 +3548,6 @@
       "actions": {},
       "lifecycles": {}
     },
-<<<<<<< HEAD
     "api::prazo.prazo": {
       "kind": "collectionType",
       "collectionName": "prazos",
@@ -3608,8 +3822,88 @@
       "actions": {},
       "lifecycles": {}
     },
-=======
->>>>>>> master
+    "api::sataus-business.sataus-business": {
+      "kind": "collectionType",
+      "collectionName": "sataus_businesses",
+      "info": {
+        "singularName": "sataus-business",
+        "pluralName": "sataus-businesses",
+        "displayName": "SatausBusiness"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "sataus_businesses",
+        "info": {
+          "singularName": "sataus-business",
+          "pluralName": "sataus-businesses",
+          "displayName": "SatausBusiness"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "sataus-business",
+      "connection": "default",
+      "uid": "api::sataus-business.sataus-business",
+      "apiName": "sataus-business",
+      "globalId": "SatausBusiness",
+      "actions": {},
+      "lifecycles": {}
+    },
     "api::tipos-de-pe.tipos-de-pe": {
       "kind": "collectionType",
       "collectionName": "tipos_de_pes",

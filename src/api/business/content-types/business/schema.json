@@ -53,6 +53,15 @@
     },
     "status": {
       "type": "boolean"
+    },
+    "DataRetorno": {
+      "type": "date"
+    },
+    "stausPedido": {
+      "type": "boolean"
+    },
+    "Bpedido": {
+      "type": "string"
     }
   }
 }

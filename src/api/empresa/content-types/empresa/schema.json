@@ -180,12 +180,6 @@
     "codigo": {
       "type": "string"
     },
-    "fornecedor": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::fornecedor.fornecedor",
-      "inversedBy": "empresas"
-    },
     "business": {
       "type": "relation",
       "relation": "oneToOne",

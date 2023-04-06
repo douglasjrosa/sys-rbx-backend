@@ -19,20 +19,11 @@
     "vencPedido": {
       "type": "date"
     },
-    "fornecedor": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::fornecedor.fornecedor",
-      "inversedBy": "pedidos"
-    },
     "empresa": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::empresa.empresa",
       "inversedBy": "pedidos"
-    },
-    "fornecedorId": {
-      "type": "integer"
     },
     "empresaId": {
       "type": "integer"
@@ -65,9 +56,6 @@
       "target": "api::business.business",
       "inversedBy": "pedidos"
     },
-    "matriz": {
-      "type": "string"
-    },
     "dataPedido": {
       "type": "date"
     },
@@ -94,6 +82,19 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "pedidos"
+    },
+    "fornecedor": {
+      "type": "string"
+    },
+    "businessId": {
+      "type": "string"
+    },
+    "stausPedido": {
+      "type": "boolean",
+      "default": false
+    },
+    "Bpedido": {
+      "type": "string"
     }
   }
 }

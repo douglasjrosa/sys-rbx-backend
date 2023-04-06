@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 50,
+      "pageSize": 10,
       "mainField": "nPedido",
-      "defaultSortBy": "id",
+      "defaultSortBy": "nPedido",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -48,21 +48,6 @@
           "sortable": true
         }
       },
-      "fornecedor": {
-        "edit": {
-          "label": "fornecedor",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "razao"
-        },
-        "list": {
-          "label": "fornecedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "empresa": {
         "edit": {
           "label": "empresa",
@@ -74,20 +59,6 @@
         },
         "list": {
           "label": "empresa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "fornecedorId": {
-        "edit": {
-          "label": "fornecedorId",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "fornecedorId",
           "searchable": true,
           "sortable": true
         }
@@ -219,20 +190,6 @@
           "sortable": true
         }
       },
-      "matriz": {
-        "edit": {
-          "label": "matriz",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "matriz",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "dataPedido": {
         "edit": {
           "label": "dataPedido",
@@ -331,6 +288,49 @@
           "sortable": true
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedor": {
+        "edit": {
+          "label": "fornecedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fornecedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "businessId": {
+        "edit": {
+          "label": "businessId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "businessId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -361,19 +361,7 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "nPedido",
-        "matriz",
-        "condi"
-      ],
       "edit": [
-        [
-          {
-            "name": "nPedido",
-            "size": 6
-          }
-        ],
         [
           {
             "name": "itens",
@@ -382,27 +370,23 @@
         ],
         [
           {
-            "name": "dataPedido",
-            "size": 4
-          },
-          {
             "name": "vencPedido",
             "size": 4
-          }
-        ],
-        [
-          {
-            "name": "matriz",
-            "size": 6
           },
           {
-            "name": "desconto",
-            "size": 4
+            "name": "fornecedor",
+            "size": 6
           }
         ],
         [
           {
-            "name": "fornecedorId",
+            "name": "empresa",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "empresaId",
             "size": 4
           },
           {
@@ -412,25 +396,19 @@
         ],
         [
           {
-            "name": "CNPJClinet",
-            "size": 4
-          },
-          {
-            "name": "empresaId",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "fornecedor",
+            "name": "nPedido",
             "size": 6
           },
           {
-            "name": "empresa",
-            "size": 4
+            "name": "desconto",
+            "size": 6
           }
         ],
         [
+          {
+            "name": "CNPJClinet",
+            "size": 6
+          },
           {
             "name": "andamento",
             "size": 6
@@ -450,6 +428,16 @@
           {
             "name": "business",
             "size": 6
+          },
+          {
+            "name": "businessId",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "dataPedido",
+            "size": 4
           }
         ],
         [
@@ -482,8 +470,18 @@
           {
             "name": "totalGeral",
             "size": 6
+          },
+          {
+            "name": "user",
+            "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "vencPedido",
+        "fornecedor",
+        "empresa"
       ]
     }
   },

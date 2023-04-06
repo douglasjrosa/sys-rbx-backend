@@ -211,12 +211,6 @@
         "lastname",
         "username"
       ],
-<<<<<<< HEAD
-=======
-      "editRelations": [
-        "roles"
-      ],
->>>>>>> master
       "edit": [
         [
           {
@@ -260,22 +254,19 @@
         ],
         [
           {
+            "name": "roles",
+            "size": 6
+          },
+          {
             "name": "blocked",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "preferedLanguage",
             "size": 6
           }
-<<<<<<< HEAD
-        ],
-        [
-          {
-            "name": "roles",
-            "size": 6
-          }
-=======
->>>>>>> master
         ]
       ]
     }

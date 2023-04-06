@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::plugin::i18n.locale",
+  "key": "plugin_content_manager_configuration_content_types::api::sataus-business.sataus-business",
   "value": {
-    "uid": "plugin::i18n.locale",
+    "uid": "api::sataus-business.sataus-business",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "name",
-      "defaultSortBy": "name",
+      "mainField": "nome",
+      "defaultSortBy": "nome",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -20,30 +20,30 @@
           "sortable": true
         }
       },
-      "name": {
+      "nome": {
         "edit": {
-          "label": "name",
+          "label": "nome",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "name",
+          "label": "nome",
           "searchable": true,
           "sortable": true
         }
       },
-      "code": {
+      "value": {
         "edit": {
-          "label": "code",
+          "label": "value",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "code",
+          "label": "value",
           "searchable": true,
           "sortable": true
         }
@@ -80,18 +80,18 @@
     "layouts": {
       "list": [
         "id",
-        "name",
-        "code",
+        "nome",
+        "value",
         "createdAt"
       ],
       "edit": [
         [
           {
-            "name": "name",
+            "name": "nome",
             "size": 6
           },
           {
-            "name": "code",
+            "name": "value",
             "size": 6
           }
         ]

@@ -20,20 +20,6 @@
           "sortable": true
         }
       },
-      "status": {
-        "edit": {
-          "label": "status",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "status",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "pedidos": {
         "edit": {
           "label": "pedidos",
@@ -133,6 +119,78 @@
           "sortable": false
         }
       },
+      "empresa": {
+        "edit": {
+          "label": "empresa",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresa",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "statusAnd": {
+        "edit": {
+          "label": "statusAnd",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "statusAnd",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "status": {
+        "edit": {
+          "label": "status",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "status",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "DataRetorno": {
+        "edit": {
+          "label": "DataRetorno",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "DataRetorno",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -165,22 +223,18 @@
     "layouts": {
       "list": [
         "id",
-        "status",
         "pedidos",
-        "deadline"
+        "deadline",
+        "nBusiness"
       ],
       "edit": [
         [
           {
-            "name": "status",
-            "size": 4
+            "name": "pedidos",
+            "size": 6
           },
           {
             "name": "deadline",
-            "size": 4
-          },
-          {
-            "name": "pedidos",
             "size": 4
           }
         ],
@@ -210,6 +264,32 @@
           {
             "name": "incidentRecord",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "empresa",
+            "size": 6
+          },
+          {
+            "name": "user",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "statusAnd",
+            "size": 6
+          },
+          {
+            "name": "status",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "DataRetorno",
+            "size": 4
           }
         ]
       ]

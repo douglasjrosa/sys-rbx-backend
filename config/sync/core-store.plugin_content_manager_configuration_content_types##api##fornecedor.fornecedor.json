@@ -174,21 +174,6 @@
           "sortable": true
         }
       },
-      "pedidos": {
-        "edit": {
-          "label": "pedidos",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nPedido"
-        },
-        "list": {
-          "label": "pedidos",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -272,17 +257,13 @@
             "size": 6
           },
           {
-            "name": "numero",
-            "size": 4
+            "name": "nome",
+            "size": 6
           }
         ],
         [
           {
-            "name": "nome",
-            "size": 6
-          },
-          {
-            "name": "pedidos",
+            "name": "numero",
             "size": 6
           }
         ]
