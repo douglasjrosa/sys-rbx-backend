@@ -34,17 +34,20 @@
       "type": "password",
       "minLength": 6,
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "resetPasswordToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmationToken": {
       "type": "string",
       "configurable": false,
-      "private": true
+      "private": true,
+      "searchable": false
     },
     "confirmed": {
       "type": "boolean",
@@ -63,6 +66,14 @@
       "inversedBy": "users",
       "configurable": false
     },
+    "pemission": {
+      "type": "enumeration",
+      "enum": [
+        "Adm",
+        "User"
+      ],
+      "default": "User"
+    },
     "businesses": {
       "type": "relation",
       "relation": "oneToMany",
@@ -75,12 +86,6 @@
       "target": "api::empresa.empresa",
       "mappedBy": "user"
     },
-    "pedidos": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::pedido.pedido",
-      "mappedBy": "user"
-    },
     "pessoas": {
       "type": "relation",
       "relation": "oneToMany",
@@ -88,22 +93,11 @@
       "mappedBy": "user"
     },
     "avatar": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "pemission": {
-      "type": "enumeration",
-      "enum": [
-        "Adm",
-        "User"
-      ]
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

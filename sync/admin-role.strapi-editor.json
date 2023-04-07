@@ -1,10 +1,55 @@
 {
-  "name": "Super Admin",
-  "code": "strapi-super-admin",
-  "description": "Super Admins can access and manage all features and settings.",
+  "name": "Editor",
+  "code": "strapi-editor",
+  "description": "Editors can manage and publish contents including those of other users.",
   "permissions": [
     {
       "action": "plugin::content-manager.explorer.create",
+      "subject": "api::atendimento.atendimento",
+      "properties": {
+        "fields": [
+          "nome",
+          "value"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::atendimento.atendimento",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::atendimento.atendimento",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::atendimento.atendimento",
+      "properties": {
+        "fields": [
+          "nome",
+          "value"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::atendimento.atendimento",
+      "properties": {
+        "fields": [
+          "nome",
+          "value"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
       "subject": "api::business.business",
       "properties": {
         "fields": [
@@ -16,11 +61,9 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
           "statusAnd",
-          "status",
-          "DataRetorno",
-          "stausPedido",
-          "Bpedido"
+          "status"
         ]
       },
       "conditions": []
@@ -50,11 +93,9 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
           "statusAnd",
-          "status",
-          "DataRetorno",
-          "stausPedido",
-          "Bpedido"
+          "status"
         ]
       },
       "conditions": []
@@ -72,11 +113,63 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
           "statusAnd",
-          "status",
-          "DataRetorno",
-          "stausPedido",
-          "Bpedido"
+          "status"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::desconto.desconto",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "percentual",
+          "validade"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::desconto.desconto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::desconto.desconto",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::desconto.desconto",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "percentual",
+          "validade"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::desconto.desconto",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "percentual",
+          "validade"
         ]
       },
       "conditions": []
@@ -140,7 +233,8 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business"
+          "business",
+          "user"
         ]
       },
       "conditions": []
@@ -216,7 +310,8 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business"
+          "business",
+          "user"
         ]
       },
       "conditions": []
@@ -280,7 +375,263 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business"
+          "business",
+          "user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::fornecedor.fornecedor",
+      "properties": {
+        "fields": [
+          "razao",
+          "fantasia",
+          "end",
+          "cnpj",
+          "cidade",
+          "uf",
+          "email",
+          "tel",
+          "titulo",
+          "nome",
+          "numero"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::materia-prima.materia-prima",
+      "properties": {
+        "fields": [
+          "nome",
+          "largura",
+          "espessura",
+          "precoCompra",
+          "unCompra",
+          "unVenda",
+          "precoVenda",
+          "comprimento"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::materia-prima.materia-prima",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::materia-prima.materia-prima",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::materia-prima.materia-prima",
+      "properties": {
+        "fields": [
+          "nome",
+          "largura",
+          "espessura",
+          "precoCompra",
+          "unCompra",
+          "unVenda",
+          "precoVenda",
+          "comprimento"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::materia-prima.materia-prima",
+      "properties": {
+        "fields": [
+          "nome",
+          "largura",
+          "espessura",
+          "precoCompra",
+          "unCompra",
+          "unVenda",
+          "precoVenda",
+          "comprimento"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::modelo.modelo",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "notas",
+          "partes",
+          "tipos_de_produto",
+          "temBase",
+          "temLateralDireita",
+          "temLateralEsquerda",
+          "temCabeceiraDireita",
+          "temCabeceiraEsquerda",
+          "temTampa",
+          "cabeceiraAoChao",
+          "cabeceiraAoTopo",
+          "lateraisPorFora",
+          "montagem.notas",
+          "montagem.fixFixos",
+          "montagem.fixadoresSoltos",
+          "montagem.baseAnexada",
+          "montagem.lateralDireitaAnexada",
+          "montagem.lateralEsquerdaAnexada",
+          "montagem.cabeceiraDireitaAnexada",
+          "montagem.cabeceiraEsquerdaAnexada",
+          "montagem.tampaAnexada",
+          "montagem.enviarFechada",
+          "publico",
+          "exp"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::modelo.modelo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::modelo.modelo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::modelo.modelo",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "notas",
+          "partes",
+          "tipos_de_produto",
+          "temBase",
+          "temLateralDireita",
+          "temLateralEsquerda",
+          "temCabeceiraDireita",
+          "temCabeceiraEsquerda",
+          "temTampa",
+          "cabeceiraAoChao",
+          "cabeceiraAoTopo",
+          "lateraisPorFora",
+          "montagem.notas",
+          "montagem.fixFixos",
+          "montagem.fixadoresSoltos",
+          "montagem.baseAnexada",
+          "montagem.lateralDireitaAnexada",
+          "montagem.lateralEsquerdaAnexada",
+          "montagem.cabeceiraDireitaAnexada",
+          "montagem.cabeceiraEsquerdaAnexada",
+          "montagem.tampaAnexada",
+          "montagem.enviarFechada",
+          "publico",
+          "exp"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::modelo.modelo",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "ativo",
+          "notas",
+          "partes",
+          "tipos_de_produto",
+          "temBase",
+          "temLateralDireita",
+          "temLateralEsquerda",
+          "temCabeceiraDireita",
+          "temCabeceiraEsquerda",
+          "temTampa",
+          "cabeceiraAoChao",
+          "cabeceiraAoTopo",
+          "lateraisPorFora",
+          "montagem.notas",
+          "montagem.fixFixos",
+          "montagem.fixadoresSoltos",
+          "montagem.baseAnexada",
+          "montagem.lateralDireitaAnexada",
+          "montagem.lateralEsquerdaAnexada",
+          "montagem.cabeceiraDireitaAnexada",
+          "montagem.cabeceiraEsquerdaAnexada",
+          "montagem.tampaAnexada",
+          "montagem.enviarFechada",
+          "publico",
+          "exp"
         ]
       },
       "conditions": []
@@ -309,10 +660,8 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
-          "businessId",
-          "stausPedido",
-          "Bpedido"
+          "user",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -353,10 +702,8 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
-          "businessId",
-          "stausPedido",
-          "Bpedido"
+          "user",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -385,10 +732,8 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
-          "businessId",
-          "stausPedido",
-          "Bpedido"
+          "user",
+          "fornecedor"
         ]
       },
       "conditions": []
@@ -415,8 +760,7 @@
           "empresas",
           "status",
           "history",
-          "departamento",
-          "cargo"
+          "user"
         ]
       },
       "conditions": []
@@ -455,8 +799,7 @@
           "empresas",
           "status",
           "history",
-          "departamento",
-          "cargo"
+          "user"
         ]
       },
       "conditions": []
@@ -483,8 +826,52 @@
           "empresas",
           "status",
           "history",
-          "departamento",
-          "cargo"
+          "user"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::prazo.prazo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::prazo.prazo",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::prazo.prazo",
+      "properties": {
+        "fields": [
+          "valor",
+          "titulo"
         ]
       },
       "conditions": []
@@ -592,291 +979,162 @@
       "conditions": []
     },
     {
-      "action": "admin::api-tokens.access",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::api-tokens.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::api-tokens.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::api-tokens.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::api-tokens.regenerate",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::api-tokens.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::marketplace.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::project-settings.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::project-settings.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::roles.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::roles.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::roles.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::roles.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.access",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.regenerate",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::users.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::users.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::users.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::users.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::webhooks.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::webhooks.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::webhooks.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::webhooks.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::config-sync.menu-link",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::config-sync.settings.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.collection-types.configure-view",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.components.configure-layout",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
       "action": "plugin::content-manager.explorer.create",
-      "subject": "plugin::users-permissions.user",
+      "subject": "api::sataus-business.sataus-business",
       "properties": {
         "fields": [
-          "username",
-          "email",
-          "provider",
-          "password",
-          "resetPasswordToken",
-          "confirmationToken",
-          "confirmed",
-          "blocked",
-          "role"
+          "nome",
+          "value"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.delete",
-      "subject": "plugin::users-permissions.user",
+      "subject": "api::sataus-business.sataus-business",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::sataus-business.sataus-business",
       "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
-      "subject": "plugin::users-permissions.user",
+      "subject": "api::sataus-business.sataus-business",
       "properties": {
         "fields": [
-          "username",
-          "email",
-          "provider",
-          "password",
-          "resetPasswordToken",
-          "confirmationToken",
-          "confirmed",
-          "blocked",
-          "role"
+          "nome",
+          "value"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.update",
-      "subject": "plugin::users-permissions.user",
+      "subject": "api::sataus-business.sataus-business",
       "properties": {
         "fields": [
-          "username",
-          "email",
-          "provider",
-          "password",
-          "resetPasswordToken",
-          "confirmationToken",
-          "confirmed",
-          "blocked",
-          "role"
+          "nome",
+          "value"
         ]
       },
       "conditions": []
     },
     {
-      "action": "plugin::content-manager.single-types.configure-view",
-      "subject": null,
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::tipos-de-pe.tipos-de-pe",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "image",
+          "notas",
+          "pe",
+          "longarina",
+          "toco",
+          "pregoG"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::tipos-de-pe.tipos-de-pe",
       "properties": {},
       "conditions": []
     },
     {
-      "action": "plugin::content-type-builder.read",
-      "subject": null,
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::tipos-de-pe.tipos-de-pe",
       "properties": {},
       "conditions": []
     },
     {
-      "action": "plugin::email.settings.read",
-      "subject": null,
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::tipos-de-pe.tipos-de-pe",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "image",
+          "notas",
+          "pe",
+          "longarina",
+          "toco",
+          "pregoG"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::tipos-de-pe.tipos-de-pe",
+      "properties": {
+        "fields": [
+          "nome",
+          "slug",
+          "image",
+          "notas",
+          "pe",
+          "longarina",
+          "toco",
+          "pregoG"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::tipos-de-produto.tipos-de-produto",
+      "properties": {
+        "fields": [
+          "nome",
+          "notas",
+          "slug",
+          "images"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::tipos-de-produto.tipos-de-produto",
       "properties": {},
       "conditions": []
     },
     {
-      "action": "plugin::i18n.locale.create",
-      "subject": null,
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::tipos-de-produto.tipos-de-produto",
       "properties": {},
       "conditions": []
     },
     {
-      "action": "plugin::i18n.locale.delete",
-      "subject": null,
-      "properties": {},
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::tipos-de-produto.tipos-de-produto",
+      "properties": {
+        "fields": [
+          "nome",
+          "notas",
+          "slug",
+          "images"
+        ]
+      },
       "conditions": []
     },
     {
-      "action": "plugin::i18n.locale.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::i18n.locale.update",
-      "subject": null,
-      "properties": {},
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::tipos-de-produto.tipos-de-produto",
+      "properties": {
+        "fields": [
+          "nome",
+          "notas",
+          "slug",
+          "images"
+        ]
+      },
       "conditions": []
     },
     {
@@ -911,72 +1169,6 @@
     },
     {
       "action": "plugin::upload.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::upload.settings.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.advanced-settings.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.advanced-settings.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.email-templates.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.email-templates.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.providers.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.providers.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.roles.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.roles.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.roles.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::users-permissions.roles.update",
       "subject": null,
       "properties": {},
       "conditions": []

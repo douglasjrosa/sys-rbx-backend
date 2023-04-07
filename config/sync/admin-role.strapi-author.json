@@ -5,53 +5,6 @@
   "permissions": [
     {
       "action": "plugin::content-manager.explorer.create",
-      "subject": "api::atendimento.atendimento",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::atendimento.atendimento",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::atendimento.atendimento",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::atendimento.atendimento",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
       "subject": "api::business.business",
       "properties": {
         "fields": [
@@ -63,7 +16,6 @@
           "history",
           "incidentRecord",
           "empresa",
-          "user",
           "statusAnd",
           "status"
         ]
@@ -93,7 +45,6 @@
           "history",
           "incidentRecord",
           "empresa",
-          "user",
           "statusAnd",
           "status"
         ]
@@ -115,65 +66,8 @@
           "history",
           "incidentRecord",
           "empresa",
-          "user",
           "statusAnd",
           "status"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::desconto.desconto",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "percentual",
-          "validade"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::desconto.desconto",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::desconto.desconto",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "percentual",
-          "validade"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::desconto.desconto",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "percentual",
-          "validade"
         ]
       },
       "conditions": [
@@ -239,8 +133,7 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business",
-          "user"
+          "business"
         ]
       },
       "conditions": [
@@ -314,8 +207,7 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business",
-          "user"
+          "business"
         ]
       },
       "conditions": [
@@ -381,269 +273,7 @@
           "fornecedorId",
           "vendedorId",
           "codigo",
-          "business",
-          "user"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::fornecedor.fornecedor",
-      "properties": {
-        "fields": [
-          "razao",
-          "fantasia",
-          "end",
-          "cnpj",
-          "cidade",
-          "uf",
-          "email",
-          "tel",
-          "titulo",
-          "nome",
-          "numero"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::fornecedor.fornecedor",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::fornecedor.fornecedor",
-      "properties": {
-        "fields": [
-          "razao",
-          "fantasia",
-          "end",
-          "cnpj",
-          "cidade",
-          "uf",
-          "email",
-          "tel",
-          "titulo",
-          "nome",
-          "numero"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::fornecedor.fornecedor",
-      "properties": {
-        "fields": [
-          "razao",
-          "fantasia",
-          "end",
-          "cnpj",
-          "cidade",
-          "uf",
-          "email",
-          "tel",
-          "titulo",
-          "nome",
-          "numero"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::materia-prima.materia-prima",
-      "properties": {
-        "fields": [
-          "nome",
-          "largura",
-          "espessura",
-          "precoCompra",
-          "unCompra",
-          "unVenda",
-          "precoVenda",
-          "comprimento"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::materia-prima.materia-prima",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::materia-prima.materia-prima",
-      "properties": {
-        "fields": [
-          "nome",
-          "largura",
-          "espessura",
-          "precoCompra",
-          "unCompra",
-          "unVenda",
-          "precoVenda",
-          "comprimento"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::materia-prima.materia-prima",
-      "properties": {
-        "fields": [
-          "nome",
-          "largura",
-          "espessura",
-          "precoCompra",
-          "unCompra",
-          "unVenda",
-          "precoVenda",
-          "comprimento"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::modelo.modelo",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "notas",
-          "partes",
-          "tipos_de_produto",
-          "temBase",
-          "temLateralDireita",
-          "temLateralEsquerda",
-          "temCabeceiraDireita",
-          "temCabeceiraEsquerda",
-          "temTampa",
-          "cabeceiraAoChao",
-          "cabeceiraAoTopo",
-          "lateraisPorFora",
-          "montagem.notas",
-          "montagem.fixFixos",
-          "montagem.fixadoresSoltos",
-          "montagem.baseAnexada",
-          "montagem.lateralDireitaAnexada",
-          "montagem.lateralEsquerdaAnexada",
-          "montagem.cabeceiraDireitaAnexada",
-          "montagem.cabeceiraEsquerdaAnexada",
-          "montagem.tampaAnexada",
-          "montagem.enviarFechada",
-          "publico",
-          "exp"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::modelo.modelo",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::modelo.modelo",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "notas",
-          "partes",
-          "tipos_de_produto",
-          "temBase",
-          "temLateralDireita",
-          "temLateralEsquerda",
-          "temCabeceiraDireita",
-          "temCabeceiraEsquerda",
-          "temTampa",
-          "cabeceiraAoChao",
-          "cabeceiraAoTopo",
-          "lateraisPorFora",
-          "montagem.notas",
-          "montagem.fixFixos",
-          "montagem.fixadoresSoltos",
-          "montagem.baseAnexada",
-          "montagem.lateralDireitaAnexada",
-          "montagem.lateralEsquerdaAnexada",
-          "montagem.cabeceiraDireitaAnexada",
-          "montagem.cabeceiraEsquerdaAnexada",
-          "montagem.tampaAnexada",
-          "montagem.enviarFechada",
-          "publico",
-          "exp"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::modelo.modelo",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "ativo",
-          "notas",
-          "partes",
-          "tipos_de_produto",
-          "temBase",
-          "temLateralDireita",
-          "temLateralEsquerda",
-          "temCabeceiraDireita",
-          "temCabeceiraEsquerda",
-          "temTampa",
-          "cabeceiraAoChao",
-          "cabeceiraAoTopo",
-          "lateraisPorFora",
-          "montagem.notas",
-          "montagem.fixFixos",
-          "montagem.fixadoresSoltos",
-          "montagem.baseAnexada",
-          "montagem.lateralDireitaAnexada",
-          "montagem.lateralEsquerdaAnexada",
-          "montagem.cabeceiraDireitaAnexada",
-          "montagem.cabeceiraEsquerdaAnexada",
-          "montagem.tampaAnexada",
-          "montagem.enviarFechada",
-          "publico",
-          "exp"
+          "business"
         ]
       },
       "conditions": [
@@ -674,7 +304,6 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "user",
           "fornecedor"
         ]
       },
@@ -714,7 +343,6 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "user",
           "fornecedor"
         ]
       },
@@ -746,7 +374,6 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "user",
           "fornecedor"
         ]
       },
@@ -775,8 +402,7 @@
           "obs",
           "empresas",
           "status",
-          "history",
-          "user"
+          "history"
         ]
       },
       "conditions": [
@@ -812,8 +438,7 @@
           "obs",
           "empresas",
           "status",
-          "history",
-          "user"
+          "history"
         ]
       },
       "conditions": [
@@ -841,55 +466,7 @@
           "obs",
           "empresas",
           "status",
-          "history",
-          "user"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::prazo.prazo",
-      "properties": {
-        "fields": [
-          "valor",
-          "titulo"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::prazo.prazo",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::prazo.prazo",
-      "properties": {
-        "fields": [
-          "valor",
-          "titulo"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::prazo.prazo",
-      "properties": {
-        "fields": [
-          "valor",
-          "titulo"
+          "history"
         ]
       },
       "conditions": [
@@ -996,171 +573,6 @@
       "properties": {
         "fields": [
           "nPedido"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::sataus-business.sataus-business",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::sataus-business.sataus-business",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::sataus-business.sataus-business",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::sataus-business.sataus-business",
-      "properties": {
-        "fields": [
-          "nome",
-          "value"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::tipos-de-pe.tipos-de-pe",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "image",
-          "notas",
-          "pe",
-          "longarina",
-          "toco",
-          "pregoG"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::tipos-de-pe.tipos-de-pe",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::tipos-de-pe.tipos-de-pe",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "image",
-          "notas",
-          "pe",
-          "longarina",
-          "toco",
-          "pregoG"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::tipos-de-pe.tipos-de-pe",
-      "properties": {
-        "fields": [
-          "nome",
-          "slug",
-          "image",
-          "notas",
-          "pe",
-          "longarina",
-          "toco",
-          "pregoG"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::tipos-de-produto.tipos-de-produto",
-      "properties": {
-        "fields": [
-          "nome",
-          "notas",
-          "slug",
-          "images"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::tipos-de-produto.tipos-de-produto",
-      "properties": {},
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::tipos-de-produto.tipos-de-produto",
-      "properties": {
-        "fields": [
-          "nome",
-          "notas",
-          "slug",
-          "images"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::tipos-de-produto.tipos-de-produto",
-      "properties": {
-        "fields": [
-          "nome",
-          "notas",
-          "slug",
-          "images"
         ]
       },
       "conditions": [

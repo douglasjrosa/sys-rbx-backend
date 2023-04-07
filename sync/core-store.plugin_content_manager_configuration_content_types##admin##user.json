@@ -1,14 +1,14 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::plugin::users-permissions.user",
+  "key": "plugin_content_manager_configuration_content_types::admin::user",
   "value": {
-    "uid": "plugin::users-permissions.user",
+    "uid": "admin::user",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "username",
-      "defaultSortBy": "username",
+      "mainField": "firstname",
+      "defaultSortBy": "firstname",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -16,6 +16,34 @@
         "edit": {},
         "list": {
           "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "firstname": {
+        "edit": {
+          "label": "firstname",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "firstname",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "lastname": {
+        "edit": {
+          "label": "lastname",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "lastname",
           "searchable": true,
           "sortable": true
         }
@@ -48,20 +76,6 @@
           "sortable": true
         }
       },
-      "provider": {
-        "edit": {
-          "label": "provider",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true
-        },
-        "list": {
-          "label": "provider",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "password": {
         "edit": {
           "label": "password",
@@ -81,7 +95,7 @@
           "label": "resetPasswordToken",
           "description": "",
           "placeholder": "",
-          "visible": false,
+          "visible": true,
           "editable": true
         },
         "list": {
@@ -90,32 +104,47 @@
           "sortable": true
         }
       },
-      "confirmationToken": {
+      "registrationToken": {
         "edit": {
-          "label": "confirmationToken",
-          "description": "",
-          "placeholder": "",
-          "visible": false,
-          "editable": true
-        },
-        "list": {
-          "label": "confirmationToken",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "confirmed": {
-        "edit": {
-          "label": "confirmed",
+          "label": "registrationToken",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "confirmed",
+          "label": "registrationToken",
           "searchable": true,
           "sortable": true
+        }
+      },
+      "isActive": {
+        "edit": {
+          "label": "isActive",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "isActive",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "roles": {
+        "edit": {
+          "label": "roles",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "roles",
+          "searchable": false,
+          "sortable": false
         }
       },
       "blocked": {
@@ -132,17 +161,16 @@
           "sortable": true
         }
       },
-      "role": {
+      "preferedLanguage": {
         "edit": {
-          "label": "role",
+          "label": "preferedLanguage",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "name"
+          "editable": true
         },
         "list": {
-          "label": "role",
+          "label": "preferedLanguage",
           "searchable": true,
           "sortable": true
         }
@@ -179,11 +207,21 @@
     "layouts": {
       "list": [
         "id",
-        "username",
-        "email",
-        "confirmed"
+        "firstname",
+        "lastname",
+        "username"
       ],
       "edit": [
+        [
+          {
+            "name": "firstname",
+            "size": 6
+          },
+          {
+            "name": "lastname",
+            "size": 6
+          }
+        ],
         [
           {
             "name": "username",
@@ -200,17 +238,33 @@
             "size": 6
           },
           {
-            "name": "confirmed",
+            "name": "resetPasswordToken",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "registrationToken",
+            "size": 6
+          },
+          {
+            "name": "isActive",
             "size": 4
           }
         ],
         [
           {
-            "name": "blocked",
-            "size": 4
+            "name": "roles",
+            "size": 6
           },
           {
-            "name": "role",
+            "name": "blocked",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "preferedLanguage",
             "size": 6
           }
         ]

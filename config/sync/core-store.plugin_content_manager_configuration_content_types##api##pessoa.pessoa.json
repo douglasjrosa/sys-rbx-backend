@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "nome",
-      "defaultSortBy": "id",
-      "defaultSortOrder": "DESC"
+      "defaultSortBy": "nome",
+      "defaultSortOrder": "ASC"
     },
     "metadatas": {
       "id": {
@@ -259,21 +259,6 @@
           "sortable": false
         }
       },
-      "user": {
-        "edit": {
-          "label": "user",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "user",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "departamento": {
         "edit": {
           "label": "departamento",
@@ -332,6 +317,12 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "nome",
+        "CEP",
+        "endereco"
+      ],
       "edit": [
         [
           {
@@ -423,10 +414,6 @@
         ],
         [
           {
-            "name": "user",
-            "size": 6
-          },
-          {
             "name": "departamento",
             "size": 6
           }
@@ -437,12 +424,6 @@
             "size": 6
           }
         ]
-      ],
-      "list": [
-        "id",
-        "nome",
-        "CEP",
-        "endereco"
       ]
     }
   },

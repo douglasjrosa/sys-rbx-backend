@@ -2,8 +2,7 @@ const ejs = require("ejs");
 const path = require("path");
 const puppeteer = require("puppeteer");
 const axios = require("axios");
-const PDFDocument = require("pdfkit");
-const fs = require("fs");
+
 
 module.exports = {
   async index(ctx, next) {

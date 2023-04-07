@@ -1,15 +1,15 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::pedido.pedido",
+  "key": "plugin_content_manager_configuration_content_types::api::pessoa.pessoa",
   "value": {
-    "uid": "api::pedido.pedido",
+    "uid": "api::pessoa.pessoa",
     "settings": {
       "bulkable": true,
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "nPedido",
-      "defaultSortBy": "nPedido",
-      "defaultSortOrder": "ASC"
+      "mainField": "nome",
+      "defaultSortBy": "id",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -20,186 +20,184 @@
           "sortable": true
         }
       },
-      "itens": {
+      "nome": {
         "edit": {
-          "label": "itens",
+          "label": "nome",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "itens",
-          "searchable": false,
-          "sortable": false
+          "label": "nome",
+          "searchable": true,
+          "sortable": true
         }
       },
-      "vencPedido": {
+      "CEP": {
         "edit": {
-          "label": "vencPedido",
+          "label": "CEP",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "vencPedido",
+          "label": "CEP",
           "searchable": true,
           "sortable": true
         }
       },
-      "empresa": {
+      "endereco": {
         "edit": {
-          "label": "empresa",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "empresa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "empresaId": {
-        "edit": {
-          "label": "empresaId",
+          "label": "endereco",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "empresaId",
+          "label": "endereco",
           "searchable": true,
           "sortable": true
         }
       },
-      "vendedorId": {
+      "numero": {
         "edit": {
-          "label": "vendedorId",
+          "label": "numero",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "vendedorId",
+          "label": "numero",
           "searchable": true,
           "sortable": true
         }
       },
-      "nPedido": {
+      "bairro": {
         "edit": {
-          "label": "nPedido",
+          "label": "bairro",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "nPedido",
+          "label": "bairro",
           "searchable": true,
           "sortable": true
         }
       },
-      "desconto": {
+      "cidade": {
         "edit": {
-          "label": "desconto",
+          "label": "cidade",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "desconto",
+          "label": "cidade",
           "searchable": true,
           "sortable": true
         }
       },
-      "CNPJClinet": {
+      "uf": {
         "edit": {
-          "label": "CNPJClinet",
+          "label": "uf",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "CNPJClinet",
+          "label": "uf",
           "searchable": true,
           "sortable": true
         }
       },
-      "andamento": {
+      "CPF": {
         "edit": {
-          "label": "andamento",
+          "label": "CPF",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "andamento",
+          "label": "CPF",
           "searchable": true,
           "sortable": true
         }
       },
-      "valorFrete": {
+      "RG": {
         "edit": {
-          "label": "valorFrete",
+          "label": "RG",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "valorFrete",
+          "label": "RG",
           "searchable": true,
           "sortable": true
         }
       },
-      "vencPrint": {
+      "whatsapp": {
         "edit": {
-          "label": "vencPrint",
+          "label": "whatsapp",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "vencPrint",
+          "label": "whatsapp",
           "searchable": true,
           "sortable": true
         }
       },
-      "business": {
+      "telefone": {
         "edit": {
-          "label": "business",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nBusiness"
-        },
-        "list": {
-          "label": "business",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "dataPedido": {
-        "edit": {
-          "label": "dataPedido",
+          "label": "telefone",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "dataPedido",
+          "label": "telefone",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "email": {
+        "edit": {
+          "label": "email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "pais": {
+        "edit": {
+          "label": "pais",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pais",
           "searchable": true,
           "sortable": true
         }
@@ -218,128 +216,88 @@
           "sortable": false
         }
       },
-      "condi": {
+      "empresas": {
         "edit": {
-          "label": "condi",
+          "label": "empresas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "status": {
+        "edit": {
+          "label": "status",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "condi",
+          "label": "status",
           "searchable": true,
           "sortable": true
         }
       },
-      "prazo": {
+      "history": {
         "edit": {
-          "label": "prazo",
+          "label": "history",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "prazo",
+          "label": "history",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
           "searchable": true,
           "sortable": true
         }
       },
-      "frete": {
+      "departamento": {
         "edit": {
-          "label": "frete",
+          "label": "departamento",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "frete",
+          "label": "departamento",
           "searchable": true,
           "sortable": true
         }
       },
-      "vendedor": {
+      "cargo": {
         "edit": {
-          "label": "vendedor",
+          "label": "cargo",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "vendedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "totalGeral": {
-        "edit": {
-          "label": "totalGeral",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "totalGeral",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "fornecedor": {
-        "edit": {
-          "label": "fornecedor",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "fornecedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "businessId": {
-        "edit": {
-          "label": "businessId",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "businessId",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "stausPedido": {
-        "edit": {
-          "label": "stausPedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "stausPedido",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "Bpedido": {
-        "edit": {
-          "label": "Bpedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Bpedido",
+          "label": "cargo",
           "searchable": true,
           "sortable": true
         }
@@ -374,85 +332,71 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "vencPedido",
-        "fornecedor",
-        "empresa"
-      ],
       "edit": [
         [
           {
-            "name": "itens",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "vencPedido",
-            "size": 4
-          },
-          {
-            "name": "fornecedor",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "empresa",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "empresaId",
-            "size": 4
-          },
-          {
-            "name": "vendedorId",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "nPedido",
+            "name": "nome",
             "size": 6
           },
           {
-            "name": "desconto",
+            "name": "CEP",
             "size": 6
           }
         ],
         [
           {
-            "name": "CNPJClinet",
+            "name": "endereco",
             "size": 6
           },
           {
-            "name": "andamento",
+            "name": "numero",
             "size": 6
           }
         ],
         [
           {
-            "name": "valorFrete",
+            "name": "bairro",
             "size": 6
           },
           {
-            "name": "vencPrint",
+            "name": "cidade",
             "size": 6
           }
         ],
         [
           {
-            "name": "business",
+            "name": "uf",
+            "size": 6
+          },
+          {
+            "name": "CPF",
             "size": 6
           }
         ],
         [
           {
-            "name": "dataPedido",
-            "size": 4
+            "name": "RG",
+            "size": 6
+          },
+          {
+            "name": "whatsapp",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "telefone",
+            "size": 6
+          },
+          {
+            "name": "email",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pais",
+            "size": 6
           }
         ],
         [
@@ -463,46 +407,42 @@
         ],
         [
           {
-            "name": "condi",
+            "name": "empresas",
             "size": 6
           },
           {
-            "name": "prazo",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "frete",
-            "size": 6
-          },
-          {
-            "name": "vendedor",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "totalGeral",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "businessId",
-            "size": 6
-          },
-          {
-            "name": "stausPedido",
+            "name": "status",
             "size": 4
           }
         ],
         [
           {
-            "name": "Bpedido",
+            "name": "history",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
+          },
+          {
+            "name": "departamento",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "cargo",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "nome",
+        "CEP",
+        "endereco"
       ]
     }
   },

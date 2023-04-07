@@ -147,6 +147,94 @@
           "sortable": true
         }
       },
+      "businesses": {
+        "edit": {
+          "label": "businesses",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "businesses",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "empresas": {
+        "edit": {
+          "label": "empresas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pedidos": {
+        "edit": {
+          "label": "pedidos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "pedidos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pessoas": {
+        "edit": {
+          "label": "pessoas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "pessoas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "avatar": {
+        "edit": {
+          "label": "avatar",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "avatar",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pemission": {
+        "edit": {
+          "label": "pemission",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pemission",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -177,12 +265,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "username",
-        "email",
-        "confirmed"
-      ],
       "edit": [
         [
           {
@@ -210,10 +292,46 @@
             "size": 4
           },
           {
+            "name": "pemission",
+            "size": 4
+          },
+          {
+            "name": "avatar",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "pedidos",
+            "size": 6
+          },
+          {
+            "name": "pessoas",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "empresas",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "businesses",
+            "size": 6
+          },
+          {
             "name": "role",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "username",
+        "email",
+        "confirmed"
       ]
     }
   },

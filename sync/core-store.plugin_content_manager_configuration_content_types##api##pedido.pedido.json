@@ -288,6 +288,21 @@
           "sortable": true
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "fornecedor": {
         "edit": {
           "label": "fornecedor",
@@ -312,34 +327,6 @@
         },
         "list": {
           "label": "businessId",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "stausPedido": {
-        "edit": {
-          "label": "stausPedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "stausPedido",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "Bpedido": {
-        "edit": {
-          "label": "Bpedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Bpedido",
           "searchable": true,
           "sortable": true
         }
@@ -374,12 +361,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "vencPedido",
-        "fornecedor",
-        "empresa"
-      ],
       "edit": [
         [
           {
@@ -447,6 +428,10 @@
           {
             "name": "business",
             "size": 6
+          },
+          {
+            "name": "businessId",
+            "size": 6
           }
         ],
         [
@@ -485,24 +470,18 @@
           {
             "name": "totalGeral",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "businessId",
-            "size": 6
           },
           {
-            "name": "stausPedido",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "Bpedido",
+            "name": "user",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "vencPedido",
+        "fornecedor",
+        "empresa"
       ]
     }
   },

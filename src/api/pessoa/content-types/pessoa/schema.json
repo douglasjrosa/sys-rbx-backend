@@ -66,17 +66,17 @@
     "history": {
       "type": "json"
     },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "pessoas"
-    },
     "departamento": {
       "type": "string"
     },
     "cargo": {
       "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pessoas"
     }
   }
 }

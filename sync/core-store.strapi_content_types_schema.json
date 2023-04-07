@@ -190,20 +190,17 @@
           "minLength": 6,
           "configurable": false,
           "required": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "resetPasswordToken": {
           "type": "string",
           "configurable": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "registrationToken": {
           "type": "string",
           "configurable": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "isActive": {
           "type": "boolean",
@@ -229,8 +226,7 @@
         "preferedLanguage": {
           "type": "string",
           "configurable": false,
-          "required": false,
-          "searchable": false
+          "required": false
         },
         "createdAt": {
           "type": "datetime"
@@ -311,20 +307,17 @@
             "minLength": 6,
             "configurable": false,
             "required": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "resetPasswordToken": {
             "type": "string",
             "configurable": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "registrationToken": {
             "type": "string",
             "configurable": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "isActive": {
             "type": "boolean",
@@ -350,8 +343,7 @@
           "preferedLanguage": {
             "type": "string",
             "configurable": false,
-            "required": false,
-            "searchable": false
+            "required": false
           }
         },
         "kind": "collectionType"
@@ -551,8 +543,7 @@
           "type": "string",
           "minLength": 1,
           "configurable": false,
-          "required": true,
-          "searchable": false
+          "required": true
         },
         "lastUsedAt": {
           "type": "datetime",
@@ -653,8 +644,7 @@
             "type": "string",
             "minLength": 1,
             "configurable": false,
-            "required": true,
-            "searchable": false
+            "required": true
           },
           "lastUsedAt": {
             "type": "datetime",
@@ -791,270 +781,6 @@
       "plugin": "admin",
       "globalId": "AdminApiTokenPermission"
     },
-    "admin::transfer-token": {
-      "collectionName": "strapi_transfer_tokens",
-      "info": {
-        "name": "Transfer Token",
-        "singularName": "transfer-token",
-        "pluralName": "transfer-tokens",
-        "displayName": "Transfer Token",
-        "description": ""
-      },
-      "options": {},
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        },
-        "content-type-builder": {
-          "visible": false
-        }
-      },
-      "attributes": {
-        "name": {
-          "type": "string",
-          "minLength": 1,
-          "configurable": false,
-          "required": true,
-          "unique": true
-        },
-        "description": {
-          "type": "string",
-          "minLength": 1,
-          "configurable": false,
-          "required": false,
-          "default": ""
-        },
-        "accessKey": {
-          "type": "string",
-          "minLength": 1,
-          "configurable": false,
-          "required": true
-        },
-        "lastUsedAt": {
-          "type": "datetime",
-          "configurable": false,
-          "required": false
-        },
-        "permissions": {
-          "type": "relation",
-          "target": "admin::transfer-token-permission",
-          "relation": "oneToMany",
-          "mappedBy": "token",
-          "configurable": false,
-          "required": false
-        },
-        "expiresAt": {
-          "type": "datetime",
-          "configurable": false,
-          "required": false
-        },
-        "lifespan": {
-          "type": "biginteger",
-          "configurable": false,
-          "required": false
-        },
-        "createdAt": {
-          "type": "datetime"
-        },
-        "updatedAt": {
-          "type": "datetime"
-        },
-        "createdBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "updatedBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        }
-      },
-      "kind": "collectionType",
-      "__schema__": {
-        "collectionName": "strapi_transfer_tokens",
-        "info": {
-          "name": "Transfer Token",
-          "singularName": "transfer-token",
-          "pluralName": "transfer-tokens",
-          "displayName": "Transfer Token",
-          "description": ""
-        },
-        "options": {},
-        "pluginOptions": {
-          "content-manager": {
-            "visible": false
-          },
-          "content-type-builder": {
-            "visible": false
-          }
-        },
-        "attributes": {
-          "name": {
-            "type": "string",
-            "minLength": 1,
-            "configurable": false,
-            "required": true,
-            "unique": true
-          },
-          "description": {
-            "type": "string",
-            "minLength": 1,
-            "configurable": false,
-            "required": false,
-            "default": ""
-          },
-          "accessKey": {
-            "type": "string",
-            "minLength": 1,
-            "configurable": false,
-            "required": true
-          },
-          "lastUsedAt": {
-            "type": "datetime",
-            "configurable": false,
-            "required": false
-          },
-          "permissions": {
-            "type": "relation",
-            "target": "admin::transfer-token-permission",
-            "relation": "oneToMany",
-            "mappedBy": "token",
-            "configurable": false,
-            "required": false
-          },
-          "expiresAt": {
-            "type": "datetime",
-            "configurable": false,
-            "required": false
-          },
-          "lifespan": {
-            "type": "biginteger",
-            "configurable": false,
-            "required": false
-          }
-        },
-        "kind": "collectionType"
-      },
-      "modelType": "contentType",
-      "modelName": "transfer-token",
-      "connection": "default",
-      "uid": "admin::transfer-token",
-      "plugin": "admin",
-      "globalId": "AdminTransferToken"
-    },
-    "admin::transfer-token-permission": {
-      "collectionName": "strapi_transfer_token_permissions",
-      "info": {
-        "name": "Transfer Token Permission",
-        "description": "",
-        "singularName": "transfer-token-permission",
-        "pluralName": "transfer-token-permissions",
-        "displayName": "Transfer Token Permission"
-      },
-      "options": {},
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        },
-        "content-type-builder": {
-          "visible": false
-        }
-      },
-      "attributes": {
-        "action": {
-          "type": "string",
-          "minLength": 1,
-          "configurable": false,
-          "required": true
-        },
-        "token": {
-          "configurable": false,
-          "type": "relation",
-          "relation": "manyToOne",
-          "inversedBy": "permissions",
-          "target": "admin::transfer-token"
-        },
-        "createdAt": {
-          "type": "datetime"
-        },
-        "updatedAt": {
-          "type": "datetime"
-        },
-        "createdBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "updatedBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        }
-      },
-      "kind": "collectionType",
-      "__schema__": {
-        "collectionName": "strapi_transfer_token_permissions",
-        "info": {
-          "name": "Transfer Token Permission",
-          "description": "",
-          "singularName": "transfer-token-permission",
-          "pluralName": "transfer-token-permissions",
-          "displayName": "Transfer Token Permission"
-        },
-        "options": {},
-        "pluginOptions": {
-          "content-manager": {
-            "visible": false
-          },
-          "content-type-builder": {
-            "visible": false
-          }
-        },
-        "attributes": {
-          "action": {
-            "type": "string",
-            "minLength": 1,
-            "configurable": false,
-            "required": true
-          },
-          "token": {
-            "configurable": false,
-            "type": "relation",
-            "relation": "manyToOne",
-            "inversedBy": "permissions",
-            "target": "admin::transfer-token"
-          }
-        },
-        "kind": "collectionType"
-      },
-      "modelType": "contentType",
-      "modelName": "transfer-token-permission",
-      "connection": "default",
-      "uid": "admin::transfer-token-permission",
-      "plugin": "admin",
-      "globalId": "AdminTransferTokenPermission"
-    },
     "plugin::upload.file": {
       "collectionName": "files",
       "info": {
@@ -1151,8 +877,7 @@
           "type": "string",
           "min": 1,
           "required": true,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "createdAt": {
           "type": "datetime"
@@ -1322,8 +1047,7 @@
             "type": "string",
             "min": 1,
             "required": true,
-            "private": true,
-            "searchable": false
+            "private": true
           }
         },
         "kind": "collectionType"
@@ -1488,107 +1212,6 @@
       "uid": "plugin::upload.folder",
       "plugin": "upload",
       "globalId": "UploadFolder"
-    },
-    "plugin::i18n.locale": {
-      "info": {
-        "singularName": "locale",
-        "pluralName": "locales",
-        "collectionName": "locales",
-        "displayName": "Locale",
-        "description": ""
-      },
-      "options": {
-        "draftAndPublish": false
-      },
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        },
-        "content-type-builder": {
-          "visible": false
-        }
-      },
-      "attributes": {
-        "name": {
-          "type": "string",
-          "min": 1,
-          "max": 50,
-          "configurable": false
-        },
-        "code": {
-          "type": "string",
-          "unique": true,
-          "configurable": false
-        },
-        "createdAt": {
-          "type": "datetime"
-        },
-        "updatedAt": {
-          "type": "datetime"
-        },
-        "createdBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "updatedBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        }
-      },
-      "kind": "collectionType",
-      "__schema__": {
-        "info": {
-          "singularName": "locale",
-          "pluralName": "locales",
-          "collectionName": "locales",
-          "displayName": "Locale",
-          "description": ""
-        },
-        "options": {
-          "draftAndPublish": false
-        },
-        "pluginOptions": {
-          "content-manager": {
-            "visible": false
-          },
-          "content-type-builder": {
-            "visible": false
-          }
-        },
-        "attributes": {
-          "name": {
-            "type": "string",
-            "min": 1,
-            "max": 50,
-            "configurable": false
-          },
-          "code": {
-            "type": "string",
-            "unique": true,
-            "configurable": false
-          }
-        },
-        "kind": "collectionType"
-      },
-      "modelType": "contentType",
-      "modelName": "locale",
-      "connection": "default",
-      "uid": "plugin::i18n.locale",
-      "plugin": "i18n",
-      "collectionName": "i18n_locale",
-      "globalId": "I18NLocale"
     },
     "plugin::users-permissions.permission": {
       "collectionName": "up_permissions",
@@ -1855,20 +1478,17 @@
           "type": "password",
           "minLength": 6,
           "configurable": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "resetPasswordToken": {
           "type": "string",
           "configurable": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "confirmationToken": {
           "type": "string",
           "configurable": false,
-          "private": true,
-          "searchable": false
+          "private": true
         },
         "confirmed": {
           "type": "boolean",
@@ -1886,6 +1506,48 @@
           "target": "plugin::users-permissions.role",
           "inversedBy": "users",
           "configurable": false
+        },
+        "businesses": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::business.business",
+          "mappedBy": "user"
+        },
+        "empresas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::empresa.empresa",
+          "mappedBy": "user"
+        },
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "user"
+        },
+        "pessoas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pessoa.pessoa",
+          "mappedBy": "user"
+        },
+        "avatar": {
+          "type": "media",
+          "multiple": false,
+          "required": false,
+          "allowedTypes": [
+            "images",
+            "files",
+            "videos",
+            "audios"
+          ]
+        },
+        "pemission": {
+          "type": "enumeration",
+          "enum": [
+            "Adm",
+            "User"
+          ]
         },
         "createdAt": {
           "type": "datetime"
@@ -1928,6 +1590,7 @@
         }
       },
       "kind": "collectionType",
+      "__filename__": "schema.json",
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1963,20 +1626,17 @@
             "type": "password",
             "minLength": 6,
             "configurable": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "resetPasswordToken": {
             "type": "string",
             "configurable": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "confirmationToken": {
             "type": "string",
             "configurable": false,
-            "private": true,
-            "searchable": false
+            "private": true
           },
           "confirmed": {
             "type": "boolean",
@@ -1994,6 +1654,48 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "businesses": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::business.business",
+            "mappedBy": "user"
+          },
+          "empresas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::empresa.empresa",
+            "mappedBy": "user"
+          },
+          "pedidos": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pedido.pedido",
+            "mappedBy": "user"
+          },
+          "pessoas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pessoa.pessoa",
+            "mappedBy": "user"
+          },
+          "avatar": {
+            "type": "media",
+            "multiple": false,
+            "required": false,
+            "allowedTypes": [
+              "images",
+              "files",
+              "videos",
+              "audios"
+            ]
+          },
+          "pemission": {
+            "type": "enumeration",
+            "enum": [
+              "Adm",
+              "User"
+            ]
           }
         },
         "kind": "collectionType"
@@ -2004,6 +1706,191 @@
       "uid": "plugin::users-permissions.user",
       "plugin": "users-permissions",
       "globalId": "UsersPermissionsUser"
+    },
+    "plugin::i18n.locale": {
+      "info": {
+        "singularName": "locale",
+        "pluralName": "locales",
+        "collectionName": "locales",
+        "displayName": "Locale",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "min": 1,
+          "max": 50,
+          "configurable": false
+        },
+        "code": {
+          "type": "string",
+          "unique": true,
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "info": {
+          "singularName": "locale",
+          "pluralName": "locales",
+          "collectionName": "locales",
+          "displayName": "Locale",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "min": 1,
+            "max": 50,
+            "configurable": false
+          },
+          "code": {
+            "type": "string",
+            "unique": true,
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "locale",
+      "connection": "default",
+      "uid": "plugin::i18n.locale",
+      "plugin": "i18n",
+      "collectionName": "i18n_locale",
+      "globalId": "I18NLocale"
+    },
+    "api::atendimento.atendimento": {
+      "kind": "collectionType",
+      "collectionName": "atendimentos",
+      "info": {
+        "singularName": "atendimento",
+        "pluralName": "atendimentos",
+        "displayName": "atendimento",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "atendimentos",
+        "info": {
+          "singularName": "atendimento",
+          "pluralName": "atendimentos",
+          "displayName": "atendimento",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "atendimento",
+      "connection": "default",
+      "uid": "api::atendimento.atendimento",
+      "apiName": "atendimento",
+      "globalId": "Atendimento",
+      "actions": {},
+      "lifecycles": {}
     },
     "api::business.business": {
       "kind": "collectionType",
@@ -2049,6 +1936,12 @@
           "target": "api::empresa.empresa",
           "inversedBy": "business"
         },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "businesses"
+        },
         "statusAnd": {
           "type": "string"
         },
@@ -2057,12 +1950,6 @@
         },
         "DataRetorno": {
           "type": "date"
-        },
-        "stausPedido": {
-          "type": "boolean"
-        },
-        "Bpedido": {
-          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -2140,6 +2027,12 @@
             "target": "api::empresa.empresa",
             "inversedBy": "business"
           },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "businesses"
+          },
           "statusAnd": {
             "type": "string"
           },
@@ -2148,12 +2041,6 @@
           },
           "DataRetorno": {
             "type": "date"
-          },
-          "stausPedido": {
-            "type": "boolean"
-          },
-          "Bpedido": {
-            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -2164,6 +2051,112 @@
       "uid": "api::business.business",
       "apiName": "business",
       "globalId": "Business",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::desconto.desconto": {
+      "kind": "collectionType",
+      "collectionName": "descontos",
+      "info": {
+        "singularName": "desconto",
+        "pluralName": "descontos",
+        "displayName": "desconto",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "ativo": {
+          "type": "boolean",
+          "default": true
+        },
+        "percentual": {
+          "type": "float"
+        },
+        "validade": {
+          "type": "date"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "descontos",
+        "info": {
+          "singularName": "desconto",
+          "pluralName": "descontos",
+          "displayName": "desconto",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "nome"
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
+          },
+          "percentual": {
+            "type": "float"
+          },
+          "validade": {
+            "type": "date"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "desconto",
+      "connection": "default",
+      "uid": "api::desconto.desconto",
+      "apiName": "desconto",
+      "globalId": "Desconto",
       "actions": {},
       "lifecycles": {}
     },
@@ -2354,6 +2347,12 @@
           "relation": "oneToOne",
           "target": "api::business.business",
           "mappedBy": "empresa"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "empresas"
         },
         "createdAt": {
           "type": "datetime"
@@ -2574,6 +2573,12 @@
             "relation": "oneToOne",
             "target": "api::business.business",
             "mappedBy": "empresa"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "empresas"
           }
         },
         "kind": "collectionType"
@@ -2584,6 +2589,532 @@
       "uid": "api::empresa.empresa",
       "apiName": "empresa",
       "globalId": "Empresa",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::fornecedor.fornecedor": {
+      "kind": "collectionType",
+      "collectionName": "fornecedores",
+      "info": {
+        "singularName": "fornecedor",
+        "pluralName": "fornecedores",
+        "displayName": "Fornecedor",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "razao": {
+          "type": "string"
+        },
+        "fantasia": {
+          "type": "string"
+        },
+        "end": {
+          "type": "string"
+        },
+        "cnpj": {
+          "type": "biginteger"
+        },
+        "cidade": {
+          "type": "string"
+        },
+        "uf": {
+          "type": "string"
+        },
+        "email": {
+          "type": "email"
+        },
+        "tel": {
+          "type": "biginteger"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "nome": {
+          "type": "uid",
+          "targetField": "titulo"
+        },
+        "numero": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "fornecedores",
+        "info": {
+          "singularName": "fornecedor",
+          "pluralName": "fornecedores",
+          "displayName": "Fornecedor",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "razao": {
+            "type": "string"
+          },
+          "fantasia": {
+            "type": "string"
+          },
+          "end": {
+            "type": "string"
+          },
+          "cnpj": {
+            "type": "biginteger"
+          },
+          "cidade": {
+            "type": "string"
+          },
+          "uf": {
+            "type": "string"
+          },
+          "email": {
+            "type": "email"
+          },
+          "tel": {
+            "type": "biginteger"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "nome": {
+            "type": "uid",
+            "targetField": "titulo"
+          },
+          "numero": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "fornecedor",
+      "connection": "default",
+      "uid": "api::fornecedor.fornecedor",
+      "apiName": "fornecedor",
+      "globalId": "Fornecedor",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::materia-prima.materia-prima": {
+      "kind": "collectionType",
+      "collectionName": "materia_primas",
+      "info": {
+        "singularName": "materia-prima",
+        "pluralName": "materia-primas",
+        "displayName": "matéria-prima",
+        "order": [
+          "materia_prima_order"
+        ]
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "largura": {
+          "type": "decimal"
+        },
+        "espessura": {
+          "type": "decimal"
+        },
+        "precoCompra": {
+          "type": "decimal"
+        },
+        "unCompra": {
+          "type": "enumeration",
+          "enum": [
+            "unidade",
+            "milheiro",
+            "metroCubico",
+            "metroQuadrado",
+            "metroLinear",
+            "litro",
+            "kg"
+          ]
+        },
+        "unVenda": {
+          "type": "enumeration",
+          "enum": [
+            "unidade",
+            "milheiro",
+            "metroCubico",
+            "metroQuadrado",
+            "metroLinear",
+            "litro",
+            "kg"
+          ]
+        },
+        "precoVenda": {
+          "type": "float"
+        },
+        "comprimento": {
+          "type": "decimal"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "materia_primas",
+        "info": {
+          "singularName": "materia-prima",
+          "pluralName": "materia-primas",
+          "displayName": "matéria-prima",
+          "order": [
+            "materia_prima_order"
+          ]
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "largura": {
+            "type": "decimal"
+          },
+          "espessura": {
+            "type": "decimal"
+          },
+          "precoCompra": {
+            "type": "decimal"
+          },
+          "unCompra": {
+            "type": "enumeration",
+            "enum": [
+              "unidade",
+              "milheiro",
+              "metroCubico",
+              "metroQuadrado",
+              "metroLinear",
+              "litro",
+              "kg"
+            ]
+          },
+          "unVenda": {
+            "type": "enumeration",
+            "enum": [
+              "unidade",
+              "milheiro",
+              "metroCubico",
+              "metroQuadrado",
+              "metroLinear",
+              "litro",
+              "kg"
+            ]
+          },
+          "precoVenda": {
+            "type": "float"
+          },
+          "comprimento": {
+            "type": "decimal"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "materia-prima",
+      "connection": "default",
+      "uid": "api::materia-prima.materia-prima",
+      "apiName": "materia-prima",
+      "globalId": "MateriaPrima",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::modelo.modelo": {
+      "kind": "collectionType",
+      "collectionName": "modelos",
+      "info": {
+        "singularName": "modelo",
+        "pluralName": "modelos",
+        "displayName": "modelo",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "ativo": {
+          "type": "boolean",
+          "default": true
+        },
+        "notas": {
+          "type": "richtext"
+        },
+        "partes": {
+          "type": "dynamiczone",
+          "components": [
+            "cx-components.palete",
+            "cx-components.quadro",
+            "cx-components.pecas",
+            "cx-components.gradeado"
+          ]
+        },
+        "tipos_de_produto": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::materia-prima.materia-prima"
+        },
+        "temBase": {
+          "type": "boolean",
+          "default": true
+        },
+        "temLateralDireita": {
+          "type": "boolean",
+          "default": true
+        },
+        "temLateralEsquerda": {
+          "type": "boolean",
+          "default": true
+        },
+        "temCabeceiraDireita": {
+          "type": "boolean",
+          "default": true
+        },
+        "temCabeceiraEsquerda": {
+          "type": "boolean",
+          "default": true
+        },
+        "temTampa": {
+          "type": "boolean",
+          "default": true
+        },
+        "cabeceiraAoChao": {
+          "type": "boolean",
+          "default": false
+        },
+        "cabeceiraAoTopo": {
+          "type": "boolean",
+          "default": false
+        },
+        "lateraisPorFora": {
+          "type": "boolean",
+          "default": false
+        },
+        "montagem": {
+          "type": "component",
+          "repeatable": false,
+          "component": "cx-components.montagem"
+        },
+        "publico": {
+          "type": "boolean",
+          "default": false
+        },
+        "exp": {
+          "type": "boolean",
+          "default": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "modelos",
+        "info": {
+          "singularName": "modelo",
+          "pluralName": "modelos",
+          "displayName": "modelo",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "nome"
+          },
+          "ativo": {
+            "type": "boolean",
+            "default": true
+          },
+          "notas": {
+            "type": "richtext"
+          },
+          "partes": {
+            "type": "dynamiczone",
+            "components": [
+              "cx-components.palete",
+              "cx-components.quadro",
+              "cx-components.pecas",
+              "cx-components.gradeado"
+            ]
+          },
+          "tipos_de_produto": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::materia-prima.materia-prima"
+          },
+          "temBase": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temLateralEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraDireita": {
+            "type": "boolean",
+            "default": true
+          },
+          "temCabeceiraEsquerda": {
+            "type": "boolean",
+            "default": true
+          },
+          "temTampa": {
+            "type": "boolean",
+            "default": true
+          },
+          "cabeceiraAoChao": {
+            "type": "boolean",
+            "default": false
+          },
+          "cabeceiraAoTopo": {
+            "type": "boolean",
+            "default": false
+          },
+          "lateraisPorFora": {
+            "type": "boolean",
+            "default": false
+          },
+          "montagem": {
+            "type": "component",
+            "repeatable": false,
+            "component": "cx-components.montagem"
+          },
+          "publico": {
+            "type": "boolean",
+            "default": false
+          },
+          "exp": {
+            "type": "boolean",
+            "default": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "modelo",
+      "connection": "default",
+      "uid": "api::modelo.modelo",
+      "apiName": "modelo",
+      "globalId": "Modelo",
       "actions": {},
       "lifecycles": {}
     },
@@ -2666,17 +3197,16 @@
         "totalGeral": {
           "type": "string"
         },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pedidos"
+        },
         "fornecedor": {
           "type": "string"
         },
         "businessId": {
-          "type": "string"
-        },
-        "stausPedido": {
-          "type": "boolean",
-          "default": false
-        },
-        "Bpedido": {
           "type": "string"
         },
         "createdAt": {
@@ -2790,17 +3320,16 @@
           "totalGeral": {
             "type": "string"
           },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pedidos"
+          },
           "fornecedor": {
             "type": "string"
           },
           "businessId": {
-            "type": "string"
-          },
-          "stausPedido": {
-            "type": "boolean",
-            "default": false
-          },
-          "Bpedido": {
             "type": "string"
           }
         },
@@ -2882,6 +3411,12 @@
         },
         "history": {
           "type": "json"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pessoas"
         },
         "departamento": {
           "type": "string"
@@ -2989,6 +3524,12 @@
           "history": {
             "type": "json"
           },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pessoas"
+          },
           "departamento": {
             "type": "string"
           },
@@ -3004,6 +3545,88 @@
       "uid": "api::pessoa.pessoa",
       "apiName": "pessoa",
       "globalId": "Pessoa",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::prazo.prazo": {
+      "kind": "collectionType",
+      "collectionName": "prazos",
+      "info": {
+        "singularName": "prazo",
+        "pluralName": "prazos",
+        "displayName": "prazo"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "valor": {
+          "type": "string"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "prazos",
+        "info": {
+          "singularName": "prazo",
+          "pluralName": "prazos",
+          "displayName": "prazo"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "valor": {
+            "type": "string"
+          },
+          "titulo": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "prazo",
+      "connection": "default",
+      "uid": "api::prazo.prazo",
+      "apiName": "prazo",
+      "globalId": "Prazo",
       "actions": {},
       "lifecycles": {}
     },
@@ -3196,6 +3819,348 @@
       "uid": "api::proposta.proposta",
       "apiName": "proposta",
       "globalId": "Proposta",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::sataus-business.sataus-business": {
+      "kind": "collectionType",
+      "collectionName": "sataus_businesses",
+      "info": {
+        "singularName": "sataus-business",
+        "pluralName": "sataus-businesses",
+        "displayName": "SatausBusiness"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "sataus_businesses",
+        "info": {
+          "singularName": "sataus-business",
+          "pluralName": "sataus-businesses",
+          "displayName": "SatausBusiness"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "sataus-business",
+      "connection": "default",
+      "uid": "api::sataus-business.sataus-business",
+      "apiName": "sataus-business",
+      "globalId": "SatausBusiness",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::tipos-de-pe.tipos-de-pe": {
+      "kind": "collectionType",
+      "collectionName": "tipos_de_pes",
+      "info": {
+        "singularName": "tipos-de-pe",
+        "pluralName": "tipos-de-pes",
+        "displayName": "tipos de pe",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "image": {
+          "allowedTypes": [
+            "images",
+            "files",
+            "videos"
+          ],
+          "type": "media",
+          "multiple": true
+        },
+        "notas": {
+          "type": "string"
+        },
+        "pe": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::materia-prima.materia-prima"
+        },
+        "longarina": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::materia-prima.materia-prima"
+        },
+        "toco": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::materia-prima.materia-prima"
+        },
+        "pregoG": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::materia-prima.materia-prima"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "tipos_de_pes",
+        "info": {
+          "singularName": "tipos-de-pe",
+          "pluralName": "tipos-de-pes",
+          "displayName": "tipos de pe",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "nome"
+          },
+          "image": {
+            "allowedTypes": [
+              "images",
+              "files",
+              "videos"
+            ],
+            "type": "media",
+            "multiple": true
+          },
+          "notas": {
+            "type": "string"
+          },
+          "pe": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::materia-prima.materia-prima"
+          },
+          "longarina": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::materia-prima.materia-prima"
+          },
+          "toco": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::materia-prima.materia-prima"
+          },
+          "pregoG": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::materia-prima.materia-prima"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "tipos-de-pe",
+      "connection": "default",
+      "uid": "api::tipos-de-pe.tipos-de-pe",
+      "apiName": "tipos-de-pe",
+      "globalId": "TiposDePe",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::tipos-de-produto.tipos-de-produto": {
+      "kind": "collectionType",
+      "collectionName": "tipos_de_produtos",
+      "info": {
+        "singularName": "tipos-de-produto",
+        "pluralName": "tipos-de-produtos",
+        "displayName": "tipos de produto",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "nome": {
+          "type": "string"
+        },
+        "notas": {
+          "type": "text"
+        },
+        "slug": {
+          "type": "uid",
+          "targetField": "nome"
+        },
+        "images": {
+          "allowedTypes": [
+            "images",
+            "files",
+            "videos"
+          ],
+          "type": "media",
+          "multiple": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "tipos_de_produtos",
+        "info": {
+          "singularName": "tipos-de-produto",
+          "pluralName": "tipos-de-produtos",
+          "displayName": "tipos de produto",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "nome": {
+            "type": "string"
+          },
+          "notas": {
+            "type": "text"
+          },
+          "slug": {
+            "type": "uid",
+            "targetField": "nome"
+          },
+          "images": {
+            "allowedTypes": [
+              "images",
+              "files",
+              "videos"
+            ],
+            "type": "media",
+            "multiple": true
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "tipos-de-produto",
+      "connection": "default",
+      "uid": "api::tipos-de-produto.tipos-de-produto",
+      "apiName": "tipos-de-produto",
+      "globalId": "TiposDeProduto",
       "actions": {},
       "lifecycles": {}
     }
