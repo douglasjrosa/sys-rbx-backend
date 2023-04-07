@@ -204,6 +204,21 @@
           "sortable": true
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -308,6 +323,10 @@
         [
           {
             "name": "Bpedido",
+            "size": 6
+          },
+          {
+            "name": "user",
             "size": 6
           }
         ]

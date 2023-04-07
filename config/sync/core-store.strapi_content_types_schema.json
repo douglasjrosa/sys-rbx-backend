@@ -1887,6 +1887,39 @@
           "inversedBy": "users",
           "configurable": false
         },
+        "pemission": {
+          "type": "enumeration",
+          "enum": [
+            "Adm",
+            "User"
+          ],
+          "default": "User"
+        },
+        "businesses": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::business.business",
+          "mappedBy": "user"
+        },
+        "empresas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::empresa.empresa",
+          "mappedBy": "user"
+        },
+        "pessoas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pessoa.pessoa",
+          "mappedBy": "user"
+        },
+        "avatar": {
+          "allowedTypes": [
+            "images"
+          ],
+          "type": "media",
+          "multiple": false
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1928,6 +1961,7 @@
         }
       },
       "kind": "collectionType",
+      "__filename__": "schema.json",
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1994,6 +2028,39 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "pemission": {
+            "type": "enumeration",
+            "enum": [
+              "Adm",
+              "User"
+            ],
+            "default": "User"
+          },
+          "businesses": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::business.business",
+            "mappedBy": "user"
+          },
+          "empresas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::empresa.empresa",
+            "mappedBy": "user"
+          },
+          "pessoas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pessoa.pessoa",
+            "mappedBy": "user"
+          },
+          "avatar": {
+            "allowedTypes": [
+              "images"
+            ],
+            "type": "media",
+            "multiple": false
           }
         },
         "kind": "collectionType"
@@ -2063,6 +2130,12 @@
         },
         "Bpedido": {
           "type": "string"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "businesses"
         },
         "createdAt": {
           "type": "datetime"
@@ -2154,6 +2227,12 @@
           },
           "Bpedido": {
             "type": "string"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "businesses"
           }
         },
         "kind": "collectionType"
@@ -2354,6 +2433,12 @@
           "relation": "oneToOne",
           "target": "api::business.business",
           "mappedBy": "empresa"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "empresas"
         },
         "createdAt": {
           "type": "datetime"
@@ -2574,6 +2659,12 @@
             "relation": "oneToOne",
             "target": "api::business.business",
             "mappedBy": "empresa"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "empresas"
           }
         },
         "kind": "collectionType"
@@ -2889,6 +2980,12 @@
         "cargo": {
           "type": "string"
         },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pessoas"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2994,6 +3091,12 @@
           },
           "cargo": {
             "type": "string"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pessoas"
           }
         },
         "kind": "collectionType"

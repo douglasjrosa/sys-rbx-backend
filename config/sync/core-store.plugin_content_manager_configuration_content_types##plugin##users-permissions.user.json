@@ -147,6 +147,79 @@
           "sortable": true
         }
       },
+      "pemission": {
+        "edit": {
+          "label": "pemission",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "pemission",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "businesses": {
+        "edit": {
+          "label": "businesses",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "businesses",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "empresas": {
+        "edit": {
+          "label": "empresas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pessoas": {
+        "edit": {
+          "label": "pessoas",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "pessoas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "avatar": {
+        "edit": {
+          "label": "avatar",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "avatar",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -211,6 +284,32 @@
           },
           {
             "name": "role",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pemission",
+            "size": 6
+          },
+          {
+            "name": "businesses",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "empresas",
+            "size": 6
+          },
+          {
+            "name": "pessoas",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "avatar",
             "size": 6
           }
         ]
