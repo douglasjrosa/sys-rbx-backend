@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 10,
+      "pageSize": 50,
       "mainField": "nPedido",
-      "defaultSortBy": "nPedido",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -376,11 +376,17 @@
     "layouts": {
       "list": [
         "id",
-        "vencPedido",
-        "fornecedor",
-        "empresa"
+        "nPedido",
+        "condi",
+        "businessId"
       ],
       "edit": [
+        [
+          {
+            "name": "nPedido",
+            "size": 6
+          }
+        ],
         [
           {
             "name": "itens",
@@ -389,25 +395,21 @@
         ],
         [
           {
+            "name": "dataPedido",
+            "size": 4
+          },
+          {
             "name": "vencPedido",
             "size": 4
-          },
-          {
-            "name": "fornecedor",
-            "size": 6
           }
         ],
         [
           {
-            "name": "empresa",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "empresaId",
+            "name": "desconto",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "vendedorId",
             "size": 4
@@ -415,19 +417,25 @@
         ],
         [
           {
-            "name": "nPedido",
-            "size": 6
+            "name": "CNPJClinet",
+            "size": 4
           },
           {
-            "name": "desconto",
-            "size": 6
+            "name": "empresaId",
+            "size": 4
           }
         ],
         [
           {
-            "name": "CNPJClinet",
+            "name": "fornecedor",
             "size": 6
           },
+          {
+            "name": "empresa",
+            "size": 4
+          }
+        ],
+        [
           {
             "name": "andamento",
             "size": 6
@@ -447,12 +455,6 @@
           {
             "name": "business",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "dataPedido",
-            "size": 4
           }
         ],
         [
@@ -485,19 +487,17 @@
           {
             "name": "totalGeral",
             "size": 6
-          }
-        ],
-        [
+          },
           {
             "name": "businessId",
             "size": 6
-          },
-          {
-            "name": "stausPedido",
-            "size": 4
           }
         ],
         [
+          {
+            "name": "stausPedido",
+            "size": 4
+          },
           {
             "name": "Bpedido",
             "size": 6

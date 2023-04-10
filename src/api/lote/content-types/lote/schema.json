@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lotes",
+  "info": {
+    "singularName": "lote",
+    "pluralName": "lotes",
+    "displayName": "Lote"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "lote": {
+      "type": "integer"
+    },
+    "empresaId": {
+      "type": "integer"
+    },
+    "business": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business.business",
+      "inversedBy": "lotes"
+    },
+    "negocioId": {
+      "type": "integer"
+    },
+    "produtos": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::produto.produto",
+      "inversedBy": "lotes"
+    },
+    "produtoId": {
+      "type": "integer"
+    },
+    "emitente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "lotes"
+    },
+    "emitenteId": {
+      "type": "integer"
+    },
+    "info": {
+      "type": "text"
+    },
+    "status": {
+      "type": "string"
+    },
+    "checklist": {
+      "type": "text"
+    },
+    "logs": {
+      "type": "text"
+    }
+  }
+}

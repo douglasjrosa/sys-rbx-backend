@@ -254,17 +254,17 @@
         ],
         [
           {
-            "name": "roles",
-            "size": 6
-          },
-          {
             "name": "blocked",
             "size": 4
+          },
+          {
+            "name": "preferedLanguage",
+            "size": 6
           }
         ],
         [
           {
-            "name": "preferedLanguage",
+            "name": "roles",
             "size": 6
           }
         ]

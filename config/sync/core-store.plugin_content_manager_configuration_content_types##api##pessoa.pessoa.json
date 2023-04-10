@@ -413,12 +413,12 @@
         ],
         [
           {
-            "name": "empresas",
-            "size": 6
-          },
-          {
             "name": "status",
             "size": 4
+          },
+          {
+            "name": "empresas",
+            "size": 6
           }
         ],
         [
@@ -429,6 +429,10 @@
         ],
         [
           {
+            "name": "user",
+            "size": 6
+          },
+          {
             "name": "departamento",
             "size": 6
           }
@@ -436,10 +440,6 @@
         [
           {
             "name": "cargo",
-            "size": 6
-          },
-          {
-            "name": "user",
             "size": 6
           }
         ]

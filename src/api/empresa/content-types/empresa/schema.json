@@ -191,6 +191,12 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "empresas"
+    },
+    "lotes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lote.lote",
+      "mappedBy": "emitente"
     }
   }
 }

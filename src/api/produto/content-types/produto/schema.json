@@ -32,6 +32,12 @@
     },
     "peso": {
       "type": "string"
+    },
+    "lotes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lote.lote",
+      "mappedBy": "produtos"
     }
   }
 }

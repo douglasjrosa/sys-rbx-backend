@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 10,
+      "pageSize": 20,
       "mainField": "nome",
-      "defaultSortBy": "nome",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -808,6 +808,21 @@
           "sortable": true
         }
       },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "status"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -848,26 +863,20 @@
         [
           {
             "name": "nome",
-            "size": 6
+            "size": 4
           },
           {
             "name": "fantasia",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "tipoPessoa",
-            "size": 6
+            "size": 4
           },
           {
-            "name": "endereco",
-            "size": 6
+            "name": "tipoPessoa",
+            "size": 4
           }
         ],
         [
           {
-            "name": "numero",
+            "name": "endereco",
             "size": 6
           },
           {
@@ -877,45 +886,47 @@
         ],
         [
           {
+            "name": "cep",
+            "size": 4
+          },
+          {
+            "name": "numero",
+            "size": 4
+          },
+          {
+            "name": "uf",
+            "size": 4
+          }
+        ],
+        [
+          {
             "name": "bairro",
             "size": 6
           },
           {
-            "name": "cep",
-            "size": 6
+            "name": "pais",
+            "size": 4
           }
         ],
         [
           {
             "name": "cidade",
-            "size": 6
+            "size": 4
           },
-          {
-            "name": "uf",
-            "size": 6
-          }
-        ],
-        [
           {
             "name": "site",
-            "size": 6
+            "size": 4
           },
-          {
-            "name": "pais",
-            "size": 6
-          }
-        ],
-        [
           {
             "name": "porte",
-            "size": 6
-          },
-          {
-            "name": "simples",
             "size": 4
           }
         ],
         [
+          {
+            "name": "simples",
+            "size": 4
+          },
           {
             "name": "ieStatus",
             "size": 4
@@ -923,7 +934,9 @@
           {
             "name": "status",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "adFrailLat",
             "size": 4
@@ -1071,31 +1084,15 @@
         ],
         [
           {
-            "name": "responsavel",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "history",
-            "size": 12
-          }
-        ],
-        [
-          {
-            "name": "pedidos",
-            "size": 6
-          },
-          {
             "name": "titulo",
             "size": 6
-          }
-        ],
-        [
+          },
           {
             "name": "vendedor",
             "size": 6
-          },
+          }
+        ],
+        [
           {
             "name": "fornecedorId",
             "size": 4
@@ -1107,8 +1104,24 @@
             "size": 4
           },
           {
+            "name": "responsavel",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "pedidos",
+            "size": 6
+          },
+          {
             "name": "codigo",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "history",
+            "size": 12
           }
         ],
         [
@@ -1118,6 +1131,12 @@
           },
           {
             "name": "user",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "lotes",
             "size": 6
           }
         ]

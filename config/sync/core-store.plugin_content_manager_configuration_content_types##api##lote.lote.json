@@ -1,0 +1,297 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::lote.lote",
+  "value": {
+    "uid": "api::lote.lote",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "status",
+      "defaultSortBy": "status",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "lote": {
+        "edit": {
+          "label": "lote",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "lote",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "empresaId": {
+        "edit": {
+          "label": "empresaId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "empresaId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "business": {
+        "edit": {
+          "label": "business",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "business",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "negocioId": {
+        "edit": {
+          "label": "negocioId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "negocioId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "produtos": {
+        "edit": {
+          "label": "produtos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nomeProd"
+        },
+        "list": {
+          "label": "produtos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "produtoId": {
+        "edit": {
+          "label": "produtoId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "produtoId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "emitente": {
+        "edit": {
+          "label": "emitente",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "emitente",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "emitenteId": {
+        "edit": {
+          "label": "emitenteId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "emitenteId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "info": {
+        "edit": {
+          "label": "info",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "info",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "status": {
+        "edit": {
+          "label": "status",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "status",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "checklist": {
+        "edit": {
+          "label": "checklist",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "checklist",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "logs": {
+        "edit": {
+          "label": "logs",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "logs",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "lote",
+        "empresaId",
+        "business"
+      ],
+      "edit": [
+        [
+          {
+            "name": "lote",
+            "size": 4
+          },
+          {
+            "name": "empresaId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "business",
+            "size": 6
+          },
+          {
+            "name": "negocioId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "produtos",
+            "size": 6
+          },
+          {
+            "name": "produtoId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "emitente",
+            "size": 6
+          },
+          {
+            "name": "emitenteId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "info",
+            "size": 6
+          },
+          {
+            "name": "status",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "checklist",
+            "size": 6
+          },
+          {
+            "name": "logs",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

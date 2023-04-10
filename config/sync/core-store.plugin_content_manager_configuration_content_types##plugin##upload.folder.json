@@ -156,21 +156,21 @@
         ],
         [
           {
-            "name": "parent",
+            "name": "path",
             "size": 6
           },
           {
-            "name": "children",
+            "name": "parent",
             "size": 6
           }
         ],
         [
           {
-            "name": "files",
+            "name": "children",
             "size": 6
           },
           {
-            "name": "path",
+            "name": "files",
             "size": 6
           }
         ]

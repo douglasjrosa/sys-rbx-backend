@@ -1489,107 +1489,6 @@
       "plugin": "upload",
       "globalId": "UploadFolder"
     },
-    "plugin::i18n.locale": {
-      "info": {
-        "singularName": "locale",
-        "pluralName": "locales",
-        "collectionName": "locales",
-        "displayName": "Locale",
-        "description": ""
-      },
-      "options": {
-        "draftAndPublish": false
-      },
-      "pluginOptions": {
-        "content-manager": {
-          "visible": false
-        },
-        "content-type-builder": {
-          "visible": false
-        }
-      },
-      "attributes": {
-        "name": {
-          "type": "string",
-          "min": 1,
-          "max": 50,
-          "configurable": false
-        },
-        "code": {
-          "type": "string",
-          "unique": true,
-          "configurable": false
-        },
-        "createdAt": {
-          "type": "datetime"
-        },
-        "updatedAt": {
-          "type": "datetime"
-        },
-        "createdBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "updatedBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        }
-      },
-      "kind": "collectionType",
-      "__schema__": {
-        "info": {
-          "singularName": "locale",
-          "pluralName": "locales",
-          "collectionName": "locales",
-          "displayName": "Locale",
-          "description": ""
-        },
-        "options": {
-          "draftAndPublish": false
-        },
-        "pluginOptions": {
-          "content-manager": {
-            "visible": false
-          },
-          "content-type-builder": {
-            "visible": false
-          }
-        },
-        "attributes": {
-          "name": {
-            "type": "string",
-            "min": 1,
-            "max": 50,
-            "configurable": false
-          },
-          "code": {
-            "type": "string",
-            "unique": true,
-            "configurable": false
-          }
-        },
-        "kind": "collectionType"
-      },
-      "modelType": "contentType",
-      "modelName": "locale",
-      "connection": "default",
-      "uid": "plugin::i18n.locale",
-      "plugin": "i18n",
-      "collectionName": "i18n_locale",
-      "globalId": "I18NLocale"
-    },
     "plugin::users-permissions.permission": {
       "collectionName": "up_permissions",
       "info": {
@@ -2072,6 +1971,107 @@
       "plugin": "users-permissions",
       "globalId": "UsersPermissionsUser"
     },
+    "plugin::i18n.locale": {
+      "info": {
+        "singularName": "locale",
+        "pluralName": "locales",
+        "collectionName": "locales",
+        "displayName": "Locale",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": false
+      },
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "min": 1,
+          "max": 50,
+          "configurable": false
+        },
+        "code": {
+          "type": "string",
+          "unique": true,
+          "configurable": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "info": {
+          "singularName": "locale",
+          "pluralName": "locales",
+          "collectionName": "locales",
+          "displayName": "Locale",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": false
+        },
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "min": 1,
+            "max": 50,
+            "configurable": false
+          },
+          "code": {
+            "type": "string",
+            "unique": true,
+            "configurable": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "locale",
+      "connection": "default",
+      "uid": "plugin::i18n.locale",
+      "plugin": "i18n",
+      "collectionName": "i18n_locale",
+      "globalId": "I18NLocale"
+    },
     "api::business.business": {
       "kind": "collectionType",
       "collectionName": "businesses",
@@ -2136,6 +2136,12 @@
           "relation": "manyToOne",
           "target": "plugin::users-permissions.user",
           "inversedBy": "businesses"
+        },
+        "lotes": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "business"
         },
         "createdAt": {
           "type": "datetime"
@@ -2233,6 +2239,12 @@
             "relation": "manyToOne",
             "target": "plugin::users-permissions.user",
             "inversedBy": "businesses"
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "business"
           }
         },
         "kind": "collectionType"
@@ -2439,6 +2451,12 @@
           "relation": "manyToOne",
           "target": "plugin::users-permissions.user",
           "inversedBy": "empresas"
+        },
+        "lotes": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "emitente"
         },
         "createdAt": {
           "type": "datetime"
@@ -2665,6 +2683,12 @@
             "relation": "manyToOne",
             "target": "plugin::users-permissions.user",
             "inversedBy": "empresas"
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "emitente"
           }
         },
         "kind": "collectionType"
@@ -2675,6 +2699,166 @@
       "uid": "api::empresa.empresa",
       "apiName": "empresa",
       "globalId": "Empresa",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::lote.lote": {
+      "kind": "collectionType",
+      "collectionName": "lotes",
+      "info": {
+        "singularName": "lote",
+        "pluralName": "lotes",
+        "displayName": "Lote"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "lote": {
+          "type": "integer"
+        },
+        "empresaId": {
+          "type": "integer"
+        },
+        "business": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::business.business",
+          "inversedBy": "lotes"
+        },
+        "negocioId": {
+          "type": "integer"
+        },
+        "produtos": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::produto.produto",
+          "inversedBy": "lotes"
+        },
+        "produtoId": {
+          "type": "integer"
+        },
+        "emitente": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::empresa.empresa",
+          "inversedBy": "lotes"
+        },
+        "emitenteId": {
+          "type": "integer"
+        },
+        "info": {
+          "type": "text"
+        },
+        "status": {
+          "type": "string"
+        },
+        "checklist": {
+          "type": "text"
+        },
+        "logs": {
+          "type": "text"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "lotes",
+        "info": {
+          "singularName": "lote",
+          "pluralName": "lotes",
+          "displayName": "Lote"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "lote": {
+            "type": "integer"
+          },
+          "empresaId": {
+            "type": "integer"
+          },
+          "business": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::business.business",
+            "inversedBy": "lotes"
+          },
+          "negocioId": {
+            "type": "integer"
+          },
+          "produtos": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::produto.produto",
+            "inversedBy": "lotes"
+          },
+          "produtoId": {
+            "type": "integer"
+          },
+          "emitente": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::empresa.empresa",
+            "inversedBy": "lotes"
+          },
+          "emitenteId": {
+            "type": "integer"
+          },
+          "info": {
+            "type": "text"
+          },
+          "status": {
+            "type": "string"
+          },
+          "checklist": {
+            "type": "text"
+          },
+          "logs": {
+            "type": "text"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "lote",
+      "connection": "default",
+      "uid": "api::lote.lote",
+      "apiName": "lote",
+      "globalId": "Lote",
       "actions": {},
       "lifecycles": {}
     },
@@ -3145,6 +3329,12 @@
         "peso": {
           "type": "string"
         },
+        "lotes": {
+          "type": "relation",
+          "relation": "manyToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "produtos"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -3211,6 +3401,12 @@
           },
           "peso": {
             "type": "string"
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "manyToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "produtos"
           }
         },
         "kind": "collectionType"

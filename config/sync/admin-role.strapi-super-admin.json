@@ -21,7 +21,8 @@
           "DataRetorno",
           "stausPedido",
           "Bpedido",
-          "user"
+          "user",
+          "lotes"
         ]
       },
       "conditions": []
@@ -56,7 +57,8 @@
           "DataRetorno",
           "stausPedido",
           "Bpedido",
-          "user"
+          "user",
+          "lotes"
         ]
       },
       "conditions": []
@@ -79,7 +81,8 @@
           "DataRetorno",
           "stausPedido",
           "Bpedido",
-          "user"
+          "user",
+          "lotes"
         ]
       },
       "conditions": []
@@ -144,7 +147,8 @@
           "vendedorId",
           "codigo",
           "business",
-          "user"
+          "user",
+          "lotes"
         ]
       },
       "conditions": []
@@ -221,7 +225,8 @@
           "vendedorId",
           "codigo",
           "business",
-          "user"
+          "user",
+          "lotes"
         ]
       },
       "conditions": []
@@ -286,7 +291,83 @@
           "vendedorId",
           "codigo",
           "business",
-          "user"
+          "user",
+          "lotes"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::lote.lote",
+      "properties": {
+        "fields": [
+          "lote",
+          "empresaId",
+          "business",
+          "negocioId",
+          "produtos",
+          "produtoId",
+          "emitente",
+          "emitenteId",
+          "info",
+          "status",
+          "checklist",
+          "logs"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::lote.lote",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::lote.lote",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::lote.lote",
+      "properties": {
+        "fields": [
+          "lote",
+          "empresaId",
+          "business",
+          "negocioId",
+          "produtos",
+          "produtoId",
+          "emitente",
+          "emitenteId",
+          "info",
+          "status",
+          "checklist",
+          "logs"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::lote.lote",
+      "properties": {
+        "fields": [
+          "lote",
+          "empresaId",
+          "business",
+          "negocioId",
+          "produtos",
+          "produtoId",
+          "emitente",
+          "emitenteId",
+          "info",
+          "status",
+          "checklist",
+          "logs"
         ]
       },
       "conditions": []
@@ -509,7 +590,8 @@
           "comprimento",
           "vFinal",
           "prodId",
-          "peso"
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -537,7 +619,8 @@
           "comprimento",
           "vFinal",
           "prodId",
-          "peso"
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -553,7 +636,8 @@
           "comprimento",
           "vFinal",
           "prodId",
-          "peso"
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -869,6 +953,30 @@
     },
     {
       "action": "plugin::content-type-builder.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.regenerate",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::documentation.settings.update",
       "subject": null,
       "properties": {},
       "conditions": []

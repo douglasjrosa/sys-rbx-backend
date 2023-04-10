@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 10,
+      "pageSize": 50,
       "mainField": "nBusiness",
-      "defaultSortBy": "nBusiness",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -219,6 +219,21 @@
           "sortable": true
         }
       },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "status"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -251,15 +266,15 @@
     "layouts": {
       "list": [
         "id",
-        "pedidos",
+        "status",
         "deadline",
-        "nBusiness"
+        "user"
       ],
       "edit": [
         [
           {
-            "name": "pedidos",
-            "size": 6
+            "name": "status",
+            "size": 4
           },
           {
             "name": "deadline",
@@ -269,17 +284,15 @@
         [
           {
             "name": "nBusiness",
-            "size": 6
+            "size": 4
           },
           {
             "name": "Budget",
-            "size": 6
-          }
-        ],
-        [
+            "size": 4
+          },
           {
             "name": "Approach",
-            "size": 6
+            "size": 4
           }
         ],
         [
@@ -297,7 +310,15 @@
         [
           {
             "name": "empresa",
-            "size": 6
+            "size": 4
+          },
+          {
+            "name": "user",
+            "size": 4
+          },
+          {
+            "name": "pedidos",
+            "size": 4
           }
         ],
         [
@@ -306,27 +327,23 @@
             "size": 6
           },
           {
-            "name": "status",
+            "name": "DataRetorno",
             "size": 4
           }
         ],
         [
-          {
-            "name": "DataRetorno",
-            "size": 4
-          },
           {
             "name": "stausPedido",
             "size": 4
+          },
+          {
+            "name": "Bpedido",
+            "size": 6
           }
         ],
         [
           {
-            "name": "Bpedido",
-            "size": 6
-          },
-          {
-            "name": "user",
+            "name": "lotes",
             "size": 6
           }
         ]

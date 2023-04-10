@@ -289,19 +289,15 @@
         ],
         [
           {
-            "name": "pemission",
+            "name": "businesses",
             "size": 6
           },
           {
-            "name": "businesses",
+            "name": "empresas",
             "size": 6
           }
         ],
         [
-          {
-            "name": "empresas",
-            "size": 6
-          },
           {
             "name": "pessoas",
             "size": 6
@@ -310,6 +306,10 @@
         [
           {
             "name": "avatar",
+            "size": 6
+          },
+          {
+            "name": "pemission",
             "size": 6
           }
         ]
