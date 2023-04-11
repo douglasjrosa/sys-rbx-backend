@@ -148,7 +148,7 @@
           "codigo",
           "business",
           "user",
-          "lotes"
+          "lotesEmitente"
         ]
       },
       "conditions": []
@@ -226,7 +226,7 @@
           "codigo",
           "business",
           "user",
-          "lotes"
+          "lotesEmitente"
         ]
       },
       "conditions": []
@@ -292,7 +292,7 @@
           "codigo",
           "business",
           "user",
-          "lotes"
+          "lotesEmitente"
         ]
       },
       "conditions": []
@@ -588,10 +588,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "vFinal",
           "prodId",
-          "peso",
-          "lotes"
+          "lotes",
+          "largura",
+          "vFinal",
+          "peso"
         ]
       },
       "conditions": []
@@ -617,10 +618,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "vFinal",
           "prodId",
-          "peso",
-          "lotes"
+          "lotes",
+          "largura",
+          "vFinal",
+          "peso"
         ]
       },
       "conditions": []
@@ -634,10 +636,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "vFinal",
           "prodId",
-          "peso",
-          "lotes"
+          "lotes",
+          "largura",
+          "vFinal",
+          "peso"
         ]
       },
       "conditions": []

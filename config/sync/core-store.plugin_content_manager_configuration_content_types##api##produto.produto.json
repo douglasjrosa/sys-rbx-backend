@@ -133,6 +133,20 @@
           "sortable": false
         }
       },
+      "largura": {
+        "edit": {
+          "label": "largura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "largura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -208,6 +222,12 @@
           {
             "name": "lotes",
             "size": 6
+          }
+        ],
+        [
+          {
+            "name": "largura",
+            "size": 4
           }
         ]
       ]

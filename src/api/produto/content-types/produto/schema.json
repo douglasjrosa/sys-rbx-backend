@@ -24,20 +24,23 @@
     "comprimento": {
       "type": "integer"
     },
-    "vFinal": {
-      "type": "string"
-    },
     "prodId": {
       "type": "integer"
-    },
-    "peso": {
-      "type": "string"
     },
     "lotes": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::lote.lote",
       "mappedBy": "produtos"
+    },
+    "largura": {
+      "type": "biginteger"
+    },
+    "vFinal": {
+      "type": "decimal"
+    },
+    "peso": {
+      "type": "decimal"
     }
   }
 }

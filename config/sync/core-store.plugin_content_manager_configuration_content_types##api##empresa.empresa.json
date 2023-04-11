@@ -808,9 +808,9 @@
           "sortable": true
         }
       },
-      "lotes": {
+      "lotesEmitente": {
         "edit": {
-          "label": "lotes",
+          "label": "lotesEmitente",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -818,7 +818,7 @@
           "mainField": "status"
         },
         "list": {
-          "label": "lotes",
+          "label": "lotesEmitente",
           "searchable": false,
           "sortable": false
         }
@@ -1136,7 +1136,7 @@
         ],
         [
           {
-            "name": "lotes",
+            "name": "lotesEmitente",
             "size": 6
           }
         ]
