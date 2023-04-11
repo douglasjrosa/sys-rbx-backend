@@ -27,12 +27,6 @@
     "prodId": {
       "type": "integer"
     },
-    "lotes": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::lote.lote",
-      "mappedBy": "produtos"
-    },
     "largura": {
       "type": "biginteger"
     },

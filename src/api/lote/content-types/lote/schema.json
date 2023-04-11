@@ -27,12 +27,6 @@
     "negocioId": {
       "type": "integer"
     },
-    "produtos": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::produto.produto",
-      "inversedBy": "lotes"
-    },
     "produtoId": {
       "type": "integer"
     },
@@ -56,6 +50,12 @@
     },
     "logs": {
       "type": "text"
+    },
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "lotes"
     }
   }
 }

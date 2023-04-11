@@ -48,6 +48,21 @@
           "sortable": true
         }
       },
+      "fornecedor": {
+        "edit": {
+          "label": "fornecedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "razao"
+        },
+        "list": {
+          "label": "fornecedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "empresa": {
         "edit": {
           "label": "empresa",
@@ -59,6 +74,20 @@
         },
         "list": {
           "label": "empresa",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedorId": {
+        "edit": {
+          "label": "fornecedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fornecedorId",
           "searchable": true,
           "sortable": true
         }
@@ -190,6 +219,20 @@
           "sortable": true
         }
       },
+      "matriz": {
+        "edit": {
+          "label": "matriz",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "matriz",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "dataPedido": {
         "edit": {
           "label": "dataPedido",
@@ -288,62 +331,6 @@
           "sortable": true
         }
       },
-      "fornecedor": {
-        "edit": {
-          "label": "fornecedor",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "fornecedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "businessId": {
-        "edit": {
-          "label": "businessId",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "businessId",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "stausPedido": {
-        "edit": {
-          "label": "stausPedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "stausPedido",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "Bpedido": {
-        "edit": {
-          "label": "Bpedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "Bpedido",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -377,8 +364,8 @@
       "list": [
         "id",
         "nPedido",
-        "condi",
-        "businessId"
+        "matriz",
+        "condi"
       ],
       "edit": [
         [
@@ -405,11 +392,19 @@
         ],
         [
           {
+            "name": "matriz",
+            "size": 6
+          },
+          {
             "name": "desconto",
             "size": 4
           }
         ],
         [
+          {
+            "name": "fornecedorId",
+            "size": 4
+          },
           {
             "name": "vendedorId",
             "size": 4
@@ -486,20 +481,6 @@
         [
           {
             "name": "totalGeral",
-            "size": 6
-          },
-          {
-            "name": "businessId",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "stausPedido",
-            "size": 4
-          },
-          {
-            "name": "Bpedido",
             "size": 6
           }
         ]

@@ -89,6 +89,9 @@
     },
     "Bpedido": {
       "type": "string"
+    },
+    "status": {
+      "type": "boolean"
     }
   }
 }
