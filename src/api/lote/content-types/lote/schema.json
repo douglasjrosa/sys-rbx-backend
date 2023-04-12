@@ -56,6 +56,9 @@
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "lotes"
+    },
+    "nPedido": {
+      "type": "string"
     }
   }
 }

@@ -220,6 +220,21 @@
           "sortable": false
         }
       },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "status"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -310,6 +325,12 @@
           },
           {
             "name": "pemission",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "lotes",
             "size": 6
           }
         ]

@@ -1819,6 +1819,12 @@
           "type": "media",
           "multiple": false
         },
+        "lotes": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "vendedor"
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1960,6 +1966,12 @@
             ],
             "type": "media",
             "multiple": false
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "vendedor"
           }
         },
         "kind": "collectionType"
@@ -2702,6 +2714,94 @@
       "actions": {},
       "lifecycles": {}
     },
+    "api::logstrello.logstrello": {
+      "kind": "collectionType",
+      "collectionName": "logstrellos",
+      "info": {
+        "singularName": "logstrello",
+        "pluralName": "logstrellos",
+        "displayName": "Logstrello"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "date": {
+          "type": "datetime"
+        },
+        "logs": {
+          "type": "text"
+        },
+        "nPedido": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "logstrellos",
+        "info": {
+          "singularName": "logstrello",
+          "pluralName": "logstrellos",
+          "displayName": "Logstrello"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "date": {
+            "type": "datetime"
+          },
+          "logs": {
+            "type": "text"
+          },
+          "nPedido": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "logstrello",
+      "connection": "default",
+      "uid": "api::logstrello.logstrello",
+      "apiName": "logstrello",
+      "globalId": "Logstrello",
+      "actions": {},
+      "lifecycles": {}
+    },
     "api::lote.lote": {
       "kind": "collectionType",
       "collectionName": "lotes",
@@ -2731,12 +2831,6 @@
         "negocioId": {
           "type": "integer"
         },
-        "produtos": {
-          "type": "relation",
-          "relation": "manyToMany",
-          "target": "api::produto.produto",
-          "inversedBy": "lotes"
-        },
         "produtoId": {
           "type": "integer"
         },
@@ -2760,6 +2854,15 @@
         },
         "logs": {
           "type": "text"
+        },
+        "vendedor": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "lotes"
+        },
+        "nPedido": {
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -2822,12 +2925,6 @@
           "negocioId": {
             "type": "integer"
           },
-          "produtos": {
-            "type": "relation",
-            "relation": "manyToMany",
-            "target": "api::produto.produto",
-            "inversedBy": "lotes"
-          },
           "produtoId": {
             "type": "integer"
           },
@@ -2851,6 +2948,15 @@
           },
           "logs": {
             "type": "text"
+          },
+          "vendedor": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "lotes"
+          },
+          "nPedido": {
+            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -2943,7 +3049,7 @@
         "totalGeral": {
           "type": "string"
         },
-        "fornecedor": {
+        "fornecedorId": {
           "type": "string"
         },
         "businessId": {
@@ -2955,6 +3061,9 @@
         },
         "Bpedido": {
           "type": "string"
+        },
+        "status": {
+          "type": "boolean"
         },
         "createdAt": {
           "type": "datetime"
@@ -3067,7 +3176,7 @@
           "totalGeral": {
             "type": "string"
           },
-          "fornecedor": {
+          "fornecedorId": {
             "type": "string"
           },
           "businessId": {
@@ -3079,6 +3188,9 @@
           },
           "Bpedido": {
             "type": "string"
+          },
+          "status": {
+            "type": "boolean"
           }
         },
         "kind": "collectionType"
@@ -3325,12 +3437,6 @@
         "prodId": {
           "type": "integer"
         },
-        "lotes": {
-          "type": "relation",
-          "relation": "manyToMany",
-          "target": "api::lote.lote",
-          "mappedBy": "produtos"
-        },
         "largura": {
           "type": "biginteger"
         },
@@ -3400,12 +3506,6 @@
           },
           "prodId": {
             "type": "integer"
-          },
-          "lotes": {
-            "type": "relation",
-            "relation": "manyToMany",
-            "target": "api::lote.lote",
-            "mappedBy": "produtos"
           },
           "largura": {
             "type": "biginteger"

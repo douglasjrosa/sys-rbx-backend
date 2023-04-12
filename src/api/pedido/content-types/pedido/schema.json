@@ -77,7 +77,7 @@
     "totalGeral": {
       "type": "string"
     },
-    "fornecedor": {
+    "fornecedorId": {
       "type": "string"
     },
     "businessId": {

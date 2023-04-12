@@ -77,21 +77,6 @@
           "sortable": true
         }
       },
-      "produtos": {
-        "edit": {
-          "label": "produtos",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nomeProd"
-        },
-        "list": {
-          "label": "produtos",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "produtoId": {
         "edit": {
           "label": "produtoId",
@@ -191,6 +176,35 @@
           "sortable": true
         }
       },
+      "vendedor": {
+        "edit": {
+          "label": "vendedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "vendedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nPedido": {
+        "edit": {
+          "label": "nPedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nPedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -250,10 +264,6 @@
         ],
         [
           {
-            "name": "produtos",
-            "size": 6
-          },
-          {
             "name": "produtoId",
             "size": 4
           }
@@ -285,6 +295,16 @@
           },
           {
             "name": "logs",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "vendedor",
+            "size": 6
+          },
+          {
+            "name": "nPedido",
             "size": 6
           }
         ]

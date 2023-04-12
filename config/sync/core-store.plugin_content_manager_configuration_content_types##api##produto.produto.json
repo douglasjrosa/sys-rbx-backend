@@ -76,20 +76,6 @@
           "sortable": true
         }
       },
-      "vFinal": {
-        "edit": {
-          "label": "vFinal",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "vFinal",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "prodId": {
         "edit": {
           "label": "prodId",
@@ -104,35 +90,6 @@
           "sortable": true
         }
       },
-      "peso": {
-        "edit": {
-          "label": "peso",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "peso",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "lotes": {
-        "edit": {
-          "label": "lotes",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "status"
-        },
-        "list": {
-          "label": "lotes",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "largura": {
         "edit": {
           "label": "largura",
@@ -143,6 +100,34 @@
         },
         "list": {
           "label": "largura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vFinal": {
+        "edit": {
+          "label": "vFinal",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vFinal",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "peso": {
+        "edit": {
+          "label": "peso",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "peso",
           "searchable": true,
           "sortable": true
         }
@@ -217,10 +202,6 @@
         [
           {
             "name": "peso",
-            "size": 6
-          },
-          {
-            "name": "lotes",
             "size": 6
           }
         ],

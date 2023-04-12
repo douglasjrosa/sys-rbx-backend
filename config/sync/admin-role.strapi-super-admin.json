@@ -299,6 +299,54 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
+      "subject": "api::logstrello.logstrello",
+      "properties": {
+        "fields": [
+          "date",
+          "logs",
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::logstrello.logstrello",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::logstrello.logstrello",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::logstrello.logstrello",
+      "properties": {
+        "fields": [
+          "date",
+          "logs",
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::logstrello.logstrello",
+      "properties": {
+        "fields": [
+          "date",
+          "logs",
+          "nPedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
       "subject": "api::lote.lote",
       "properties": {
         "fields": [
@@ -306,14 +354,15 @@
           "empresaId",
           "business",
           "negocioId",
-          "produtos",
           "produtoId",
           "emitente",
           "emitenteId",
           "info",
           "status",
           "checklist",
-          "logs"
+          "logs",
+          "vendedor",
+          "nPedido"
         ]
       },
       "conditions": []
@@ -339,14 +388,15 @@
           "empresaId",
           "business",
           "negocioId",
-          "produtos",
           "produtoId",
           "emitente",
           "emitenteId",
           "info",
           "status",
           "checklist",
-          "logs"
+          "logs",
+          "vendedor",
+          "nPedido"
         ]
       },
       "conditions": []
@@ -360,14 +410,15 @@
           "empresaId",
           "business",
           "negocioId",
-          "produtos",
           "produtoId",
           "emitente",
           "emitenteId",
           "info",
           "status",
           "checklist",
-          "logs"
+          "logs",
+          "vendedor",
+          "nPedido"
         ]
       },
       "conditions": []
@@ -396,10 +447,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
+          "fornecedorId",
           "businessId",
           "stausPedido",
-          "Bpedido"
+          "Bpedido",
+          "status"
         ]
       },
       "conditions": []
@@ -440,10 +492,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
+          "fornecedorId",
           "businessId",
           "stausPedido",
-          "Bpedido"
+          "Bpedido",
+          "status"
         ]
       },
       "conditions": []
@@ -472,10 +525,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedor",
+          "fornecedorId",
           "businessId",
           "stausPedido",
-          "Bpedido"
+          "Bpedido",
+          "status"
         ]
       },
       "conditions": []
@@ -589,7 +643,6 @@
           "altura",
           "comprimento",
           "prodId",
-          "lotes",
           "largura",
           "vFinal",
           "peso"
@@ -619,7 +672,6 @@
           "altura",
           "comprimento",
           "prodId",
-          "lotes",
           "largura",
           "vFinal",
           "peso"
@@ -637,7 +689,6 @@
           "altura",
           "comprimento",
           "prodId",
-          "lotes",
           "largura",
           "vFinal",
           "peso"
@@ -891,7 +942,8 @@
           "businesses",
           "empresas",
           "pessoas",
-          "avatar"
+          "avatar",
+          "lotes"
         ]
       },
       "conditions": []
@@ -920,7 +972,8 @@
           "businesses",
           "empresas",
           "pessoas",
-          "avatar"
+          "avatar",
+          "lotes"
         ]
       },
       "conditions": []
@@ -943,7 +996,8 @@
           "businesses",
           "empresas",
           "pessoas",
-          "avatar"
+          "avatar",
+          "lotes"
         ]
       },
       "conditions": []
