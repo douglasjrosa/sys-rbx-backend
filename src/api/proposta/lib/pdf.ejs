@@ -62,11 +62,12 @@
           <div class="col ms-3 align-self-end">
             <spam style="font-size: 28px">Proposta comercial</spam>
           </div>
-          <div class="col-3 align-self-end p-3 m-1">
+          <div class="col-3 align-self-end p-1 m-1">
             <img
-              src="https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75"
-              alt="Ribermax"
+              src=<%=logo.url%>
+              alt=<%=logo.alt%>
               width="115"
+              style="height: <%=logo.height%>; margin: <%=logo.margin%>;"
             />
           </div>
         </div>
@@ -211,8 +212,8 @@
                 <%=parseFloat(i.vFinal).toLocaleString('pt-BR', {style:
                 'currency', currency: 'BRL'})%>
               </td>
-              <td><%=i.expo === true ? "✅" : "" %></td>
-              <td><%=i.mont === true ? "✅" : "" %></td>
+              <td><%=i.expo === true ? "SIM" : "NÃO" %></td>
+              <td><%=i.mont === true ? "SIM" : "NÃO" %></td>
               <td>
                 <%=i.total.toLocaleString('pt-BR', {style: 'currency', currency:
                 'BRL'})%>

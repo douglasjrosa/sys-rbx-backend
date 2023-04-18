@@ -1,13 +1,8 @@
 const ejs = require("ejs");
 const path = require("path");
-const puppeteer = require("puppeteer");
-const axios = require("axios");
-
 
 module.exports = {
-  async index(ctx, next) {
-
-  },
+  async index(ctx, next) {},
 
   async create(ctx, next) {
     try {
@@ -30,8 +25,21 @@ module.exports = {
       const totoalGeral = inf.totoalGeral;
       const obs = inf.obs;
       const business = inf.business;
-      const logo = '';
 
+      const link1 = {
+        url: "https://ribermax.com.br/images/logomarca-h.webp?w=1080&q=75",
+        alt: "Ribermax",
+        height: "30px",
+        margin: "1rem 0",
+      };
+      const link2 = {
+        url: "https://www.braghetopaletes.com.br/images/logomarca-bragheto-escuro.png?w=1080&q=75",
+        alt: "Bragheto",
+        height: "55px",
+        margin: "0",
+      };
+
+      const logo = fornecedor.fantasia !== "BRAGHETO PALETES" ? link1 : link2;
       const chunk = itens.slice(offset, offset + limit);
 
       const filePath = path.join(__dirname, "../", "lib", "pdf.ejs");
@@ -51,7 +59,7 @@ module.exports = {
           obs,
           business,
           pagina: page,
-          logo
+          logo,
         },
         async (err, html) => {
           if (err) {
