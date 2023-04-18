@@ -77,7 +77,13 @@
     "totalGeral": {
       "type": "string"
     },
-    "fornecedorId": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pedidos"
+    },
+    "fornecedor": {
       "type": "string"
     },
     "businessId": {
@@ -90,8 +96,11 @@
     "Bpedido": {
       "type": "string"
     },
-    "status": {
-      "type": "boolean"
+    "fornecedorId": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "Pvendas"
     }
   }
 }

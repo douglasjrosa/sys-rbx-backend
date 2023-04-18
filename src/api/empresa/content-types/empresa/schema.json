@@ -58,7 +58,8 @@
       "type": "boolean"
     },
     "status": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "adFrailLat": {
       "type": "boolean"
@@ -192,11 +193,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "empresas"
     },
-    "lotesEmitente": {
+    "Pvendas": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::lote.lote",
-      "mappedBy": "emitente"
+      "target": "api::pedido.pedido",
+      "mappedBy": "fornecedorId"
     }
   }
 }

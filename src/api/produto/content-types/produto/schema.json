@@ -4,8 +4,7 @@
   "info": {
     "singularName": "produto",
     "pluralName": "produtos",
-    "displayName": "Produto",
-    "description": ""
+    "displayName": "produto"
   },
   "options": {
     "draftAndPublish": true
@@ -19,19 +18,19 @@
       "type": "string"
     },
     "altura": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "comprimento": {
-      "type": "integer"
-    },
-    "prodId": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "largura": {
       "type": "biginteger"
     },
     "vFinal": {
       "type": "decimal"
+    },
+    "prodId": {
+      "type": "biginteger"
     },
     "peso": {
       "type": "decimal"

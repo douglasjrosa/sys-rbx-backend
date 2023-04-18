@@ -42,9 +42,6 @@
       "target": "api::empresa.empresa",
       "inversedBy": "business"
     },
-    "statusAnd": {
-      "type": "string"
-    },
     "status": {
       "type": "boolean"
     },
@@ -56,18 +53,6 @@
     },
     "Bpedido": {
       "type": "string"
-    },
-    "user": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "plugin::users-permissions.user",
-      "inversedBy": "businesses"
-    },
-    "lotes": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::lote.lote",
-      "mappedBy": "business"
     }
   }
 }

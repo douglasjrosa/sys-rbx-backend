@@ -358,11 +358,11 @@
         ],
         [
           {
-            "name": "folderPath",
+            "name": "folder",
             "size": 6
           },
           {
-            "name": "folder",
+            "name": "folderPath",
             "size": 6
           }
         ]

@@ -203,9 +203,7 @@
           {
             "name": "peso",
             "size": 6
-          }
-        ],
-        [
+          },
           {
             "name": "largura",
             "size": 4

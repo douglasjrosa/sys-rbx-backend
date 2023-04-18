@@ -13,30 +13,23 @@
   "pluginOptions": {},
   "attributes": {
     "lote": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "empresaId": {
-      "type": "integer"
+      "type": "biginteger"
     },
     "business": {
       "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::business.business",
-      "inversedBy": "lotes"
+      "relation": "oneToOne",
+      "target": "api::business.business"
     },
-    "negocioId": {
+    "produtosId": {
       "type": "integer"
-    },
-    "produtoId": {
-      "type": "integer"
-    },
-    "emitente": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::empresa.empresa",
-      "inversedBy": "lotesEmitente"
     },
     "emitenteId": {
+      "type": "integer"
+    },
+    "qtde": {
       "type": "integer"
     },
     "info": {
@@ -57,7 +50,13 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "lotes"
     },
-    "nPedido": {
+    "nProposta": {
+      "type": "integer"
+    },
+    "CNPJClinet": {
+      "type": "string"
+    },
+    "CNPJEmitente": {
       "type": "string"
     }
   }

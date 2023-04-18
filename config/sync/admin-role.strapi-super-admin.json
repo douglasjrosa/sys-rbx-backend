@@ -16,13 +16,13 @@
           "history",
           "incidentRecord",
           "empresa",
-          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
           "Bpedido",
           "user",
-          "lotes"
+          "lotes",
+          "statusAnd"
         ]
       },
       "conditions": []
@@ -52,13 +52,13 @@
           "history",
           "incidentRecord",
           "empresa",
-          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
           "Bpedido",
           "user",
-          "lotes"
+          "lotes",
+          "statusAnd"
         ]
       },
       "conditions": []
@@ -76,13 +76,13 @@
           "history",
           "incidentRecord",
           "empresa",
-          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
           "Bpedido",
           "user",
-          "lotes"
+          "lotes",
+          "statusAnd"
         ]
       },
       "conditions": []

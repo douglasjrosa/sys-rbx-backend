@@ -34,20 +34,17 @@
       "type": "password",
       "minLength": 6,
       "configurable": false,
-      "private": true,
-      "searchable": false
+      "private": true
     },
     "resetPasswordToken": {
       "type": "string",
       "configurable": false,
-      "private": true,
-      "searchable": false
+      "private": true
     },
     "confirmationToken": {
       "type": "string",
       "configurable": false,
-      "private": true,
-      "searchable": false
+      "private": true
     },
     "confirmed": {
       "type": "boolean",
@@ -66,24 +63,16 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "pemission": {
-      "type": "enumeration",
-      "enum": [
-        "Adm",
-        "User"
-      ],
-      "default": "User"
-    },
-    "businesses": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::business.business",
-      "mappedBy": "user"
-    },
     "empresas": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::empresa.empresa",
+      "mappedBy": "user"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
       "mappedBy": "user"
     },
     "pessoas": {
@@ -93,17 +82,51 @@
       "mappedBy": "user"
     },
     "avatar": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pemission": {
+      "type": "enumeration",
+      "enum": [
+        "Adm",
+        "User"
+      ]
     },
     "lotes": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::lote.lote",
       "mappedBy": "vendedor"
+    },
+    "trello_key": {
+      "type": "string"
+    },
+    "trello_token": {
+      "type": "string"
+    },
+    "trello_id": {
+      "type": "string"
+    },
+    "setor": {
+      "type": "enumeration",
+      "enum": [
+        "Vendas",
+        "Expedição",
+        "Produção",
+        "Administração",
+        "Ti",
+        "Gvendas"
+      ]
+    },
+    "nome": {
+      "type": "string"
     }
   }
 }

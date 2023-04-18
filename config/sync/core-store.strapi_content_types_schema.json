@@ -2128,9 +2128,6 @@
           "target": "api::empresa.empresa",
           "inversedBy": "business"
         },
-        "statusAnd": {
-          "type": "string"
-        },
         "status": {
           "type": "boolean"
         },
@@ -2154,6 +2151,9 @@
           "relation": "oneToMany",
           "target": "api::lote.lote",
           "mappedBy": "business"
+        },
+        "statusAnd": {
+          "type": "integer"
         },
         "createdAt": {
           "type": "datetime"
@@ -2231,9 +2231,6 @@
             "target": "api::empresa.empresa",
             "inversedBy": "business"
           },
-          "statusAnd": {
-            "type": "string"
-          },
           "status": {
             "type": "boolean"
           },
@@ -2257,6 +2254,9 @@
             "relation": "oneToMany",
             "target": "api::lote.lote",
             "mappedBy": "business"
+          },
+          "statusAnd": {
+            "type": "integer"
           }
         },
         "kind": "collectionType"

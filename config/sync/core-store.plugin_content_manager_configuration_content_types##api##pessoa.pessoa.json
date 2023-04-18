@@ -413,12 +413,12 @@
         ],
         [
           {
-            "name": "status",
-            "size": 4
-          },
-          {
             "name": "empresas",
             "size": 6
+          },
+          {
+            "name": "status",
+            "size": 4
           }
         ],
         [
@@ -429,17 +429,17 @@
         ],
         [
           {
-            "name": "user",
+            "name": "departamento",
             "size": 6
           },
           {
-            "name": "departamento",
+            "name": "cargo",
             "size": 6
           }
         ],
         [
           {
-            "name": "cargo",
+            "name": "user",
             "size": 6
           }
         ]

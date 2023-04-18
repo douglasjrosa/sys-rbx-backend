@@ -196,18 +196,18 @@
             "size": 6
           },
           {
-            "name": "expiresAt",
+            "name": "permissions",
             "size": 6
           }
         ],
         [
           {
-            "name": "lifespan",
-            "size": 4
+            "name": "expiresAt",
+            "size": 6
           },
           {
-            "name": "permissions",
-            "size": 6
+            "name": "lifespan",
+            "size": 4
           }
         ]
       ]
