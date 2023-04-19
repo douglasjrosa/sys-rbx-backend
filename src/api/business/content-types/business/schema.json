@@ -53,6 +53,15 @@
     },
     "Bpedido": {
       "type": "string"
+    },
+    "etapa": {
+      "type": "integer"
+    },
+    "andamento": {
+      "type": "integer"
+    },
+    "Mperca": {
+      "type": "integer"
     }
   }
 }
