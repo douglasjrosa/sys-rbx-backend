@@ -38,9 +38,9 @@
     },
     "empresa": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "manyToOne",
       "target": "api::empresa.empresa",
-      "inversedBy": "business"
+      "inversedBy": "businesses"
     },
     "status": {
       "type": "boolean"

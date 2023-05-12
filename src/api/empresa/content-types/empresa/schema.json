@@ -181,12 +181,6 @@
     "codigo": {
       "type": "string"
     },
-    "business": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::business.business",
-      "mappedBy": "empresa"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -198,6 +192,12 @@
       "relation": "oneToMany",
       "target": "api::pedido.pedido",
       "mappedBy": "fornecedorId"
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "empresa"
     }
   }
 }
