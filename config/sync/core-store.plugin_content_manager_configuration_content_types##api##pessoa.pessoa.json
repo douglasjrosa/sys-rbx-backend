@@ -245,6 +245,63 @@
           "sortable": true
         }
       },
+      "history": {
+        "edit": {
+          "label": "history",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "history",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "departamento": {
+        "edit": {
+          "label": "departamento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "departamento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "cargo": {
+        "edit": {
+          "label": "cargo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "cargo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -280,9 +337,6 @@
         "nome",
         "CEP",
         "endereco"
-      ],
-      "editRelations": [
-        "empresas"
       ],
       "edit": [
         [
@@ -359,8 +413,34 @@
         ],
         [
           {
+            "name": "empresas",
+            "size": 6
+          },
+          {
             "name": "status",
             "size": 4
+          }
+        ],
+        [
+          {
+            "name": "history",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "departamento",
+            "size": 6
+          },
+          {
+            "name": "cargo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
           }
         ]
       ]

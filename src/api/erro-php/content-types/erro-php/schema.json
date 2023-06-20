@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "erro_phps",
+  "info": {
+    "singularName": "erro-php",
+    "pluralName": "erro-phps",
+    "displayName": "erro_php"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "log": {
+      "type": "json"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "report_solution": {
+      "type": "richtext"
+    }
+  }
+}

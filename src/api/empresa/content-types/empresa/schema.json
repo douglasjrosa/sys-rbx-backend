@@ -58,7 +58,8 @@
       "type": "boolean"
     },
     "status": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "adFrailLat": {
       "type": "boolean"
@@ -120,11 +121,6 @@
     "emailNfe": {
       "type": "string"
     },
-    "pessoa": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::pessoa.pessoa"
-    },
     "tablecalc": {
       "type": "string"
     },
@@ -160,6 +156,48 @@
       "relation": "manyToOne",
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
+    },
+    "history": {
+      "type": "json"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "empresa"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "fornecedorId": {
+      "type": "integer"
+    },
+    "vendedorId": {
+      "type": "integer"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "empresas"
+    },
+    "Pvendas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "fornecedorId"
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "empresa"
     }
   }
 }

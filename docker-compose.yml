@@ -1,0 +1,12 @@
+version: '1'
+services:
+  node:
+    build: .
+    command: "npm eum start"
+    working_dir: "./user/app"
+    environment:
+      - NODE_ENV=production
+    expose:
+      - "1337"
+    ports:
+      - "1337:1337"

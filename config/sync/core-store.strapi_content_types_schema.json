@@ -190,17 +190,20 @@
           "minLength": 6,
           "configurable": false,
           "required": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "resetPasswordToken": {
           "type": "string",
           "configurable": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "registrationToken": {
           "type": "string",
           "configurable": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "isActive": {
           "type": "boolean",
@@ -226,7 +229,8 @@
         "preferedLanguage": {
           "type": "string",
           "configurable": false,
-          "required": false
+          "required": false,
+          "searchable": false
         },
         "createdAt": {
           "type": "datetime"
@@ -307,17 +311,20 @@
             "minLength": 6,
             "configurable": false,
             "required": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "resetPasswordToken": {
             "type": "string",
             "configurable": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "registrationToken": {
             "type": "string",
             "configurable": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "isActive": {
             "type": "boolean",
@@ -343,7 +350,8 @@
           "preferedLanguage": {
             "type": "string",
             "configurable": false,
-            "required": false
+            "required": false,
+            "searchable": false
           }
         },
         "kind": "collectionType"
@@ -543,7 +551,8 @@
           "type": "string",
           "minLength": 1,
           "configurable": false,
-          "required": true
+          "required": true,
+          "searchable": false
         },
         "lastUsedAt": {
           "type": "datetime",
@@ -564,7 +573,7 @@
           "required": false
         },
         "lifespan": {
-          "type": "integer",
+          "type": "biginteger",
           "configurable": false,
           "required": false
         },
@@ -644,7 +653,8 @@
             "type": "string",
             "minLength": 1,
             "configurable": false,
-            "required": true
+            "required": true,
+            "searchable": false
           },
           "lastUsedAt": {
             "type": "datetime",
@@ -665,7 +675,7 @@
             "required": false
           },
           "lifespan": {
-            "type": "integer",
+            "type": "biginteger",
             "configurable": false,
             "required": false
           }
@@ -781,6 +791,270 @@
       "plugin": "admin",
       "globalId": "AdminApiTokenPermission"
     },
+    "admin::transfer-token": {
+      "collectionName": "strapi_transfer_tokens",
+      "info": {
+        "name": "Transfer Token",
+        "singularName": "transfer-token",
+        "pluralName": "transfer-tokens",
+        "displayName": "Transfer Token",
+        "description": ""
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true,
+          "unique": true
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": false,
+          "default": ""
+        },
+        "accessKey": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "lastUsedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "required": false
+        },
+        "permissions": {
+          "type": "relation",
+          "target": "admin::transfer-token-permission",
+          "relation": "oneToMany",
+          "mappedBy": "token",
+          "configurable": false,
+          "required": false
+        },
+        "expiresAt": {
+          "type": "datetime",
+          "configurable": false,
+          "required": false
+        },
+        "lifespan": {
+          "type": "biginteger",
+          "configurable": false,
+          "required": false
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "strapi_transfer_tokens",
+        "info": {
+          "name": "Transfer Token",
+          "singularName": "transfer-token",
+          "pluralName": "transfer-tokens",
+          "displayName": "Transfer Token",
+          "description": ""
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true,
+            "unique": true
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": false,
+            "default": ""
+          },
+          "accessKey": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          },
+          "lastUsedAt": {
+            "type": "datetime",
+            "configurable": false,
+            "required": false
+          },
+          "permissions": {
+            "type": "relation",
+            "target": "admin::transfer-token-permission",
+            "relation": "oneToMany",
+            "mappedBy": "token",
+            "configurable": false,
+            "required": false
+          },
+          "expiresAt": {
+            "type": "datetime",
+            "configurable": false,
+            "required": false
+          },
+          "lifespan": {
+            "type": "biginteger",
+            "configurable": false,
+            "required": false
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "transfer-token",
+      "connection": "default",
+      "uid": "admin::transfer-token",
+      "plugin": "admin",
+      "globalId": "AdminTransferToken"
+    },
+    "admin::transfer-token-permission": {
+      "collectionName": "strapi_transfer_token_permissions",
+      "info": {
+        "name": "Transfer Token Permission",
+        "description": "",
+        "singularName": "transfer-token-permission",
+        "pluralName": "transfer-token-permissions",
+        "displayName": "Transfer Token Permission"
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "token": {
+          "configurable": false,
+          "type": "relation",
+          "relation": "manyToOne",
+          "inversedBy": "permissions",
+          "target": "admin::transfer-token"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "strapi_transfer_token_permissions",
+        "info": {
+          "name": "Transfer Token Permission",
+          "description": "",
+          "singularName": "transfer-token-permission",
+          "pluralName": "transfer-token-permissions",
+          "displayName": "Transfer Token Permission"
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          },
+          "token": {
+            "configurable": false,
+            "type": "relation",
+            "relation": "manyToOne",
+            "inversedBy": "permissions",
+            "target": "admin::transfer-token"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "transfer-token-permission",
+      "connection": "default",
+      "uid": "admin::transfer-token-permission",
+      "plugin": "admin",
+      "globalId": "AdminTransferTokenPermission"
+    },
     "plugin::upload.file": {
       "collectionName": "files",
       "info": {
@@ -877,7 +1151,8 @@
           "type": "string",
           "min": 1,
           "required": true,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "createdAt": {
           "type": "datetime"
@@ -911,6 +1186,41 @@
           "name": "upload_files_folder_path_index",
           "columns": [
             "folder_path"
+          ],
+          "type": null
+        },
+        {
+          "name": "upload_files_created_at_index",
+          "columns": [
+            "created_at"
+          ],
+          "type": null
+        },
+        {
+          "name": "upload_files_updated_at_index",
+          "columns": [
+            "updated_at"
+          ],
+          "type": null
+        },
+        {
+          "name": "upload_files_name_index",
+          "columns": [
+            "name"
+          ],
+          "type": null
+        },
+        {
+          "name": "upload_files_size_index",
+          "columns": [
+            "size"
+          ],
+          "type": null
+        },
+        {
+          "name": "upload_files_ext_index",
+          "columns": [
+            "ext"
           ],
           "type": null
         }
@@ -1012,7 +1322,8 @@
             "type": "string",
             "min": 1,
             "required": true,
-            "private": true
+            "private": true,
+            "searchable": false
           }
         },
         "kind": "collectionType"
@@ -1443,17 +1754,20 @@
           "type": "password",
           "minLength": 6,
           "configurable": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "resetPasswordToken": {
           "type": "string",
           "configurable": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "confirmationToken": {
           "type": "string",
           "configurable": false,
-          "private": true
+          "private": true,
+          "searchable": false
         },
         "confirmed": {
           "type": "boolean",
@@ -1471,6 +1785,45 @@
           "target": "plugin::users-permissions.role",
           "inversedBy": "users",
           "configurable": false
+        },
+        "pemission": {
+          "type": "enumeration",
+          "enum": [
+            "Adm",
+            "User"
+          ],
+          "default": "User"
+        },
+        "businesses": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::business.business",
+          "mappedBy": "user"
+        },
+        "empresas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::empresa.empresa",
+          "mappedBy": "user"
+        },
+        "pessoas": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pessoa.pessoa",
+          "mappedBy": "user"
+        },
+        "avatar": {
+          "allowedTypes": [
+            "images"
+          ],
+          "type": "media",
+          "multiple": false
+        },
+        "lotes": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "vendedor"
         },
         "createdAt": {
           "type": "datetime"
@@ -1513,6 +1866,7 @@
         }
       },
       "kind": "collectionType",
+      "__filename__": "schema.json",
       "__schema__": {
         "collectionName": "up_users",
         "info": {
@@ -1548,17 +1902,20 @@
             "type": "password",
             "minLength": 6,
             "configurable": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "resetPasswordToken": {
             "type": "string",
             "configurable": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "confirmationToken": {
             "type": "string",
             "configurable": false,
-            "private": true
+            "private": true,
+            "searchable": false
           },
           "confirmed": {
             "type": "boolean",
@@ -1576,6 +1933,45 @@
             "target": "plugin::users-permissions.role",
             "inversedBy": "users",
             "configurable": false
+          },
+          "pemission": {
+            "type": "enumeration",
+            "enum": [
+              "Adm",
+              "User"
+            ],
+            "default": "User"
+          },
+          "businesses": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::business.business",
+            "mappedBy": "user"
+          },
+          "empresas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::empresa.empresa",
+            "mappedBy": "user"
+          },
+          "pessoas": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pessoa.pessoa",
+            "mappedBy": "user"
+          },
+          "avatar": {
+            "allowedTypes": [
+              "images"
+            ],
+            "type": "media",
+            "multiple": false
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "vendedor"
           }
         },
         "kind": "collectionType"
@@ -1688,13 +2084,13 @@
       "collectionName": "i18n_locale",
       "globalId": "I18NLocale"
     },
-    "api::desconto.desconto": {
+    "api::business.business": {
       "kind": "collectionType",
-      "collectionName": "descontos",
+      "collectionName": "businesses",
       "info": {
-        "singularName": "desconto",
-        "pluralName": "descontos",
-        "displayName": "desconto",
+        "singularName": "business",
+        "pluralName": "businesses",
+        "displayName": "Business",
         "description": ""
       },
       "options": {
@@ -1702,22 +2098,62 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "nome": {
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "business"
+        },
+        "deadline": {
+          "type": "date"
+        },
+        "nBusiness": {
           "type": "string"
         },
-        "slug": {
-          "type": "uid",
-          "targetField": "nome"
+        "Budget": {
+          "type": "string"
         },
-        "ativo": {
-          "type": "boolean",
-          "default": true
+        "Approach": {
+          "type": "string"
         },
-        "percentual": {
-          "type": "float"
+        "history": {
+          "type": "json"
         },
-        "validade": {
+        "incidentRecord": {
+          "type": "json"
+        },
+        "empresa": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::empresa.empresa",
+          "inversedBy": "business"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "DataRetorno": {
           "type": "date"
+        },
+        "stausPedido": {
+          "type": "boolean"
+        },
+        "Bpedido": {
+          "type": "string"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "businesses"
+        },
+        "lotes": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "business"
+        },
+        "statusAnd": {
+          "type": "integer"
         },
         "createdAt": {
           "type": "datetime"
@@ -1753,11 +2189,11 @@
         }
       },
       "__schema__": {
-        "collectionName": "descontos",
+        "collectionName": "businesses",
         "info": {
-          "singularName": "desconto",
-          "pluralName": "descontos",
-          "displayName": "desconto",
+          "singularName": "business",
+          "pluralName": "businesses",
+          "displayName": "Business",
           "description": ""
         },
         "options": {
@@ -1765,32 +2201,72 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "nome": {
+          "pedidos": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pedido.pedido",
+            "mappedBy": "business"
+          },
+          "deadline": {
+            "type": "date"
+          },
+          "nBusiness": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid",
-            "targetField": "nome"
+          "Budget": {
+            "type": "string"
           },
-          "ativo": {
-            "type": "boolean",
-            "default": true
+          "Approach": {
+            "type": "string"
           },
-          "percentual": {
-            "type": "float"
+          "history": {
+            "type": "json"
           },
-          "validade": {
+          "incidentRecord": {
+            "type": "json"
+          },
+          "empresa": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::empresa.empresa",
+            "inversedBy": "business"
+          },
+          "status": {
+            "type": "boolean"
+          },
+          "DataRetorno": {
             "type": "date"
+          },
+          "stausPedido": {
+            "type": "boolean"
+          },
+          "Bpedido": {
+            "type": "string"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "businesses"
+          },
+          "lotes": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "business"
+          },
+          "statusAnd": {
+            "type": "integer"
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "desconto",
+      "modelName": "business",
       "connection": "default",
-      "uid": "api::desconto.desconto",
-      "apiName": "desconto",
-      "globalId": "Desconto",
+      "uid": "api::business.business",
+      "apiName": "business",
+      "globalId": "Business",
       "actions": {},
       "lifecycles": {}
     },
@@ -1916,11 +2392,6 @@
         "emailNfe": {
           "type": "string"
         },
-        "pessoa": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::pessoa.pessoa"
-        },
         "tablecalc": {
           "type": "string"
         },
@@ -1956,6 +2427,48 @@
           "relation": "manyToOne",
           "target": "api::pessoa.pessoa",
           "inversedBy": "empresas"
+        },
+        "history": {
+          "type": "json"
+        },
+        "pedidos": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::pedido.pedido",
+          "mappedBy": "empresa"
+        },
+        "titulo": {
+          "type": "string"
+        },
+        "vendedor": {
+          "type": "string"
+        },
+        "fornecedorId": {
+          "type": "integer"
+        },
+        "vendedorId": {
+          "type": "integer"
+        },
+        "codigo": {
+          "type": "string"
+        },
+        "business": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "api::business.business",
+          "mappedBy": "empresa"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "empresas"
+        },
+        "lotesEmitente": {
+          "type": "relation",
+          "relation": "oneToMany",
+          "target": "api::lote.lote",
+          "mappedBy": "emitente"
         },
         "createdAt": {
           "type": "datetime"
@@ -2111,11 +2624,6 @@
           "emailNfe": {
             "type": "string"
           },
-          "pessoa": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::pessoa.pessoa"
-          },
           "tablecalc": {
             "type": "string"
           },
@@ -2151,6 +2659,48 @@
             "relation": "manyToOne",
             "target": "api::pessoa.pessoa",
             "inversedBy": "empresas"
+          },
+          "history": {
+            "type": "json"
+          },
+          "pedidos": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::pedido.pedido",
+            "mappedBy": "empresa"
+          },
+          "titulo": {
+            "type": "string"
+          },
+          "vendedor": {
+            "type": "string"
+          },
+          "fornecedorId": {
+            "type": "integer"
+          },
+          "vendedorId": {
+            "type": "integer"
+          },
+          "codigo": {
+            "type": "string"
+          },
+          "business": {
+            "type": "relation",
+            "relation": "oneToOne",
+            "target": "api::business.business",
+            "mappedBy": "empresa"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "empresas"
+          },
+          "lotesEmitente": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::lote.lote",
+            "mappedBy": "emitente"
           }
         },
         "kind": "collectionType"
@@ -2164,60 +2714,27 @@
       "actions": {},
       "lifecycles": {}
     },
-    "api::materia-prima.materia-prima": {
+    "api::logstrello.logstrello": {
       "kind": "collectionType",
-      "collectionName": "materia_primas",
+      "collectionName": "logstrellos",
       "info": {
-        "singularName": "materia-prima",
-        "pluralName": "materia-primas",
-        "displayName": "matéria-prima"
+        "singularName": "logstrello",
+        "pluralName": "logstrellos",
+        "displayName": "Logstrello"
       },
       "options": {
         "draftAndPublish": true
       },
       "pluginOptions": {},
       "attributes": {
-        "nome": {
+        "date": {
+          "type": "datetime"
+        },
+        "logs": {
+          "type": "text"
+        },
+        "nPedido": {
           "type": "string"
-        },
-        "largura": {
-          "type": "decimal"
-        },
-        "espessura": {
-          "type": "decimal"
-        },
-        "precoCompra": {
-          "type": "decimal"
-        },
-        "unCompra": {
-          "type": "enumeration",
-          "enum": [
-            "unidade",
-            "milheiro",
-            "metroCubico",
-            "metroQuadrado",
-            "metroLinear",
-            "litro",
-            "kg"
-          ]
-        },
-        "unVenda": {
-          "type": "enumeration",
-          "enum": [
-            "unidade",
-            "milheiro",
-            "metroCubico",
-            "metroQuadrado",
-            "metroLinear",
-            "litro",
-            "kg"
-          ]
-        },
-        "precoVenda": {
-          "type": "float"
-        },
-        "comprimento": {
-          "type": "decimal"
         },
         "createdAt": {
           "type": "datetime"
@@ -2253,78 +2770,45 @@
         }
       },
       "__schema__": {
-        "collectionName": "materia_primas",
+        "collectionName": "logstrellos",
         "info": {
-          "singularName": "materia-prima",
-          "pluralName": "materia-primas",
-          "displayName": "matéria-prima"
+          "singularName": "logstrello",
+          "pluralName": "logstrellos",
+          "displayName": "Logstrello"
         },
         "options": {
           "draftAndPublish": true
         },
         "pluginOptions": {},
         "attributes": {
-          "nome": {
+          "date": {
+            "type": "datetime"
+          },
+          "logs": {
+            "type": "text"
+          },
+          "nPedido": {
             "type": "string"
-          },
-          "largura": {
-            "type": "decimal"
-          },
-          "espessura": {
-            "type": "decimal"
-          },
-          "precoCompra": {
-            "type": "decimal"
-          },
-          "unCompra": {
-            "type": "enumeration",
-            "enum": [
-              "unidade",
-              "milheiro",
-              "metroCubico",
-              "metroQuadrado",
-              "metroLinear",
-              "litro",
-              "kg"
-            ]
-          },
-          "unVenda": {
-            "type": "enumeration",
-            "enum": [
-              "unidade",
-              "milheiro",
-              "metroCubico",
-              "metroQuadrado",
-              "metroLinear",
-              "litro",
-              "kg"
-            ]
-          },
-          "precoVenda": {
-            "type": "float"
-          },
-          "comprimento": {
-            "type": "decimal"
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "materia-prima",
+      "modelName": "logstrello",
       "connection": "default",
-      "uid": "api::materia-prima.materia-prima",
-      "apiName": "materia-prima",
-      "globalId": "MateriaPrima",
+      "uid": "api::logstrello.logstrello",
+      "apiName": "logstrello",
+      "globalId": "Logstrello",
       "actions": {},
       "lifecycles": {}
     },
-    "api::modelo.modelo": {
+    "api::lote.lote": {
       "kind": "collectionType",
-      "collectionName": "modelos",
+      "collectionName": "lotes",
       "info": {
-        "singularName": "modelo",
-        "pluralName": "modelos",
-        "displayName": "modelo",
+        "singularName": "lote",
+        "pluralName": "lotes",
+        "displayName": "Lote",
         "description": ""
       },
       "options": {
@@ -2332,87 +2816,53 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "nome": {
+        "lote": {
+          "type": "integer"
+        },
+        "empresaId": {
+          "type": "integer"
+        },
+        "business": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::business.business",
+          "inversedBy": "lotes"
+        },
+        "negocioId": {
+          "type": "integer"
+        },
+        "produtoId": {
+          "type": "integer"
+        },
+        "emitente": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::empresa.empresa",
+          "inversedBy": "lotesEmitente"
+        },
+        "emitenteId": {
+          "type": "integer"
+        },
+        "info": {
+          "type": "text"
+        },
+        "status": {
           "type": "string"
         },
-        "slug": {
-          "type": "uid",
-          "targetField": "nome"
+        "checklist": {
+          "type": "text"
         },
-        "ativo": {
-          "type": "boolean",
-          "default": true
+        "logs": {
+          "type": "text"
         },
-        "notas": {
-          "type": "richtext"
-        },
-        "partes": {
-          "type": "dynamiczone",
-          "components": [
-            "cx-components.palete",
-            "cx-components.quadro",
-            "cx-components.pecas",
-            "cx-components.gradeado"
-          ]
-        },
-        "tipos_de_produto": {
+        "vendedor": {
           "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::materia-prima.materia-prima"
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "lotes"
         },
-        "temBase": {
-          "type": "boolean",
-          "default": true
-        },
-        "temLateralDireita": {
-          "type": "boolean",
-          "default": true
-        },
-        "temLateralEsquerda": {
-          "type": "boolean",
-          "default": true
-        },
-        "temCabeceiraDireita": {
-          "type": "boolean",
-          "default": true
-        },
-        "temCabeceiraEsquerda": {
-          "type": "boolean",
-          "default": true
-        },
-        "temTampa": {
-          "type": "boolean",
-          "default": true
-        },
-        "cabeceiraAoChao": {
-          "type": "boolean",
-          "default": false
-        },
-        "cabeceiraAoTopo": {
-          "type": "boolean",
-          "default": false
-        },
-        "lateraisPorFora": {
-          "type": "boolean",
-          "default": false
-        },
-        "montagem": {
-          "type": "component",
-          "repeatable": false,
-          "component": "cx-components.montagem"
-        },
-        "publico": {
-          "type": "boolean",
-          "default": false
-        },
-        "exp": {
-          "type": "boolean",
-          "default": false
-        },
-        "desconto": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::desconto.desconto"
+        "nPedido": {
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -2448,11 +2898,11 @@
         }
       },
       "__schema__": {
-        "collectionName": "modelos",
+        "collectionName": "lotes",
         "info": {
-          "singularName": "modelo",
-          "pluralName": "modelos",
-          "displayName": "modelo",
+          "singularName": "lote",
+          "pluralName": "lotes",
+          "displayName": "Lote",
           "description": ""
         },
         "options": {
@@ -2460,97 +2910,297 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "nome": {
+          "lote": {
+            "type": "integer"
+          },
+          "empresaId": {
+            "type": "integer"
+          },
+          "business": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::business.business",
+            "inversedBy": "lotes"
+          },
+          "negocioId": {
+            "type": "integer"
+          },
+          "produtoId": {
+            "type": "integer"
+          },
+          "emitente": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::empresa.empresa",
+            "inversedBy": "lotesEmitente"
+          },
+          "emitenteId": {
+            "type": "integer"
+          },
+          "info": {
+            "type": "text"
+          },
+          "status": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid",
-            "targetField": "nome"
+          "checklist": {
+            "type": "text"
           },
-          "ativo": {
-            "type": "boolean",
-            "default": true
+          "logs": {
+            "type": "text"
           },
-          "notas": {
-            "type": "richtext"
-          },
-          "partes": {
-            "type": "dynamiczone",
-            "components": [
-              "cx-components.palete",
-              "cx-components.quadro",
-              "cx-components.pecas",
-              "cx-components.gradeado"
-            ]
-          },
-          "tipos_de_produto": {
+          "vendedor": {
             "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::materia-prima.materia-prima"
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "lotes"
           },
-          "temBase": {
-            "type": "boolean",
-            "default": true
-          },
-          "temLateralDireita": {
-            "type": "boolean",
-            "default": true
-          },
-          "temLateralEsquerda": {
-            "type": "boolean",
-            "default": true
-          },
-          "temCabeceiraDireita": {
-            "type": "boolean",
-            "default": true
-          },
-          "temCabeceiraEsquerda": {
-            "type": "boolean",
-            "default": true
-          },
-          "temTampa": {
-            "type": "boolean",
-            "default": true
-          },
-          "cabeceiraAoChao": {
-            "type": "boolean",
-            "default": false
-          },
-          "cabeceiraAoTopo": {
-            "type": "boolean",
-            "default": false
-          },
-          "lateraisPorFora": {
-            "type": "boolean",
-            "default": false
-          },
-          "montagem": {
-            "type": "component",
-            "repeatable": false,
-            "component": "cx-components.montagem"
-          },
-          "publico": {
-            "type": "boolean",
-            "default": false
-          },
-          "exp": {
-            "type": "boolean",
-            "default": false
-          },
-          "desconto": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::desconto.desconto"
+          "nPedido": {
+            "type": "string"
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "modelo",
+      "modelName": "lote",
       "connection": "default",
-      "uid": "api::modelo.modelo",
-      "apiName": "modelo",
-      "globalId": "Modelo",
+      "uid": "api::lote.lote",
+      "apiName": "lote",
+      "globalId": "Lote",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::pedido.pedido": {
+      "kind": "collectionType",
+      "collectionName": "pedidos",
+      "info": {
+        "singularName": "pedido",
+        "pluralName": "pedidos",
+        "displayName": "pedido",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "itens": {
+          "type": "json",
+          "default": "null"
+        },
+        "vencPedido": {
+          "type": "date"
+        },
+        "empresa": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::empresa.empresa",
+          "inversedBy": "pedidos"
+        },
+        "empresaId": {
+          "type": "integer"
+        },
+        "vendedorId": {
+          "type": "integer"
+        },
+        "nPedido": {
+          "type": "string",
+          "default": "null"
+        },
+        "desconto": {
+          "type": "string"
+        },
+        "CNPJClinet": {
+          "type": "string"
+        },
+        "andamento": {
+          "type": "string"
+        },
+        "valorFrete": {
+          "type": "string"
+        },
+        "vencPrint": {
+          "type": "string"
+        },
+        "business": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "api::business.business",
+          "inversedBy": "pedidos"
+        },
+        "dataPedido": {
+          "type": "date"
+        },
+        "obs": {
+          "type": "richtext"
+        },
+        "condi": {
+          "type": "string"
+        },
+        "prazo": {
+          "type": "string"
+        },
+        "frete": {
+          "type": "string"
+        },
+        "vendedor": {
+          "type": "string"
+        },
+        "totalGeral": {
+          "type": "string"
+        },
+        "fornecedorId": {
+          "type": "string"
+        },
+        "businessId": {
+          "type": "string"
+        },
+        "stausPedido": {
+          "type": "boolean",
+          "default": false
+        },
+        "Bpedido": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "pedidos",
+        "info": {
+          "singularName": "pedido",
+          "pluralName": "pedidos",
+          "displayName": "pedido",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "itens": {
+            "type": "json",
+            "default": "null"
+          },
+          "vencPedido": {
+            "type": "date"
+          },
+          "empresa": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::empresa.empresa",
+            "inversedBy": "pedidos"
+          },
+          "empresaId": {
+            "type": "integer"
+          },
+          "vendedorId": {
+            "type": "integer"
+          },
+          "nPedido": {
+            "type": "string",
+            "default": "null"
+          },
+          "desconto": {
+            "type": "string"
+          },
+          "CNPJClinet": {
+            "type": "string"
+          },
+          "andamento": {
+            "type": "string"
+          },
+          "valorFrete": {
+            "type": "string"
+          },
+          "vencPrint": {
+            "type": "string"
+          },
+          "business": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "api::business.business",
+            "inversedBy": "pedidos"
+          },
+          "dataPedido": {
+            "type": "date"
+          },
+          "obs": {
+            "type": "richtext"
+          },
+          "condi": {
+            "type": "string"
+          },
+          "prazo": {
+            "type": "string"
+          },
+          "frete": {
+            "type": "string"
+          },
+          "vendedor": {
+            "type": "string"
+          },
+          "totalGeral": {
+            "type": "string"
+          },
+          "fornecedorId": {
+            "type": "string"
+          },
+          "businessId": {
+            "type": "string"
+          },
+          "stausPedido": {
+            "type": "boolean",
+            "default": false
+          },
+          "Bpedido": {
+            "type": "string"
+          },
+          "status": {
+            "type": "boolean"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "pedido",
+      "connection": "default",
+      "uid": "api::pedido.pedido",
+      "apiName": "pedido",
+      "globalId": "Pedido",
       "actions": {},
       "lifecycles": {}
     },
@@ -2618,6 +3268,21 @@
         },
         "status": {
           "type": "boolean"
+        },
+        "history": {
+          "type": "json"
+        },
+        "departamento": {
+          "type": "string"
+        },
+        "cargo": {
+          "type": "string"
+        },
+        "user": {
+          "type": "relation",
+          "relation": "manyToOne",
+          "target": "plugin::users-permissions.user",
+          "inversedBy": "pessoas"
         },
         "createdAt": {
           "type": "datetime"
@@ -2715,6 +3380,21 @@
           },
           "status": {
             "type": "boolean"
+          },
+          "history": {
+            "type": "json"
+          },
+          "departamento": {
+            "type": "string"
+          },
+          "cargo": {
+            "type": "string"
+          },
+          "user": {
+            "type": "relation",
+            "relation": "manyToOne",
+            "target": "plugin::users-permissions.user",
+            "inversedBy": "pessoas"
           }
         },
         "kind": "collectionType"
@@ -2728,13 +3408,13 @@
       "actions": {},
       "lifecycles": {}
     },
-    "api::tipos-de-pe.tipos-de-pe": {
+    "api::produto.produto": {
       "kind": "collectionType",
-      "collectionName": "tipos_de_pes",
+      "collectionName": "produtos",
       "info": {
-        "singularName": "tipos-de-pe",
-        "pluralName": "tipos-de-pes",
-        "displayName": "tipos de pe",
+        "singularName": "produto",
+        "pluralName": "produtos",
+        "displayName": "Produto",
         "description": ""
       },
       "options": {
@@ -2742,44 +3422,29 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "nome": {
+        "nomeProd": {
           "type": "string"
         },
-        "slug": {
-          "type": "uid",
-          "targetField": "nome"
-        },
-        "image": {
-          "allowedTypes": [
-            "images",
-            "files",
-            "videos"
-          ],
-          "type": "media",
-          "multiple": true
-        },
-        "notas": {
+        "modelo": {
           "type": "string"
         },
-        "pe": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::materia-prima.materia-prima"
+        "altura": {
+          "type": "integer"
         },
-        "longarina": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::materia-prima.materia-prima"
+        "comprimento": {
+          "type": "integer"
         },
-        "toco": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::materia-prima.materia-prima"
+        "prodId": {
+          "type": "integer"
         },
-        "pregoG": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "api::materia-prima.materia-prima"
+        "largura": {
+          "type": "biginteger"
+        },
+        "vFinal": {
+          "type": "decimal"
+        },
+        "peso": {
+          "type": "decimal"
         },
         "createdAt": {
           "type": "datetime"
@@ -2815,11 +3480,11 @@
         }
       },
       "__schema__": {
-        "collectionName": "tipos_de_pes",
+        "collectionName": "produtos",
         "info": {
-          "singularName": "tipos-de-pe",
-          "pluralName": "tipos-de-pes",
-          "displayName": "tipos de pe",
+          "singularName": "produto",
+          "pluralName": "produtos",
+          "displayName": "Produto",
           "description": ""
         },
         "options": {
@@ -2827,64 +3492,49 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "nome": {
+          "nomeProd": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid",
-            "targetField": "nome"
-          },
-          "image": {
-            "allowedTypes": [
-              "images",
-              "files",
-              "videos"
-            ],
-            "type": "media",
-            "multiple": true
-          },
-          "notas": {
+          "modelo": {
             "type": "string"
           },
-          "pe": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::materia-prima.materia-prima"
+          "altura": {
+            "type": "integer"
           },
-          "longarina": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::materia-prima.materia-prima"
+          "comprimento": {
+            "type": "integer"
           },
-          "toco": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::materia-prima.materia-prima"
+          "prodId": {
+            "type": "integer"
           },
-          "pregoG": {
-            "type": "relation",
-            "relation": "oneToOne",
-            "target": "api::materia-prima.materia-prima"
+          "largura": {
+            "type": "biginteger"
+          },
+          "vFinal": {
+            "type": "decimal"
+          },
+          "peso": {
+            "type": "decimal"
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "tipos-de-pe",
+      "modelName": "produto",
       "connection": "default",
-      "uid": "api::tipos-de-pe.tipos-de-pe",
-      "apiName": "tipos-de-pe",
-      "globalId": "TiposDePe",
+      "uid": "api::produto.produto",
+      "apiName": "produto",
+      "globalId": "Produto",
       "actions": {},
       "lifecycles": {}
     },
-    "api::tipos-de-produto.tipos-de-produto": {
+    "api::proposta.proposta": {
       "kind": "collectionType",
-      "collectionName": "tipos_de_produtos",
+      "collectionName": "propostas",
       "info": {
-        "singularName": "tipos-de-produto",
-        "pluralName": "tipos-de-produtos",
-        "displayName": "tipos de produto",
+        "singularName": "proposta",
+        "pluralName": "propostas",
+        "displayName": "proposta",
         "description": ""
       },
       "options": {
@@ -2892,24 +3542,8 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "nome": {
+        "nPedido": {
           "type": "string"
-        },
-        "notas": {
-          "type": "text"
-        },
-        "slug": {
-          "type": "uid",
-          "targetField": "nome"
-        },
-        "images": {
-          "allowedTypes": [
-            "images",
-            "files",
-            "videos"
-          ],
-          "type": "media",
-          "multiple": true
         },
         "createdAt": {
           "type": "datetime"
@@ -2945,11 +3579,11 @@
         }
       },
       "__schema__": {
-        "collectionName": "tipos_de_produtos",
+        "collectionName": "propostas",
         "info": {
-          "singularName": "tipos-de-produto",
-          "pluralName": "tipos-de-produtos",
-          "displayName": "tipos de produto",
+          "singularName": "proposta",
+          "pluralName": "propostas",
+          "displayName": "proposta",
           "description": ""
         },
         "options": {
@@ -2957,34 +3591,18 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "nome": {
+          "nPedido": {
             "type": "string"
-          },
-          "notas": {
-            "type": "text"
-          },
-          "slug": {
-            "type": "uid",
-            "targetField": "nome"
-          },
-          "images": {
-            "allowedTypes": [
-              "images",
-              "files",
-              "videos"
-            ],
-            "type": "media",
-            "multiple": true
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "tipos-de-produto",
+      "modelName": "proposta",
       "connection": "default",
-      "uid": "api::tipos-de-produto.tipos-de-produto",
-      "apiName": "tipos-de-produto",
-      "globalId": "TiposDeProduto",
+      "uid": "api::proposta.proposta",
+      "apiName": "proposta",
+      "globalId": "Proposta",
       "actions": {},
       "lifecycles": {}
     }

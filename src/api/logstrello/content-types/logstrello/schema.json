@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "logstrellos",
+  "info": {
+    "singularName": "logstrello",
+    "pluralName": "logstrellos",
+    "displayName": "Logstrello"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "datetime"
+    },
+    "logs": {
+      "type": "text"
+    },
+    "nPedido": {
+      "type": "string"
+    }
+  }
+}

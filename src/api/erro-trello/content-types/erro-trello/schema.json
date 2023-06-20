@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "erro_trellos",
+  "info": {
+    "singularName": "erro-trello",
+    "pluralName": "erro-trellos",
+    "displayName": "erro_trello",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "log": {
+      "type": "json"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    },
+    "report_solution": {
+      "type": "richtext"
+    }
+  }
+}
