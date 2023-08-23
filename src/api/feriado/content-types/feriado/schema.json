@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "feriados",
+  "info": {
+    "singularName": "feriado",
+    "pluralName": "feriados",
+    "displayName": "feriado"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "feriado": {
+      "type": "string"
+    }
+  }
+}

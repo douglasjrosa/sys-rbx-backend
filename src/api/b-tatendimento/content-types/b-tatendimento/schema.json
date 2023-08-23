@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "b_tatendimentos",
+  "info": {
+    "singularName": "b-tatendimento",
+    "pluralName": "b-tatendimentos",
+    "displayName": "BTatendimento"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    }
+  }
+}

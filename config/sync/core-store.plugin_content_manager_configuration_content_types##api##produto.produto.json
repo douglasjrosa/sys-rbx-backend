@@ -76,20 +76,6 @@
           "sortable": true
         }
       },
-      "prodId": {
-        "edit": {
-          "label": "prodId",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "prodId",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "largura": {
         "edit": {
           "label": "largura",
@@ -118,6 +104,20 @@
           "sortable": true
         }
       },
+      "prodId": {
+        "edit": {
+          "label": "prodId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "prodId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "peso": {
         "edit": {
           "label": "peso",
@@ -130,6 +130,21 @@
           "label": "peso",
           "searchable": true,
           "sortable": true
+        }
+      },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
         }
       },
       "createdAt": {
@@ -187,26 +202,30 @@
           {
             "name": "comprimento",
             "size": 4
+          },
+          {
+            "name": "largura",
+            "size": 4
           }
         ],
         [
           {
             "name": "vFinal",
-            "size": 6
+            "size": 4
           },
           {
             "name": "prodId",
+            "size": 4
+          },
+          {
+            "name": "peso",
             "size": 4
           }
         ],
         [
           {
-            "name": "peso",
+            "name": "lotes",
             "size": 6
-          },
-          {
-            "name": "largura",
-            "size": 4
           }
         ]
       ]

@@ -75,21 +75,6 @@
           "searchable": true,
           "sortable": true
         }
-      },
-      "materia_prima": {
-        "edit": {
-          "label": "materia_prima",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "materia_prima",
-          "searchable": true,
-          "sortable": true
-        }
       }
     },
     "layouts": {
@@ -119,19 +104,8 @@
             "name": "qtde",
             "size": 4
           }
-        ],
-        [
-          {
-            "name": "materia_prima",
-            "size": 6
-          }
         ]
-<<<<<<< HEAD
       ]
-=======
-      ],
-      "editRelations": []
->>>>>>> master
     },
     "isComponent": true
   },

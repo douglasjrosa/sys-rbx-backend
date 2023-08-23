@@ -8,8 +8,8 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "nome",
-      "defaultSortBy": "nome",
-      "defaultSortOrder": "ASC"
+      "defaultSortBy": "id",
+      "defaultSortOrder": "DESC"
     },
     "metadatas": {
       "id": {
@@ -259,6 +259,21 @@
           "sortable": false
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "departamento": {
         "edit": {
           "label": "departamento",
@@ -283,21 +298,6 @@
         },
         "list": {
           "label": "cargo",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "user": {
-        "edit": {
-          "label": "user",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "user",
           "searchable": true,
           "sortable": true
         }
@@ -332,12 +332,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "nome",
-        "CEP",
-        "endereco"
-      ],
       "edit": [
         [
           {
@@ -429,20 +423,26 @@
         ],
         [
           {
-            "name": "departamento",
+            "name": "user",
             "size": 6
           },
           {
-            "name": "cargo",
+            "name": "departamento",
             "size": 6
           }
         ],
         [
           {
-            "name": "user",
+            "name": "cargo",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "nome",
+        "CEP",
+        "endereco"
       ]
     }
   },

@@ -808,6 +808,21 @@
           "sortable": true
         }
       },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "lotesEmitente": {
         "edit": {
           "label": "lotesEmitente",
@@ -1130,9 +1145,15 @@
           {
             "name": "business",
             "size": 6
-          },
+          }
+        ],
+        [
           {
             "name": "user",
+            "size": 6
+          },
+          {
+            "name": "lotes",
             "size": 6
           }
         ],

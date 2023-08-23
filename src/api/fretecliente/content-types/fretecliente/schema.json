@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "freteclientes",
+  "info": {
+    "singularName": "fretecliente",
+    "pluralName": "freteclientes",
+    "displayName": "fretecliente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "prazo": {
+      "type": "string"
+    },
+    "descricao": {
+      "type": "string"
+    }
+  }
+}

@@ -134,6 +134,35 @@
           "sortable": true
         }
       },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "statusAnd": {
+        "edit": {
+          "label": "statusAnd",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "statusAnd",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "status": {
         "edit": {
           "label": "status",
@@ -190,50 +219,6 @@
           "sortable": true
         }
       },
-      "user": {
-        "edit": {
-          "label": "user",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "user",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "lotes": {
-        "edit": {
-          "label": "lotes",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "status"
-        },
-        "list": {
-          "label": "lotes",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "statusAnd": {
-        "edit": {
-          "label": "statusAnd",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "statusAnd",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -266,22 +251,18 @@
     "layouts": {
       "list": [
         "id",
-        "status",
         "pedidos",
-        "deadline"
+        "deadline",
+        "nBusiness"
       ],
       "edit": [
         [
           {
-            "name": "status",
-            "size": 4
+            "name": "pedidos",
+            "size": 6
           },
           {
             "name": "deadline",
-            "size": 4
-          },
-          {
-            "name": "pedidos",
             "size": 4
           }
         ],
@@ -319,34 +300,34 @@
             "size": 6
           },
           {
-            "name": "DataRetorno",
-            "size": 4
-          }
-        ],
-        [
-          {
-            "name": "stausPedido",
-            "size": 4
-          },
-          {
-            "name": "Bpedido",
-            "size": 6
-          }
-        ],
-        [
-          {
             "name": "user",
-            "size": 6
-          },
-          {
-            "name": "lotes",
             "size": 6
           }
         ],
         [
           {
             "name": "statusAnd",
+            "size": 6
+          },
+          {
+            "name": "status",
             "size": 4
+          }
+        ],
+        [
+          {
+            "name": "DataRetorno",
+            "size": 4
+          },
+          {
+            "name": "stausPedido",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "Bpedido",
+            "size": 6
           }
         ]
       ]

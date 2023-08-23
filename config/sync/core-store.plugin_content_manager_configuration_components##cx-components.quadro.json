@@ -34,51 +34,6 @@
           "sortable": true
         }
       },
-      "sarrafos": {
-        "edit": {
-          "label": "sarrafos",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "sarrafos",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "chapa": {
-        "edit": {
-          "label": "chapa",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "chapa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "fixadores": {
-        "edit": {
-          "label": "fixadores",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "fixadores",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "vaoMaximoEntreSarrafos": {
         "edit": {
           "label": "vaoMaximoEntreSarrafos",
@@ -195,28 +150,12 @@
     "layouts": {
       "list": [
         "id",
-        "nome",
-        "sarrafos",
-        "chapa"
+        "nome"
       ],
       "edit": [
         [
           {
             "name": "nome",
-            "size": 6
-          },
-          {
-            "name": "sarrafos",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "chapa",
-            "size": 6
-          },
-          {
-            "name": "fixadores",
             "size": 6
           }
         ],
@@ -260,12 +199,7 @@
             "size": 6
           }
         ]
-<<<<<<< HEAD
       ]
-=======
-      ],
-      "editRelations": []
->>>>>>> master
     },
     "isComponent": true
   },

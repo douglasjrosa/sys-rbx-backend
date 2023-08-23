@@ -34,21 +34,6 @@
           "sortable": true
         }
       },
-      "assoalho": {
-        "edit": {
-          "label": "assoalho",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "assoalho",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "vaoMaximoEntreTabuas": {
         "edit": {
           "label": "vaoMaximoEntreTabuas",
@@ -61,21 +46,6 @@
           "label": "vaoMaximoEntreTabuas",
           "searchable": true,
           "sortable": true
-        }
-      },
-      "tipos_de_pes": {
-        "edit": {
-          "label": "tipos_de_pes",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "tipos_de_pes",
-          "searchable": false,
-          "sortable": false
         }
       },
       "nome": {
@@ -119,43 +89,12 @@
           "searchable": true,
           "sortable": true
         }
-      },
-      "pregoG": {
-        "edit": {
-          "label": "pregoG",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "pregoG",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "pregoP": {
-        "edit": {
-          "label": "pregoP",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "pregoP",
-          "searchable": true,
-          "sortable": true
-        }
       }
     },
     "layouts": {
       "list": [
         "id",
         "vaoMaximoEntrePes",
-        "assoalho",
         "vaoMaximoEntreTabuas"
       ],
       "edit": [
@@ -163,20 +102,12 @@
           {
             "name": "vaoMaximoEntrePes",
             "size": 4
-          },
-          {
-            "name": "assoalho",
-            "size": 6
           }
         ],
         [
           {
             "name": "vaoMaximoEntreTabuas",
             "size": 4
-          },
-          {
-            "name": "tipos_de_pes",
-            "size": 6
           }
         ],
         [
@@ -193,24 +124,9 @@
           {
             "name": "pesMeioQtde",
             "size": 4
-          },
-          {
-            "name": "pregoG",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "pregoP",
-            "size": 6
           }
         ]
-<<<<<<< HEAD
       ]
-=======
-      ],
-      "editRelations": []
->>>>>>> master
     },
     "isComponent": true
   },

@@ -101,6 +101,18 @@
       "relation": "manyToOne",
       "target": "api::empresa.empresa",
       "inversedBy": "Pvendas"
+    },
+    "cliente_pedido": {
+      "type": "string"
+    },
+    "dataEntrega": {
+      "type": "date"
+    },
+    "descontoAdd": {
+      "type": "string"
+    },
+    "descontoTotal": {
+      "type": "string"
     }
   }
 }

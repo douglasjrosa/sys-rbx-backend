@@ -16,13 +16,12 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
+          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
-          "Bpedido",
-          "user",
-          "lotes",
-          "statusAnd"
+          "Bpedido"
         ]
       },
       "conditions": []
@@ -52,13 +51,12 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
+          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
-          "Bpedido",
-          "user",
-          "lotes",
-          "statusAnd"
+          "Bpedido"
         ]
       },
       "conditions": []
@@ -76,78 +74,78 @@
           "history",
           "incidentRecord",
           "empresa",
+          "user",
+          "statusAnd",
           "status",
           "DataRetorno",
           "stausPedido",
-          "Bpedido",
+          "Bpedido"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::empresa.empresa",
+      "properties": {
+        "fields": [
+          "nome",
+          "fantasia",
+          "tipoPessoa",
+          "endereco",
+          "numero",
+          "complemento",
+          "bairro",
+          "cep",
+          "cidade",
+          "uf",
+          "site",
+          "pais",
+          "porte",
+          "simples",
+          "ieStatus",
+          "status",
+          "adFrailLat",
+          "adFrailCab",
+          "adEspecialLat",
+          "adEspecialCab",
+          "latFCab",
+          "cabChao",
+          "cabTop",
+          "cxEco",
+          "cxEst",
+          "cxLev",
+          "cxRef",
+          "cxSupRef",
+          "platSMed",
+          "cxResi",
+          "engEco",
+          "engLev",
+          "engRef",
+          "engResi",
+          "email",
+          "emailNfe",
+          "tablecalc",
+          "maxPg",
+          "forpg",
+          "frete",
+          "CNPJ",
+          "Ie",
+          "fone",
+          "celular",
+          "CNAE",
+          "codpais",
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo",
+          "business",
           "user",
           "lotes",
-          "statusAnd"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::empresa.empresa",
-      "properties": {
-        "fields": [
-          "nome",
-          "fantasia",
-          "tipoPessoa",
-          "endereco",
-          "numero",
-          "complemento",
-          "bairro",
-          "cep",
-          "cidade",
-          "uf",
-          "site",
-          "pais",
-          "porte",
-          "simples",
-          "ieStatus",
-          "status",
-          "adFrailLat",
-          "adFrailCab",
-          "adEspecialLat",
-          "adEspecialCab",
-          "latFCab",
-          "cabChao",
-          "cabTop",
-          "cxEco",
-          "cxEst",
-          "cxLev",
-          "cxRef",
-          "cxSupRef",
-          "platSMed",
-          "cxResi",
-          "engEco",
-          "engLev",
-          "engRef",
-          "engResi",
-          "email",
-          "emailNfe",
-          "tablecalc",
-          "maxPg",
-          "forpg",
-          "frete",
-          "CNPJ",
-          "Ie",
-          "fone",
-          "celular",
-          "CNAE",
-          "codpais",
-          "responsavel",
-          "history",
-          "pedidos",
-          "titulo",
-          "vendedor",
-          "fornecedorId",
-          "vendedorId",
-          "codigo",
-          "business",
-          "user",
           "lotesEmitente"
         ]
       },
@@ -226,6 +224,7 @@
           "codigo",
           "business",
           "user",
+          "lotes",
           "lotesEmitente"
         ]
       },
@@ -292,6 +291,7 @@
           "codigo",
           "business",
           "user",
+          "lotes",
           "lotesEmitente"
         ]
       },
@@ -299,70 +299,22 @@
     },
     {
       "action": "plugin::content-manager.explorer.create",
-      "subject": "api::logstrello.logstrello",
-      "properties": {
-        "fields": [
-          "date",
-          "logs",
-          "nPedido"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::logstrello.logstrello",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::logstrello.logstrello",
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::logstrello.logstrello",
-      "properties": {
-        "fields": [
-          "date",
-          "logs",
-          "nPedido"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::logstrello.logstrello",
-      "properties": {
-        "fields": [
-          "date",
-          "logs",
-          "nPedido"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
       "subject": "api::lote.lote",
       "properties": {
         "fields": [
           "lote",
+          "empresa",
           "empresaId",
           "business",
-          "negocioId",
-          "produtoId",
+          "produtos",
+          "produtosId",
           "emitente",
           "emitenteId",
+          "qtde",
           "info",
           "status",
           "checklist",
-          "logs",
-          "vendedor",
-          "nPedido"
+          "logs"
         ]
       },
       "conditions": []
@@ -385,18 +337,18 @@
       "properties": {
         "fields": [
           "lote",
+          "empresa",
           "empresaId",
           "business",
-          "negocioId",
-          "produtoId",
+          "produtos",
+          "produtosId",
           "emitente",
           "emitenteId",
+          "qtde",
           "info",
           "status",
           "checklist",
-          "logs",
-          "vendedor",
-          "nPedido"
+          "logs"
         ]
       },
       "conditions": []
@@ -407,18 +359,18 @@
       "properties": {
         "fields": [
           "lote",
+          "empresa",
           "empresaId",
           "business",
-          "negocioId",
-          "produtoId",
+          "produtos",
+          "produtosId",
           "emitente",
           "emitenteId",
+          "qtde",
           "info",
           "status",
           "checklist",
-          "logs",
-          "vendedor",
-          "nPedido"
+          "logs"
         ]
       },
       "conditions": []
@@ -447,11 +399,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedorId",
+          "user",
+          "fornecedor",
           "businessId",
           "stausPedido",
-          "Bpedido",
-          "status"
+          "Bpedido"
         ]
       },
       "conditions": []
@@ -492,11 +444,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedorId",
+          "user",
+          "fornecedor",
           "businessId",
           "stausPedido",
-          "Bpedido",
-          "status"
+          "Bpedido"
         ]
       },
       "conditions": []
@@ -525,11 +477,11 @@
           "frete",
           "vendedor",
           "totalGeral",
-          "fornecedorId",
+          "user",
+          "fornecedor",
           "businessId",
           "stausPedido",
-          "Bpedido",
-          "status"
+          "Bpedido"
         ]
       },
       "conditions": []
@@ -556,9 +508,9 @@
           "empresas",
           "status",
           "history",
+          "user",
           "departamento",
-          "cargo",
-          "user"
+          "cargo"
         ]
       },
       "conditions": []
@@ -597,9 +549,9 @@
           "empresas",
           "status",
           "history",
+          "user",
           "departamento",
-          "cargo",
-          "user"
+          "cargo"
         ]
       },
       "conditions": []
@@ -626,9 +578,9 @@
           "empresas",
           "status",
           "history",
+          "user",
           "departamento",
-          "cargo",
-          "user"
+          "cargo"
         ]
       },
       "conditions": []
@@ -642,10 +594,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "prodId",
           "largura",
           "vFinal",
-          "peso"
+          "prodId",
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -671,10 +624,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "prodId",
           "largura",
           "vFinal",
-          "peso"
+          "prodId",
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -688,10 +642,11 @@
           "modelo",
           "altura",
           "comprimento",
-          "prodId",
           "largura",
           "vFinal",
-          "peso"
+          "prodId",
+          "peso",
+          "lotes"
         ]
       },
       "conditions": []
@@ -817,42 +772,6 @@
       "conditions": []
     },
     {
-      "action": "admin::transfer.tokens.access",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.create",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.delete",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.read",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.regenerate",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
-      "action": "admin::transfer.tokens.update",
-      "subject": null,
-      "properties": {},
-      "conditions": []
-    },
-    {
       "action": "admin::users.create",
       "subject": null,
       "properties": {},
@@ -938,12 +857,12 @@
           "confirmed",
           "blocked",
           "role",
-          "pemission",
           "businesses",
           "empresas",
+          "pedidos",
           "pessoas",
           "avatar",
-          "lotes"
+          "pemission"
         ]
       },
       "conditions": []
@@ -968,12 +887,12 @@
           "confirmed",
           "blocked",
           "role",
-          "pemission",
           "businesses",
           "empresas",
+          "pedidos",
           "pessoas",
           "avatar",
-          "lotes"
+          "pemission"
         ]
       },
       "conditions": []
@@ -992,12 +911,12 @@
           "confirmed",
           "blocked",
           "role",
-          "pemission",
           "businesses",
           "empresas",
+          "pedidos",
           "pessoas",
           "avatar",
-          "lotes"
+          "pemission"
         ]
       },
       "conditions": []

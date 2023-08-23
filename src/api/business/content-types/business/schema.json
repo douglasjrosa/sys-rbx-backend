@@ -62,6 +62,18 @@
     },
     "Mperca": {
       "type": "integer"
+    },
+    "date_conclucao": {
+      "type": "date"
+    },
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "businesses"
+    },
+    "flag": {
+      "type": "string"
     }
   }
 }

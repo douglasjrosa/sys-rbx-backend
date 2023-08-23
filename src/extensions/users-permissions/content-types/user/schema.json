@@ -127,6 +127,22 @@
     },
     "nome": {
       "type": "string"
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "vendedor"
+    },
+    "primeiro_acesso": {
+      "type": "boolean",
+      "default": false
+    },
+    "interacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interacao.interacao",
+      "mappedBy": "vendedor"
     }
   }
 }

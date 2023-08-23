@@ -4,6 +4,532 @@
   "description": "Authors can manage the content they have created.",
   "permissions": [
     {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord",
+          "empresa",
+          "user",
+          "statusAnd",
+          "status"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::business.business",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord",
+          "empresa",
+          "user",
+          "statusAnd",
+          "status"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::business.business",
+      "properties": {
+        "fields": [
+          "pedidos",
+          "deadline",
+          "nBusiness",
+          "Budget",
+          "Approach",
+          "history",
+          "incidentRecord",
+          "empresa",
+          "user",
+          "statusAnd",
+          "status"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::empresa.empresa",
+      "properties": {
+        "fields": [
+          "nome",
+          "fantasia",
+          "tipoPessoa",
+          "endereco",
+          "numero",
+          "complemento",
+          "bairro",
+          "cep",
+          "cidade",
+          "uf",
+          "site",
+          "pais",
+          "porte",
+          "simples",
+          "ieStatus",
+          "status",
+          "adFrailLat",
+          "adFrailCab",
+          "adEspecialLat",
+          "adEspecialCab",
+          "latFCab",
+          "cabChao",
+          "cabTop",
+          "cxEco",
+          "cxEst",
+          "cxLev",
+          "cxRef",
+          "cxSupRef",
+          "platSMed",
+          "cxResi",
+          "engEco",
+          "engLev",
+          "engRef",
+          "engResi",
+          "email",
+          "emailNfe",
+          "tablecalc",
+          "maxPg",
+          "forpg",
+          "frete",
+          "CNPJ",
+          "Ie",
+          "fone",
+          "celular",
+          "CNAE",
+          "codpais",
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo",
+          "business",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::empresa.empresa",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::empresa.empresa",
+      "properties": {
+        "fields": [
+          "nome",
+          "fantasia",
+          "tipoPessoa",
+          "endereco",
+          "numero",
+          "complemento",
+          "bairro",
+          "cep",
+          "cidade",
+          "uf",
+          "site",
+          "pais",
+          "porte",
+          "simples",
+          "ieStatus",
+          "status",
+          "adFrailLat",
+          "adFrailCab",
+          "adEspecialLat",
+          "adEspecialCab",
+          "latFCab",
+          "cabChao",
+          "cabTop",
+          "cxEco",
+          "cxEst",
+          "cxLev",
+          "cxRef",
+          "cxSupRef",
+          "platSMed",
+          "cxResi",
+          "engEco",
+          "engLev",
+          "engRef",
+          "engResi",
+          "email",
+          "emailNfe",
+          "tablecalc",
+          "maxPg",
+          "forpg",
+          "frete",
+          "CNPJ",
+          "Ie",
+          "fone",
+          "celular",
+          "CNAE",
+          "codpais",
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo",
+          "business",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::empresa.empresa",
+      "properties": {
+        "fields": [
+          "nome",
+          "fantasia",
+          "tipoPessoa",
+          "endereco",
+          "numero",
+          "complemento",
+          "bairro",
+          "cep",
+          "cidade",
+          "uf",
+          "site",
+          "pais",
+          "porte",
+          "simples",
+          "ieStatus",
+          "status",
+          "adFrailLat",
+          "adFrailCab",
+          "adEspecialLat",
+          "adEspecialCab",
+          "latFCab",
+          "cabChao",
+          "cabTop",
+          "cxEco",
+          "cxEst",
+          "cxLev",
+          "cxRef",
+          "cxSupRef",
+          "platSMed",
+          "cxResi",
+          "engEco",
+          "engLev",
+          "engRef",
+          "engResi",
+          "email",
+          "emailNfe",
+          "tablecalc",
+          "maxPg",
+          "forpg",
+          "frete",
+          "CNPJ",
+          "Ie",
+          "fone",
+          "celular",
+          "CNAE",
+          "codpais",
+          "responsavel",
+          "history",
+          "pedidos",
+          "titulo",
+          "vendedor",
+          "fornecedorId",
+          "vendedorId",
+          "codigo",
+          "business",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "empresa",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral",
+          "user",
+          "fornecedor"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pedido.pedido",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "empresa",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral",
+          "user",
+          "fornecedor"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pedido.pedido",
+      "properties": {
+        "fields": [
+          "itens",
+          "vencPedido",
+          "empresa",
+          "empresaId",
+          "vendedorId",
+          "nPedido",
+          "desconto",
+          "CNPJClinet",
+          "andamento",
+          "valorFrete",
+          "vencPrint",
+          "business",
+          "dataPedido",
+          "obs",
+          "condi",
+          "prazo",
+          "frete",
+          "vendedor",
+          "totalGeral",
+          "user",
+          "fornecedor"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::pessoa.pessoa",
+      "properties": {
+        "fields": [
+          "nome",
+          "CEP",
+          "endereco",
+          "numero",
+          "bairro",
+          "cidade",
+          "uf",
+          "CPF",
+          "RG",
+          "whatsapp",
+          "telefone",
+          "email",
+          "pais",
+          "obs",
+          "empresas",
+          "status",
+          "history",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::pessoa.pessoa",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::pessoa.pessoa",
+      "properties": {
+        "fields": [
+          "nome",
+          "CEP",
+          "endereco",
+          "numero",
+          "bairro",
+          "cidade",
+          "uf",
+          "CPF",
+          "RG",
+          "whatsapp",
+          "telefone",
+          "email",
+          "pais",
+          "obs",
+          "empresas",
+          "status",
+          "history",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::pessoa.pessoa",
+      "properties": {
+        "fields": [
+          "nome",
+          "CEP",
+          "endereco",
+          "numero",
+          "bairro",
+          "cidade",
+          "uf",
+          "CPF",
+          "RG",
+          "whatsapp",
+          "telefone",
+          "email",
+          "pais",
+          "obs",
+          "empresas",
+          "status",
+          "history",
+          "user"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::proposta.proposta",
+      "properties": {},
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::proposta.proposta",
+      "properties": {
+        "fields": [
+          "nPedido"
+        ]
+      },
+      "conditions": [
+        "admin::is-creator"
+      ]
+    },
+    {
       "action": "plugin::upload.assets.copy-link",
       "subject": null,
       "properties": {},
@@ -28,6 +554,12 @@
       "conditions": [
         "admin::is-creator"
       ]
+    },
+    {
+      "action": "plugin::upload.configure-view",
+      "subject": null,
+      "properties": {},
+      "conditions": []
     },
     {
       "action": "plugin::upload.read",

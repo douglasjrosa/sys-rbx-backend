@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formapgs",
+  "info": {
+    "singularName": "formapg",
+    "pluralName": "formapgs",
+    "displayName": "formapg"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    }
+  }
+}

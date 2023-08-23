@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bt_etapas_negocios",
+  "info": {
+    "singularName": "bt-etapas-negocio",
+    "pluralName": "bt-etapas-negocios",
+    "displayName": "BTEtapasNegocio"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bt_statuses",
+  "info": {
+    "singularName": "bt-status",
+    "pluralName": "bt-statuses",
+    "displayName": "BTStatus"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "nome": {
+      "type": "string"
+    }
+  }
+}

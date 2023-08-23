@@ -58,6 +58,9 @@
     },
     "CNPJEmitente": {
       "type": "string"
+    },
+    "item_id": {
+      "type": "string"
     }
   }
 }

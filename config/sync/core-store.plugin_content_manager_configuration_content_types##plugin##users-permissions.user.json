@@ -147,20 +147,6 @@
           "sortable": true
         }
       },
-      "pemission": {
-        "edit": {
-          "label": "pemission",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "pemission",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "businesses": {
         "edit": {
           "label": "businesses",
@@ -187,6 +173,21 @@
         },
         "list": {
           "label": "empresas",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pedidos": {
+        "edit": {
+          "label": "pedidos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "pedidos",
           "searchable": false,
           "sortable": false
         }
@@ -220,19 +221,18 @@
           "sortable": false
         }
       },
-      "lotes": {
+      "pemission": {
         "edit": {
-          "label": "lotes",
+          "label": "pemission",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true,
-          "mainField": "status"
+          "editable": true
         },
         "list": {
-          "label": "lotes",
-          "searchable": false,
-          "sortable": false
+          "label": "pemission",
+          "searchable": true,
+          "sortable": true
         }
       },
       "createdAt": {
@@ -265,12 +265,6 @@
       }
     },
     "layouts": {
-      "list": [
-        "id",
-        "username",
-        "email",
-        "confirmed"
-      ],
       "edit": [
         [
           {
@@ -298,23 +292,17 @@
             "size": 4
           },
           {
-            "name": "role",
-            "size": 6
-          }
-        ],
-        [
-          {
             "name": "pemission",
-            "size": 6
+            "size": 4
           },
           {
-            "name": "businesses",
-            "size": 6
+            "name": "avatar",
+            "size": 4
           }
         ],
         [
           {
-            "name": "empresas",
+            "name": "pedidos",
             "size": 6
           },
           {
@@ -324,14 +312,26 @@
         ],
         [
           {
-            "name": "avatar",
+            "name": "empresas",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "businesses",
             "size": 6
           },
           {
-            "name": "lotes",
+            "name": "role",
             "size": 6
           }
         ]
+      ],
+      "list": [
+        "id",
+        "username",
+        "email",
+        "confirmed"
       ]
     }
   },

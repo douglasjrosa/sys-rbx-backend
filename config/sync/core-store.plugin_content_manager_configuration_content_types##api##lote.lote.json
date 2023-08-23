@@ -7,8 +7,8 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "status",
-      "defaultSortBy": "status",
+      "mainField": "id",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -30,6 +30,21 @@
         },
         "list": {
           "label": "lote",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "empresa": {
+        "edit": {
+          "label": "empresa",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresa",
           "searchable": true,
           "sortable": true
         }
@@ -63,30 +78,31 @@
           "sortable": true
         }
       },
-      "negocioId": {
+      "produtos": {
         "edit": {
-          "label": "negocioId",
+          "label": "produtos",
           "description": "",
           "placeholder": "",
           "visible": true,
-          "editable": true
+          "editable": true,
+          "mainField": "nomeProd"
         },
         "list": {
-          "label": "negocioId",
-          "searchable": true,
-          "sortable": true
+          "label": "produtos",
+          "searchable": false,
+          "sortable": false
         }
       },
-      "produtoId": {
+      "produtosId": {
         "edit": {
-          "label": "produtoId",
+          "label": "produtosId",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "produtoId",
+          "label": "produtosId",
           "searchable": true,
           "sortable": true
         }
@@ -116,6 +132,20 @@
         },
         "list": {
           "label": "emitenteId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "qtde": {
+        "edit": {
+          "label": "qtde",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "qtde",
           "searchable": true,
           "sortable": true
         }
@@ -176,35 +206,6 @@
           "sortable": true
         }
       },
-      "vendedor": {
-        "edit": {
-          "label": "vendedor",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "username"
-        },
-        "list": {
-          "label": "vendedor",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "nPedido": {
-        "edit": {
-          "label": "nPedido",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "nPedido",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -238,8 +239,8 @@
       "list": [
         "id",
         "lote",
-        "empresaId",
-        "business"
+        "empresa",
+        "empresaId"
       ],
       "edit": [
         [
@@ -248,23 +249,27 @@
             "size": 4
           },
           {
-            "name": "empresaId",
-            "size": 4
+            "name": "empresa",
+            "size": 6
           }
         ],
         [
+          {
+            "name": "empresaId",
+            "size": 4
+          },
           {
             "name": "business",
             "size": 6
-          },
-          {
-            "name": "negocioId",
-            "size": 4
           }
         ],
         [
           {
-            "name": "produtoId",
+            "name": "produtos",
+            "size": 6
+          },
+          {
+            "name": "produtosId",
             "size": 4
           }
         ],
@@ -280,31 +285,27 @@
         ],
         [
           {
+            "name": "qtde",
+            "size": 4
+          },
+          {
             "name": "info",
             "size": 6
-          },
+          }
+        ],
+        [
           {
             "name": "status",
             "size": 6
-          }
-        ],
-        [
+          },
           {
             "name": "checklist",
             "size": 6
-          },
-          {
-            "name": "logs",
-            "size": 6
           }
         ],
         [
           {
-            "name": "vendedor",
-            "size": 6
-          },
-          {
-            "name": "nPedido",
+            "name": "logs",
             "size": 6
           }
         ]

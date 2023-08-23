@@ -15,7 +15,7 @@
     "nome": {
       "type": "string"
     },
-    "fantasia": {
+    "razao": {
       "type": "string"
     },
     "tipoPessoa": {
@@ -172,15 +172,6 @@
     "vendedor": {
       "type": "string"
     },
-    "fornecedorId": {
-      "type": "integer"
-    },
-    "vendedorId": {
-      "type": "integer"
-    },
-    "codigo": {
-      "type": "string"
-    },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
@@ -197,6 +188,40 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::business.business",
+      "mappedBy": "empresa"
+    },
+    "ultima_compra": {
+      "type": "date"
+    },
+    "valor_ultima_compra": {
+      "type": "string"
+    },
+    "penultima_compra": {
+      "type": "date"
+    },
+    "inativOk": {
+      "type": "integer",
+      "default": 60
+    },
+    "inativStatus": {
+      "type": "integer",
+      "default": 3,
+      "max": 6,
+      "min": 1
+    },
+    "fantasia": {
+      "type": "string"
+    },
+    "modEsp": {
+      "type": "boolean"
+    },
+    "representantes": {
+      "type": "json"
+    },
+    "interacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interacao.interacao",
       "mappedBy": "empresa"
     }
   }

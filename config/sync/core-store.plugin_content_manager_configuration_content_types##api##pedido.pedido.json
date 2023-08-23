@@ -6,9 +6,9 @@
       "bulkable": true,
       "filterable": true,
       "searchable": true,
-      "pageSize": 50,
+      "pageSize": 10,
       "mainField": "nPedido",
-      "defaultSortBy": "id",
+      "defaultSortBy": "nPedido",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -288,16 +288,31 @@
           "sortable": true
         }
       },
-      "fornecedorId": {
+      "user": {
         "edit": {
-          "label": "fornecedorId",
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedor": {
+        "edit": {
+          "label": "fornecedor",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "fornecedorId",
+          "label": "fornecedor",
           "searchable": true,
           "sortable": true
         }
@@ -344,20 +359,6 @@
           "sortable": true
         }
       },
-      "status": {
-        "edit": {
-          "label": "status",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "status",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -390,17 +391,11 @@
     "layouts": {
       "list": [
         "id",
-        "nPedido",
-        "condi",
-        "businessId"
+        "vencPedido",
+        "fornecedor",
+        "empresa"
       ],
       "edit": [
-        [
-          {
-            "name": "nPedido",
-            "size": 6
-          }
-        ],
         [
           {
             "name": "itens",
@@ -409,23 +404,23 @@
         ],
         [
           {
-            "name": "dataPedido",
+            "name": "vencPedido",
             "size": 4
           },
           {
-            "name": "vencPedido",
-            "size": 4
+            "name": "fornecedor",
+            "size": 6
           }
         ],
         [
           {
-            "name": "desconto",
-            "size": 4
+            "name": "empresa",
+            "size": 6
           }
         ],
         [
           {
-            "name": "fornecedorId",
+            "name": "empresaId",
             "size": 4
           },
           {
@@ -435,21 +430,19 @@
         ],
         [
           {
-            "name": "CNPJClinet",
-            "size": 4
+            "name": "nPedido",
+            "size": 6
           },
           {
-            "name": "empresaId",
-            "size": 4
+            "name": "desconto",
+            "size": 6
           }
         ],
         [
           {
-            "name": "empresa",
-            "size": 4
-          }
-        ],
-        [
+            "name": "CNPJClinet",
+            "size": 6
+          },
           {
             "name": "andamento",
             "size": 6
@@ -469,6 +462,16 @@
           {
             "name": "business",
             "size": 6
+          },
+          {
+            "name": "businessId",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "dataPedido",
+            "size": 4
           }
         ],
         [
@@ -503,7 +506,7 @@
             "size": 6
           },
           {
-            "name": "businessId",
+            "name": "user",
             "size": 6
           }
         ],
@@ -515,12 +518,6 @@
           {
             "name": "Bpedido",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "status",
-            "size": 4
           }
         ]
       ]
