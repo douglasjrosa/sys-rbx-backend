@@ -223,6 +223,18 @@
       "relation": "oneToMany",
       "target": "api::interacao.interacao",
       "mappedBy": "empresa"
+    },
+    "formapgs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::formapg.formapg",
+      "mappedBy": "empresa"
+    },
+    "prazo_pgs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::prazo-pg.prazo-pg",
+      "mappedBy": "empresa"
     }
   }
 }

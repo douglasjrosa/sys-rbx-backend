@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "formapgs",
+  "collectionName": "prazo_pgs",
   "info": {
-    "singularName": "formapg",
-    "pluralName": "formapgs",
-    "displayName": "formapg",
+    "singularName": "prazo-pg",
+    "pluralName": "prazo-pgs",
+    "displayName": "PrazoPg",
     "description": ""
   },
   "options": {
@@ -12,17 +12,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "value": {
-      "type": "string"
-    },
     "title": {
       "type": "string"
+    },
+    "value": {
+      "type": "integer"
     },
     "empresa": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::empresa.empresa",
-      "inversedBy": "formapgs"
+      "inversedBy": "prazo_pgs"
     }
   }
 }

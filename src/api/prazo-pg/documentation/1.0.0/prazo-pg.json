@@ -1,5 +1,5 @@
 {
-  "/freteclientes": {
+  "/prazo-pgs": {
     "get": {
       "responses": {
         "200": {
@@ -7,7 +7,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FreteclienteListResponse"
+                "$ref": "#/components/schemas/PrazoPgListResponse"
               }
             }
           }
@@ -64,7 +64,7 @@
         }
       },
       "tags": [
-        "Fretecliente"
+        "Prazo-pg"
       ],
       "parameters": [
         {
@@ -169,7 +169,7 @@
           }
         }
       ],
-      "operationId": "get/freteclientes"
+      "operationId": "get/prazo-pgs"
     },
     "post": {
       "responses": {
@@ -178,7 +178,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FreteclienteResponse"
+                "$ref": "#/components/schemas/PrazoPgResponse"
               }
             }
           }
@@ -235,23 +235,23 @@
         }
       },
       "tags": [
-        "Fretecliente"
+        "Prazo-pg"
       ],
       "parameters": [],
-      "operationId": "post/freteclientes",
+      "operationId": "post/prazo-pgs",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/FreteclienteRequest"
+              "$ref": "#/components/schemas/PrazoPgRequest"
             }
           }
         }
       }
     }
   },
-  "/freteclientes/{id}": {
+  "/prazo-pgs/{id}": {
     "get": {
       "responses": {
         "200": {
@@ -259,7 +259,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FreteclienteResponse"
+                "$ref": "#/components/schemas/PrazoPgResponse"
               }
             }
           }
@@ -316,7 +316,7 @@
         }
       },
       "tags": [
-        "Fretecliente"
+        "Prazo-pg"
       ],
       "parameters": [
         {
@@ -330,7 +330,7 @@
           }
         }
       ],
-      "operationId": "get/freteclientes/{id}"
+      "operationId": "get/prazo-pgs/{id}"
     },
     "put": {
       "responses": {
@@ -339,7 +339,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/FreteclienteResponse"
+                "$ref": "#/components/schemas/PrazoPgResponse"
               }
             }
           }
@@ -396,7 +396,7 @@
         }
       },
       "tags": [
-        "Fretecliente"
+        "Prazo-pg"
       ],
       "parameters": [
         {
@@ -410,13 +410,13 @@
           }
         }
       ],
-      "operationId": "put/freteclientes/{id}",
+      "operationId": "put/prazo-pgs/{id}",
       "requestBody": {
         "required": true,
         "content": {
           "application/json": {
             "schema": {
-              "$ref": "#/components/schemas/FreteclienteRequest"
+              "$ref": "#/components/schemas/PrazoPgRequest"
             }
           }
         }
@@ -487,7 +487,7 @@
         }
       },
       "tags": [
-        "Fretecliente"
+        "Prazo-pg"
       ],
       "parameters": [
         {
@@ -501,7 +501,7 @@
           }
         }
       ],
-      "operationId": "delete/freteclientes/{id}"
+      "operationId": "delete/prazo-pgs/{id}"
     }
   }
 }
