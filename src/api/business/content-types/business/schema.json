@@ -1,0 +1,79 @@
+{
+  "kind": "collectionType",
+  "collectionName": "businesses",
+  "info": {
+    "singularName": "business",
+    "pluralName": "businesses",
+    "displayName": "Business",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "business"
+    },
+    "deadline": {
+      "type": "date"
+    },
+    "nBusiness": {
+      "type": "string"
+    },
+    "Budget": {
+      "type": "string"
+    },
+    "Approach": {
+      "type": "string"
+    },
+    "history": {
+      "type": "json"
+    },
+    "incidentRecord": {
+      "type": "json"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "businesses"
+    },
+    "status": {
+      "type": "boolean"
+    },
+    "DataRetorno": {
+      "type": "date"
+    },
+    "stausPedido": {
+      "type": "boolean"
+    },
+    "Bpedido": {
+      "type": "string"
+    },
+    "etapa": {
+      "type": "integer"
+    },
+    "andamento": {
+      "type": "integer"
+    },
+    "Mperca": {
+      "type": "integer"
+    },
+    "date_conclucao": {
+      "type": "date"
+    },
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "businesses"
+    },
+    "flag": {
+      "type": "string"
+    }
+  }
+}

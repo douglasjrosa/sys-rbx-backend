@@ -1,0 +1,12 @@
+{
+  "apps": [
+    {
+      "name": "strapi_vendas",
+      "script": "yarn",
+      "args": "start",
+      "autorestart": true
+    }
+  ]
+}
+
+

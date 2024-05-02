@@ -1,0 +1,46 @@
+{
+  "kind": "collectionType",
+  "collectionName": "interacoes",
+  "info": {
+    "singularName": "interacao",
+    "pluralName": "interacoes",
+    "displayName": "interacao",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "interacaos"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "interacaos"
+    },
+    "descricao": {
+      "type": "text"
+    },
+    "tipo": {
+      "type": "integer"
+    },
+    "objetivo": {
+      "type": "integer"
+    },
+    "proxima": {
+      "type": "date"
+    },
+    "pontual": {
+      "type": "boolean"
+    },
+    "CNPJ": {
+      "type": "string"
+    }
+  }
+}

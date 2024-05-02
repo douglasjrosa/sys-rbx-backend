@@ -131,51 +131,6 @@
           "searchable": true,
           "sortable": true
         }
-      },
-      "estrutura": {
-        "edit": {
-          "label": "estrutura",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "estrutura",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "fixadores": {
-        "edit": {
-          "label": "fixadores",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "fixadores",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "grade": {
-        "edit": {
-          "label": "grade",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "grade",
-          "searchable": true,
-          "sortable": true
-        }
       }
     },
     "layouts": {
@@ -224,24 +179,9 @@
           {
             "name": "compGrade",
             "size": 4
-          },
-          {
-            "name": "estrutura",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "fixadores",
-            "size": 6
-          },
-          {
-            "name": "grade",
-            "size": 6
           }
         ]
-      ],
-      "editRelations": []
+      ]
     },
     "isComponent": true
   },

@@ -211,9 +211,6 @@
         "lastname",
         "username"
       ],
-      "editRelations": [
-        "roles"
-      ],
       "edit": [
         [
           {
@@ -257,9 +254,15 @@
         ],
         [
           {
+            "name": "roles",
+            "size": 6
+          },
+          {
             "name": "blocked",
             "size": 4
-          },
+          }
+        ],
+        [
           {
             "name": "preferedLanguage",
             "size": 6

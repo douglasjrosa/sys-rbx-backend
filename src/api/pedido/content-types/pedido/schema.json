@@ -1,0 +1,118 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pedidos",
+  "info": {
+    "singularName": "pedido",
+    "pluralName": "pedidos",
+    "displayName": "pedido",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "itens": {
+      "type": "json",
+      "default": "null"
+    },
+    "vencPedido": {
+      "type": "date"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "pedidos"
+    },
+    "empresaId": {
+      "type": "integer"
+    },
+    "vendedorId": {
+      "type": "integer"
+    },
+    "nPedido": {
+      "type": "string",
+      "default": "null"
+    },
+    "desconto": {
+      "type": "string"
+    },
+    "CNPJClinet": {
+      "type": "string"
+    },
+    "andamento": {
+      "type": "string"
+    },
+    "valorFrete": {
+      "type": "string"
+    },
+    "vencPrint": {
+      "type": "string"
+    },
+    "business": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::business.business",
+      "inversedBy": "pedidos"
+    },
+    "dataPedido": {
+      "type": "date"
+    },
+    "obs": {
+      "type": "richtext"
+    },
+    "condi": {
+      "type": "string"
+    },
+    "prazo": {
+      "type": "string"
+    },
+    "frete": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "totalGeral": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "pedidos"
+    },
+    "fornecedor": {
+      "type": "string"
+    },
+    "businessId": {
+      "type": "string"
+    },
+    "stausPedido": {
+      "type": "boolean",
+      "default": false
+    },
+    "Bpedido": {
+      "type": "string"
+    },
+    "fornecedorId": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "Pvendas"
+    },
+    "cliente_pedido": {
+      "type": "string"
+    },
+    "dataEntrega": {
+      "type": "date"
+    },
+    "descontoAdd": {
+      "type": "string"
+    },
+    "descontoTotal": {
+      "type": "string"
+    }
+  }
+}

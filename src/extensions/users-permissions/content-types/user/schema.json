@@ -1,0 +1,148 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "empresas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empresa.empresa",
+      "mappedBy": "user"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "user"
+    },
+    "pessoas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pessoa.pessoa",
+      "mappedBy": "user"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pemission": {
+      "type": "enumeration",
+      "enum": [
+        "Adm",
+        "User"
+      ]
+    },
+    "lotes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lote.lote",
+      "mappedBy": "vendedor"
+    },
+    "trello_key": {
+      "type": "string"
+    },
+    "trello_token": {
+      "type": "string"
+    },
+    "trello_id": {
+      "type": "string"
+    },
+    "setor": {
+      "type": "enumeration",
+      "enum": [
+        "Vendas",
+        "Expedição",
+        "Produção",
+        "Administração",
+        "Ti",
+        "Gvendas"
+      ]
+    },
+    "nome": {
+      "type": "string"
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "vendedor"
+    },
+    "primeiro_acesso": {
+      "type": "boolean",
+      "default": false
+    },
+    "interacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interacao.interacao",
+      "mappedBy": "vendedor"
+    }
+  }
+}

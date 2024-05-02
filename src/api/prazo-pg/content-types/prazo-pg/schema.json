@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prazo_pgs",
+  "info": {
+    "singularName": "prazo-pg",
+    "pluralName": "prazo-pgs",
+    "displayName": "PrazoPg",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "value": {
+      "type": "integer"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "prazo_pgs"
+    }
+  }
+}

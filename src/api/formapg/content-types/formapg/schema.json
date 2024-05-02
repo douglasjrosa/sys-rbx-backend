@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "formapgs",
+  "info": {
+    "singularName": "formapg",
+    "pluralName": "formapgs",
+    "displayName": "formapg",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "value": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "formapgs"
+    }
+  }
+}
