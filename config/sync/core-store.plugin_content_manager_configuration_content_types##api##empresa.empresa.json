@@ -524,21 +524,6 @@
           "sortable": true
         }
       },
-      "pessoa": {
-        "edit": {
-          "label": "pessoa",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "pessoa",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "tablecalc": {
         "edit": {
           "label": "tablecalc",
@@ -694,6 +679,165 @@
           "sortable": true
         }
       },
+      "history": {
+        "edit": {
+          "label": "history",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "history",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "pedidos": {
+        "edit": {
+          "label": "pedidos",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nPedido"
+        },
+        "list": {
+          "label": "pedidos",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "titulo": {
+        "edit": {
+          "label": "titulo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "titulo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vendedor": {
+        "edit": {
+          "label": "vendedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vendedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedorId": {
+        "edit": {
+          "label": "fornecedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fornecedorId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vendedorId": {
+        "edit": {
+          "label": "vendedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vendedorId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "codigo": {
+        "edit": {
+          "label": "codigo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "codigo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "business": {
+        "edit": {
+          "label": "business",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "business",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "lotesEmitente": {
+        "edit": {
+          "label": "lotesEmitente",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "status"
+        },
+        "list": {
+          "label": "lotesEmitente",
+          "searchable": false,
+          "sortable": false
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -729,10 +873,6 @@
         "nome",
         "fantasia",
         "tipoPessoa"
-      ],
-      "editRelations": [
-        "pessoa",
-        "responsavel"
       ],
       "edit": [
         [
@@ -956,6 +1096,70 @@
           },
           {
             "name": "codpais",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "responsavel",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "history",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "pedidos",
+            "size": 6
+          },
+          {
+            "name": "titulo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "vendedor",
+            "size": 6
+          },
+          {
+            "name": "fornecedorId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "vendedorId",
+            "size": 4
+          },
+          {
+            "name": "codigo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "business",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "user",
+            "size": 6
+          },
+          {
+            "name": "lotes",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "lotesEmitente",
             "size": 6
           }
         ]

@@ -1,0 +1,529 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::pedido.pedido",
+  "value": {
+    "uid": "api::pedido.pedido",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "nPedido",
+      "defaultSortBy": "nPedido",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "itens": {
+        "edit": {
+          "label": "itens",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "itens",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "vencPedido": {
+        "edit": {
+          "label": "vencPedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vencPedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "empresa": {
+        "edit": {
+          "label": "empresa",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nome"
+        },
+        "list": {
+          "label": "empresa",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "empresaId": {
+        "edit": {
+          "label": "empresaId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "empresaId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vendedorId": {
+        "edit": {
+          "label": "vendedorId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vendedorId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nPedido": {
+        "edit": {
+          "label": "nPedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nPedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "desconto": {
+        "edit": {
+          "label": "desconto",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "desconto",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "CNPJClinet": {
+        "edit": {
+          "label": "CNPJClinet",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "CNPJClinet",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "andamento": {
+        "edit": {
+          "label": "andamento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "andamento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "valorFrete": {
+        "edit": {
+          "label": "valorFrete",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "valorFrete",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vencPrint": {
+        "edit": {
+          "label": "vencPrint",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vencPrint",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "business": {
+        "edit": {
+          "label": "business",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "nBusiness"
+        },
+        "list": {
+          "label": "business",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "dataPedido": {
+        "edit": {
+          "label": "dataPedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "dataPedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "obs": {
+        "edit": {
+          "label": "obs",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "obs",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "condi": {
+        "edit": {
+          "label": "condi",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "condi",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "prazo": {
+        "edit": {
+          "label": "prazo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "prazo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "frete": {
+        "edit": {
+          "label": "frete",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "frete",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vendedor": {
+        "edit": {
+          "label": "vendedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vendedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "totalGeral": {
+        "edit": {
+          "label": "totalGeral",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "totalGeral",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "user": {
+        "edit": {
+          "label": "user",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "username"
+        },
+        "list": {
+          "label": "user",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "fornecedor": {
+        "edit": {
+          "label": "fornecedor",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "fornecedor",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "businessId": {
+        "edit": {
+          "label": "businessId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "businessId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "stausPedido": {
+        "edit": {
+          "label": "stausPedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "stausPedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "Bpedido": {
+        "edit": {
+          "label": "Bpedido",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "Bpedido",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "vencPedido",
+        "fornecedor",
+        "empresa"
+      ],
+      "edit": [
+        [
+          {
+            "name": "itens",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "vencPedido",
+            "size": 4
+          },
+          {
+            "name": "fornecedor",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "empresa",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "empresaId",
+            "size": 4
+          },
+          {
+            "name": "vendedorId",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "nPedido",
+            "size": 6
+          },
+          {
+            "name": "desconto",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "CNPJClinet",
+            "size": 6
+          },
+          {
+            "name": "andamento",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "valorFrete",
+            "size": 6
+          },
+          {
+            "name": "vencPrint",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "business",
+            "size": 6
+          },
+          {
+            "name": "businessId",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "dataPedido",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "obs",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "condi",
+            "size": 6
+          },
+          {
+            "name": "prazo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "frete",
+            "size": 6
+          },
+          {
+            "name": "vendedor",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "totalGeral",
+            "size": 6
+          },
+          {
+            "name": "user",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "stausPedido",
+            "size": 4
+          },
+          {
+            "name": "Bpedido",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

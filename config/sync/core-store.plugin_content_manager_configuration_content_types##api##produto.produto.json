@@ -1,0 +1,237 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::produto.produto",
+  "value": {
+    "uid": "api::produto.produto",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "nomeProd",
+      "defaultSortBy": "nomeProd",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "nomeProd": {
+        "edit": {
+          "label": "nomeProd",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "nomeProd",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "modelo": {
+        "edit": {
+          "label": "modelo",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "modelo",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "altura": {
+        "edit": {
+          "label": "altura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "altura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "comprimento": {
+        "edit": {
+          "label": "comprimento",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "comprimento",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "largura": {
+        "edit": {
+          "label": "largura",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "largura",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "vFinal": {
+        "edit": {
+          "label": "vFinal",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "vFinal",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "prodId": {
+        "edit": {
+          "label": "prodId",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "prodId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "peso": {
+        "edit": {
+          "label": "peso",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "peso",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "lotes": {
+        "edit": {
+          "label": "lotes",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "id"
+        },
+        "list": {
+          "label": "lotes",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "list": [
+        "id",
+        "nomeProd",
+        "modelo",
+        "altura"
+      ],
+      "edit": [
+        [
+          {
+            "name": "nomeProd",
+            "size": 6
+          },
+          {
+            "name": "modelo",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "altura",
+            "size": 4
+          },
+          {
+            "name": "comprimento",
+            "size": 4
+          },
+          {
+            "name": "largura",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "vFinal",
+            "size": 4
+          },
+          {
+            "name": "prodId",
+            "size": 4
+          },
+          {
+            "name": "peso",
+            "size": 4
+          }
+        ],
+        [
+          {
+            "name": "lotes",
+            "size": 6
+          }
+        ]
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

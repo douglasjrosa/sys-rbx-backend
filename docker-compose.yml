@@ -1,0 +1,46 @@
+version: '3'
+services:
+  strapiVendas:
+    container_name: strapi
+    build: .
+    image: strapi:latest
+    restart: always
+    env_file: .env
+    environment:
+      DATABASE_CLIENT: ${DATABASE_CLIENT}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      NODE_ENV: ${NODE_ENV}
+      URL: ${URL}
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
+    expose:
+      - '1339'
+    networks:
+      - strapi-network
+
+  nginx:
+    container_name: nginx-proxy
+    image: nginx:alpine
+    restart: always
+    ports:
+      - '80:80'
+    volumes:
+      - ./nginx.cloudflare.conf:/etc/nginx/conf.d/default.conf:ro
+    depends_on:
+      - strapiVendas
+    networks:
+      - strapi-network
+
+networks:
+  strapi-network:
+    driver: bridge

@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "log_empresas",
+  "info": {
+    "singularName": "log-empresa",
+    "pluralName": "log-empresas",
+    "displayName": "LogEmpresa",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "dados": {
+      "type": "json"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "solicitante": {
+      "type": "string"
+    },
+    "data": {
+      "type": "datetime"
+    },
+    "CNPJ": {
+      "type": "string"
+    }
+  }
+}

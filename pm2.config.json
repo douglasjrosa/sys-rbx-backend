@@ -1,0 +1,13 @@
+{
+  "apps": [
+    {
+      "name": "strapi_vendas",
+      "script": "npm run",
+      "args": "start",
+      "autorestart": true,
+      "watch": false
+    }
+  ]
+}
+
+

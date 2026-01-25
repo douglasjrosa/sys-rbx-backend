@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "log_representantes",
+  "info": {
+    "singularName": "log-representante",
+    "pluralName": "log-representantes",
+    "displayName": "LogRepresentante",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "CNPJ": {
+      "type": "string"
+    },
+    "tipo": {
+      "type": "string"
+    },
+    "solicitante": {
+      "type": "string"
+    },
+    "data": {
+      "type": "datetime"
+    },
+    "dados": {
+      "type": "json"
+    }
+  }
+}

@@ -34,36 +34,6 @@
           "sortable": true
         }
       },
-      "fixadoresFixos": {
-        "edit": {
-          "label": "fixadoresFixos",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "fixadoresFixos",
-          "searchable": false,
-          "sortable": false
-        }
-      },
-      "fixadoresSoltos": {
-        "edit": {
-          "label": "fixadoresSoltos",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true,
-          "mainField": "nome"
-        },
-        "list": {
-          "label": "fixadoresSoltos",
-          "searchable": false,
-          "sortable": false
-        }
-      },
       "baseAnexada": {
         "edit": {
           "label": "baseAnexada",
@@ -166,26 +136,16 @@
     "layouts": {
       "list": [
         "id",
-        "notas",
-        "fixadoresFixos",
-        "fixadoresSoltos"
+        "notas"
       ],
       "edit": [
         [
           {
             "name": "notas",
             "size": 6
-          },
-          {
-            "name": "fixadoresFixos",
-            "size": 6
           }
         ],
         [
-          {
-            "name": "fixadoresSoltos",
-            "size": 6
-          },
           {
             "name": "baseAnexada",
             "size": 4
@@ -219,8 +179,7 @@
             "size": 4
           }
         ]
-      ],
-      "editRelations": []
+      ]
     },
     "isComponent": true
   },

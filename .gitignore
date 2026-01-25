@@ -94,12 +94,12 @@ logs
 results
 node_modules
 .node_history
+UsersDouglasAppDataRoamingnpm-cache
 
 ############################
 # Tests
 ############################
 
-testApp
 coverage
 
 ############################
@@ -110,5 +110,6 @@ coverage
 license.txt
 exports
 *.cache
+dist
 build
 .strapi-updater.json

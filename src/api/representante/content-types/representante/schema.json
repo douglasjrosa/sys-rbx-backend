@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "representantes",
+  "info": {
+    "singularName": "representante",
+    "pluralName": "representantes",
+    "displayName": "representante",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nome": {
+      "type": "string"
+    },
+    "telefone": {
+      "type": "string"
+    },
+    "whatsapp": {
+      "type": "string"
+    },
+    "departamento": {
+      "type": "string"
+    },
+    "cargo": {
+      "type": "string"
+    },
+    "obs": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "representantes"
+    },
+    "permissao": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "representantesContato"
+    },
+    "status": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

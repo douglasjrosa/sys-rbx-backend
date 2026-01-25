@@ -15,7 +15,7 @@
     "nome": {
       "type": "string"
     },
-    "fantasia": {
+    "razao": {
       "type": "string"
     },
     "tipoPessoa": {
@@ -58,7 +58,8 @@
       "type": "boolean"
     },
     "status": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": true
     },
     "adFrailLat": {
       "type": "boolean"
@@ -120,11 +121,6 @@
     "emailNfe": {
       "type": "string"
     },
-    "pessoa": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::pessoa.pessoa"
-    },
     "tablecalc": {
       "type": "string"
     },
@@ -160,6 +156,105 @@
       "relation": "manyToOne",
       "target": "api::pessoa.pessoa",
       "inversedBy": "empresas"
+    },
+    "history": {
+      "type": "json"
+    },
+    "pedidos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "empresa"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "empresas"
+    },
+    "Pvendas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pedido.pedido",
+      "mappedBy": "fornecedorId"
+    },
+    "businesses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::business.business",
+      "mappedBy": "empresa"
+    },
+    "ultima_compra": {
+      "type": "date"
+    },
+    "valor_ultima_compra": {
+      "type": "string"
+    },
+    "penultima_compra": {
+      "type": "date"
+    },
+    "inativOk": {
+      "type": "integer",
+      "default": 60
+    },
+    "inativStatus": {
+      "type": "integer",
+      "default": 3,
+      "max": 6,
+      "min": 1
+    },
+    "fantasia": {
+      "type": "string"
+    },
+    "modEsp": {
+      "type": "boolean"
+    },
+    "representantes": {
+      "type": "json"
+    },
+    "interacaos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::interacao.interacao",
+      "mappedBy": "empresa"
+    },
+    "formapgs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::formapg.formapg",
+      "mappedBy": "empresa"
+    },
+    "prazo_pgs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::prazo-pg.prazo-pg",
+      "mappedBy": "empresa"
+    },
+    "vendedorId": {
+      "type": "string"
+    },
+    "representantesContato": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::representante.representante",
+      "mappedBy": "empresa"
+    },
+    "purchaseFrequency": {
+      "type": "enumeration",
+      "enum": [
+        "Raramente",
+        "Eventualmente",
+        "Mensalmente"
+      ]
+    },
+    "expiresIn": {
+      "type": "date"
     }
   }
 }

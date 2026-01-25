@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "config_vendas",
+  "info": {
+    "singularName": "config-venda",
+    "pluralName": "config-vendas",
+    "displayName": "config_venda",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ano": {
+      "type": "string"
+    },
+    "mes": {
+      "type": "string"
+    },
+    "meta_decendio": {
+      "type": "string"
+    },
+    "salario_fixo": {
+      "type": "string"
+    },
+    "ajuda_de_custo": {
+      "type": "string"
+    },
+    "premio_decendio_1": {
+      "type": "string"
+    },
+    "premio_decendio_2": {
+      "type": "string"
+    },
+    "premio_decendio_3": {
+      "type": "string"
+    },
+    "premio_meta_do_mes": {
+      "type": "string"
+    },
+    "premio_recorde_de_vendas": {
+      "type": "string"
+    },
+    "entradas_atendimento": {
+      "type": "string"
+    },
+    "comisao_atendimento": {
+      "type": "string"
+    },
+    "entradas_venda": {
+      "type": "string"
+    },
+    "comissao_venda": {
+      "type": "string"
+    },
+    "entradas_contas": {
+      "type": "string"
+    },
+    "comissao_conta": {
+      "type": "string"
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "config_vendas"
+    },
+    "record": {
+      "type": "string"
+    }
+  }
+}
