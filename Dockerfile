@@ -1,36 +1,20 @@
-# Estágio 1: Build
-FROM node:18-slim as build
+# Use a imagem Node.js como base
+FROM node:18
 
-# Instalar dependências necessárias para compilar pacotes nativos
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    pkg-config \
-    python3 \
-    libvips-dev \
-    git \
-    && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /opt/
-COPY package.json package-lock.json ./
-RUN npm install --production=false
-
+# Crie e defina o diretório de trabalho dentro do contêiner
 WORKDIR /opt/app
+
+# Copie o arquivo package.json e yarn.lock para o contêiner
+COPY package.json yarn.lock ./
+
+# Instale as dependências do projeto usando o Yarn
+RUN yarn install
+
+# Copie todo o restante do código-fonte para o contêiner
 COPY . .
-RUN npm run build
 
-# Estágio 2: Runtime
-FROM node:18-slim
-RUN apt-get update && apt-get install -y libvips-dev && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /opt/
-COPY --from=build /opt/node_modules ./node_modules
-WORKDIR /opt/app
-COPY --from=build /opt/app ./
-
-ENV PATH /opt/node_modules/.bin:$PATH
-ENV NODE_ENV production
-
-RUN chown -R node:node /opt/app
-USER node
+# Exponha a porta 1339 (ou a porta que você deseja)
 EXPOSE 1339
-CMD ["npm", "run", "start"]
+
+# Comando para iniciar o Strapi (substitua pelo seu comando Strapi)
+CMD ["yarn", "dev"]
