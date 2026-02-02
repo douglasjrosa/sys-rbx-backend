@@ -122,7 +122,8 @@
       "type": "string"
     },
     "tablecalc": {
-      "type": "string"
+      "type": "string",
+      "default": "0.30"
     },
     "maxPg": {
       "type": "string"
@@ -255,6 +256,12 @@
     },
     "expiresIn": {
       "type": "date"
+    },
+    "produtos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::produto.produto",
+      "mappedBy": "empresa"
     }
   }
 }

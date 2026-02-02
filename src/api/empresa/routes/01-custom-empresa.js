@@ -24,5 +24,14 @@ module.exports = {
 				middlewares: [],
 			},
 		},
+		{
+			method: 'GET',
+			path: '/update-tablecalc-all',
+			handler: 'api::empresa.empresa.UpdateTableCalc',
+			config: {
+				policies: [],
+				middlewares: [],
+			},
+		},
 	],
 }

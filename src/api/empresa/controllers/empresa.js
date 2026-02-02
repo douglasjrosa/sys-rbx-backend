@@ -664,4 +664,160 @@ module.exports = createCoreController( 'api::empresa.empresa', ( { strapi } ) =>
 			ctx.throw( 400, error )
 		}
 	},
+	async UpdateTableCalc ( ctx )
+	{
+		try
+		{
+			const { limit = 50, start = 0 } = ctx.query
+			
+			// Get total count once to help frontend manage progress
+			const totalCount = await strapi.entityService.count( 'api::empresa.empresa' )
+
+			const companies = await strapi.entityService.findMany( 'api::empresa.empresa', {
+				fields: [ 'id', 'nome', 'tablecalc' ],
+				populate: {
+					businesses: {
+						fields: [ 'etapa', 'andamento', 'date_conclucao', 'updatedAt' ],
+						populate: {
+							pedidos: {
+								fields: [ 'itens' ],
+							}
+						}
+					}
+				},
+				limit: parseInt( limit ),
+				start: parseInt( start )
+			} )
+
+			const marginTableMap = [
+				{ value: 0.35, name: 'Balcão' },
+				{ value: 0.30, name: 'Vip' },
+				{ value: 0.26, name: 'Bronze' },
+				{ value: 0.22, name: 'Prata' },
+				{ value: 0.18, name: 'Ouro' },
+				{ value: 0.15, name: 'Platinum' },
+				{ value: 0.12, name: 'Estratégico' }
+			]
+
+			const getTableName = ( val ) =>
+			{
+				const numericVal = parseFloat( val )
+				if ( isNaN( numericVal ) ) return 'N/A'
+				const exact = marginTableMap.find( m => Math.abs( m.value - numericVal ) < 0.001 )
+				if ( exact ) return exact.name
+
+				const sorted = [ ...marginTableMap ].sort( ( a, b ) => b.value - a.value )
+				const lower = sorted.find( m => m.value < numericVal )
+				return lower ? lower.name + '+' : 'Estratégico-'
+			}
+
+			const margins = marginTableMap.map( m => m.value )
+			const results = []
+
+			for ( const company of companies )
+			{
+				const businesses = company.businesses || []
+				let selectedBusiness = null
+				let statusType = 'Null'
+				let businessDate = 'N/A'
+
+				const wonBusinesses = businesses
+					.filter( b => b.etapa === 6 && b.andamento === 5 )
+					.sort( ( a, b ) =>
+					{
+						const da = a.date_conclucao ? new Date( a.date_conclucao ).getTime() : 0
+						const db = b.date_conclucao ? new Date( b.date_conclucao ).getTime() : 0
+						return db - da
+					} )
+
+				if ( wonBusinesses.length > 0 )
+				{
+					selectedBusiness = wonBusinesses[ 0 ]
+					statusType = 'Ganho'
+					businessDate = selectedBusiness.date_conclucao || selectedBusiness.updatedAt
+				} else
+				{
+					const lostBusinesses = businesses
+						.filter( b => b.andamento === 1 )
+						.sort( ( a, b ) =>
+						{
+							const da = new Date( a.updatedAt ).getTime()
+							const db = new Date( b.updatedAt ).getTime()
+							return db - da
+						} )
+					if ( lostBusinesses.length > 0 )
+					{
+						selectedBusiness = lostBusinesses[ 0 ]
+						statusType = 'Perdido'
+						businessDate = selectedBusiness.updatedAt
+					}
+				}
+
+				let newTableCalcValue = 0.30 // Default Vip
+				let previousMarginFloat = parseFloat( company.tablecalc ) || 0.30
+
+				if ( selectedBusiness )
+				{
+					const pedidos = selectedBusiness.pedidos || []
+					const allItens = pedidos.flatMap( p => p.itens || [] ).filter( i => i && i.tabela != null )
+
+					if ( allItens.length > 0 )
+					{
+						const tabelaValues = allItens.map( i => parseFloat( i.tabela ) ).filter( v => !isNaN( v ) )
+						if ( tabelaValues.length > 0 )
+						{
+							const maxTabela = Math.max( ...tabelaValues )
+							previousMarginFloat = maxTabela
+
+							if ( statusType === 'Ganho' )
+							{
+								const possible = margins.filter( m => m >= maxTabela - 0.001 )
+								newTableCalcValue = possible.length > 0 ? Math.min( ...possible ) : margins[ 0 ]
+							} else
+							{
+								const sorted = [ ...margins ].sort( ( a, b ) => b - a )
+								const exactIndex = sorted.findIndex( m => Math.abs( m - maxTabela ) < 0.001 )
+								if ( exactIndex !== -1 )
+								{
+									newTableCalcValue = exactIndex + 1 < sorted.length ? sorted[ exactIndex + 1 ] : sorted[ exactIndex ]
+								} else
+								{
+									const lower = sorted.find( m => m < maxTabela )
+									newTableCalcValue = lower !== undefined ? lower : sorted[ sorted.length - 1 ]
+								}
+							}
+						}
+					}
+				}
+
+				const newTableCalc = newTableCalcValue.toFixed( 2 )
+
+				if ( String( company.tablecalc ) !== newTableCalc )
+				{
+					await strapi.entityService.update( 'api::empresa.empresa', company.id, {
+						data: { tablecalc: newTableCalc }
+					} )
+					results.push( {
+						id: company.id,
+						nome: company.nome,
+						old: company.tablecalc,
+						new: newTableCalc,
+						status: statusType
+					} )
+				}
+			}
+
+			ctx.body = {
+				success: true,
+				total: companies.length,
+				totalCount,
+				updated: results.length,
+				details: results
+			}
+		} catch ( error )
+		{
+			strapi.log.error( error )
+			ctx.throw( 400, error )
+		}
+	},
 } ) )

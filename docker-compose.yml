@@ -1,27 +1,47 @@
-version: '3'
+version: '3.8'
+
 services:
-  strapiVendas:
+  db:
+    container_name: strapi_db
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: strapi
+      MYSQL_USER: strapi_user
+      MYSQL_PASSWORD: strapi_password
+      MYSQL_ROOT_PASSWORD: root_password
+    ports:
+      - '3306:3306'
+    volumes:
+      - strapi_db_data:/var/lib/mysql
+
+  strapi:
     container_name: strapi
     build: .
     image: strapi:latest
     restart: always
     env_file: .env
     environment:
-      DATABASE_CLIENT: ${DATABASE_CLIENT}
-      DATABASE_PORT: ${DATABASE_PORT}
-      DATABASE_NAME: ${DATABASE_NAME}
-      DATABASE_USERNAME: ${DATABASE_USERNAME}
-      DATABASE_PASSWORD: ${DATABASE_PASSWORD}
-      JWT_SECRET: ${JWT_SECRET}
-      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
-      APP_KEYS: ${APP_KEYS}
-      NODE_ENV: ${NODE_ENV}
-      URL: ${URL}
+      DATABASE_CLIENT: mysql
+      DATABASE_HOST: db # Nome do serviço definido acima
+      DATABASE_PORT: 3306
+      DATABASE_NAME: strapi
+      DATABASE_USERNAME: strapi_user
+      DATABASE_PASSWORD: strapi_password
+      NODE_ENV: development
+      CHOKIDAR_USEPOLLING: 'true'
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
+      - ./rbx-core:/opt/app/rbx-core
+      - ./package.json:/opt/app/package.json
+      - ./yarn.lock:/opt/app/yarn.lock
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     ports:
       - '1339:1339'
+    depends_on:
+      - db
+
+volumes:
+  strapi_db_data:

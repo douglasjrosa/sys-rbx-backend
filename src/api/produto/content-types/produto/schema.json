@@ -38,6 +38,33 @@
     },
     "custoMp": {
       "type": "decimal"
+    },
+    "codigo": {
+      "type": "string"
+    },
+    "lastChange": {
+      "type": "string"
+    },
+    "ncm": {
+      "type": "string"
+    },
+    "titulo": {
+      "type": "string"
+    },
+    "tablecalc": {
+      "type": "decimal"
+    },
+    "pesoCx": {
+      "type": "decimal"
+    },
+    "lastUser": {
+      "type": "string"
+    },
+    "empresa": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "produtos"
     }
   }
 }
