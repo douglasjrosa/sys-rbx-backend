@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-02-02T02:30:08.778Z"
+    "x-generation-date": "2026-02-17T21:23:59.045Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -1740,9 +1740,6 @@
                 ],
                 "example": "string or id"
               },
-              "flag": {
-                "type": "string"
-              },
               "vendedor_name": {
                 "type": "string"
               }
@@ -3070,9 +3067,6 @@
                                                                                             }
                                                                                           }
                                                                                         }
-                                                                                      },
-                                                                                      "flag": {
-                                                                                        "type": "string"
                                                                                       },
                                                                                       "vendedor_name": {
                                                                                         "type": "string"
@@ -4573,9 +4567,6 @@
               }
             }
           },
-          "flag": {
-            "type": "string"
-          },
           "vendedor_name": {
             "type": "string"
           },
@@ -5759,9 +5750,6 @@
                                                                     }
                                                                   }
                                                                 }
-                                                              },
-                                                              "flag": {
-                                                                "type": "string"
                                                               },
                                                               "vendedor_name": {
                                                                 "type": "string"
@@ -10012,9 +10000,6 @@
                                                                   }
                                                                 }
                                                               },
-                                                              "flag": {
-                                                                "type": "string"
-                                                              },
                                                               "vendedor_name": {
                                                                 "type": "string"
                                                               },
@@ -13250,9 +13235,6 @@
                                                                               }
                                                                             }
                                                                           }
-                                                                        },
-                                                                        "flag": {
-                                                                          "type": "string"
                                                                         },
                                                                         "vendedor_name": {
                                                                           "type": "string"
@@ -16587,9 +16569,6 @@
                                                                     }
                                                                   }
                                                                 }
-                                                              },
-                                                              "flag": {
-                                                                "type": "string"
                                                               },
                                                               "vendedor_name": {
                                                                 "type": "string"
@@ -22463,9 +22442,6 @@
                           }
                         }
                       },
-                      "flag": {
-                        "type": "string"
-                      },
                       "vendedor_name": {
                         "type": "string"
                       },
@@ -23703,9 +23679,6 @@
                                                                               }
                                                                             }
                                                                           }
-                                                                        },
-                                                                        "flag": {
-                                                                          "type": "string"
                                                                         },
                                                                         "vendedor_name": {
                                                                           "type": "string"
@@ -26782,9 +26755,6 @@
                                                                               }
                                                                             }
                                                                           },
-                                                                          "flag": {
-                                                                            "type": "string"
-                                                                          },
                                                                           "vendedor_name": {
                                                                             "type": "string"
                                                                           },
@@ -29660,9 +29630,6 @@
                                                                               }
                                                                             }
                                                                           }
-                                                                        },
-                                                                        "flag": {
-                                                                          "type": "string"
                                                                         },
                                                                         "vendedor_name": {
                                                                           "type": "string"
@@ -32625,9 +32592,6 @@
                                                                             }
                                                                           }
                                                                         },
-                                                                        "flag": {
-                                                                          "type": "string"
-                                                                        },
                                                                         "vendedor_name": {
                                                                           "type": "string"
                                                                         },
@@ -35580,9 +35544,6 @@
                                                                     }
                                                                   }
                                                                 }
-                                                              },
-                                                              "flag": {
-                                                                "type": "string"
                                                               },
                                                               "vendedor_name": {
                                                                 "type": "string"
