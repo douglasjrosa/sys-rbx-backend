@@ -8,6 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 45
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -18,10 +19,15 @@ jobs:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          command_timeout: 40m
           script: |
             cd /var/www/html/vendas/backend/
-            git clone https://github.com/douglasjrosa/sys-rbx-backend.git temp_repo || (cd temp_repo && git pull)
-            cp -r temp_repo/* .
+            if [ -d temp_repo ]; then
+              cd temp_repo && git pull && cd ..
+            else
+              git clone https://github.com/douglasjrosa/sys-rbx-backend.git temp_repo
+            fi
+            cp -r temp_repo/. .
             rm -rf temp_repo
             docker compose -f docker-compose.prod.yml up -d --build
             docker image prune -f

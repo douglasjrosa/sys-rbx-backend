@@ -1,14 +1,14 @@
-# Estágio 1: Build
-FROM node:18-slim as build
+# Stage 1: Build
+FROM node:18-slim AS build
 RUN apt-get update && apt-get install -y build-essential pkg-config python3 libvips-dev git && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt/
 COPY package.json package-lock.json ./
-RUN npm install --production=false
+RUN npm ci
 WORKDIR /opt/app
 COPY . .
 RUN npm run build
 
-# Estágio 2: Runtime
+# Stage 2: Runtime
 FROM node:18-slim
 RUN apt-get update && apt-get install -y libvips-dev && rm -rf /var/lib/apt/lists/*
 WORKDIR /opt/

@@ -5,3 +5,10 @@ node_modules
 build
 dist
 .env
+.env.*
+.github
+*.md
+.editorconfig
+.strapi-updater.json
+Dockerfile
+docker-compose*.yml
