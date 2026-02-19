@@ -64,11 +64,15 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 	{
 		try
 		{
-			const { empresaId, produtos, deleteMissing } = ctx.request.body
+			const { empresaId, produtos, deleteMissing, keepProdIds } = ctx.request.body
 
-			if ( !empresaId || !produtos || !Array.isArray( produtos ) )
+			if ( !empresaId )
 			{
-				return ctx.badRequest( 'empresaId and produtos array are required' )
+				return ctx.badRequest( 'empresaId is required' )
+			}
+			if ( !deleteMissing && ( !produtos || !Array.isArray( produtos ) ) )
+			{
+				return ctx.badRequest( 'produtos array is required when not doing deleteMissing cleanup' )
 			}
 
 			// Buscar a tabela de cálculo da empresa no Strapi
@@ -83,9 +87,9 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 				details: []
 			}
 
-			const syncedProdIds = []
+			const syncedProdIds = Array.isArray( keepProdIds ) ? keepProdIds.map( id => parseInt( id ) ) : []
 
-			for ( const prod of produtos )
+			for ( const prod of ( produtos || [] ) )
 			{
 				try
 				{
