@@ -664,6 +664,91 @@ module.exports = createCoreController( 'api::empresa.empresa', ( { strapi } ) =>
 			ctx.throw( 400, error )
 		}
 	},
+
+	/**
+	 * GetEmpresaOutrosVendedores: companies assigned to other vendors (not the current user).
+	 * Used by vendors to see that a company exists but belongs to someone else.
+	 * Returns minimal fields: nome, CNAE, expiresIn, cidade.
+	 */
+	async GetEmpresaOutrosVendedores ( ctx )
+	{
+		try
+		{
+			const uid = normalizeUserId( ctx.query.userId )
+			if ( uid == null || uid === '' )
+			{
+				return ctx.badRequest( 'userId is required' )
+			}
+
+			const { page = 1, pageSize = 50 } = ctx.query
+			const filtroTexto = ctx.query.filtroTexto || ''
+			const filtroCNAE = ctx.query.filtroCNAE || ''
+			const filtroCidade = ctx.query.filtroCidade || ''
+
+			const filters = {
+				$and: [
+					{ user: { id: { $notNull: true } } },
+					{ user: { id: { $ne: uid } } },
+				],
+			}
+			if ( filtroTexto && String( filtroTexto ).trim() !== '' )
+			{
+				const isCNPJ = isNumericText( filtroTexto )
+				if ( isCNPJ )
+				{
+					filters.CNPJ = { $containsi: String( filtroTexto ).trim() }
+				} else
+				{
+					filters.$or = [
+						{ nome: { $containsi: filtroTexto } },
+						{ fantasia: { $containsi: filtroTexto } },
+						{ CNPJ: { $containsi: filtroTexto } },
+					]
+				}
+			}
+			if ( filtroCNAE && String( filtroCNAE ).trim() !== '' )
+			{
+				filters.CNAE = { $containsi: filtroCNAE }
+			}
+			if ( filtroCidade && String( filtroCidade ).trim() !== '' )
+			{
+				filters.cidade = { $containsi: String( filtroCidade ).trim() }
+			}
+
+			const queryParams = {
+				fields: [ 'nome', 'CNAE', 'expiresIn', 'cidade' ],
+				populate: { user: { fields: [ 'username' ] } },
+				filters,
+				pagination: { page: parseInt( page, 10 ) || 1, pageSize: parseInt( pageSize, 10 ) || 50 },
+			}
+
+			const result = await strapi.entityService.findPage( 'api::empresa.empresa', queryParams )
+			const rawData = result.data ?? result.results ?? []
+			const items = rawData.map( ( emp ) => {
+				const user = emp.user ?? emp.attributes?.user
+				const vendedor = user?.username ?? user?.data?.username ?? ''
+				return {
+					id: emp.id,
+					attributes: {
+						nome: emp.nome ?? emp.attributes?.nome ?? '',
+						CNAE: emp.CNAE ?? emp.attributes?.CNAE ?? '',
+						expiresIn: emp.expiresIn ?? emp.attributes?.expiresIn ?? null,
+						cidade: emp.cidade ?? emp.attributes?.cidade ?? '',
+						vendedor,
+					},
+				}
+			} )
+
+			ctx.body = {
+				data: items,
+				meta: result.meta ?? { pagination: { page: parseInt( page, 10 ), pageSize: parseInt( pageSize, 10 ), pageCount: 1, total: items.length } },
+			}
+		} catch ( error )
+		{
+			ctx.throw( 400, error )
+		}
+	},
+
 	async UpdateTableCalc ( ctx )
 	{
 		try

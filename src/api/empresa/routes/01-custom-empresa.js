@@ -26,6 +26,15 @@ module.exports = {
 		},
 		{
 			method: 'GET',
+			path: '/empresas/outros-vendedores',
+			handler: 'api::empresa.empresa.GetEmpresaOutrosVendedores',
+			config: {
+				policies: [],
+				middlewares: [],
+			},
+		},
+		{
+			method: 'GET',
 			path: '/update-tablecalc-all',
 			handler: 'api::empresa.empresa.UpdateTableCalc',
 			config: {
