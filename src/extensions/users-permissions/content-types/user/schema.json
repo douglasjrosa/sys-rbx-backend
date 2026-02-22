@@ -154,6 +154,12 @@
       "relation": "oneToMany",
       "target": "api::config-venda.config-venda",
       "mappedBy": "user"
+    },
+    "demandas": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::demanda.demanda",
+      "mappedBy": "user"
     }
   }
 }

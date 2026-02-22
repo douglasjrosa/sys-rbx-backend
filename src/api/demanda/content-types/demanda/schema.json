@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demandas",
+  "info": {
+    "singularName": "demanda",
+    "pluralName": "demandas",
+    "displayName": "demanda",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "titulo": {
+      "type": "string",
+      "maxLength": 50,
+      "required": true
+    },
+    "content": {
+      "type": "json"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Na fila",
+        "Em andamento",
+        "Concluido"
+      ],
+      "default": "Na fila"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Suporte comercial",
+        "Suporte tecnico"
+      ]
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "demandas"
+    },
+    "viewers": {
+      "type": "json"
+    }
+  }
+}
