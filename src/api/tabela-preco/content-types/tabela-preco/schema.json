@@ -4,26 +4,32 @@
   "info": {
     "singularName": "tabela-preco",
     "pluralName": "tabela-precos",
-    "displayName": "tabela-preco",
-    "description": ""
+    "displayName": "Tabela Preco",
+    "description": "Price table for companies"
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
+    "obs": {
+      "type": "text"
+    },
     "itens": {
-      "type": "json"
+      "type": "json",
+      "required": false
     },
     "empresa": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::empresa.empresa"
+      "target": "api::empresa.empresa",
+      "required": true
     },
     "user": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "plugin::users-permissions.user"
+      "target": "plugin::users-permissions.user",
+      "required": false
     }
   }
 }
