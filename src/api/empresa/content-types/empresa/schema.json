@@ -179,6 +179,13 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "empresas"
     },
+    "vendedores_emitente": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "empresa_emitente",
+      "description": "Sellers that use this company as emitter"
+    },
     "Pvendas": {
       "type": "relation",
       "relation": "oneToMany",

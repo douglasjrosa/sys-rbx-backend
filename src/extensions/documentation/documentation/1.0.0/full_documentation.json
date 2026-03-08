@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-02-22T17:35:25.971Z"
+    "x-generation-date": "2026-03-08T17:35:38.831Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3243,6 +3243,29 @@
                                                             "nome": {
                                                               "type": "string"
                                                             },
+                                                            "sobrenome": {
+                                                              "type": "string"
+                                                            },
+                                                            "cpf": {
+                                                              "type": "string"
+                                                            },
+                                                            "empresa_emitente": {
+                                                              "type": "object",
+                                                              "properties": {
+                                                                "data": {
+                                                                  "type": "object",
+                                                                  "properties": {
+                                                                    "id": {
+                                                                      "type": "number"
+                                                                    },
+                                                                    "attributes": {
+                                                                      "type": "object",
+                                                                      "properties": {}
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            },
                                                             "businesses": {
                                                               "type": "object",
                                                               "properties": {
@@ -3526,7 +3549,7 @@
                                                             "record": {
                                                               "type": "string"
                                                             },
-                                                            "config_vendas": {
+                                                            "config_comissaos": {
                                                               "type": "object",
                                                               "properties": {
                                                                 "data": {
@@ -3546,48 +3569,20 @@
                                                                           "mes": {
                                                                             "type": "string"
                                                                           },
-                                                                          "meta_decendio": {
-                                                                            "type": "string"
+                                                                          "meta": {
+                                                                            "type": "number",
+                                                                            "format": "float"
                                                                           },
                                                                           "salario_fixo": {
-                                                                            "type": "string"
+                                                                            "type": "number",
+                                                                            "format": "float"
                                                                           },
-                                                                          "ajuda_de_custo": {
-                                                                            "type": "string"
+                                                                          "base_rate": {
+                                                                            "type": "number",
+                                                                            "format": "float"
                                                                           },
-                                                                          "premio_decendio_1": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "premio_decendio_2": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "premio_decendio_3": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "premio_meta_do_mes": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "premio_recorde_de_vendas": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "entradas_atendimento": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "comisao_atendimento": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "entradas_venda": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "comissao_venda": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "entradas_contas": {
-                                                                            "type": "string"
-                                                                          },
-                                                                          "comissao_conta": {
-                                                                            "type": "string"
-                                                                          },
+                                                                          "milestones": {},
+                                                                          "deductions": {},
                                                                           "vendedor": {
                                                                             "type": "string"
                                                                           },
@@ -3608,18 +3603,11 @@
                                                                               }
                                                                             }
                                                                           },
-                                                                          "record": {
-                                                                            "type": "string"
-                                                                          },
                                                                           "createdAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
                                                                           },
                                                                           "updatedAt": {
-                                                                            "type": "string",
-                                                                            "format": "date-time"
-                                                                          },
-                                                                          "publishedAt": {
                                                                             "type": "string",
                                                                             "format": "date-time"
                                                                           },
@@ -3916,6 +3904,26 @@
                                             "attributes": {
                                               "type": "object",
                                               "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
                                             }
                                           }
                                         }
@@ -4744,13 +4752,19 @@
           }
         }
       },
-      "ConfigVendaRequest": {
+      "ConfigComissaoRequest": {
         "type": "object",
         "required": [
           "data"
         ],
         "properties": {
           "data": {
+            "required": [
+              "ano",
+              "mes",
+              "meta",
+              "salario_fixo"
+            ],
             "type": "object",
             "properties": {
               "ano": {
@@ -4759,48 +4773,20 @@
               "mes": {
                 "type": "string"
               },
-              "meta_decendio": {
-                "type": "string"
+              "meta": {
+                "type": "number",
+                "format": "float"
               },
               "salario_fixo": {
-                "type": "string"
+                "type": "number",
+                "format": "float"
               },
-              "ajuda_de_custo": {
-                "type": "string"
+              "base_rate": {
+                "type": "number",
+                "format": "float"
               },
-              "premio_decendio_1": {
-                "type": "string"
-              },
-              "premio_decendio_2": {
-                "type": "string"
-              },
-              "premio_decendio_3": {
-                "type": "string"
-              },
-              "premio_meta_do_mes": {
-                "type": "string"
-              },
-              "premio_recorde_de_vendas": {
-                "type": "string"
-              },
-              "entradas_atendimento": {
-                "type": "string"
-              },
-              "comisao_atendimento": {
-                "type": "string"
-              },
-              "entradas_venda": {
-                "type": "string"
-              },
-              "comissao_venda": {
-                "type": "string"
-              },
-              "entradas_contas": {
-                "type": "string"
-              },
-              "comissao_conta": {
-                "type": "string"
-              },
+              "milestones": {},
+              "deductions": {},
               "vendedor": {
                 "type": "string"
               },
@@ -4814,32 +4800,29 @@
                   }
                 ],
                 "example": "string or id"
-              },
-              "record": {
-                "type": "string"
               }
             }
           }
         }
       },
-      "ConfigVendaListResponseDataItem": {
+      "ConfigComissaoListResponseDataItem": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/ConfigVenda"
+            "$ref": "#/components/schemas/ConfigComissao"
           }
         }
       },
-      "ConfigVendaListResponse": {
+      "ConfigComissaoListResponse": {
         "type": "object",
         "properties": {
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ConfigVendaListResponseDataItem"
+              "$ref": "#/components/schemas/ConfigComissaoListResponseDataItem"
             }
           },
           "meta": {
@@ -4868,8 +4851,14 @@
           }
         }
       },
-      "ConfigVenda": {
+      "ConfigComissao": {
         "type": "object",
+        "required": [
+          "ano",
+          "mes",
+          "meta",
+          "salario_fixo"
+        ],
         "properties": {
           "ano": {
             "type": "string"
@@ -4877,48 +4866,20 @@
           "mes": {
             "type": "string"
           },
-          "meta_decendio": {
-            "type": "string"
+          "meta": {
+            "type": "number",
+            "format": "float"
           },
           "salario_fixo": {
-            "type": "string"
+            "type": "number",
+            "format": "float"
           },
-          "ajuda_de_custo": {
-            "type": "string"
+          "base_rate": {
+            "type": "number",
+            "format": "float"
           },
-          "premio_decendio_1": {
-            "type": "string"
-          },
-          "premio_decendio_2": {
-            "type": "string"
-          },
-          "premio_decendio_3": {
-            "type": "string"
-          },
-          "premio_meta_do_mes": {
-            "type": "string"
-          },
-          "premio_recorde_de_vendas": {
-            "type": "string"
-          },
-          "entradas_atendimento": {
-            "type": "string"
-          },
-          "comisao_atendimento": {
-            "type": "string"
-          },
-          "entradas_venda": {
-            "type": "string"
-          },
-          "comissao_venda": {
-            "type": "string"
-          },
-          "entradas_contas": {
-            "type": "string"
-          },
-          "comissao_conta": {
-            "type": "string"
-          },
+          "milestones": {},
+          "deductions": {},
           "vendedor": {
             "type": "string"
           },
@@ -6066,6 +6027,26 @@
                                             "attributes": {
                                               "type": "object",
                                               "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
                                             }
                                           }
                                         }
@@ -7360,6 +7341,29 @@
                       "nome": {
                         "type": "string"
                       },
+                      "sobrenome": {
+                        "type": "string"
+                      },
+                      "cpf": {
+                        "type": "string"
+                      },
+                      "empresa_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
                       "businesses": {
                         "type": "object",
                         "properties": {
@@ -7429,7 +7433,7 @@
                       "record": {
                         "type": "string"
                       },
-                      "config_vendas": {
+                      "config_comissaos": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -7449,48 +7453,20 @@
                                     "mes": {
                                       "type": "string"
                                     },
-                                    "meta_decendio": {
-                                      "type": "string"
+                                    "meta": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "salario_fixo": {
-                                      "type": "string"
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "ajuda_de_custo": {
-                                      "type": "string"
+                                    "base_rate": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "premio_decendio_1": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_2": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_3": {
-                                      "type": "string"
-                                    },
-                                    "premio_meta_do_mes": {
-                                      "type": "string"
-                                    },
-                                    "premio_recorde_de_vendas": {
-                                      "type": "string"
-                                    },
-                                    "entradas_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "comisao_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "entradas_venda": {
-                                      "type": "string"
-                                    },
-                                    "comissao_venda": {
-                                      "type": "string"
-                                    },
-                                    "entradas_contas": {
-                                      "type": "string"
-                                    },
-                                    "comissao_conta": {
-                                      "type": "string"
-                                    },
+                                    "milestones": {},
+                                    "deductions": {},
                                     "vendedor": {
                                       "type": "string"
                                     },
@@ -7511,18 +7487,11 @@
                                         }
                                       }
                                     },
-                                    "record": {
-                                      "type": "string"
-                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
                                     "updatedAt": {
-                                      "type": "string",
-                                      "format": "date-time"
-                                    },
-                                    "publishedAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
@@ -7719,18 +7688,11 @@
               }
             }
           },
-          "record": {
-            "type": "string"
-          },
           "createdAt": {
             "type": "string",
             "format": "date-time"
           },
           "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "publishedAt": {
             "type": "string",
             "format": "date-time"
           },
@@ -7770,22 +7732,22 @@
           }
         }
       },
-      "ConfigVendaResponseDataObject": {
+      "ConfigComissaoResponseDataObject": {
         "type": "object",
         "properties": {
           "id": {
             "type": "number"
           },
           "attributes": {
-            "$ref": "#/components/schemas/ConfigVenda"
+            "$ref": "#/components/schemas/ConfigComissao"
           }
         }
       },
-      "ConfigVendaResponse": {
+      "ConfigComissaoResponse": {
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ConfigVendaResponseDataObject"
+            "$ref": "#/components/schemas/ConfigComissaoResponseDataObject"
           },
           "meta": {
             "type": "object"
@@ -9059,6 +9021,26 @@
                                         }
                                       }
                                     },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "Pvendas": {
                                       "type": "object",
                                       "properties": {
@@ -10348,6 +10330,29 @@
                       "nome": {
                         "type": "string"
                       },
+                      "sobrenome": {
+                        "type": "string"
+                      },
+                      "cpf": {
+                        "type": "string"
+                      },
+                      "empresa_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
                       "businesses": {
                         "type": "object",
                         "properties": {
@@ -10417,7 +10422,7 @@
                       "record": {
                         "type": "string"
                       },
-                      "config_vendas": {
+                      "config_comissaos": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -10437,48 +10442,20 @@
                                     "mes": {
                                       "type": "string"
                                     },
-                                    "meta_decendio": {
-                                      "type": "string"
+                                    "meta": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "salario_fixo": {
-                                      "type": "string"
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "ajuda_de_custo": {
-                                      "type": "string"
+                                    "base_rate": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "premio_decendio_1": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_2": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_3": {
-                                      "type": "string"
-                                    },
-                                    "premio_meta_do_mes": {
-                                      "type": "string"
-                                    },
-                                    "premio_recorde_de_vendas": {
-                                      "type": "string"
-                                    },
-                                    "entradas_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "comisao_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "entradas_venda": {
-                                      "type": "string"
-                                    },
-                                    "comissao_venda": {
-                                      "type": "string"
-                                    },
-                                    "entradas_contas": {
-                                      "type": "string"
-                                    },
-                                    "comissao_conta": {
-                                      "type": "string"
-                                    },
+                                    "milestones": {},
+                                    "deductions": {},
                                     "vendedor": {
                                       "type": "string"
                                     },
@@ -10499,18 +10476,11 @@
                                         }
                                       }
                                     },
-                                    "record": {
-                                      "type": "string"
-                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
                                     "updatedAt": {
-                                      "type": "string",
-                                      "format": "date-time"
-                                    },
-                                    "publishedAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
@@ -10967,6 +10937,20 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "vendedores_emitente": {
+                "type": "array",
+                "items": {
+                  "oneOf": [
+                    {
+                      "type": "integer"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
+                  "example": "string or id"
+                }
               },
               "Pvendas": {
                 "type": "array",
@@ -12725,6 +12709,29 @@
                                                                           "nome": {
                                                                             "type": "string"
                                                                           },
+                                                                          "sobrenome": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "cpf": {
+                                                                            "type": "string"
+                                                                          },
+                                                                          "empresa_emitente": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                              "data": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                  "id": {
+                                                                                    "type": "number"
+                                                                                  },
+                                                                                  "attributes": {
+                                                                                    "type": "object",
+                                                                                    "properties": {}
+                                                                                  }
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          },
                                                                           "businesses": {
                                                                             "type": "object",
                                                                             "properties": {
@@ -13008,7 +13015,7 @@
                                                                           "record": {
                                                                             "type": "string"
                                                                           },
-                                                                          "config_vendas": {
+                                                                          "config_comissaos": {
                                                                             "type": "object",
                                                                             "properties": {
                                                                               "data": {
@@ -13028,48 +13035,20 @@
                                                                                         "mes": {
                                                                                           "type": "string"
                                                                                         },
-                                                                                        "meta_decendio": {
-                                                                                          "type": "string"
+                                                                                        "meta": {
+                                                                                          "type": "number",
+                                                                                          "format": "float"
                                                                                         },
                                                                                         "salario_fixo": {
-                                                                                          "type": "string"
+                                                                                          "type": "number",
+                                                                                          "format": "float"
                                                                                         },
-                                                                                        "ajuda_de_custo": {
-                                                                                          "type": "string"
+                                                                                        "base_rate": {
+                                                                                          "type": "number",
+                                                                                          "format": "float"
                                                                                         },
-                                                                                        "premio_decendio_1": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "premio_decendio_2": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "premio_decendio_3": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "premio_meta_do_mes": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "premio_recorde_de_vendas": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "entradas_atendimento": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "comisao_atendimento": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "entradas_venda": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "comissao_venda": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "entradas_contas": {
-                                                                                          "type": "string"
-                                                                                        },
-                                                                                        "comissao_conta": {
-                                                                                          "type": "string"
-                                                                                        },
+                                                                                        "milestones": {},
+                                                                                        "deductions": {},
                                                                                         "vendedor": {
                                                                                           "type": "string"
                                                                                         },
@@ -13090,18 +13069,11 @@
                                                                                             }
                                                                                           }
                                                                                         },
-                                                                                        "record": {
-                                                                                          "type": "string"
-                                                                                        },
                                                                                         "createdAt": {
                                                                                           "type": "string",
                                                                                           "format": "date-time"
                                                                                         },
                                                                                         "updatedAt": {
-                                                                                          "type": "string",
-                                                                                          "format": "date-time"
-                                                                                        },
-                                                                                        "publishedAt": {
                                                                                           "type": "string",
                                                                                           "format": "date-time"
                                                                                         },
@@ -13509,6 +13481,26 @@
                                             "attributes": {
                                               "type": "object",
                                               "properties": {}
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
                                             }
                                           }
                                         }
@@ -14132,6 +14124,26 @@
                   "attributes": {
                     "type": "object",
                     "properties": {}
+                  }
+                }
+              }
+            }
+          },
+          "vendedores_emitente": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "attributes": {
+                      "type": "object",
+                      "properties": {}
+                    }
                   }
                 }
               }
@@ -17285,6 +17297,29 @@
                                               "nome": {
                                                 "type": "string"
                                               },
+                                              "sobrenome": {
+                                                "type": "string"
+                                              },
+                                              "cpf": {
+                                                "type": "string"
+                                              },
+                                              "empresa_emitente": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "businesses": {
                                                 "type": "object",
                                                 "properties": {
@@ -17568,7 +17603,7 @@
                                               "record": {
                                                 "type": "string"
                                               },
-                                              "config_vendas": {
+                                              "config_comissaos": {
                                                 "type": "object",
                                                 "properties": {
                                                   "data": {
@@ -17588,48 +17623,20 @@
                                                             "mes": {
                                                               "type": "string"
                                                             },
-                                                            "meta_decendio": {
-                                                              "type": "string"
+                                                            "meta": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
                                                             "salario_fixo": {
-                                                              "type": "string"
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "ajuda_de_custo": {
-                                                              "type": "string"
+                                                            "base_rate": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "premio_decendio_1": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_2": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_3": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_meta_do_mes": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_recorde_de_vendas": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "comisao_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_contas": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_conta": {
-                                                              "type": "string"
-                                                            },
+                                                            "milestones": {},
+                                                            "deductions": {},
                                                             "vendedor": {
                                                               "type": "string"
                                                             },
@@ -17650,18 +17657,11 @@
                                                                 }
                                                               }
                                                             },
-                                                            "record": {
-                                                              "type": "string"
-                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
                                                             "updatedAt": {
-                                                              "type": "string",
-                                                              "format": "date-time"
-                                                            },
-                                                            "publishedAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
@@ -17958,6 +17958,26 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "vendedores_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
                               }
                             }
                           }
@@ -20188,6 +20208,26 @@
                                         }
                                       }
                                     },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "Pvendas": {
                                       "type": "object",
                                       "properties": {
@@ -21477,6 +21517,29 @@
                       "nome": {
                         "type": "string"
                       },
+                      "sobrenome": {
+                        "type": "string"
+                      },
+                      "cpf": {
+                        "type": "string"
+                      },
+                      "empresa_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
                       "businesses": {
                         "type": "object",
                         "properties": {
@@ -21546,7 +21609,7 @@
                       "record": {
                         "type": "string"
                       },
-                      "config_vendas": {
+                      "config_comissaos": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -21566,48 +21629,20 @@
                                     "mes": {
                                       "type": "string"
                                     },
-                                    "meta_decendio": {
-                                      "type": "string"
+                                    "meta": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "salario_fixo": {
-                                      "type": "string"
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "ajuda_de_custo": {
-                                      "type": "string"
+                                    "base_rate": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "premio_decendio_1": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_2": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_3": {
-                                      "type": "string"
-                                    },
-                                    "premio_meta_do_mes": {
-                                      "type": "string"
-                                    },
-                                    "premio_recorde_de_vendas": {
-                                      "type": "string"
-                                    },
-                                    "entradas_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "comisao_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "entradas_venda": {
-                                      "type": "string"
-                                    },
-                                    "comissao_venda": {
-                                      "type": "string"
-                                    },
-                                    "entradas_contas": {
-                                      "type": "string"
-                                    },
-                                    "comissao_conta": {
-                                      "type": "string"
-                                    },
+                                    "milestones": {},
+                                    "deductions": {},
                                     "vendedor": {
                                       "type": "string"
                                     },
@@ -21628,18 +21663,11 @@
                                         }
                                       }
                                     },
-                                    "record": {
-                                      "type": "string"
-                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
                                     "updatedAt": {
-                                      "type": "string",
-                                      "format": "date-time"
-                                    },
-                                    "publishedAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
@@ -24624,6 +24652,29 @@
                                                                         "nome": {
                                                                           "type": "string"
                                                                         },
+                                                                        "sobrenome": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "cpf": {
+                                                                          "type": "string"
+                                                                        },
+                                                                        "empresa_emitente": {
+                                                                          "type": "object",
+                                                                          "properties": {
+                                                                            "data": {
+                                                                              "type": "object",
+                                                                              "properties": {
+                                                                                "id": {
+                                                                                  "type": "number"
+                                                                                },
+                                                                                "attributes": {
+                                                                                  "type": "object",
+                                                                                  "properties": {}
+                                                                                }
+                                                                              }
+                                                                            }
+                                                                          }
+                                                                        },
                                                                         "businesses": {
                                                                           "type": "object",
                                                                           "properties": {
@@ -24907,7 +24958,7 @@
                                                                         "record": {
                                                                           "type": "string"
                                                                         },
-                                                                        "config_vendas": {
+                                                                        "config_comissaos": {
                                                                           "type": "object",
                                                                           "properties": {
                                                                             "data": {
@@ -24927,48 +24978,20 @@
                                                                                       "mes": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "meta_decendio": {
-                                                                                        "type": "string"
+                                                                                      "meta": {
+                                                                                        "type": "number",
+                                                                                        "format": "float"
                                                                                       },
                                                                                       "salario_fixo": {
-                                                                                        "type": "string"
+                                                                                        "type": "number",
+                                                                                        "format": "float"
                                                                                       },
-                                                                                      "ajuda_de_custo": {
-                                                                                        "type": "string"
+                                                                                      "base_rate": {
+                                                                                        "type": "number",
+                                                                                        "format": "float"
                                                                                       },
-                                                                                      "premio_decendio_1": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "premio_decendio_2": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "premio_decendio_3": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "premio_meta_do_mes": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "premio_recorde_de_vendas": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "entradas_atendimento": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "comisao_atendimento": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "entradas_venda": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "comissao_venda": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "entradas_contas": {
-                                                                                        "type": "string"
-                                                                                      },
-                                                                                      "comissao_conta": {
-                                                                                        "type": "string"
-                                                                                      },
+                                                                                      "milestones": {},
+                                                                                      "deductions": {},
                                                                                       "vendedor": {
                                                                                         "type": "string"
                                                                                       },
@@ -24989,18 +25012,11 @@
                                                                                           }
                                                                                         }
                                                                                       },
-                                                                                      "record": {
-                                                                                        "type": "string"
-                                                                                      },
                                                                                       "createdAt": {
                                                                                         "type": "string",
                                                                                         "format": "date-time"
                                                                                       },
                                                                                       "updatedAt": {
-                                                                                        "type": "string",
-                                                                                        "format": "date-time"
-                                                                                      },
-                                                                                      "publishedAt": {
                                                                                         "type": "string",
                                                                                         "format": "date-time"
                                                                                       },
@@ -25297,6 +25313,26 @@
                                                         "attributes": {
                                                           "type": "object",
                                                           "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
+                                                "vendedores_emitente": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "array",
+                                                      "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                          "id": {
+                                                            "type": "number"
+                                                          },
+                                                          "attributes": {
+                                                            "type": "object",
+                                                            "properties": {}
+                                                          }
                                                         }
                                                       }
                                                     }
@@ -28041,6 +28077,29 @@
                                               "nome": {
                                                 "type": "string"
                                               },
+                                              "sobrenome": {
+                                                "type": "string"
+                                              },
+                                              "cpf": {
+                                                "type": "string"
+                                              },
+                                              "empresa_emitente": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "businesses": {
                                                 "type": "object",
                                                 "properties": {
@@ -28324,7 +28383,7 @@
                                               "record": {
                                                 "type": "string"
                                               },
-                                              "config_vendas": {
+                                              "config_comissaos": {
                                                 "type": "object",
                                                 "properties": {
                                                   "data": {
@@ -28344,48 +28403,20 @@
                                                             "mes": {
                                                               "type": "string"
                                                             },
-                                                            "meta_decendio": {
-                                                              "type": "string"
+                                                            "meta": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
                                                             "salario_fixo": {
-                                                              "type": "string"
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "ajuda_de_custo": {
-                                                              "type": "string"
+                                                            "base_rate": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "premio_decendio_1": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_2": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_3": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_meta_do_mes": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_recorde_de_vendas": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "comisao_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_contas": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_conta": {
-                                                              "type": "string"
-                                                            },
+                                                            "milestones": {},
+                                                            "deductions": {},
                                                             "vendedor": {
                                                               "type": "string"
                                                             },
@@ -28406,18 +28437,11 @@
                                                                 }
                                                               }
                                                             },
-                                                            "record": {
-                                                              "type": "string"
-                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
                                                             "updatedAt": {
-                                                              "type": "string",
-                                                              "format": "date-time"
-                                                            },
-                                                            "publishedAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
@@ -28714,6 +28738,26 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "vendedores_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
                               }
                             }
                           }
@@ -31220,6 +31264,29 @@
                                                 "nome": {
                                                   "type": "string"
                                                 },
+                                                "sobrenome": {
+                                                  "type": "string"
+                                                },
+                                                "cpf": {
+                                                  "type": "string"
+                                                },
+                                                "empresa_emitente": {
+                                                  "type": "object",
+                                                  "properties": {
+                                                    "data": {
+                                                      "type": "object",
+                                                      "properties": {
+                                                        "id": {
+                                                          "type": "number"
+                                                        },
+                                                        "attributes": {
+                                                          "type": "object",
+                                                          "properties": {}
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
                                                 "businesses": {
                                                   "type": "object",
                                                   "properties": {
@@ -31503,7 +31570,7 @@
                                                 "record": {
                                                   "type": "string"
                                                 },
-                                                "config_vendas": {
+                                                "config_comissaos": {
                                                   "type": "object",
                                                   "properties": {
                                                     "data": {
@@ -31523,48 +31590,20 @@
                                                               "mes": {
                                                                 "type": "string"
                                                               },
-                                                              "meta_decendio": {
-                                                                "type": "string"
+                                                              "meta": {
+                                                                "type": "number",
+                                                                "format": "float"
                                                               },
                                                               "salario_fixo": {
-                                                                "type": "string"
+                                                                "type": "number",
+                                                                "format": "float"
                                                               },
-                                                              "ajuda_de_custo": {
-                                                                "type": "string"
+                                                              "base_rate": {
+                                                                "type": "number",
+                                                                "format": "float"
                                                               },
-                                                              "premio_decendio_1": {
-                                                                "type": "string"
-                                                              },
-                                                              "premio_decendio_2": {
-                                                                "type": "string"
-                                                              },
-                                                              "premio_decendio_3": {
-                                                                "type": "string"
-                                                              },
-                                                              "premio_meta_do_mes": {
-                                                                "type": "string"
-                                                              },
-                                                              "premio_recorde_de_vendas": {
-                                                                "type": "string"
-                                                              },
-                                                              "entradas_atendimento": {
-                                                                "type": "string"
-                                                              },
-                                                              "comisao_atendimento": {
-                                                                "type": "string"
-                                                              },
-                                                              "entradas_venda": {
-                                                                "type": "string"
-                                                              },
-                                                              "comissao_venda": {
-                                                                "type": "string"
-                                                              },
-                                                              "entradas_contas": {
-                                                                "type": "string"
-                                                              },
-                                                              "comissao_conta": {
-                                                                "type": "string"
-                                                              },
+                                                              "milestones": {},
+                                                              "deductions": {},
                                                               "vendedor": {
                                                                 "type": "string"
                                                               },
@@ -31585,18 +31624,11 @@
                                                                   }
                                                                 }
                                                               },
-                                                              "record": {
-                                                                "type": "string"
-                                                              },
                                                               "createdAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
                                                               },
                                                               "updatedAt": {
-                                                                "type": "string",
-                                                                "format": "date-time"
-                                                              },
-                                                              "publishedAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
                                                               },
@@ -31893,6 +31925,26 @@
                                 "attributes": {
                                   "type": "object",
                                   "properties": {}
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "vendedores_emitente": {
+                          "type": "object",
+                          "properties": {
+                            "data": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "id": {
+                                    "type": "number"
+                                  },
+                                  "attributes": {
+                                    "type": "object",
+                                    "properties": {}
+                                  }
                                 }
                               }
                             }
@@ -34200,6 +34252,29 @@
                                               "nome": {
                                                 "type": "string"
                                               },
+                                              "sobrenome": {
+                                                "type": "string"
+                                              },
+                                              "cpf": {
+                                                "type": "string"
+                                              },
+                                              "empresa_emitente": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "businesses": {
                                                 "type": "object",
                                                 "properties": {
@@ -34483,7 +34558,7 @@
                                               "record": {
                                                 "type": "string"
                                               },
-                                              "config_vendas": {
+                                              "config_comissaos": {
                                                 "type": "object",
                                                 "properties": {
                                                   "data": {
@@ -34503,48 +34578,20 @@
                                                             "mes": {
                                                               "type": "string"
                                                             },
-                                                            "meta_decendio": {
-                                                              "type": "string"
+                                                            "meta": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
                                                             "salario_fixo": {
-                                                              "type": "string"
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "ajuda_de_custo": {
-                                                              "type": "string"
+                                                            "base_rate": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "premio_decendio_1": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_2": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_3": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_meta_do_mes": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_recorde_de_vendas": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "comisao_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_contas": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_conta": {
-                                                              "type": "string"
-                                                            },
+                                                            "milestones": {},
+                                                            "deductions": {},
                                                             "vendedor": {
                                                               "type": "string"
                                                             },
@@ -34565,18 +34612,11 @@
                                                                 }
                                                               }
                                                             },
-                                                            "record": {
-                                                              "type": "string"
-                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
                                                             "updatedAt": {
-                                                              "type": "string",
-                                                              "format": "date-time"
-                                                            },
-                                                            "publishedAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
@@ -34873,6 +34913,26 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "vendedores_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
                               }
                             }
                           }
@@ -37265,6 +37325,29 @@
                                               "nome": {
                                                 "type": "string"
                                               },
+                                              "sobrenome": {
+                                                "type": "string"
+                                              },
+                                              "cpf": {
+                                                "type": "string"
+                                              },
+                                              "empresa_emitente": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "businesses": {
                                                 "type": "object",
                                                 "properties": {
@@ -37548,7 +37631,7 @@
                                               "record": {
                                                 "type": "string"
                                               },
-                                              "config_vendas": {
+                                              "config_comissaos": {
                                                 "type": "object",
                                                 "properties": {
                                                   "data": {
@@ -37568,48 +37651,20 @@
                                                             "mes": {
                                                               "type": "string"
                                                             },
-                                                            "meta_decendio": {
-                                                              "type": "string"
+                                                            "meta": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
                                                             "salario_fixo": {
-                                                              "type": "string"
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "ajuda_de_custo": {
-                                                              "type": "string"
+                                                            "base_rate": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "premio_decendio_1": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_2": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_3": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_meta_do_mes": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_recorde_de_vendas": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "comisao_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_contas": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_conta": {
-                                                              "type": "string"
-                                                            },
+                                                            "milestones": {},
+                                                            "deductions": {},
                                                             "vendedor": {
                                                               "type": "string"
                                                             },
@@ -37630,18 +37685,11 @@
                                                                 }
                                                               }
                                                             },
-                                                            "record": {
-                                                              "type": "string"
-                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
                                                             "updatedAt": {
-                                                              "type": "string",
-                                                              "format": "date-time"
-                                                            },
-                                                            "publishedAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
@@ -37938,6 +37986,26 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "vendedores_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
                               }
                             }
                           }
@@ -39787,6 +39855,26 @@
                                         }
                                       }
                                     },
+                                    "vendedores_emitente": {
+                                      "type": "object",
+                                      "properties": {
+                                        "data": {
+                                          "type": "array",
+                                          "items": {
+                                            "type": "object",
+                                            "properties": {
+                                              "id": {
+                                                "type": "number"
+                                              },
+                                              "attributes": {
+                                                "type": "object",
+                                                "properties": {}
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "Pvendas": {
                                       "type": "object",
                                       "properties": {
@@ -41076,6 +41164,29 @@
                       "nome": {
                         "type": "string"
                       },
+                      "sobrenome": {
+                        "type": "string"
+                      },
+                      "cpf": {
+                        "type": "string"
+                      },
+                      "empresa_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "number"
+                              },
+                              "attributes": {
+                                "type": "object",
+                                "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
                       "businesses": {
                         "type": "object",
                         "properties": {
@@ -41145,7 +41256,7 @@
                       "record": {
                         "type": "string"
                       },
-                      "config_vendas": {
+                      "config_comissaos": {
                         "type": "object",
                         "properties": {
                           "data": {
@@ -41165,48 +41276,20 @@
                                     "mes": {
                                       "type": "string"
                                     },
-                                    "meta_decendio": {
-                                      "type": "string"
+                                    "meta": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "salario_fixo": {
-                                      "type": "string"
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "ajuda_de_custo": {
-                                      "type": "string"
+                                    "base_rate": {
+                                      "type": "number",
+                                      "format": "float"
                                     },
-                                    "premio_decendio_1": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_2": {
-                                      "type": "string"
-                                    },
-                                    "premio_decendio_3": {
-                                      "type": "string"
-                                    },
-                                    "premio_meta_do_mes": {
-                                      "type": "string"
-                                    },
-                                    "premio_recorde_de_vendas": {
-                                      "type": "string"
-                                    },
-                                    "entradas_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "comisao_atendimento": {
-                                      "type": "string"
-                                    },
-                                    "entradas_venda": {
-                                      "type": "string"
-                                    },
-                                    "comissao_venda": {
-                                      "type": "string"
-                                    },
-                                    "entradas_contas": {
-                                      "type": "string"
-                                    },
-                                    "comissao_conta": {
-                                      "type": "string"
-                                    },
+                                    "milestones": {},
+                                    "deductions": {},
                                     "vendedor": {
                                       "type": "string"
                                     },
@@ -41227,18 +41310,11 @@
                                         }
                                       }
                                     },
-                                    "record": {
-                                      "type": "string"
-                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
                                     "updatedAt": {
-                                      "type": "string",
-                                      "format": "date-time"
-                                    },
-                                    "publishedAt": {
                                       "type": "string",
                                       "format": "date-time"
                                     },
@@ -41538,8 +41614,14 @@
         ],
         "properties": {
           "data": {
+            "required": [
+              "empresa"
+            ],
             "type": "object",
             "properties": {
+              "obs": {
+                "type": "string"
+              },
               "itens": {},
               "empresa": {
                 "oneOf": [
@@ -41615,7 +41697,13 @@
       },
       "TabelaPreco": {
         "type": "object",
+        "required": [
+          "empresa"
+        ],
         "properties": {
+          "obs": {
+            "type": "string"
+          },
           "itens": {},
           "empresa": {
             "type": "object",
@@ -43240,6 +43328,29 @@
                                               "nome": {
                                                 "type": "string"
                                               },
+                                              "sobrenome": {
+                                                "type": "string"
+                                              },
+                                              "cpf": {
+                                                "type": "string"
+                                              },
+                                              "empresa_emitente": {
+                                                "type": "object",
+                                                "properties": {
+                                                  "data": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                      "id": {
+                                                        "type": "number"
+                                                      },
+                                                      "attributes": {
+                                                        "type": "object",
+                                                        "properties": {}
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              },
                                               "businesses": {
                                                 "type": "object",
                                                 "properties": {
@@ -43523,7 +43634,7 @@
                                               "record": {
                                                 "type": "string"
                                               },
-                                              "config_vendas": {
+                                              "config_comissaos": {
                                                 "type": "object",
                                                 "properties": {
                                                   "data": {
@@ -43543,48 +43654,20 @@
                                                             "mes": {
                                                               "type": "string"
                                                             },
-                                                            "meta_decendio": {
-                                                              "type": "string"
+                                                            "meta": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
                                                             "salario_fixo": {
-                                                              "type": "string"
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "ajuda_de_custo": {
-                                                              "type": "string"
+                                                            "base_rate": {
+                                                              "type": "number",
+                                                              "format": "float"
                                                             },
-                                                            "premio_decendio_1": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_2": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_decendio_3": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_meta_do_mes": {
-                                                              "type": "string"
-                                                            },
-                                                            "premio_recorde_de_vendas": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "comisao_atendimento": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_venda": {
-                                                              "type": "string"
-                                                            },
-                                                            "entradas_contas": {
-                                                              "type": "string"
-                                                            },
-                                                            "comissao_conta": {
-                                                              "type": "string"
-                                                            },
+                                                            "milestones": {},
+                                                            "deductions": {},
                                                             "vendedor": {
                                                               "type": "string"
                                                             },
@@ -43605,18 +43688,11 @@
                                                                 }
                                                               }
                                                             },
-                                                            "record": {
-                                                              "type": "string"
-                                                            },
                                                             "createdAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
                                                             "updatedAt": {
-                                                              "type": "string",
-                                                              "format": "date-time"
-                                                            },
-                                                            "publishedAt": {
                                                               "type": "string",
                                                               "format": "date-time"
                                                             },
@@ -43913,6 +43989,26 @@
                               "attributes": {
                                 "type": "object",
                                 "properties": {}
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "vendedores_emitente": {
+                        "type": "object",
+                        "properties": {
+                          "data": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "number"
+                                },
+                                "attributes": {
+                                  "type": "object",
+                                  "properties": {}
+                                }
                               }
                             }
                           }
@@ -44436,10 +44532,6 @@
             "format": "date-time"
           },
           "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "publishedAt": {
             "type": "string",
             "format": "date-time"
           },
@@ -47669,7 +47761,7 @@
         "operationId": "delete/businesses/{id}"
       }
     },
-    "/config-vendas": {
+    "/config-comissaos": {
       "get": {
         "responses": {
           "200": {
@@ -47677,7 +47769,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConfigVendaListResponse"
+                  "$ref": "#/components/schemas/ConfigComissaoListResponse"
                 }
               }
             }
@@ -47734,7 +47826,7 @@
           }
         },
         "tags": [
-          "Config-venda"
+          "Config-comissao"
         ],
         "parameters": [
           {
@@ -47839,7 +47931,7 @@
             }
           }
         ],
-        "operationId": "get/config-vendas"
+        "operationId": "get/config-comissaos"
       },
       "post": {
         "responses": {
@@ -47848,7 +47940,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConfigVendaResponse"
+                  "$ref": "#/components/schemas/ConfigComissaoResponse"
                 }
               }
             }
@@ -47905,23 +47997,23 @@
           }
         },
         "tags": [
-          "Config-venda"
+          "Config-comissao"
         ],
         "parameters": [],
-        "operationId": "post/config-vendas",
+        "operationId": "post/config-comissaos",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfigVendaRequest"
+                "$ref": "#/components/schemas/ConfigComissaoRequest"
               }
             }
           }
         }
       }
     },
-    "/config-vendas/{id}": {
+    "/config-comissaos/{id}": {
       "get": {
         "responses": {
           "200": {
@@ -47929,7 +48021,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConfigVendaResponse"
+                  "$ref": "#/components/schemas/ConfigComissaoResponse"
                 }
               }
             }
@@ -47986,7 +48078,7 @@
           }
         },
         "tags": [
-          "Config-venda"
+          "Config-comissao"
         ],
         "parameters": [
           {
@@ -48000,7 +48092,7 @@
             }
           }
         ],
-        "operationId": "get/config-vendas/{id}"
+        "operationId": "get/config-comissaos/{id}"
       },
       "put": {
         "responses": {
@@ -48009,7 +48101,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConfigVendaResponse"
+                  "$ref": "#/components/schemas/ConfigComissaoResponse"
                 }
               }
             }
@@ -48066,7 +48158,7 @@
           }
         },
         "tags": [
-          "Config-venda"
+          "Config-comissao"
         ],
         "parameters": [
           {
@@ -48080,13 +48172,13 @@
             }
           }
         ],
-        "operationId": "put/config-vendas/{id}",
+        "operationId": "put/config-comissaos/{id}",
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ConfigVendaRequest"
+                "$ref": "#/components/schemas/ConfigComissaoRequest"
               }
             }
           }
@@ -48157,7 +48249,7 @@
           }
         },
         "tags": [
-          "Config-venda"
+          "Config-comissao"
         ],
         "parameters": [
           {
@@ -48171,7 +48263,7 @@
             }
           }
         ],
-        "operationId": "delete/config-vendas/{id}"
+        "operationId": "delete/config-comissaos/{id}"
       }
     },
     "/demandas": {

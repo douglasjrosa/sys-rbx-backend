@@ -121,6 +121,19 @@
     "nome": {
       "type": "string"
     },
+    "sobrenome": {
+      "type": "string"
+    },
+    "cpf": {
+      "type": "string"
+    },
+    "empresa_emitente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "vendedores_emitente",
+      "description": "Company used as emitter for this seller's documents"
+    },
     "businesses": {
       "type": "relation",
       "relation": "oneToMany",
@@ -149,10 +162,10 @@
     "record": {
       "type": "string"
     },
-    "config_vendas": {
+    "config_comissaos": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::config-venda.config-venda",
+      "target": "api::config-comissao.config-comissao",
       "mappedBy": "user"
     },
     "demandas": {

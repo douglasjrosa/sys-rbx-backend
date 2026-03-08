@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "config_comissaos",
+  "info": {
+    "singularName": "config-comissao",
+    "pluralName": "config-comissaos",
+    "displayName": "config_comissao",
+    "description": "Commission configuration per seller per month"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ano": {
+      "type": "string",
+      "required": true
+    },
+    "mes": {
+      "type": "string",
+      "required": true
+    },
+    "meta": {
+      "type": "decimal",
+      "required": true
+    },
+    "salario_fixo": {
+      "type": "decimal",
+      "required": true
+    },
+    "base_rate": {
+      "type": "decimal",
+      "default": 0.01,
+      "description": "Commission base rate (e.g. 0.01 = 1% of sales)"
+    },
+    "milestones": {
+      "type": "json",
+      "description": "Array of {targetPercent, comissionPercent}. targetPercent in decimal (0.5=50%, 1=100%, 2=200%). comissionPercent is multiplier of base. Below first=0. No implicit 100%."
+    },
+    "deductions": {
+      "type": "json",
+      "description": "Array of {description, value}. Manual deduction entries (e.g. commission from cancelled orders) summed and subtracted from total."
+    },
+    "vendedor": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "config_comissaos"
+    }
+  }
+}
