@@ -94,7 +94,7 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 				try
 				{
 					const existing = await strapi.entityService.findMany( 'api::produto.produto', {
-						filters: { prodId: prod.prodId },
+						filters: { prodId: prod.prodId, empresa: empresaId },
 						limit: 1
 					} )
 
