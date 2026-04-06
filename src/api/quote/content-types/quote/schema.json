@@ -1,0 +1,160 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quotes",
+  "info": {
+    "singularName": "quote",
+    "pluralName": "quotes",
+    "displayName": "Quote",
+    "description": "Packaging calculator submissions (cotações)"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Na fila",
+        "Em andamento",
+        "Concluído"
+      ],
+      "default": "Na fila",
+      "required": true
+    },
+    "turnedIntoBusiness": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "submittedAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "customerClarity": {
+      "type": "enumeration",
+      "enum": [
+        "clear",
+        "doubt"
+      ],
+      "required": true
+    },
+    "contactChannel": {
+      "type": "enumeration",
+      "enum": [
+        "email",
+        "call",
+        "text",
+        "audio",
+        "any"
+      ]
+    },
+    "customerCnpj": {
+      "type": "string"
+    },
+    "emailNfe": {
+      "type": "email"
+    },
+    "customerName": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "email"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "message": {
+      "type": "text"
+    },
+    "assemblyCost": {
+      "type": "decimal"
+    },
+    "basePrice": {
+      "type": "decimal"
+    },
+    "totalDiscount": {
+      "type": "decimal"
+    },
+    "exportTreatmentCost": {
+      "type": "decimal"
+    },
+    "totalValue": {
+      "type": "decimal"
+    },
+    "qty": {
+      "type": "integer"
+    },
+    "prodName": {
+      "type": "string"
+    },
+    "prodCode": {
+      "type": "string"
+    },
+    "packType": {
+      "type": "enumeration",
+      "enum": [
+        "box",
+        "crate",
+        "pallet",
+        "any"
+      ]
+    },
+    "prodType": {
+      "type": "integer"
+    },
+    "isExport": {
+      "type": "boolean"
+    },
+    "weight": {
+      "type": "decimal"
+    },
+    "measuresOf": {
+      "type": "enumeration",
+      "enum": [
+        "internal",
+        "product"
+      ]
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "mm",
+        "cm"
+      ]
+    },
+    "length": {
+      "type": "decimal"
+    },
+    "width": {
+      "type": "decimal"
+    },
+    "height": {
+      "type": "decimal"
+    },
+    "clearance": {
+      "type": "decimal"
+    },
+    "isUnitizedContent": {
+      "type": "boolean"
+    },
+    "isDistributedWeight": {
+      "type": "boolean"
+    },
+    "template": {
+      "type": "string"
+    },
+    "assembly": {
+      "type": "string"
+    },
+    "discounts": {
+      "type": "json",
+      "required": true
+    },
+    "vendedor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
