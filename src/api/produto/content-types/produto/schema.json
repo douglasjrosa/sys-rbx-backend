@@ -65,6 +65,13 @@
       "relation": "manyToOne",
       "target": "api::empresa.empresa",
       "inversedBy": "produtos"
+    },
+    "assembly": {
+      "type": "string"
+    },
+    "ativo": {
+      "type": "string",
+      "default": "1"
     }
   }
 }

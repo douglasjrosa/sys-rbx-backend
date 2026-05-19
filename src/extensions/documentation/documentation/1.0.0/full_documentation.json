@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2026-04-28T03:39:01.398Z"
+    "x-generation-date": "2026-05-19T16:00:49.247Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -4320,6 +4320,12 @@
                                                       }
                                                     }
                                                   },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
+                                                  },
                                                   "createdAt": {
                                                     "type": "string",
                                                     "format": "date-time"
@@ -6656,6 +6662,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -9645,6 +9657,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -13896,6 +13914,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -18374,6 +18398,12 @@
                                         }
                                       }
                                     },
+                                    "assembly": {
+                                      "type": "string"
+                                    },
+                                    "ativo": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -20832,6 +20862,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -25729,6 +25765,12 @@
                                                                   }
                                                                 }
                                                               },
+                                                              "assembly": {
+                                                                "type": "string"
+                                                              },
+                                                              "ativo": {
+                                                                "type": "string"
+                                                              },
                                                               "createdAt": {
                                                                 "type": "string",
                                                                 "format": "date-time"
@@ -29154,6 +29196,12 @@
                                         }
                                       }
                                     },
+                                    "assembly": {
+                                      "type": "string"
+                                    },
+                                    "ativo": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -32341,6 +32389,12 @@
                                           }
                                         }
                                       },
+                                      "assembly": {
+                                        "type": "string"
+                                      },
+                                      "ativo": {
+                                        "type": "string"
+                                      },
                                       "createdAt": {
                                         "type": "string",
                                         "format": "date-time"
@@ -35329,6 +35383,12 @@
                                         }
                                       }
                                     },
+                                    "assembly": {
+                                      "type": "string"
+                                    },
+                                    "ativo": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -35587,6 +35647,12 @@
                   }
                 ],
                 "example": "string or id"
+              },
+              "assembly": {
+                "type": "string"
+              },
+              "ativo": {
+                "type": "string"
               }
             }
           }
@@ -38402,6 +38468,12 @@
                                         }
                                       }
                                     },
+                                    "assembly": {
+                                      "type": "string"
+                                    },
+                                    "ativo": {
+                                      "type": "string"
+                                    },
                                     "createdAt": {
                                       "type": "string",
                                       "format": "date-time"
@@ -38506,6 +38578,12 @@
                 }
               }
             }
+          },
+          "assembly": {
+            "type": "string"
+          },
+          "ativo": {
+            "type": "string"
           },
           "createdAt": {
             "type": "string",
@@ -40723,6 +40801,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -43723,6 +43807,12 @@
                                                         }
                                                       }
                                                     }
+                                                  },
+                                                  "assembly": {
+                                                    "type": "string"
+                                                  },
+                                                  "ativo": {
+                                                    "type": "string"
                                                   },
                                                   "createdAt": {
                                                     "type": "string",
@@ -47648,6 +47738,12 @@
                                           }
                                         }
                                       }
+                                    },
+                                    "assembly": {
+                                      "type": "string"
+                                    },
+                                    "ativo": {
+                                      "type": "string"
                                     },
                                     "createdAt": {
                                       "type": "string",

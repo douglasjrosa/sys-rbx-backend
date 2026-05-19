@@ -98,13 +98,23 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 						limit: 1
 					} )
 
-					// Se o produto está inativo no legado, removemos do Strapi
-					if ( prod.ativo === "0" || prod.ativo === 0 )
+					const isInactive = prod.ativo === '0' || prod.ativo === 0
+
+					if ( isInactive )
 					{
 						if ( existing && existing.length > 0 )
 						{
-							await strapi.entityService.delete( 'api::produto.produto', existing[ 0 ].id )
-							results.deleted++
+							await strapi.entityService.update(
+								'api::produto.produto',
+								existing[ 0 ].id,
+								{
+									data: {
+										ativo: '0',
+										publishedAt: new Date(),
+									},
+								},
+							)
+							results.updated++
 						}
 						continue
 					}
@@ -128,6 +138,8 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 						tablecalc: companyTablecalc,
 						pesoCx: parseBrazilianDecimal( prod.pesoCx ),
 						lastUser: prod.lastUser,
+						assembly: prod.assembly || null,
+						ativo: '1',
 						empresa: empresaId,
 						publishedAt: new Date(),
 					}
@@ -167,6 +179,10 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 
 				for ( const p of allCompanyProducts )
 				{
+					if ( p.ativo === '0' )
+					{
+						continue
+					}
 					await strapi.entityService.delete( 'api::produto.produto', p.id )
 					results.deleted++
 				}

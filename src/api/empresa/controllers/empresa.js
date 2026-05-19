@@ -50,16 +50,35 @@ function toProximaYYYYMMDD ( val )
 	return `${ match[ 1 ] }-${ match[ 2 ] }-${ match[ 3 ] }`
 }
 
+const DOCUMENT_SEARCH_MIN_DIGITS = 3
+
+function stripDocumentDigits ( texto )
+{
+	if ( !texto || typeof texto !== 'string' ) return ''
+	return texto.trim().replace( /\D/g, '' )
+}
+
 /**
- * Checks if text is numeric (CNPJ detection)
- * Returns true if text contains only numbers
+ * True when input looks like a CNPJ/CPF search (digits only or masked).
  */
-function isNumericText ( texto )
+function isDocumentNumberSearch ( texto )
 {
 	if ( !texto || typeof texto !== 'string' ) return false
-	// Remove whitespace and check if only numbers remain
-	const cleaned = texto.trim().replace( /\s/g, '' )
-	return /^\d+$/.test( cleaned )
+	const trimmed = texto.trim()
+	const digits = stripDocumentDigits( trimmed )
+	if ( digits.length < DOCUMENT_SEARCH_MIN_DIGITS ) return false
+	const compact = trimmed.replace( /\s/g, '' )
+	if ( /^\d+$/.test( compact ) ) return true
+	return /[.\-/]/.test( compact )
+}
+
+/** Digits-only value for CNPJ filters (DB stores unformatted CNPJ). */
+function cnpjFilterValue ( texto )
+{
+	const trimmed = String( texto || '' ).trim()
+	if ( !trimmed ) return ''
+	if ( isDocumentNumberSearch( trimmed ) ) return stripDocumentDigits( trimmed )
+	return trimmed
 }
 
 /**
@@ -413,11 +432,11 @@ const EMPRESA_POPULATE = {
 function buildEmpresaFilters ( { userId, filtroTexto, filtroCNAE, filtroCidade }, userMode )
 {
 	const filters = {}
-	const isCNPJ = filtroTexto && String( filtroTexto ).trim() !== '' && isNumericText( filtroTexto )
+	const isCNPJ = filtroTexto && String( filtroTexto ).trim() !== '' && isDocumentNumberSearch( filtroTexto )
 
 	if ( isCNPJ )
 	{
-		filters.CNPJ = { $containsi: String( filtroTexto ).trim() }
+		filters.CNPJ = { $containsi: cnpjFilterValue( filtroTexto ) }
 		return filters
 	}
 
@@ -434,10 +453,11 @@ function buildEmpresaFilters ( { userId, filtroTexto, filtroCNAE, filtroCidade }
 
 	if ( filtroTexto && String( filtroTexto ).trim() !== '' )
 	{
+		const cnpjTerm = cnpjFilterValue( filtroTexto ) || String( filtroTexto ).trim()
 		filters.$or = [
 			{ nome: { $containsi: filtroTexto } },
 			{ fantasia: { $containsi: filtroTexto } },
-			{ CNPJ: { $containsi: filtroTexto } },
+			{ CNPJ: { $containsi: cnpjTerm } },
 		]
 	}
 	if ( filtroCNAE && String( filtroCNAE ).trim() !== '' )
@@ -693,16 +713,17 @@ module.exports = createCoreController( 'api::empresa.empresa', ( { strapi } ) =>
 			}
 			if ( filtroTexto && String( filtroTexto ).trim() !== '' )
 			{
-				const isCNPJ = isNumericText( filtroTexto )
+				const isCNPJ = isDocumentNumberSearch( filtroTexto )
 				if ( isCNPJ )
 				{
-					filters.CNPJ = { $containsi: String( filtroTexto ).trim() }
+					filters.CNPJ = { $containsi: cnpjFilterValue( filtroTexto ) }
 				} else
 				{
+					const cnpjTerm = cnpjFilterValue( filtroTexto ) || String( filtroTexto ).trim()
 					filters.$or = [
 						{ nome: { $containsi: filtroTexto } },
 						{ fantasia: { $containsi: filtroTexto } },
-						{ CNPJ: { $containsi: filtroTexto } },
+						{ CNPJ: { $containsi: cnpjTerm } },
 					]
 				}
 			}
