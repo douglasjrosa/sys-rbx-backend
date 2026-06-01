@@ -61,6 +61,24 @@
       "type": "boolean",
       "default": true
     },
+    "isEmitente": {
+      "type": "boolean",
+      "default": false
+    },
+    "empresaEmitente": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::empresa.empresa",
+      "inversedBy": "empresasClientes",
+      "description": "Emitter company linked to this client company"
+    },
+    "empresasClientes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::empresa.empresa",
+      "mappedBy": "empresaEmitente",
+      "description": "Client companies that use this company as emitter"
+    },
     "adFrailLat": {
       "type": "boolean"
     },
