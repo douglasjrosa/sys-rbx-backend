@@ -21,10 +21,15 @@ function isNonEmptyBpedido(value) {
   return typeof value === 'string' && value.trim() !== '';
 }
 
+/**
+ * Loads the latest pedido row (draft or published). Pedido uses draftAndPublish;
+ * Bpedido is set on UPDATE and often lives only on the draft until publish.
+ */
 async function loadPedidoForWebhook(strapi, id) {
   const pedido = await strapi.entityService.findOne('api::pedido.pedido', id, {
     fields: ['itens', 'dataEntrega', 'Bpedido'],
     populate: { empresa: { fields: ['nome'] } },
+    publicationState: 'preview',
   });
 
   if (!pedido || !isNonEmptyBpedido(pedido.Bpedido)) {
@@ -66,10 +71,16 @@ async function sendPixtrelaWebhook(strapi, payload) {
     });
 
     if (!response.ok) {
+      const responseText = await response.text().catch(() => '');
       strapi.log.warn(
-        `[pixtrela-webhook] HTTP ${response.status} for pedido ${payload.pedidoId}`,
+        `[pixtrela-webhook] HTTP ${response.status} for pedido ${payload.pedidoId}: ${responseText.slice(0, 200)}`,
       );
+      return;
     }
+
+    strapi.log.info(
+      `[pixtrela-webhook] sent pedido ${payload.pedidoId} (${payload.Bpedido})`,
+    );
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
     strapi.log.warn(
@@ -82,7 +93,12 @@ async function sendPixtrelaWebhook(strapi, payload) {
 
 async function notifyPixtrela(strapi, pedidoId) {
   const payload = await loadPedidoForWebhook(strapi, pedidoId);
-  if (!payload) return;
+  if (!payload) {
+    strapi.log.debug(
+      `[pixtrela-webhook] skip pedido ${pedidoId}: missing or empty Bpedido`,
+    );
+    return;
+  }
   void sendPixtrelaWebhook(strapi, payload);
 }
 
@@ -90,4 +106,5 @@ module.exports = {
   notifyPixtrela,
   signBody,
   isNonEmptyBpedido,
+  loadPedidoForWebhook,
 };

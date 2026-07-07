@@ -14,8 +14,12 @@ Requires Node 18+ for native `fetch` in the webhook sender.
 
 ## Trigger rules
 
-- **afterCreate**: always evaluated; webhook sent only if `Bpedido` is non-empty after reload.
-- **afterUpdate**: sent only when `Bpedido`, `itens`, `dataEntrega`, or `empresa` changed.
+- **afterCreate**: evaluated on create; webhook sent only if `Bpedido` is non-empty (rare).
+- **afterUpdate**: sent when `Bpedido`, `itens`, `dataEntrega`, `empresa`, `stausPedido`, or `publishedAt` changed.
+
+`pedido` uses **Draft & Publish**. `Bpedido` is normally set on UPDATE (e.g. after Bling integration via sys-rbx-frontend). The loader uses `publicationState: 'preview'` so draft-only `Bpedido` values are visible before publish.
+
+Restart CRM Strapi after changing lifecycle or env vars.
 
 ## Payload
 

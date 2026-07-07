@@ -7,6 +7,8 @@ const RELEVANT_UPDATE_FIELDS = new Set([
   'itens',
   'dataEntrega',
   'empresa',
+  'stausPedido',
+  'publishedAt',
 ]);
 
 function hasRelevantUpdate(data) {
