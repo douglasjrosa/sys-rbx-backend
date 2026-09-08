@@ -124,7 +124,15 @@ async function loadPedidoForWebhook(strapi, id) {
   }
 
   const empresaNome = pedido.empresa?.nome?.trim() || 'Sem empresa';
-  const itens = await enrichItensWithVersions(strapi, pedido.itens);
+  let itens = parsePedidoItensRows(pedido.itens);
+  try {
+    itens = await enrichItensWithVersions(strapi, pedido.itens);
+  } catch (error) {
+    const message = error instanceof Error ? error.message : String(error);
+    strapi.log.warn(
+      `[pixtrela-webhook] versions enrich failed for pedido ${id}: ${message}`,
+    );
+  }
 
   return {
     pedidoId: pedido.id,
