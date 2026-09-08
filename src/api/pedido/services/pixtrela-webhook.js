@@ -2,7 +2,7 @@
 
 const crypto = require('crypto');
 
-const WEBHOOK_TIMEOUT_MS = 5000;
+const WEBHOOK_TIMEOUT_MS = 60_000;
 const SIGNATURE_HEADER = 'X-Pixtrela-Signature';
 
 function getConfig() {
