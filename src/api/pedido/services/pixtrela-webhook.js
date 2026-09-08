@@ -21,6 +21,93 @@ function isNonEmptyBpedido(value) {
   return typeof value === 'string' && value.trim() !== '';
 }
 
+function normalizeProdutoVersions(value) {
+  let rows = [];
+  if (Array.isArray(value)) {
+    rows = value;
+  } else if (typeof value === 'string') {
+    const trimmed = value.trim();
+    if (!trimmed || trimmed === 'null') return [];
+    try {
+      const parsed = JSON.parse(trimmed);
+      if (Array.isArray(parsed)) rows = parsed;
+    } catch (_err) {
+      return [];
+    }
+  }
+
+  const seen = new Set();
+  const out = [];
+  for (const entry of rows) {
+    if (typeof entry !== 'string' && typeof entry !== 'number') continue;
+    const code = String(entry).trim();
+    if (!code || !/^\d+$/.test(code) || seen.has(code)) continue;
+    seen.add(code);
+    out.push(code);
+  }
+  return out;
+}
+
+function parsePedidoItensRows(itens) {
+  if (itens == null) return [];
+  if (Array.isArray(itens)) return itens;
+  if (typeof itens === 'string') {
+    const trimmed = itens.trim();
+    if (!trimmed || trimmed === 'null') return [];
+    try {
+      const parsed = JSON.parse(trimmed);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch (_err) {
+      return [];
+    }
+  }
+  return [];
+}
+
+/**
+ * Attaches `versions` from Strapi produto records onto each pedido item.
+ * Does not mutate stored pedido.itens — only the outbound webhook payload.
+ */
+async function enrichItensWithVersions(strapi, itens) {
+  const rows = parsePedidoItensRows(itens);
+  if (rows.length === 0) return rows;
+
+  const prodIds = [
+    ...new Set(
+      rows
+        .map((row) => {
+          if (!row || typeof row !== 'object') return null;
+          const n = Number(row.prodId);
+          return Number.isInteger(n) && n > 0 ? n : null;
+        })
+        .filter((id) => id != null),
+    ),
+  ];
+
+  const versionsByProdId = new Map();
+  if (prodIds.length > 0) {
+    const produtos = await strapi.entityService.findMany('api::produto.produto', {
+      filters: { prodId: { $in: prodIds } },
+      fields: ['prodId', 'versions'],
+      limit: prodIds.length,
+      publicationState: 'preview',
+    });
+
+    for (const produto of produtos || []) {
+      const prodId = Number(produto.prodId);
+      if (!Number.isInteger(prodId) || prodId <= 0) continue;
+      versionsByProdId.set(prodId, normalizeProdutoVersions(produto.versions));
+    }
+  }
+
+  return rows.map((row) => {
+    if (!row || typeof row !== 'object') return row;
+    const prodId = Number(row.prodId);
+    const versions = versionsByProdId.get(prodId) || [];
+    return { ...row, versions };
+  });
+}
+
 /**
  * Loads the latest pedido row (draft or published). Pedido uses draftAndPublish;
  * Bpedido is set on UPDATE and often lives only on the draft until publish.
@@ -37,11 +124,12 @@ async function loadPedidoForWebhook(strapi, id) {
   }
 
   const empresaNome = pedido.empresa?.nome?.trim() || 'Sem empresa';
+  const itens = await enrichItensWithVersions(strapi, pedido.itens);
 
   return {
     pedidoId: pedido.id,
     Bpedido: pedido.Bpedido.trim(),
-    itens: pedido.itens,
+    itens,
     dataEntrega: pedido.dataEntrega ?? null,
     empresaNome,
   };
@@ -107,4 +195,7 @@ module.exports = {
   signBody,
   isNonEmptyBpedido,
   loadPedidoForWebhook,
+  normalizeProdutoVersions,
+  enrichItensWithVersions,
+  parsePedidoItensRows,
 };

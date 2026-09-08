@@ -59,6 +59,44 @@ function parseBrazilianDecimal ( value )
 	return Number.isNaN( parsed ) ? 0 : parsed
 }
 
+/**
+ * Normalizes produto.versions to a chronological string array of prodIds.
+ */
+function normalizeProdutoVersions ( value )
+{
+	let rows = []
+	if ( Array.isArray( value ) )
+	{
+		rows = value
+	}
+	else if ( typeof value === 'string' )
+	{
+		const trimmed = value.trim()
+		if ( !trimmed || trimmed === 'null' ) return []
+		try
+		{
+			const parsed = JSON.parse( trimmed )
+			if ( Array.isArray( parsed ) ) rows = parsed
+		}
+		catch ( _err )
+		{
+			return []
+		}
+	}
+
+	const seen = new Set()
+	const out = []
+	for ( const entry of rows )
+	{
+		if ( typeof entry !== 'string' && typeof entry !== 'number' ) continue
+		const code = String( entry ).trim()
+		if ( !code || !/^\d+$/.test( code ) || seen.has( code ) ) continue
+		seen.add( code )
+		out.push( code )
+	}
+	return out
+}
+
 module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) => ( {
 	async SyncProducts ( ctx )
 	{
@@ -139,6 +177,7 @@ module.exports = createCoreController( 'api::produto.produto', ( { strapi } ) =>
 						pesoCx: parseBrazilianDecimal( prod.pesoCx ),
 						lastUser: prod.lastUser,
 						assembly: prod.assembly || null,
+						versions: normalizeProdutoVersions( prod.versions ),
 						ativo: '1',
 						empresa: empresaId,
 						publishedAt: new Date(),

@@ -69,6 +69,10 @@
     "assembly": {
       "type": "string"
     },
+    "versions": {
+      "type": "json",
+      "default": []
+    },
     "ativo": {
       "type": "string",
       "default": "1"
